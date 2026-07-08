@@ -12,11 +12,61 @@
   },
   "drops": [
     {
+      "id": "viral-pack",
+      "date": "2026-07-08",
+      "title": "The Viral Pack",
+      "eyebrow": "Real pops · 2026 sounds",
+      "intro": "Two new cuts tuned for the 2026 feed — jersey club bounce and amapiano groove — and every ending across the page now spins the actual product.",
+      "videos": [
+        {
+          "num": "01",
+          "title": "The Bounce",
+          "tag": "Jersey club · vocal",
+          "blurb": "TikTok-ready bounce with a chantable hook. Closes on a real Blackberry Lemonade spin.",
+          "src": "assets/reel-bounce.mp4",
+          "poster": "assets/poster-v5.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Bounce.mp4"
+        },
+        {
+          "num": "02",
+          "title": "The Piano",
+          "tag": "Amapiano instrumental",
+          "blurb": "Log drums and warm keys — the global groove of the moment. Closes on a real Basil Lemonade spin.",
+          "src": "assets/reel-piano.mp4",
+          "poster": "assets/poster-v6.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Piano.mp4"
+        }
+      ],
+      "tracks": [
+        {
+          "title": "Pop Pop Bliss",
+          "desc": "Jersey club · viral chant",
+          "dur": "0:45",
+          "gradient": "#FF2E63,#FFD000",
+          "src": "assets/song-jersey.m4a"
+        },
+        {
+          "title": "Rooftop Mzansi Glow",
+          "desc": "Amapiano instrumental · full length",
+          "dur": "5:09",
+          "gradient": "#F5A623,#4CAF50",
+          "src": "assets/song-amapiano.m4a"
+        },
+        {
+          "title": "Sol da Ladeira",
+          "desc": "Baile funk instrumental · full length",
+          "dur": "1:28",
+          "gradient": "#00A6FB,#FF6B35",
+          "src": "assets/song-bailefunk.m4a"
+        }
+      ]
+    },
+    {
       "id": "waymo-reel",
       "date": "2026-07-08",
       "title": "The Waymo Reel",
       "eyebrow": "Waymo × MOKIPOPS · Atlanta Streets Alive",
-      "intro": "One shoot, four finished cuts — same picture, four different sounds. 26 seconds each, vertical 9:16, ready for Instagram, TikTok & Shorts.",
+      "intro": "One shoot, four finished cuts — same picture, four different sounds. 26 seconds each, vertical 9:16, ready for Instagram, TikTok & Shorts. Every cut now closes on a real MOKIPOPS product spin.",
       "videos": [
         {
           "num": "01",
