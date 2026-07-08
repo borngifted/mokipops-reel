@@ -1,0 +1,97 @@
+{
+  "site": {
+    "title": "MOKIPOPS — Content Hub",
+    "wordmark_top": "MOKI",
+    "wordmark_accent": "POPS",
+    "hero_eyebrow": "The Living Brand Reel",
+    "hero_title_1": "Bliss on a Stick.",
+    "hero_title_2": "Always something new.",
+    "hero_lede": "This page grows with the brand — every new cut, track, and drop lands here first. Bookmark it and check back.",
+    "footer_line": "Bliss on a Stick · mokipops.com · @mokipops",
+    "footer_credit": "Crafted by Work Official LLC"
+  },
+  "drops": [
+    {
+      "id": "waymo-reel",
+      "date": "2026-07-08",
+      "title": "The Waymo Reel",
+      "eyebrow": "Waymo × MOKIPOPS · Atlanta Streets Alive",
+      "intro": "One shoot, four finished cuts — same picture, four different sounds. 26 seconds each, vertical 9:16, ready for Instagram, TikTok & Shorts.",
+      "videos": [
+        {
+          "num": "01",
+          "title": "The Original",
+          "tag": "Summer pop-funk · vocal",
+          "blurb": "Bright, bouncy, hand-claps-and-brass feel-good — the crowd-pleaser.",
+          "src": "assets/reel-original.mp4",
+          "poster": "assets/poster-v1.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Original.mp4"
+        },
+        {
+          "num": "02",
+          "title": "The Anthem",
+          "tag": "ATL trap-soul · vocal",
+          "blurb": "808s and a confident hook. Made in Atlanta, sounds like it.",
+          "src": "assets/reel-anthem.mp4",
+          "poster": "assets/poster-v2.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Anthem.mp4"
+        },
+        {
+          "num": "03",
+          "title": "The Beat",
+          "tag": "Trap instrumental",
+          "blurb": "All groove, no vocals — lets the footage do the talking.",
+          "src": "assets/reel-beat.mp4",
+          "poster": "assets/poster-v3.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Beat.mp4"
+        },
+        {
+          "num": "04",
+          "title": "The Groove",
+          "tag": "Tropical instrumental",
+          "blurb": "Marimba and steel drums. Sunshine you can hear.",
+          "src": "assets/reel-groove.mp4",
+          "poster": "assets/poster-v4.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Groove.mp4"
+        }
+      ],
+      "tracks": [
+        {
+          "title": "Bliss on a Stick",
+          "desc": "Summer pop-funk · the original cut",
+          "dur": "0:35",
+          "gradient": "#FFD000,#FF6B35",
+          "src": "assets/song-bliss.m4a"
+        },
+        {
+          "title": "Mokipops Anthem",
+          "desc": "ATL trap-soul anthem",
+          "dur": "0:40",
+          "gradient": "#FF2E63,#E23A23",
+          "src": "assets/song-anthem.m4a"
+        },
+        {
+          "title": "Mokipops Anthem (Alt Take)",
+          "desc": "Alternate hook, same energy",
+          "dur": "0:32",
+          "gradient": "#FF2E63,#FFD000",
+          "src": "assets/song-anthemalt.m4a"
+        },
+        {
+          "title": "Backyard Summer Fade",
+          "desc": "Trap instrumental · full length",
+          "dur": "2:18",
+          "gradient": "#2A1A12,#EE6C2B",
+          "src": "assets/song-trap.m4a"
+        },
+        {
+          "title": "Palm Shade Parade",
+          "desc": "Tropical house instrumental · full length",
+          "dur": "2:35",
+          "gradient": "#4CAF50,#00A6FB",
+          "src": "assets/song-tropical.m4a"
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MOKIPOPS — The Waymo Reel</title>
+<title>MOKIPOPS — Content Hub</title>
 <style>
 @font-face { font-family:'Fraunces'; src:url(assets/fraunces.woff2) format('woff2'); font-weight:100 900; font-display:swap; }
 @font-face { font-family:'Archivo'; src:url(assets/archivo.woff2) format('woff2'); font-weight:100 900; font-display:swap; }
@@ -20,7 +20,7 @@ body {
   font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
   background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-.display, h1, h2, h3 { font-family:'Fraunces',Georgia,serif; }
+h1, h2, h3 { font-family:'Fraunces',Georgia,serif; }
 .wrap { max-width:1040px; margin:0 auto; padding:0 max(22px, env(safe-area-inset-left)); }
 
 .topbar { position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px);
@@ -30,23 +30,30 @@ body {
 .wordmark em { font-style:normal; color:var(--mango); }
 .topmeta { font-size:12.5px; color:var(--sub); font-weight:600; }
 
-.hero { position:relative; text-align:center; padding:clamp(64px,11vw,110px) 0 clamp(40px,6vw,64px); overflow:hidden; }
+.hero { position:relative; text-align:center; padding:clamp(56px,10vw,96px) 0 clamp(34px,5vw,54px); overflow:hidden; }
 .hero::before { content:""; position:absolute; inset:0; pointer-events:none; background:
   radial-gradient(480px 300px at 18% 8%, rgba(245,166,35,.22), transparent 62%),
   radial-gradient(430px 280px at 84% 16%, rgba(226,58,35,.12), transparent 60%); }
 .hero > * { position:relative; }
 .eyebrow { display:inline-block; font-size:12.5px; font-weight:800; color:var(--chili); letter-spacing:.09em; text-transform:uppercase;
   background:rgba(245,166,35,.16); border:1px solid rgba(245,166,35,.35); border-radius:100px; padding:7px 16px; margin-bottom:22px; }
-h1 { font-size:clamp(40px,7.5vw,74px); font-weight:900; letter-spacing:-0.02em; line-height:1.02; }
+h1 { font-size:clamp(38px,7vw,70px); font-weight:900; letter-spacing:-0.02em; line-height:1.02; }
 h1 .soft { background:linear-gradient(92deg,var(--mango),var(--orange) 45%,var(--chili)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-.lede { font-size:clamp(16.5px,2.4vw,20px); color:var(--sub); max-width:580px; margin:20px auto 0; }
-.hero .hint { margin-top:26px; font-size:13px; color:var(--sub); opacity:.85; }
+.lede { font-size:clamp(16px,2.3vw,19px); color:var(--sub); max-width:580px; margin:20px auto 0; }
 
-section { padding:clamp(36px,6vw,72px) 0; }
-.sechead { text-align:center; margin-bottom:clamp(26px,4vw,44px); }
-h2 { font-size:clamp(28px,4.4vw,42px); font-weight:900; letter-spacing:-0.015em; }
-h2 .dot { color:var(--mango); }
-.sechead p { color:var(--sub); font-size:15.5px; margin-top:9px; }
+.drop { padding:clamp(30px,5vw,56px) 0 clamp(20px,3vw,34px); }
+.drop + .drop { border-top:1px solid var(--hairline); }
+.drophead { text-align:center; margin-bottom:clamp(24px,4vw,40px); }
+.datechip { display:inline-block; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--sub); border:1.5px solid var(--hairline); border-radius:100px; padding:6px 14px; }
+.newbadge { display:inline-block; margin-left:8px; font-size:11.5px; font-weight:900; letter-spacing:.1em;
+  color:#fff; background:linear-gradient(90deg,var(--mango),var(--chili)); border-radius:100px; padding:6px 12px; vertical-align:1px; }
+h2 { font-size:clamp(28px,4.4vw,42px); font-weight:900; letter-spacing:-0.015em; margin-top:14px; }
+h2 .dot, h3 .dot { color:var(--mango); }
+.dropeyebrow { margin-top:8px; font-size:12.5px; font-weight:800; color:var(--chili); letter-spacing:.09em; text-transform:uppercase; }
+.dropintro { color:var(--sub); font-size:15.5px; max-width:640px; margin:10px auto 0; }
+.sechead { text-align:center; margin-bottom:clamp(18px,3vw,30px); }
+.tracksh { font-size:clamp(22px,3.2vw,30px); font-weight:900; letter-spacing:-0.015em; }
 
 .cuts { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
 @media (max-width:960px) { .cuts { grid-template-columns:repeat(2,1fr); } }
@@ -64,12 +71,13 @@ h2 .dot { color:var(--mango); }
 .tag { font-size:12px; color:var(--sub); }
 .vwrap { border-radius:14px; overflow:hidden; aspect-ratio:9/16; background:#1a0f0a; }
 .vwrap video { width:100%; height:100%; display:block; object-fit:cover; }
+.gimg { width:100%; border-radius:14px; display:block; }
 .blurb { font-size:13px; color:var(--sub); margin:12px 6px 4px; }
 .dl { display:inline-block; margin:10px 6px 2px; font-size:12.5px; font-weight:800; color:var(--chili); text-decoration:none;
   border:1.5px solid rgba(226,58,35,.4); border-radius:100px; padding:7px 14px; transition:background .15s ease; }
 .dl:hover { background:rgba(226,58,35,.08); }
 
-.panelband { background:var(--panel); border:1px solid var(--hairline); border-radius:calc(var(--r) + 8px); padding:clamp(26px,4vw,48px); }
+.panelband { background:var(--panel); border:1px solid var(--hairline); border-radius:calc(var(--r) + 8px); padding:clamp(22px,3.4vw,40px); }
 .tracks { display:flex; flex-direction:column; }
 .trow { display:flex; align-items:center; gap:14px; padding:14px 6px; border-bottom:1px solid var(--hairline); }
 .trow:last-child { border-bottom:none; }
@@ -78,15 +86,13 @@ h2 .dot { color:var(--mango); }
 .tplay:active { transform:scale(.92); }
 .tart { flex:none; width:46px; height:46px; border-radius:10px; color:rgba(255,255,255,.95); display:grid; place-items:center; font-size:20px; }
 .tmeta { flex:1; min-width:0; }
-.tmeta b { display:block; font-size:15.5px; font-weight:700; letter-spacing:-0.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.tmeta b { display:block; font-size:15.5px; font-weight:700; letter-spacing:-0.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-family:'Archivo'; }
 .tmeta span { display:block; font-size:12.5px; color:var(--sub); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .tbar { height:3px; border-radius:99px; background:var(--hairline); margin-top:8px; overflow:hidden; cursor:pointer; }
 .tfill { height:100%; width:0%; border-radius:99px; background:linear-gradient(90deg,var(--mango),var(--chili)); }
 .tdur { font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
 
-.note { text-align:center; font-size:13px; color:var(--sub); margin-top:26px; }
-
-footer { margin-top:30px; background:var(--ink); color:#FBEAD0; text-align:center;
+footer { margin-top:44px; background:var(--ink); color:#FBEAD0; text-align:center;
   padding:56px 0 calc(44px + env(safe-area-inset-bottom)); }
 @media (prefers-color-scheme: dark) { footer { background:#170e0a; } }
 footer img { height:64px; width:auto; }
@@ -106,20 +112,22 @@ footer .fsmall { margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
 
 <div class="topbar"><div class="wrap">
   <span class="wordmark">MOKI<em>POPS</em></span>
-  <span class="topmeta">The Waymo Reel · 4 cuts · 5 tracks</span>
+  <span class="topmeta">Updated July 8, 2026</span>
 </div></div>
 
 <header class="hero wrap">
-  <span class="eyebrow">Waymo &times; MOKIPOPS · Atlanta Streets Alive</span>
-  <h1>Bliss on a Stick.<br><span class="soft">Now with a soundtrack.</span></h1>
-  <p class="lede">One shoot, four finished cuts — same picture, four different sounds. Tap play, listen, and tell us which one feels like MOKIPOPS.</p>
-  <p class="hint">Tap any cut to play it with sound. Masters are downloadable below each video.</p>
+  <span class="eyebrow">The Living Brand Reel</span>
+  <h1>Bliss on a Stick.<br><span class="soft">Always something new.</span></h1>
+  <p class="lede">This page grows with the brand — every new cut, track, and drop lands here first. Bookmark it and check back.</p>
 </header>
 
-<section class="wrap" id="cuts">
-  <div class="sechead reveal">
-    <h2>The Cuts<span class="dot">.</span></h2>
-    <p>26 seconds each · vertical 9:16 · ready for Instagram, TikTok &amp; Shorts</p>
+
+<section class="wrap drop" id="waymo-reel">
+  <div class="drophead reveal">
+    <span class="datechip">July 8, 2026</span><span class="newbadge">NEW</span>
+    <h2>The Waymo Reel<span class="dot">.</span></h2>
+    <p class="dropeyebrow">Waymo × MOKIPOPS · Atlanta Streets Alive</p>
+    <p class="dropintro">One shoot, four finished cuts — same picture, four different sounds. 26 seconds each, vertical 9:16, ready for Instagram, TikTok & Shorts.</p>
   </div>
   <div class="cuts">
       <div class="card reveal">
@@ -159,16 +167,10 @@ footer .fsmall { margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
         <a class="dl" href="masters/MOKIPOPS-Waymo-Reel-Groove.mp4" download>&#8595;&#xFE0E; Download master (720&times;1280)</a>
       </div>
   </div>
-</section>
-
-<section class="wrap" id="tracks">
-  <div class="panelband">
-    <div class="sechead reveal">
-      <h2>The Soundtracks<span class="dot">.</span></h2>
-      <p>Original music, made for MOKIPOPS. The full-length instrumentals are yours to reuse.</p>
-    </div>
+  <div class="panelband" style="margin-top:22px">
+    <div class="sechead reveal"><h3 class="tracksh">The Soundtracks<span class="dot">.</span></h3></div>
     <div class="tracks">
-      <div class="trow reveal" data-audio="bliss">
+      <div class="trow reveal">
         <button class="tplay" aria-label="Play Bliss on a Stick">
           <svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
           <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
@@ -181,7 +183,7 @@ footer .fsmall { margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
         <span class="tdur">0:35</span>
         <audio preload="metadata" src="assets/song-bliss.m4a"></audio>
       </div>
-      <div class="trow reveal" data-audio="anthem">
+      <div class="trow reveal">
         <button class="tplay" aria-label="Play Mokipops Anthem">
           <svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
           <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
@@ -194,7 +196,7 @@ footer .fsmall { margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
         <span class="tdur">0:40</span>
         <audio preload="metadata" src="assets/song-anthem.m4a"></audio>
       </div>
-      <div class="trow reveal" data-audio="anthemalt">
+      <div class="trow reveal">
         <button class="tplay" aria-label="Play Mokipops Anthem (Alt Take)">
           <svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
           <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
@@ -207,7 +209,7 @@ footer .fsmall { margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
         <span class="tdur">0:32</span>
         <audio preload="metadata" src="assets/song-anthemalt.m4a"></audio>
       </div>
-      <div class="trow reveal" data-audio="trap">
+      <div class="trow reveal">
         <button class="tplay" aria-label="Play Backyard Summer Fade">
           <svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
           <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
@@ -220,7 +222,7 @@ footer .fsmall { margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
         <span class="tdur">2:18</span>
         <audio preload="metadata" src="assets/song-trap.m4a"></audio>
       </div>
-      <div class="trow reveal" data-audio="tropical">
+      <div class="trow reveal">
         <button class="tplay" aria-label="Play Palm Shade Parade">
           <svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
           <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
@@ -235,7 +237,6 @@ footer .fsmall { margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
       </div>
     </div>
   </div>
-  <p class="note">All music &amp; edits crafted for MOKIPOPS — no dairy, no dyes, no stock tracks.</p>
 </section>
 
 <footer>
