@@ -41,7 +41,7 @@ def track_row(t):
           <div class="tbar"><div class="tfill"></div></div>
         </div>
         <span class="tdur">{t["dur"]}</span>
-        <audio preload="metadata" src="{t["src"]}"></audio>
+        <audio controls preload="metadata" src="{t["src"]}"></audio>
       </div>"""
 
 def image_card(im):
@@ -178,6 +178,9 @@ h2 .dot, h3 .dot {{ color:var(--mango); }}
 .tbar {{ height:3px; border-radius:99px; background:var(--hairline); margin-top:8px; overflow:hidden; cursor:pointer; }}
 .tfill {{ height:100%; width:0%; border-radius:99px; background:linear-gradient(90deg,var(--mango),var(--chili)); }}
 .tdur {{ font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }}
+.trow audio {{ width:200px; max-width:34vw; height:36px; }}
+.js .trow audio {{ display:none; }}
+html:not(.js) .tplay, html:not(.js) .tbar {{ display:none; }}
 
 footer {{ margin-top:44px; background:var(--ink); color:#FBEAD0; text-align:center;
   padding:56px 0 calc(44px + env(safe-area-inset-bottom)); }}
@@ -187,15 +190,16 @@ footer .fline {{ margin-top:16px; font-size:14px; color:#e6d6c4; }}
 footer .fline b {{ color:#fff; font-family:'Fraunces',Georgia,serif; }}
 footer .fsmall {{ margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }}
 
-.reveal {{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }}
-.reveal.in {{ opacity:1; transform:none; }}
+.js .reveal {{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }}
+.js .reveal.in {{ opacity:1; transform:none; }}
 @media (prefers-reduced-motion: reduce) {{
   html {{ scroll-behavior:auto; }}
-  .reveal {{ opacity:1; transform:none; transition:none; }}
+  .js .reveal {{ opacity:1; transform:none; transition:none; }}
 }}
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.add('js');</script>
 
 <div class="topbar"><div class="wrap">
   <span class="wordmark">{site["wordmark_top"]}<em>{site["wordmark_accent"]}</em></span>
@@ -254,6 +258,9 @@ footer .fsmall {{ margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
   }} else {{
     document.querySelectorAll('.reveal').forEach(function(el) {{ el.classList.add('in'); }});
   }}
+  setTimeout(function() {{
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el) {{ el.classList.add('in'); }});
+  }}, 2500);
 }})();
 </script>
 </body>
