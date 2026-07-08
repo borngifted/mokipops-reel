@@ -12,6 +12,74 @@
   },
   "drops": [
     {
+      "id": "instrumental-pack",
+      "date": "2026-07-08",
+      "title": "The Instrumental Pack",
+      "eyebrow": "Four cuts · no vocals · all groove",
+      "intro": "Four instrumental flips of the reel — baile funk, afro house, UK garage and drift phonk — each closing on a different real MOKIPOPS flavor.",
+      "videos": [
+        {
+          "num": "01",
+          "title": "The Carnival",
+          "tag": "Baile funk instrumental",
+          "blurb": "Punchy tamborzão bounce. Closes on a real Rosy Raspberry spin.",
+          "src": "assets/reel-carnival.mp4",
+          "poster": "assets/poster-v7.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Carnival.mp4"
+        },
+        {
+          "num": "02",
+          "title": "The Wave",
+          "tag": "Afro house instrumental",
+          "blurb": "Rolling percussion, sunset energy. Closes on a real Blueberriest Eye spin.",
+          "src": "assets/reel-wave.mp4",
+          "poster": "assets/poster-v8.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Wave.mp4"
+        },
+        {
+          "num": "03",
+          "title": "The Step",
+          "tag": "UK garage instrumental",
+          "blurb": "Skippy 2-step shuffle. Closes on a real Lemon Lime spin.",
+          "src": "assets/reel-step.mp4",
+          "poster": "assets/poster-v9.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Step.mp4"
+        },
+        {
+          "num": "04",
+          "title": "The Drift",
+          "tag": "Drift phonk instrumental",
+          "blurb": "Cowbell melody, sped-up edit energy. Closes on a real Mango Ginger spin.",
+          "src": "assets/reel-drift.mp4",
+          "poster": "assets/poster-v10.jpg",
+          "master": "masters/MOKIPOPS-Waymo-Reel-Drift.mp4"
+        }
+      ],
+      "tracks": [
+        {
+          "title": "Tide Circle",
+          "desc": "Afro house instrumental · full length",
+          "dur": "4:02",
+          "gradient": "#00A6FB,#4CAF50",
+          "src": "assets/song-afrohouse.m4a"
+        },
+        {
+          "title": "Pavement Smile",
+          "desc": "UK garage 2-step instrumental · full length",
+          "dur": "2:54",
+          "gradient": "#FFD000,#FF2E63",
+          "src": "assets/song-ukgarage.m4a"
+        },
+        {
+          "title": "Sunrush Lap",
+          "desc": "Drift phonk instrumental · full length",
+          "dur": "1:58",
+          "gradient": "#FF6B35,#2A1A12",
+          "src": "assets/song-phonk.m4a"
+        }
+      ]
+    },
+    {
       "id": "viral-pack",
       "date": "2026-07-08",
       "title": "The Viral Pack",
