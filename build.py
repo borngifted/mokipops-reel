@@ -116,6 +116,8 @@ h1, h2, h3 {{ font-family:'Fraunces',Georgia,serif; }}
 .wordmark {{ font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:17px; letter-spacing:-.01em; }}
 .wordmark em {{ font-style:normal; color:var(--mango); }}
 .topmeta {{ font-size:12.5px; color:var(--sub); font-weight:600; }}
+.topnav {{ display:flex; align-items:center; gap:18px; }}
+.topnav a {{ font-size:13px; font-weight:800; color:var(--chili); text-decoration:none; }}
 
 .hero {{ position:relative; text-align:center; padding:clamp(56px,10vw,96px) 0 clamp(34px,5vw,54px); overflow:hidden; }}
 .hero::before {{ content:""; position:absolute; inset:0; pointer-events:none; background:
@@ -203,7 +205,7 @@ footer .fsmall {{ margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
 
 <div class="topbar"><div class="wrap">
   <span class="wordmark">{site["wordmark_top"]}<em>{site["wordmark_accent"]}</em></span>
-  <span class="topmeta">Updated {updated}</span>
+  <span class="topnav"><a href="status.html">Posting Status</a><span class="topmeta">Updated {updated}</span></span>
 </div></div>
 
 <header class="hero wrap">
