@@ -20,6 +20,8 @@ SOURCE_ROOT = ROOT.parent
 OUT = ROOT / "calendar.html"
 LIBRARY_DIR = ROOT / "assets" / "library"
 IMPORTED_PHOTOS = LIBRARY_DIR / "imported" / "photos"
+VIDEO_THUMBS = LIBRARY_DIR / "imported" / "video-thumbs"
+EXTERNAL_VIDEOS_JSON = LIBRARY_DIR / "imported" / "external-videos.json"
 DATA_JS = LIBRARY_DIR / "library-data.js"
 
 PHOTO_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".avif"}
@@ -168,6 +170,8 @@ def scan_public_media():
                 continue
             if path.name.startswith("."):
                 continue
+            if VIDEO_THUMBS in path.parents:
+                continue
             if path.suffix.lower() in VIDEO_EXTS and path.stat().st_size > MAX_VIDEO_BYTES:
                 continue
             files.append(path)
@@ -194,6 +198,39 @@ def scan_public_media():
             "text": "MOKIPOPS — Bliss on a Stick\n\n#mokipops #blissonastick #atlanta #fruitpops",
         }
         records.append(record)
+    return records
+
+
+def scan_external_videos(start_index):
+    """Videos too large for GitHub Pages, hosted on Blotato media storage.
+
+    external-videos.json maps each original file to its hosted mediaUrl and a
+    repo-local poster thumbnail generated at import time.
+    """
+    if not EXTERNAL_VIDEOS_JSON.exists():
+        return []
+    entries = json.loads(EXTERNAL_VIDEOS_JSON.read_text(encoding="utf-8"))
+    records = []
+    for entry in sorted(entries, key=lambda item: item["filename"].lower()):
+        source = Path(entry["filename"])
+        title = pretty_title(source)
+        if re.fullmatch(r"[0-9A-Fa-f\s-]{12,}", title):
+            title = f"Clip {source.stem[:8]}"
+        thumb = entry.get("thumbnail", "")
+        if thumb and not (ROOT / thumb).exists():
+            thumb = ""
+        records.append({
+            "id": f"asset-{start_index + len(records) + 1:04d}",
+            "mediaType": "video",
+            "title": title,
+            "filename": source.name,
+            "folder": entry.get("folder", "icloud-photos"),
+            "extension": source.suffix.lower().lstrip("."),
+            "sizeMb": entry.get("sizeMb", 0),
+            "mediaUrl": entry["mediaUrl"],
+            "thumbnail": thumb,
+            "text": "MOKIPOPS — Bliss on a Stick\n\n#mokipops #blissonastick #atlanta #fruitpops",
+        })
     return records
 
 
@@ -317,7 +354,7 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
   <header class="hero">
     <span class="eyebrow">Media Picker</span>
     <h1>All postable <span class="soft">MOKIPOPS media.</span></h1>
-    <p class="lede">Select photos or videos from the scanned asset library and create Blotato drafts from public GitHub Pages media URLs.</p>
+    <p class="lede">Select photos or videos from the scanned asset library and create Blotato drafts from public media URLs.</p>
     <div class="stats" aria-label="Media stats">
       <div class="stat"><span>Total assets</span><b id="statTotal">{payload["counts"]["total"]}</b></div>
       <div class="stat"><span>Photos</span><b id="statPhotos">{payload["counts"]["photo"]}</b></div>
@@ -724,6 +761,7 @@ updateActions();
 def main():
     scan = import_external_photos()
     records = scan_public_media()
+    records += scan_external_videos(len(records))
     payload = build_payload(records, scan)
     LIBRARY_DIR.mkdir(parents=True, exist_ok=True)
     write_if_changed(
