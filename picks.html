@@ -24,6 +24,7 @@ a { color:var(--chili); }
   background:color-mix(in srgb, var(--bg) 80%, transparent); border-bottom:1px solid var(--hairline); }
 .wordmark { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:17px; letter-spacing:-.01em; }
 .wordmark em { font-style:normal; color:var(--mango); }
+.topnav { display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end; }
 .top a { font-size:13px; font-weight:800; color:var(--chili); text-decoration:none; }
 .wrap { max-width:1120px; margin:0 auto; padding:0 clamp(16px,4vw,40px); }
 .hero { text-align:center; padding:clamp(34px,6vw,64px) 0 12px; }
@@ -80,7 +81,7 @@ footer .fsmall { margin-top:14px; font-size:12px; color:#cdbba8; opacity:.85; }
 <body>
 <div class="top">
   <div class="wordmark">MOKI<em>POPS</em></div>
-  <a href="index.html">← Back to the reel</a>
+  <div class="topnav"><a href="index.html">Reel</a><a href="calendar.html">Full Calendar</a></div>
 </div>
 
 <div class="wrap">
