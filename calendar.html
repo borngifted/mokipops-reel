@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MOKIPOPS - Content Calendar</title>
+<title>MOKIPOPS - Media Picker</title>
 <meta name="robots" content="noindex">
 <style>
 @font-face { font-family:'Fraunces'; src:url(assets/fraunces.woff2) format('woff2'); font-weight:100 900; font-display:swap; }
@@ -17,31 +17,30 @@
   :root { --bg:#211714; --panel:#2A1A12; --ink:#FFF6E9; --sub:#cdbba8; --line:rgba(255,246,233,.15); --card:#33211a; --shadow:0 18px 42px -30px rgba(0,0,0,.9); }
 }
 * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
-body { font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.48; -webkit-font-smoothing:antialiased; padding-bottom:94px; }
+body { font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.42; padding-bottom:98px; -webkit-font-smoothing:antialiased; }
 h1,h2,h3 { font-family:'Fraunces',Georgia,serif; }
 button,input,select,textarea { font:inherit; }
 .top { position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:13px clamp(16px,4vw,40px); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); background:color-mix(in srgb,var(--bg) 84%,transparent); border-bottom:1px solid var(--line); }
-.wordmark { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:17px; letter-spacing:0; white-space:nowrap; }
+.wordmark { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:17px; white-space:nowrap; }
 .wordmark em { font-style:normal; color:var(--mango); }
 .nav { display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:14px; }
 .nav a { color:var(--chili); text-decoration:none; font-size:13px; font-weight:850; }
-.wrap { max-width:1180px; margin:0 auto; padding:0 clamp(16px,4vw,40px); }
-.hero { padding:clamp(34px,6vw,64px) 0 22px; text-align:center; }
+.wrap { max-width:1380px; margin:0 auto; padding:0 clamp(16px,4vw,40px); }
+.hero { padding:clamp(32px,5vw,58px) 0 20px; text-align:center; }
 .eyebrow { display:inline-block; color:var(--chili); background:rgba(245,166,35,.16); border:1px solid rgba(245,166,35,.36); border-radius:999px; padding:7px 15px; font-size:12px; font-weight:850; letter-spacing:.09em; text-transform:uppercase; margin-bottom:18px; }
-h1 { font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-weight:900; }
+h1 { font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }
 .soft { background:linear-gradient(92deg,var(--mango),var(--orange) 48%,var(--chili)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-.lede { max-width:680px; margin:18px auto 0; color:var(--sub); font-size:clamp(15px,2.2vw,18px); }
-.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; max-width:760px; margin:24px auto 0; }
+.lede { max-width:780px; margin:18px auto 0; color:var(--sub); font-size:clamp(15px,2vw,18px); }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; max-width:860px; margin:24px auto 0; }
 .stat { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:11px 13px; text-align:left; box-shadow:var(--shadow); }
 .stat span { display:block; font-size:11px; color:var(--sub); font-weight:850; text-transform:uppercase; letter-spacing:.07em; }
-.stat b { display:block; font-size:17px; margin-top:2px; }
-.tools { display:grid; grid-template-columns:1fr; gap:14px; margin:20px 0 24px; }
+.stat b { display:block; font-size:18px; margin-top:2px; }
+.tools { display:grid; gap:14px; margin:20px 0 24px; }
 .panel { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:var(--shadow); }
-.filters { display:grid; grid-template-columns:minmax(180px,1fr) 180px 150px 150px auto auto; gap:10px; align-items:end; }
+.filters { display:grid; grid-template-columns:minmax(190px,1fr) 150px minmax(160px,.7fr) 150px auto auto; gap:10px; align-items:end; }
 .field label { display:block; color:var(--sub); font-size:11px; font-weight:850; letter-spacing:.07em; text-transform:uppercase; margin:0 0 6px 2px; }
 .field input,.field select,.field textarea { width:100%; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); border-radius:12px; padding:10px 12px; min-height:42px; }
-.field textarea { min-height:66px; resize:vertical; }
-.draft-grid { display:grid; grid-template-columns:1.2fr .8fr .8fr .8fr .8fr; gap:10px; align-items:end; }
+.draft-grid { display:grid; grid-template-columns:1.2fr .75fr .85fr .85fr .75fr; gap:10px; align-items:end; }
 .actions { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
 .btn { border:1.5px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; min-height:42px; padding:10px 16px; font-weight:850; cursor:pointer; }
 .btn.primary { border-color:transparent; color:#fff; background:linear-gradient(90deg,var(--mango),var(--chili)); }
@@ -52,43 +51,34 @@ h1 { font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-we
 .log div { border:1px solid var(--line); border-radius:10px; padding:8px 10px; font-size:12px; background:color-mix(in srgb,var(--bg) 72%,var(--card)); }
 .log .ok { border-color:rgba(93,168,105,.45); color:var(--green); }
 .log .bad { border-color:rgba(226,58,35,.45); color:var(--chili); }
-.calendar { display:grid; gap:12px; }
-.weekhead { margin-top:22px; padding:14px 16px; border-radius:14px; color:#fff; box-shadow:var(--shadow); }
-.weekhead .wk { font-size:11px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; opacity:.92; }
-.weekhead h2 { font-size:22px; letter-spacing:0; margin-top:2px; }
-.weekhead p { margin-top:3px; font-size:12.5px; opacity:.94; max-width:800px; }
-.dayhead { margin-top:12px; color:var(--chili); font-weight:900; font-size:14px; border-bottom:2px solid var(--line); padding-bottom:6px; }
-.postgrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-.post { position:relative; display:grid; grid-template-columns:104px 1fr; gap:12px; width:100%; text-align:left; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:14px; padding:10px; cursor:pointer; box-shadow:var(--shadow); }
-.post[aria-pressed="true"] { border-color:var(--mango); outline:2px solid rgba(245,166,35,.24); }
-.thumb { position:relative; width:104px; height:132px; border-radius:10px; overflow:hidden; background:var(--panel); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(168px,1fr)); gap:12px; }
+.asset { position:relative; text-align:left; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:14px; overflow:hidden; cursor:pointer; box-shadow:var(--shadow); }
+.asset[aria-pressed="true"] { border-color:var(--mango); outline:2px solid rgba(245,166,35,.24); }
+.thumb { position:relative; aspect-ratio:4/5; background:var(--panel); overflow:hidden; }
 .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
-.media-badge { position:absolute; left:7px; top:7px; z-index:2; display:inline-flex; align-items:center; gap:4px; color:#fff; border-radius:999px; padding:4px 7px; font-size:9px; line-height:1; font-weight:900; letter-spacing:.06em; background:rgba(42,26,18,.82); }
-.post[data-media="video"] .media-badge { background:linear-gradient(90deg,var(--orange),var(--chili)); }
-.play { position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-size:28px; text-shadow:0 2px 14px rgba(0,0,0,.6); background:radial-gradient(circle,rgba(0,0,0,.18),rgba(0,0,0,0) 45%); }
-.check { position:absolute; top:16px; right:16px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font-weight:900; color:transparent; background:rgba(255,255,255,.88); border:1px solid var(--line); }
-.post[aria-pressed="true"] .check { color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--mango),var(--chili)); }
-.body { min-width:0; padding-right:26px; }
-.slot { display:inline-block; color:#fff; background:var(--ink); border-radius:999px; padding:3px 9px; font-size:11px; font-weight:900; }
-.cap { margin-top:8px; font-size:13.5px; font-weight:720; }
-.cta { margin-top:5px; color:var(--sub); font-size:12px; font-weight:760; }
-.tags { margin-top:6px; color:#a57942; font-size:11px; overflow-wrap:anywhere; }
-.fn { margin-top:7px; color:color-mix(in srgb,var(--sub) 70%,transparent); font-size:10px; overflow-wrap:anywhere; }
+.placeholder { width:100%; height:100%; display:grid; place-items:center; padding:18px; color:#fff; text-align:center; font-weight:900; background:linear-gradient(135deg,var(--orange),var(--chili)); }
+.badge { position:absolute; left:8px; top:8px; z-index:2; display:inline-flex; align-items:center; gap:4px; color:#fff; border-radius:999px; padding:5px 8px; font-size:10px; line-height:1; font-weight:900; letter-spacing:.06em; background:rgba(42,26,18,.82); }
+.asset[data-media="video"] .badge { background:linear-gradient(90deg,var(--orange),var(--chili)); }
+.play { position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-size:36px; text-shadow:0 2px 14px rgba(0,0,0,.65); background:radial-gradient(circle,rgba(0,0,0,.2),rgba(0,0,0,0) 45%); }
+.check { position:absolute; top:9px; right:9px; z-index:3; width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-weight:900; color:transparent; background:rgba(255,255,255,.88); border:1px solid var(--line); }
+.asset[aria-pressed="true"] .check { color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--mango),var(--chili)); }
+.meta { display:grid; gap:5px; padding:10px; min-height:116px; }
+.title { font-size:13px; font-weight:900; overflow-wrap:anywhere; }
+.folder { color:var(--sub); font-size:11px; overflow-wrap:anywhere; }
+.size { color:#a57942; font-size:11px; font-weight:850; }
 .empty { text-align:center; color:var(--sub); padding:32px; border:1px dashed var(--line); border-radius:16px; }
 .bar { position:fixed; left:0; right:0; bottom:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px clamp(16px,4vw,40px) calc(12px + env(safe-area-inset-bottom)); background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--line); }
 .count { font-weight:900; }
 .count b { color:var(--chili); font-variant-numeric:tabular-nums; }
-@media (max-width:940px) {
-  .stats { grid-template-columns:repeat(2,1fr); }
+@media (max-width:1050px) {
   .filters,.draft-grid { grid-template-columns:1fr 1fr; }
-  .postgrid { grid-template-columns:1fr; }
+  .stats { grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:620px) {
   .top { align-items:flex-start; flex-direction:column; gap:8px; }
   .nav { justify-content:flex-start; }
-  .stats,.filters,.draft-grid { grid-template-columns:1fr; }
-  .post { grid-template-columns:92px 1fr; }
-  .thumb { width:92px; height:118px; }
+  .filters,.draft-grid,.stats { grid-template-columns:1fr; }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
   .bar { align-items:stretch; flex-direction:column; }
   .bar .actions { width:100%; }
   .bar .btn { flex:1; }
@@ -107,24 +97,24 @@ h1 { font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-we
 
 <main class="wrap">
   <header class="hero">
-    <span class="eyebrow">Content Calendar</span>
-    <h1>467 posts, ready for <span class="soft">Blotato.</span></h1>
-    <p class="lede">Select photo or video posts, connect a Blotato account, and create scheduled drafts from the live GitHub Pages media URLs.</p>
-    <div class="stats" aria-label="Calendar stats">
-      <div class="stat"><span>Total posts</span><b id="statPosts">467</b></div>
-      <div class="stat"><span>Photos</span><b id="statPhotos">0</b></div>
-      <div class="stat"><span>Videos</span><b id="statVideos">0</b></div>
-      <div class="stat"><span>Timezone</span><b>ET</b></div>
+    <span class="eyebrow">Media Picker</span>
+    <h1>All postable <span class="soft">MOKIPOPS media.</span></h1>
+    <p class="lede">Select photos or videos from the scanned asset library and create Blotato drafts from public GitHub Pages media URLs.</p>
+    <div class="stats" aria-label="Media stats">
+      <div class="stat"><span>Total assets</span><b id="statTotal">1066</b></div>
+      <div class="stat"><span>Photos</span><b id="statPhotos">1040</b></div>
+      <div class="stat"><span>Videos</span><b id="statVideos">26</b></div>
+      <div class="stat"><span>Folders</span><b id="statFolders">10</b></div>
     </div>
   </header>
 
-  <section class="tools" aria-label="Calendar controls">
+  <section class="tools" aria-label="Media controls">
     <div class="panel">
       <div class="filters">
-        <div class="field"><label for="q">Search</label><input id="q" type="search" placeholder="Caption, tag, filename"></div>
-        <div class="field"><label for="theme">Theme</label><select id="theme"></select></div>
+        <div class="field"><label for="q">Search</label><input id="q" type="search" placeholder="Filename, title, folder"></div>
         <div class="field"><label for="mediaType">Media</label><select id="mediaType"><option value="">Photos + videos</option><option value="photo">Photos only</option><option value="video">Videos only</option></select></div>
-        <div class="field"><label for="month">Month</label><select id="month"></select></div>
+        <div class="field"><label for="folder">Folder</label><select id="folder"></select></div>
+        <div class="field"><label for="sort">Sort</label><select id="sort"><option value="folder">Folder</option><option value="type">Type</option><option value="name">Name</option><option value="size">Size</option></select></div>
         <button class="btn" id="selectVisible" type="button">Select Visible</button>
         <button class="btn warn" id="clear" type="button">Clear</button>
       </div>
@@ -145,7 +135,7 @@ h1 { font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-we
         </select></div>
         <div class="field"><label for="accountId">Account ID</label><input id="accountId" list="accounts" placeholder="Load or paste ID"><datalist id="accounts"></datalist></div>
         <div class="field"><label for="subId" id="subLabel">Page / board ID</label><input id="subId" placeholder="If required"></div>
-        <div class="field"><label for="scheduleMode">Schedule</label><select id="scheduleMode"><option value="calendar">Calendar dates</option><option value="next">Next free slots</option></select></div>
+        <div class="field"><label for="postMode">Post mode</label><select id="postMode"><option value="draft">Draft only</option><option value="next">Next free slot</option></select></div>
       </div>
       <div class="actions" style="margin-top:12px">
         <button class="btn" id="loadAccounts" type="button">Load Accounts</button>
@@ -157,7 +147,7 @@ h1 { font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-we
     </div>
   </section>
 
-  <section class="calendar" id="calendar" aria-label="Calendar posts"></section>
+  <section class="grid" id="grid" aria-label="Media assets"></section>
 </main>
 
 <div class="bar">
@@ -168,24 +158,24 @@ h1 { font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-we
   </div>
 </div>
 
-<script src="assets/calendar/calendar-data.js"></script>
+<script src="assets/library/library-data.js"></script>
 <script>
 const API_BASE = "https://backend.blotato.com/v2";
-const data = window.MOKIPOPS_CALENDAR;
-const posts = data.posts;
-const byId = new Map(posts.map(post => [post.id, post]));
-const selectedKey = "mokipops-calendar-selected-v1";
-const settingsKey = "mokipops-calendar-settings-v1";
+const data = window.MOKIPOPS_LIBRARY;
+const items = data.items;
+const byId = new Map(items.map(item => [item.id, item]));
+const selectedKey = "mokipops-media-selected-v1";
+const settingsKey = "mokipops-media-settings-v1";
 const selected = new Set(JSON.parse(localStorage.getItem(selectedKey) || "[]").filter(id => byId.has(id)));
 let selectedOnly = false;
 let visibleIds = [];
 
 const els = {
   q: document.getElementById("q"),
-  theme: document.getElementById("theme"),
   mediaType: document.getElementById("mediaType"),
-  month: document.getElementById("month"),
-  calendar: document.getElementById("calendar"),
+  folder: document.getElementById("folder"),
+  sort: document.getElementById("sort"),
+  grid: document.getElementById("grid"),
   selectedCount: document.getElementById("selectedCount"),
   selectedOnly: document.getElementById("selectedOnly"),
   selectVisible: document.getElementById("selectVisible"),
@@ -196,7 +186,7 @@ const els = {
   accounts: document.getElementById("accounts"),
   subId: document.getElementById("subId"),
   subLabel: document.getElementById("subLabel"),
-  scheduleMode: document.getElementById("scheduleMode"),
+  postMode: document.getElementById("postMode"),
   loadAccounts: document.getElementById("loadAccounts"),
   createDrafts: document.getElementById("createDrafts"),
   createDraftsBottom: document.getElementById("createDraftsBottom"),
@@ -205,13 +195,13 @@ const els = {
   log: document.getElementById("log")
 };
 
-els.statPosts = document.getElementById("statPosts");
-els.statPhotos = document.getElementById("statPhotos");
-els.statVideos = document.getElementById("statVideos");
-
 const settings = JSON.parse(localStorage.getItem(settingsKey) || "{}");
-for (const key of ["apiKey", "platform", "accountId", "subId", "scheduleMode"]) {
+for (const key of ["apiKey", "platform", "accountId", "subId", "postMode"]) {
   if (settings[key]) els[key].value = settings[key];
+}
+
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
 }
 
 function saveSelected() {
@@ -224,113 +214,78 @@ function saveSettings() {
     platform: els.platform.value,
     accountId: els.accountId.value.trim(),
     subId: els.subId.value.trim(),
-    scheduleMode: els.scheduleMode.value
+    postMode: els.postMode.value
   };
   localStorage.setItem(settingsKey, JSON.stringify(next));
   updateActions();
 }
 
-function escapeHtml(value) {
-  return String(value || "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
+function fillFolders() {
+  els.folder.innerHTML = '<option value="">All folders</option>' + data.folders.map(folder => `<option value="${escapeHtml(folder)}">${escapeHtml(folder)}</option>`).join("");
 }
 
-function unique(values) {
-  return [...new Set(values.filter(Boolean))];
-}
-
-function fillFilters() {
-  const themes = unique(posts.map(post => post.theme));
-  els.theme.innerHTML = '<option value="">All themes</option>' + themes.map(value => `<option>${escapeHtml(value)}</option>`).join("");
-
-  const monthNames = new Intl.DateTimeFormat("en", { month:"long", year:"numeric", timeZone:"UTC" });
-  const months = unique(posts.map(post => post.date.slice(0, 7)));
-  els.month.innerHTML = '<option value="">All months</option>' + months.map(value => {
-    const label = monthNames.format(new Date(value + "-01T00:00:00Z"));
-    return `<option value="${value}">${escapeHtml(label)}</option>`;
-  }).join("");
-}
-
-function updateStats() {
-  const counts = data.mediaCounts || {};
-  els.statPosts.textContent = posts.length;
-  els.statPhotos.textContent = counts.photo ?? posts.filter(post => post.mediaType !== "video").length;
-  els.statVideos.textContent = counts.video ?? posts.filter(post => post.mediaType === "video").length;
-}
-
-function matches(post) {
-  if (selectedOnly && !selected.has(post.id)) return false;
-  if (els.theme.value && post.theme !== els.theme.value) return false;
-  if (els.mediaType.value && (post.mediaType || "photo") !== els.mediaType.value) return false;
-  if (els.month.value && !post.date.startsWith(els.month.value)) return false;
+function matches(item) {
+  if (selectedOnly && !selected.has(item.id)) return false;
+  if (els.mediaType.value && item.mediaType !== els.mediaType.value) return false;
+  if (els.folder.value && item.folder !== els.folder.value) return false;
   const query = els.q.value.trim().toLowerCase();
   if (!query) return true;
-  return [post.caption, post.cta, post.tags, post.file, post.theme, post.dayLabel, post.mediaType, post.assetTitle].join(" ").toLowerCase().includes(query);
+  return [item.title, item.filename, item.folder, item.extension, item.mediaType].join(" ").toLowerCase().includes(query);
 }
 
-function mediaUrlFor(post) {
-  return post.mediaUrl || post.image;
+function sorted(list) {
+  const next = [...list];
+  const mode = els.sort.value;
+  next.sort((a, b) => {
+    if (mode === "size") return b.sizeMb - a.sizeMb || a.filename.localeCompare(b.filename);
+    if (mode === "type") return a.mediaType.localeCompare(b.mediaType) || a.folder.localeCompare(b.folder) || a.filename.localeCompare(b.filename);
+    if (mode === "name") return a.filename.localeCompare(b.filename);
+    return a.folder.localeCompare(b.folder) || a.filename.localeCompare(b.filename);
+  });
+  return next;
+}
+
+function mediaThumb(item) {
+  const label = item.mediaType === "video" ? "VIDEO" : "PHOTO";
+  const icon = item.mediaType === "video" ? "▶" : "●";
+  const image = item.thumbnail ? `<img src="${escapeHtml(item.thumbnail)}" alt="" loading="lazy">` : `<span class="placeholder">${escapeHtml(item.extension.toUpperCase())}</span>`;
+  return `
+    <span class="thumb">
+      ${image}
+      <span class="badge">${icon} ${label}</span>
+      ${item.mediaType === "video" ? '<span class="play" aria-hidden="true">▶</span>' : ''}
+    </span>`;
 }
 
 function render() {
-  const filtered = posts.filter(matches);
-  visibleIds = filtered.map(post => post.id);
-  els.calendar.innerHTML = "";
-
+  const filtered = sorted(items.filter(matches));
+  visibleIds = filtered.map(item => item.id);
   if (!filtered.length) {
-    els.calendar.innerHTML = '<div class="empty">No posts match the current filters.</div>';
+    els.grid.innerHTML = '<div class="empty">No assets match the current filters.</div>';
     updateActions();
     return;
   }
-
-  let lastWeek = "";
-  let lastDay = "";
-  let grid = null;
-  for (const post of filtered) {
-    if (post.weekLabel !== lastWeek) {
-      lastWeek = post.weekLabel;
-      const week = document.createElement("div");
-      week.className = "weekhead";
-      week.style.background = `linear-gradient(120deg, ${post.themeColor}, ${post.themeColor}cc)`;
-      week.innerHTML = `<div class="wk">${escapeHtml(post.weekLabel)}</div><h2>${escapeHtml(post.theme)}</h2><p>${escapeHtml(post.themeDescription)}</p>`;
-      els.calendar.appendChild(week);
-      lastDay = "";
-    }
-    if (post.dayLabel !== lastDay) {
-      lastDay = post.dayLabel;
-      const day = document.createElement("div");
-      day.className = "dayhead";
-      day.textContent = post.dayLabel;
-      els.calendar.appendChild(day);
-      grid = document.createElement("div");
-      grid.className = "postgrid";
-      els.calendar.appendChild(grid);
-    }
+  els.grid.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+  for (const item of filtered) {
     const card = document.createElement("button");
     card.type = "button";
-    card.className = "post";
-    card.dataset.id = post.id;
-    card.dataset.media = post.mediaType || "photo";
-    card.setAttribute("aria-pressed", selected.has(post.id) ? "true" : "false");
-    const mediaType = post.mediaType || "photo";
-    const mediaLabel = mediaType === "video" ? "VIDEO" : "PHOTO";
-    const mediaIcon = mediaType === "video" ? "▶" : "●";
+    card.className = "asset";
+    card.dataset.id = item.id;
+    card.dataset.media = item.mediaType;
+    card.setAttribute("aria-pressed", selected.has(item.id) ? "true" : "false");
     card.innerHTML = `
-      <span class="thumb">
-        <img src="${escapeHtml(post.thumbnail || post.image)}" alt="" loading="lazy">
-        <span class="media-badge">${mediaIcon} ${mediaLabel}</span>
-        ${mediaType === "video" ? '<span class="play" aria-hidden="true">▶</span>' : ''}
-      </span>
+      ${mediaThumb(item)}
       <span class="check" aria-hidden="true">✓</span>
-      <span class="body">
-        <span class="slot">${escapeHtml(post.slot)} · ${mediaLabel}</span>
-        <span class="cap">${escapeHtml(post.caption)}</span>
-        <span class="cta">${escapeHtml(post.cta)}</span>
-        <span class="tags">${escapeHtml(post.tags)}</span>
-        <span class="fn">${escapeHtml(post.file)}</span>
+      <span class="meta">
+        <span class="title">${escapeHtml(item.title)}</span>
+        <span class="folder">${escapeHtml(item.folder)}</span>
+        <span class="size">${escapeHtml(item.extension.toUpperCase())} · ${item.sizeMb} MB</span>
       </span>`;
-    card.addEventListener("click", () => toggle(post.id, card));
-    grid.appendChild(card);
+    card.addEventListener("click", () => toggle(item.id, card));
+    fragment.appendChild(card);
   }
+  els.grid.appendChild(fragment);
   updateActions();
 }
 
@@ -340,6 +295,10 @@ function toggle(id, card) {
   saveSelected();
   if (card) card.setAttribute("aria-pressed", selected.has(id) ? "true" : "false");
   updateActions();
+}
+
+function selectedItems() {
+  return items.filter(item => selected.has(item.id));
 }
 
 function updateActions() {
@@ -359,10 +318,6 @@ function updateSubLabel() {
     tiktok: "TikTok options",
   };
   els.subLabel.textContent = labels[els.platform.value] || "Page / board ID";
-}
-
-function selectedPosts() {
-  return posts.filter(post => selected.has(post.id));
 }
 
 function targetFor(platform) {
@@ -392,26 +347,20 @@ function targetFor(platform) {
   return target;
 }
 
-function payloadFor(post) {
+function payloadFor(item) {
   const platform = els.platform.value;
   const payload = {
     post: {
       accountId: els.accountId.value.trim(),
       content: {
-        text: post.text,
-        mediaUrls: [new URL(mediaUrlFor(post), window.location.href).href],
+        text: item.text,
+        mediaUrls: [new URL(item.mediaUrl, window.location.href).href],
         platform
       },
       target: targetFor(platform)
     }
   };
-
-  const scheduledTime = Date.parse(post.scheduledTime);
-  if (els.scheduleMode.value === "calendar" && scheduledTime > Date.now() + 10 * 60 * 1000) {
-    payload.scheduledTime = post.scheduledTime;
-  } else {
-    payload.useNextFreeSlot = true;
-  }
+  if (els.postMode.value === "next") payload.useNextFreeSlot = true;
   return payload;
 }
 
@@ -463,13 +412,13 @@ async function loadAccounts() {
   els.status.textContent = "Loading Blotato accounts...";
   try {
     const result = await blotato(`/users/me/accounts?platform=${encodeURIComponent(els.platform.value)}`, { method:"GET" });
-    const items = result.items || [];
-    els.accounts.innerHTML = items.map(item => `<option value="${escapeHtml(item.id)}">${escapeHtml([item.fullname, item.username, item.platform].filter(Boolean).join(" - "))}</option>`).join("");
-    if (items.length && !els.accountId.value.trim()) {
-      els.accountId.value = items[0].id;
+    const accounts = result.items || [];
+    els.accounts.innerHTML = accounts.map(item => `<option value="${escapeHtml(item.id)}">${escapeHtml([item.fullname, item.username, item.platform].filter(Boolean).join(" - "))}</option>`).join("");
+    if (accounts.length && !els.accountId.value.trim()) {
+      els.accountId.value = accounts[0].id;
       saveSettings();
     }
-    els.status.textContent = `${items.length} account${items.length === 1 ? "" : "s"} loaded.`;
+    els.status.textContent = `${accounts.length} account${accounts.length === 1 ? "" : "s"} loaded.`;
   } catch (error) {
     els.status.textContent = "Could not load accounts.";
     logLine(error.message || String(error), "bad");
@@ -479,7 +428,7 @@ async function loadAccounts() {
 }
 
 async function createDrafts() {
-  const chosen = selectedPosts();
+  const chosen = selectedItems();
   if (!chosen.length) return;
   saveSettings();
   els.log.innerHTML = "";
@@ -487,17 +436,17 @@ async function createDrafts() {
   let ok = 0;
   let failed = 0;
   els.status.textContent = `Creating ${chosen.length} Blotato draft${chosen.length === 1 ? "" : "s"}...`;
-  for (const [index, post] of chosen.entries()) {
+  for (const [index, item] of chosen.entries()) {
     try {
       const result = await blotato("/posts", {
         method: "POST",
-        body: JSON.stringify(payloadFor(post))
+        body: JSON.stringify(payloadFor(item))
       });
       ok += 1;
-      logLine(`#${post.number} ${post.slot} - draft queued${result.postSubmissionId ? " (" + result.postSubmissionId + ")" : ""}`, "ok");
+      logLine(`${item.filename} - draft queued${result.postSubmissionId ? " (" + result.postSubmissionId + ")" : ""}`, "ok");
     } catch (error) {
       failed += 1;
-      logLine(`#${post.number} failed - ${error.message || error}`, "bad");
+      logLine(`${item.filename} failed - ${error.message || error}`, "bad");
       if (/401|403/.test(String(error.message))) break;
     }
     if (index < chosen.length - 1) await sleep(2200);
@@ -507,23 +456,22 @@ async function createDrafts() {
 }
 
 function downloadPayloads() {
-  const payloads = selectedPosts().map(post => ({ calendarPost: post, blotatoPayload: payloadFor(post) }));
+  const payloads = selectedItems().map(item => ({ mediaAsset: item, blotatoPayload: payloadFor(item) }));
   const blob = new Blob([JSON.stringify(payloads, null, 2)], { type:"application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "mokipops-blotato-draft-payloads.json";
+  link.download = "mokipops-blotato-media-payloads.json";
   document.body.appendChild(link);
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
 }
 
-fillFilters();
-updateStats();
+fillFolders();
 render();
-for (const el of [els.q, els.theme, els.mediaType, els.month]) el.addEventListener("input", render);
-for (const el of [els.apiKey, els.platform, els.accountId, els.subId, els.scheduleMode]) el.addEventListener("input", saveSettings);
+for (const el of [els.q, els.mediaType, els.folder, els.sort]) el.addEventListener("input", render);
+for (const el of [els.apiKey, els.platform, els.accountId, els.subId, els.postMode]) el.addEventListener("input", saveSettings);
 els.platform.addEventListener("change", () => { els.accountId.value = ""; els.accounts.innerHTML = ""; saveSettings(); });
 els.selectVisible.addEventListener("click", () => {
   visibleIds.forEach(id => selected.add(id));

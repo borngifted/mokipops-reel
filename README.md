@@ -30,12 +30,12 @@ repo lives at `~/Documents/MOKIPOPS/mokipops-reel-site`.
 
 - `content.json` — the single source of truth (site copy + all drops)
 - `build.py` — renders `index.html` (never edit `index.html` by hand)
-- `build_calendar.py` — extracts the full content calendar into `calendar.html` and public media for Blotato drafts
+- `build_calendar.py` — scans public/postable media into `calendar.html` as a selectable Blotato asset picker
 - `add.py` — encodes & registers new media
 - `publish.sh` — build + commit + push
 - `assets/` — web-optimized media (+ brand fonts + logo)
 - `masters/` — full-resolution downloads linked from each video card
 
-## Content calendar + Blotato
+## Media picker + Blotato
 
-`calendar.html` is generated from `../MOKIPOPS-Content-Calendar.html`. It extracts the embedded calendar images into `assets/calendar/` so each selected post has a public GitHub Pages media URL that Blotato can pull into a scheduled draft.
+`calendar.html` is now a selectable media picker, not a dated calendar. It scans the site media folders, imports optimized copies of external photos from the MOKIPOPS folder into `assets/library/`, labels each asset as photo or video, and sends selected public media URLs to Blotato as drafts.
