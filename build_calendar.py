@@ -8,7 +8,7 @@ them from GitHub Pages, then renders an interactive calendar page.
 import base64
 import json
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT.parent / "MOKIPOPS-Content-Calendar.html"
 ASSET_DIR = ROOT / "assets" / "calendar"
 DATA_JS = ASSET_DIR / "calendar-data.js"
+INTERSTITIAL_DATA = ASSET_DIR / "interstitial" / "interstitial-data.json"
 OUT = ROOT / "calendar.html"
 TZ = ZoneInfo("America/New_York")
 
@@ -38,10 +39,81 @@ def scheduled_iso(date_value, slot):
     return when.replace(tzinfo=TZ).isoformat()
 
 
+def format_day_label(value):
+    return f"{value.strftime('%a')} · {value.strftime('%B')} {value.day}, {value.year}"
+
+
+def format_slot(value):
+    return value.strftime("%I:%M %p").lstrip("0")
+
+
 def write_if_changed(path, data):
     if path.exists() and path.read_bytes() == data:
         return
     path.write_bytes(data)
+
+
+def media_counts(posts):
+    photo_count = sum(1 for post in posts if post.get("mediaType") == "photo")
+    video_count = sum(1 for post in posts if post.get("mediaType") == "video")
+    return {"photo": photo_count, "video": video_count}
+
+
+def add_interstitial_posts(posts):
+    if not INTERSTITIAL_DATA.exists():
+        return posts
+
+    items = json.loads(INTERSTITIAL_DATA.read_text(encoding="utf-8")).get("items", [])
+    if not items:
+        return posts
+
+    interval = max(1, len(posts) // (len(items) + 1))
+    inserts = {}
+    for index, item in enumerate(items, start=1):
+        anchor_index = min(len(posts) - 1, index * interval - 1)
+        anchor = posts[anchor_index]
+        anchor_time = datetime.fromisoformat(anchor["scheduledTime"])
+        scheduled_time = anchor_time + timedelta(minutes=45)
+        media_type = item.get("mediaType", "photo")
+        thumbnail = item.get("thumbnail") or item.get("mediaUrl")
+        label_icon = "🎥" if media_type == "video" else "📷"
+        post = {
+            "id": item.get("id", f"interstitial-{index:03d}"),
+            "number": 0,
+            "weekLabel": anchor["weekLabel"],
+            "theme": anchor["theme"],
+            "themeDescription": anchor["themeDescription"],
+            "themeColor": "#EE6C2B" if media_type == "video" else "#F5A623",
+            "dayLabel": format_day_label(scheduled_time.date()),
+            "date": scheduled_time.date().isoformat(),
+            "slot": format_slot(scheduled_time),
+            "scheduledTime": scheduled_time.isoformat(),
+            "caption": item.get("caption") or item.get("title", "MOKIPOPS interstitial"),
+            "cta": item.get("cta", "Add this between scheduled posts."),
+            "tags": item.get("tags", "#mokipops #blissonastick"),
+            "text": "\n\n".join(part for part in [
+                item.get("caption") or item.get("title", "MOKIPOPS interstitial"),
+                item.get("cta", "Add this between scheduled posts."),
+                item.get("tags", "#mokipops #blissonastick"),
+            ] if part),
+            "file": f"{label_icon} {item.get('sourceFile', item.get('mediaUrl', 'media asset'))} · {item.get('suggestedSlot', 'between scheduled posts')}",
+            "image": thumbnail,
+            "thumbnail": thumbnail,
+            "mediaUrl": item.get("mediaUrl", thumbnail),
+            "mediaType": media_type,
+            "assetTitle": item.get("title", ""),
+            "source": "interstitial",
+        }
+        inserts.setdefault(anchor_index, []).append(post)
+
+    merged = []
+    for index, post in enumerate(posts):
+        merged.append(post)
+        merged.extend(inserts.get(index, []))
+
+    for number, post in enumerate(merged, start=1):
+        post["number"] = number
+    return merged
 
 
 def extract_posts():
@@ -120,12 +192,18 @@ def extract_posts():
                 "text": full_text,
                 "file": text(card, ".fn"),
                 "image": f"assets/calendar/{image_name}",
+                "thumbnail": f"assets/calendar/{image_name}",
+                "mediaUrl": f"assets/calendar/{image_name}",
+                "mediaType": "photo",
+                "source": "calendar",
             })
 
+    posts = add_interstitial_posts(posts)
     payload = {
         "source": SOURCE.name,
         "count": len(posts),
         "timezone": "America/New_York",
+        "mediaCounts": media_counts(posts),
         "weeks": weeks,
         "posts": posts,
     }
@@ -176,7 +254,7 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-w
 .stat b {{ display:block; font-size:17px; margin-top:2px; }}
 .tools {{ display:grid; grid-template-columns:1fr; gap:14px; margin:20px 0 24px; }}
 .panel {{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:var(--shadow); }}
-.filters {{ display:grid; grid-template-columns:minmax(180px,1fr) 180px 160px auto auto; gap:10px; align-items:end; }}
+.filters {{ display:grid; grid-template-columns:minmax(180px,1fr) 180px 150px 150px auto auto; gap:10px; align-items:end; }}
 .field label {{ display:block; color:var(--sub); font-size:11px; font-weight:850; letter-spacing:.07em; text-transform:uppercase; margin:0 0 6px 2px; }}
 .field input,.field select,.field textarea {{ width:100%; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); border-radius:12px; padding:10px 12px; min-height:42px; }}
 .field textarea {{ min-height:66px; resize:vertical; }}
@@ -200,7 +278,11 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-w
 .postgrid {{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }}
 .post {{ position:relative; display:grid; grid-template-columns:104px 1fr; gap:12px; width:100%; text-align:left; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:14px; padding:10px; cursor:pointer; box-shadow:var(--shadow); }}
 .post[aria-pressed="true"] {{ border-color:var(--mango); outline:2px solid rgba(245,166,35,.24); }}
-.post img {{ width:104px; height:132px; object-fit:cover; border-radius:10px; background:var(--panel); }}
+.thumb {{ position:relative; width:104px; height:132px; border-radius:10px; overflow:hidden; background:var(--panel); }}
+.thumb img {{ width:100%; height:100%; object-fit:cover; display:block; }}
+.media-badge {{ position:absolute; left:7px; top:7px; z-index:2; display:inline-flex; align-items:center; gap:4px; color:#fff; border-radius:999px; padding:4px 7px; font-size:9px; line-height:1; font-weight:900; letter-spacing:.06em; background:rgba(42,26,18,.82); }}
+.post[data-media="video"] .media-badge {{ background:linear-gradient(90deg,var(--orange),var(--chili)); }}
+.play {{ position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-size:28px; text-shadow:0 2px 14px rgba(0,0,0,.6); background:radial-gradient(circle,rgba(0,0,0,.18),rgba(0,0,0,0) 45%); }}
 .check {{ position:absolute; top:16px; right:16px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font-weight:900; color:transparent; background:rgba(255,255,255,.88); border:1px solid var(--line); }}
 .post[aria-pressed="true"] .check {{ color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--mango),var(--chili)); }}
 .body {{ min-width:0; padding-right:26px; }}
@@ -223,7 +305,7 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-w
   .nav {{ justify-content:flex-start; }}
   .stats,.filters,.draft-grid {{ grid-template-columns:1fr; }}
   .post {{ grid-template-columns:92px 1fr; }}
-  .post img {{ width:92px; height:118px; }}
+  .thumb {{ width:92px; height:118px; }}
   .bar {{ align-items:stretch; flex-direction:column; }}
   .bar .actions {{ width:100%; }}
   .bar .btn {{ flex:1; }}
@@ -244,11 +326,11 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-w
   <header class="hero">
     <span class="eyebrow">Content Calendar</span>
     <h1>{count} posts, ready for <span class="soft">Blotato.</span></h1>
-    <p class="lede">Select calendar posts, connect a Blotato account, and create scheduled drafts from the live GitHub Pages media URLs.</p>
+    <p class="lede">Select photo or video posts, connect a Blotato account, and create scheduled drafts from the live GitHub Pages media URLs.</p>
     <div class="stats" aria-label="Calendar stats">
       <div class="stat"><span>Total posts</span><b id="statPosts">{count}</b></div>
-      <div class="stat"><span>Weeks</span><b>29</b></div>
-      <div class="stat"><span>Cadence</span><b>4/day</b></div>
+      <div class="stat"><span>Photos</span><b id="statPhotos">0</b></div>
+      <div class="stat"><span>Videos</span><b id="statVideos">0</b></div>
       <div class="stat"><span>Timezone</span><b>ET</b></div>
     </div>
   </header>
@@ -258,6 +340,7 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; letter-spacing:0; font-w
       <div class="filters">
         <div class="field"><label for="q">Search</label><input id="q" type="search" placeholder="Caption, tag, filename"></div>
         <div class="field"><label for="theme">Theme</label><select id="theme"></select></div>
+        <div class="field"><label for="mediaType">Media</label><select id="mediaType"><option value="">Photos + videos</option><option value="photo">Photos only</option><option value="video">Videos only</option></select></div>
         <div class="field"><label for="month">Month</label><select id="month"></select></div>
         <button class="btn" id="selectVisible" type="button">Select Visible</button>
         <button class="btn warn" id="clear" type="button">Clear</button>
@@ -317,6 +400,7 @@ let visibleIds = [];
 const els = {{
   q: document.getElementById("q"),
   theme: document.getElementById("theme"),
+  mediaType: document.getElementById("mediaType"),
   month: document.getElementById("month"),
   calendar: document.getElementById("calendar"),
   selectedCount: document.getElementById("selectedCount"),
@@ -337,6 +421,10 @@ const els = {{
   status: document.getElementById("status"),
   log: document.getElementById("log")
 }};
+
+els.statPosts = document.getElementById("statPosts");
+els.statPhotos = document.getElementById("statPhotos");
+els.statVideos = document.getElementById("statVideos");
 
 const settings = JSON.parse(localStorage.getItem(settingsKey) || "{{}}");
 for (const key of ["apiKey", "platform", "accountId", "subId", "scheduleMode"]) {{
@@ -379,13 +467,25 @@ function fillFilters() {{
   }}).join("");
 }}
 
+function updateStats() {{
+  const counts = data.mediaCounts || {{}};
+  els.statPosts.textContent = posts.length;
+  els.statPhotos.textContent = counts.photo ?? posts.filter(post => post.mediaType !== "video").length;
+  els.statVideos.textContent = counts.video ?? posts.filter(post => post.mediaType === "video").length;
+}}
+
 function matches(post) {{
   if (selectedOnly && !selected.has(post.id)) return false;
   if (els.theme.value && post.theme !== els.theme.value) return false;
+  if (els.mediaType.value && (post.mediaType || "photo") !== els.mediaType.value) return false;
   if (els.month.value && !post.date.startsWith(els.month.value)) return false;
   const query = els.q.value.trim().toLowerCase();
   if (!query) return true;
-  return [post.caption, post.cta, post.tags, post.file, post.theme, post.dayLabel].join(" ").toLowerCase().includes(query);
+  return [post.caption, post.cta, post.tags, post.file, post.theme, post.dayLabel, post.mediaType, post.assetTitle].join(" ").toLowerCase().includes(query);
+}}
+
+function mediaUrlFor(post) {{
+  return post.mediaUrl || post.image;
 }}
 
 function render() {{
@@ -426,12 +526,20 @@ function render() {{
     card.type = "button";
     card.className = "post";
     card.dataset.id = post.id;
+    card.dataset.media = post.mediaType || "photo";
     card.setAttribute("aria-pressed", selected.has(post.id) ? "true" : "false");
+    const mediaType = post.mediaType || "photo";
+    const mediaLabel = mediaType === "video" ? "VIDEO" : "PHOTO";
+    const mediaIcon = mediaType === "video" ? "▶" : "●";
     card.innerHTML = `
-      <img src="${{escapeHtml(post.image)}}" alt="" loading="lazy">
+      <span class="thumb">
+        <img src="${{escapeHtml(post.thumbnail || post.image)}}" alt="" loading="lazy">
+        <span class="media-badge">${{mediaIcon}} ${{mediaLabel}}</span>
+        ${{mediaType === "video" ? '<span class="play" aria-hidden="true">▶</span>' : ''}}
+      </span>
       <span class="check" aria-hidden="true">✓</span>
       <span class="body">
-        <span class="slot">${{escapeHtml(post.slot)}}</span>
+        <span class="slot">${{escapeHtml(post.slot)}} · ${{mediaLabel}}</span>
         <span class="cap">${{escapeHtml(post.caption)}}</span>
         <span class="cta">${{escapeHtml(post.cta)}}</span>
         <span class="tags">${{escapeHtml(post.tags)}}</span>
@@ -508,7 +616,7 @@ function payloadFor(post) {{
       accountId: els.accountId.value.trim(),
       content: {{
         text: post.text,
-        mediaUrls: [new URL(post.image, window.location.href).href],
+        mediaUrls: [new URL(mediaUrlFor(post), window.location.href).href],
         platform
       }},
       target: targetFor(platform)
@@ -629,8 +737,9 @@ function downloadPayloads() {{
 }}
 
 fillFilters();
+updateStats();
 render();
-for (const el of [els.q, els.theme, els.month]) el.addEventListener("input", render);
+for (const el of [els.q, els.theme, els.mediaType, els.month]) el.addEventListener("input", render);
 for (const el of [els.apiKey, els.platform, els.accountId, els.subId, els.scheduleMode]) el.addEventListener("input", saveSettings);
 els.platform.addEventListener("change", () => {{ els.accountId.value = ""; els.accounts.innerHTML = ""; saveSettings(); }});
 els.selectVisible.addEventListener("click", () => {{
@@ -666,7 +775,11 @@ updateActions();
 def main():
     payload = extract_posts()
     render_page(payload["count"])
-    print(f"wrote {OUT.name}, {DATA_JS.relative_to(ROOT)}, {payload['count']} images")
+    counts = payload.get("mediaCounts", {})
+    print(
+        f"wrote {OUT.name}, {DATA_JS.relative_to(ROOT)}, "
+        f"{payload['count']} posts ({counts.get('photo', 0)} photos, {counts.get('video', 0)} videos)"
+    )
 
 
 if __name__ == "__main__":
