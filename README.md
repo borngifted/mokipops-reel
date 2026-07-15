@@ -40,4 +40,6 @@ repo lives at `~/Documents/MOKIPOPS/mokipops-reel-site`.
 
 `calendar.html` is now a selectable media picker, not a dated calendar. It scans the site media folders, imports optimized copies of external photos from the MOKIPOPS folder into `assets/library/`, labels each asset as photo or video, and sends selected public media URLs to Blotato as drafts.
 
+The picker also curates the Shopify storefront: select assets, pick a Store channel (Gallery / Events / Markets / Waymo / Behind the Scenes), and click "Download Storefront Feed" to export `storefront-feed.json`. Committing that file to this repo root updates the picker-fed sections of the "MOKIPOPS Pop" Shopify theme (see `../mokipops-theme/README.md`) — the theme reads the feed plus `assets/library/library-data.json` from GitHub Pages at page load.
+
 Videos too large for GitHub Pages (the `icloud-photos` clips) are hosted on Blotato media storage instead. `assets/library/imported/external-videos.json` maps each original file to its hosted `mediaUrl` plus a local poster thumbnail in `assets/library/imported/video-thumbs/`; `build_calendar.py` merges those entries into the picker. To add more external videos, upload them via `blotato_create_presigned_upload_url`, append entries to that JSON, generate a poster JPG, and re-run `python3 build_calendar.py`.
