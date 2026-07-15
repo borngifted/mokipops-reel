@@ -1,0 +1,39 @@
+{
+ "updated": "2026-07-14T22:00:00Z",
+ "channels": {
+  "lifestyle-events": [
+   "asset-1097",
+   "asset-1103",
+   "asset-1104",
+   "asset-1105",
+   "asset-1108",
+   "asset-1114",
+   "asset-1115",
+   "asset-1116"
+  ],
+  "lifestyle-markets": [],
+  "lifestyle-waymo": [
+   "asset-1056",
+   "asset-1057",
+   "asset-1058",
+   "asset-1059",
+   "asset-1060",
+   "asset-1061"
+  ],
+  "lifestyle-bts": [],
+  "gallery": [
+   "asset-0001",
+   "asset-0002",
+   "asset-0003",
+   "asset-0004",
+   "asset-0005",
+   "asset-0006",
+   "asset-0007",
+   "asset-0008",
+   "asset-1067",
+   "asset-1068",
+   "asset-1069",
+   "asset-1070"
+  ]
+ }
+}
