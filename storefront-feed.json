@@ -1,7 +1,8 @@
 {
  "updated": "2026-07-15T16:00:00Z",
  "source": {
-  "facebook": "https://facebook.com/mokipops"
+  "facebook": "https://www.facebook.com/mokipops",
+  "note": "gallery = live published page posts, mirrored locally"
  },
  "channels": {
   "lifestyle-events": [
@@ -27,21 +28,84 @@
   "gallery": [
    {
     "mediaType": "video",
-    "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/485cd5ff-6696-4f8f-a522-9328df291a58.mp4",
-    "thumbnail": "",
-    "title": "As posted on Facebook"
+    "mediaUrl": "assets/facebook/fb-4410882532560355.mp4",
+    "thumbnail": "assets/facebook/fb-4410882532560355.jpg",
+    "title": "Bliss on a stick. \ud83c\udf52\u2600\ufe0f Catch MOKIPOPS in the wild \u2014 all-natural, handcrafted frozen fruit bars made with real fruit. N...",
+    "postUrl": "https://www.facebook.com/reel/4410882532560355/",
+    "posted": "20260713"
    },
-   "asset-0001",
-   "asset-0002",
-   "asset-0003",
-   "asset-0004",
-   "asset-0005",
-   "asset-0006",
-   "asset-0007",
-   "asset-0008",
-   "asset-1083",
-   "asset-1084",
-   "asset-1085"
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-921647757546415.mp4",
+    "thumbnail": "assets/facebook/fb-921647757546415.jpg",
+    "title": "After months of planning, design, sourcing, and waiting on shipments, our new MOKIPOPS packaging has officially arriv...",
+    "postUrl": "https://www.facebook.com/reel/921647757546415/",
+    "posted": "20260606"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-844385741572870.mp4",
+    "thumbnail": "assets/facebook/fb-844385741572870.jpg",
+    "title": "Thank you for all that supported with your purchase, contributions, and prayers. In these times of uncertainty the on...",
+    "postUrl": "https://www.facebook.com/reel/844385741572870/",
+    "posted": "20251209"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-1183326977227331.mp4",
+    "thumbnail": "assets/facebook/fb-1183326977227331.jpg",
+    "title": "Take advantage of our MOKIPOPS red BLACK green FRIDAY: $1/PER POP! Price increases daily \u2192 Ends Monday \u2022 Dec 01 at $1...",
+    "postUrl": "https://www.facebook.com/reel/1183326977227331/",
+    "posted": "20251129"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-1162337872541076.mp4",
+    "thumbnail": "assets/facebook/fb-1162337872541076.jpg",
+    "title": "Win a Special Edition MOKIPOPS Hoodie orders $50+ PICKUP POPS TODAY (EAST ATLANTA) Saturday! 11.22.25 11am-5pm CRANBE...",
+    "postUrl": "https://www.facebook.com/reel/1162337872541076/",
+    "posted": "20251122"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-1213637517291982.mp4",
+    "thumbnail": "assets/facebook/fb-1213637517291982.jpg",
+    "title": "MOKIPOPS PICKUP DAY This Saturday! 11.22.25 11am-5pm CRANBERRY PEAR, SWEET POTATO PIE, CHAI, COFFEE LATTE, LEMON GING...",
+    "postUrl": "https://www.facebook.com/reel/1213637517291982/",
+    "posted": "20251121"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-2112073225992851.mp4",
+    "thumbnail": "assets/facebook/fb-2112073225992851.jpg",
+    "title": "MOKIPOPS PICKUP DAY This Saturday! 11.22.25 11am-5pm CRANBERRY PEAR, SWEET POTATO PIE, CHAI, COFFEE LATTE, LEMON GING...",
+    "postUrl": "https://www.facebook.com/reel/2112073225992851/",
+    "posted": "20251120"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-935132228068433.mp4",
+    "thumbnail": "assets/facebook/fb-935132228068433.jpg",
+    "title": "MOKIPOPS on Facebook",
+    "postUrl": "https://www.facebook.com/reel/935132228068433/",
+    "posted": "20240407"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-414246087977226.mp4",
+    "thumbnail": "assets/facebook/fb-414246087977226.jpg",
+    "title": "Celebrating our #Growth @MOKIPOPS",
+    "postUrl": "https://www.facebook.com/reel/414246087977226/",
+    "posted": "20240404"
+   },
+   {
+    "mediaType": "video",
+    "mediaUrl": "assets/facebook/fb-283209953801948.mp4",
+    "thumbnail": "assets/facebook/fb-283209953801948.jpg",
+    "title": "Standing on the shoulders of giants! Thank you @atlhawks and @chase for your support and recognition. Looking forward...",
+    "postUrl": "https://www.facebook.com/reel/283209953801948/",
+    "posted": "20220306"
+   }
   ]
  }
 }
