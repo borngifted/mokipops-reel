@@ -1,27 +1,36 @@
 {
- "updated": "2026-07-14T22:00:00Z",
+ "updated": "2026-07-15T15:00:00Z",
+ "source": {
+  "facebook": "https://facebook.com/mokipops"
+ },
  "channels": {
   "lifestyle-events": [
-   "asset-1097",
-   "asset-1103",
-   "asset-1104",
-   "asset-1105",
-   "asset-1108",
-   "asset-1114",
-   "asset-1115",
-   "asset-1116"
+   "asset-1113",
+   "asset-1119",
+   "asset-1120",
+   "asset-1121",
+   "asset-1124",
+   "asset-1130",
+   "asset-1131",
+   "asset-1132"
   ],
   "lifestyle-markets": [],
   "lifestyle-waymo": [
-   "asset-1056",
-   "asset-1057",
-   "asset-1058",
-   "asset-1059",
-   "asset-1060",
-   "asset-1061"
+   "asset-1072",
+   "asset-1073",
+   "asset-1074",
+   "asset-1075",
+   "asset-1076",
+   "asset-1077"
   ],
   "lifestyle-bts": [],
   "gallery": [
+   {
+    "mediaType": "video",
+    "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/485cd5ff-6696-4f8f-a522-9328df291a58.mp4",
+    "thumbnail": "",
+    "title": "As posted on Facebook"
+   },
    "asset-0001",
    "asset-0002",
    "asset-0003",
@@ -30,10 +39,9 @@
    "asset-0006",
    "asset-0007",
    "asset-0008",
-   "asset-1067",
-   "asset-1068",
-   "asset-1069",
-   "asset-1070"
+   "asset-1083",
+   "asset-1084",
+   "asset-1085"
   ]
  }
 }
