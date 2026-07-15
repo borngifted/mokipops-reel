@@ -7,6 +7,7 @@ copies of external photos from the MOKIPOPS folder, and lets selected assets
 be sent to Blotato as drafts.
 """
 
+import base64
 import json
 import re
 import hashlib
@@ -18,6 +19,7 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parent
 SOURCE_ROOT = ROOT.parent
 OUT = ROOT / "calendar.html"
+SYNC_CONFIG = ROOT / "calendar-sync.json"
 LIBRARY_DIR = ROOT / "assets" / "library"
 IMPORTED_PHOTOS = LIBRARY_DIR / "imported" / "photos"
 VIDEO_THUMBS = LIBRARY_DIR / "imported" / "video-thumbs"
@@ -60,6 +62,35 @@ VIDEO_POSTERS = {
     "mokipops-waymo-reel-drift.mp4": "assets/poster-v10.jpg",
     "mokipops-waymo-reel-piano.mp4": "assets/poster-v5.jpg",
 }
+
+
+def sync_settings():
+    """Supabase connection for shared picks; empty values = browser-only mode."""
+    if not SYNC_CONFIG.exists():
+        return {"supabaseUrl": "", "anonKey": "", "table": "calendar_picks"}
+    cfg = json.loads(SYNC_CONFIG.read_text())
+    key = cfg.get("anonKey") or ""
+    # Supabase keys are JWTs whose payload carries the role. Decode it rather
+    # than string-matching the file, so a service_role key can never be baked
+    # into a public page by mistake (it bypasses row-level security entirely).
+    if key.count(".") == 2:
+        try:
+            body = key.split(".")[1]
+            body += "=" * (-len(body) % 4)
+            role = json.loads(base64.urlsafe_b64decode(body)).get("role")
+        except Exception:
+            role = None
+        if role and role != "anon":
+            raise SystemExit(
+                f"{SYNC_CONFIG.name}: anonKey is a '{role}' key. That bypasses "
+                "row-level security and must never ship to the browser — copy the "
+                "anon/public key from Supabase > Project Settings > API instead."
+            )
+    return {
+        "supabaseUrl": (cfg.get("supabaseUrl") or "").rstrip("/"),
+        "anonKey": cfg.get("anonKey") or "",
+        "table": cfg.get("table") or "calendar_picks",
+    }
 
 
 def safe_name(value):
@@ -253,6 +284,7 @@ def build_payload(records, scan):
 
 
 def render_page(payload):
+    sync_json = json.dumps(sync_settings())
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -308,6 +340,15 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
 .log .bad {{ border-color:rgba(226,58,35,.45); color:var(--chili); }}
 .grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(168px,1fr)); gap:12px; }}
 .asset {{ position:relative; text-align:left; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:14px; overflow:hidden; cursor:pointer; box-shadow:var(--shadow); }}
+.sync {{ font-weight:600; font-size:12px; padding:3px 9px; border-radius:999px; margin-left:8px; }}
+.sync.ok {{ color:#0a7d4b; background:rgba(10,125,75,.12); }}
+.sync.warn {{ color:#8a5a00; background:rgba(245,166,35,.16); }}
+.sync.err {{ color:#a32116; background:rgba(226,58,35,.12); }}
+.adopt {{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:10px 0;
+  padding:10px 14px; border-radius:10px; background:rgba(245,166,35,.14); border:1px solid rgba(245,166,35,.4); font-size:13px; }}
+.asset .by {{ position:absolute; left:8px; top:8px; z-index:2; max-width:60%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  padding:3px 8px; border-radius:999px; font-size:11px; font-weight:700;
+  color:#fff; background:rgba(20,12,8,.72); backdrop-filter:blur(2px); }}
 .asset[aria-pressed="true"] {{ border-color:var(--mango); outline:2px solid rgba(245,166,35,.24); }}
 .thumb {{ position:relative; aspect-ratio:4/5; background:var(--panel); overflow:hidden; }}
 .thumb img {{ width:100%; height:100%; object-fit:cover; display:block; }}
@@ -450,7 +491,14 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
 </div>
 
 <div class="bar">
-  <div class="count"><b id="selectedCount">0</b> selected</div>
+  <div class="count"><b id="selectedCount">0</b> selected <span id="syncStatus" class="sync">…</span>
+    <button class="btn" id="whoami" type="button" title="Change the name saved with your picks">Who am I?</button>
+  </div>
+  <div class="adopt" id="adoptBanner" hidden>
+    <span><b id="adoptCount">0</b> selections saved in this browser aren't in the shared list yet.</span>
+    <button class="btn" id="adoptYes" type="button">Add them to the shared list</button>
+    <button class="btn warn" id="adoptNo" type="button">Keep them local</button>
+  </div>
   <div class="actions">
     <button class="btn" id="selectedOnly" type="button" aria-pressed="false">Selected Only</button>
     <button class="btn primary" id="createDraftsBottom" type="button" disabled>Create Drafts</button>
@@ -465,9 +513,168 @@ const items = data.items;
 const byId = new Map(items.map(item => [item.id, item]));
 const selectedKey = "mokipops-media-selected-v1";
 const settingsKey = "mokipops-media-settings-v1";
+const reviewerKey = "mokipops-reviewer-v1";
+const adoptedKey = "mokipops-adopted-v1";
 const selected = new Set(JSON.parse(localStorage.getItem(selectedKey) || "[]").filter(id => byId.has(id)));
+/* Whatever this browser had picked before it could ever sync. The first
+   pullPicks() rewrites localStorage from the shared list, so this snapshot is
+   the only surviving record of picks made back when the page saved nowhere —
+   offerAdoption() reads this, never localStorage. */
+const localAtBoot = [...selected];
 let selectedOnly = false;
 let visibleIds = [];
+
+/* ---- shared picks (Supabase) -------------------------------------------
+   The calendar is a static GitHub Pages file, so it cannot store anything
+   itself. Picks live in a Supabase table instead, which is what lets several
+   reviewers in different places build one shared list. With no credentials
+   configured everything below no-ops and selections stay browser-only.       */
+const SYNC = {sync_json};
+const syncOn = () => Boolean(SYNC.supabaseUrl && SYNC.anonKey);
+const pickedBy = new Map();      // item id -> {{ by, at }}
+const inFlight = new Set();      // ids mid-write; a poll must not clobber them
+let reviewer = localStorage.getItem(reviewerKey) || "";
+let lastSync = null;
+let syncErr = null;
+
+function sbUrl(qs) {{
+  return SYNC.supabaseUrl + "/rest/v1/" + SYNC.table + (qs ? "?" + qs : "");
+}}
+
+function sbFetch(qs, options) {{
+  const opts = options || {{}};
+  return fetch(sbUrl(qs), Object.assign({{}}, opts, {{
+    headers: Object.assign({{
+      apikey: SYNC.anonKey,
+      Authorization: "Bearer " + SYNC.anonKey,
+      "Content-Type": "application/json"
+    }}, opts.headers || {{}})
+  }}));
+}}
+
+/* Pull the shared list and rebuild local state from it. Ids with a write in
+   flight keep their optimistic value so a poll can't undo a fresh click. */
+async function pullPicks() {{
+  if (!syncOn()) return;
+  try {{
+    const res = await sbFetch("select=item_id,picked_by,picked_at");
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const rows = await res.json();
+    pickedBy.clear();
+    const remote = new Set();
+    for (const row of rows) {{
+      if (!byId.has(row.item_id)) continue;   // asset removed from the library
+      remote.add(row.item_id);
+      pickedBy.set(row.item_id, {{ by: row.picked_by, at: row.picked_at }});
+    }}
+    for (const id of selected) if (inFlight.has(id)) remote.add(id);
+    for (const id of inFlight) if (!selected.has(id)) remote.delete(id);
+    selected.clear();
+    remote.forEach(id => selected.add(id));
+    saveSelected();
+    lastSync = new Date();
+    syncErr = null;
+    render();
+    offerAdoption();
+  }} catch (err) {{
+    syncErr = err.message;
+    updateSyncStatus();
+  }}
+}}
+
+async function pushPick(id) {{
+  if (!syncOn()) return true;
+  inFlight.add(id);
+  try {{
+    const res = await sbFetch("", {{
+      method: "POST",
+      headers: {{ Prefer: "resolution=merge-duplicates" }},
+      body: JSON.stringify([{{ item_id: id, picked_by: reviewer || "unknown" }}])
+    }});
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    pickedBy.set(id, {{ by: reviewer, at: new Date().toISOString() }});
+    lastSync = new Date();
+    syncErr = null;
+    return true;
+  }} catch (err) {{
+    syncErr = err.message;
+    return false;
+  }} finally {{
+    inFlight.delete(id);
+    updateSyncStatus();
+  }}
+}}
+
+async function dropPick(id) {{
+  if (!syncOn()) return true;
+  inFlight.add(id);
+  try {{
+    const res = await sbFetch("item_id=eq." + encodeURIComponent(id), {{ method: "DELETE" }});
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    pickedBy.delete(id);
+    lastSync = new Date();
+    syncErr = null;
+    return true;
+  }} catch (err) {{
+    syncErr = err.message;
+    return false;
+  }} finally {{
+    inFlight.delete(id);
+    updateSyncStatus();
+  }}
+}}
+
+/* Picks made before this page could save are still sitting in the reviewer's
+   own browser. Offer to lift them into the shared list rather than lose them. */
+function offerAdoption() {{
+  if (!syncOn() || localStorage.getItem(adoptedKey)) return;
+  const local = localAtBoot.filter(id => byId.has(id) && !pickedBy.has(id));
+  const banner = document.getElementById("adoptBanner");
+  if (!banner) return;
+  if (!local.length) {{ banner.hidden = true; return; }}
+  document.getElementById("adoptCount").textContent = local.length;
+  banner.hidden = false;
+  banner.dataset.ids = JSON.stringify(local);
+}}
+
+async function adoptLocal() {{
+  const banner = document.getElementById("adoptBanner");
+  const ids = JSON.parse(banner.dataset.ids || "[]");
+  if (!(await ensureReviewer())) return;
+  for (const id of ids) {{ selected.add(id); await pushPick(id); }}
+  localStorage.setItem(adoptedKey, "1");
+  banner.hidden = true;
+  render();
+}}
+
+async function ensureReviewer() {{
+  if (reviewer) return true;
+  const name = window.prompt("Your name (saved with each pick so everyone can see who chose what):", "");
+  if (!name || !name.trim()) return false;
+  reviewer = name.trim().slice(0, 40);
+  localStorage.setItem(reviewerKey, reviewer);
+  updateSyncStatus();
+  return true;
+}}
+
+function updateSyncStatus() {{
+  const el = document.getElementById("syncStatus");
+  if (!el) return;
+  if (!syncOn()) {{
+    el.textContent = "browser-only — picks are not shared";
+    el.className = "sync warn";
+    return;
+  }}
+  const who = reviewer ? reviewer : "not signed in";
+  if (syncErr) {{
+    el.textContent = "offline · saved in this browser · " + who;
+    el.className = "sync err";
+  }} else {{
+    const t = lastSync ? lastSync.toLocaleTimeString() : "…";
+    el.textContent = "shared · synced " + t + " · " + who;
+    el.className = "sync ok";
+  }}
+}}
 
 const els = {{
   q: document.getElementById("q"),
@@ -582,10 +789,12 @@ function render() {{
     card.dataset.id = item.id;
     card.dataset.media = item.mediaType;
     card.setAttribute("aria-pressed", selected.has(item.id) ? "true" : "false");
+    const mark = pickedBy.get(item.id);
     card.innerHTML = `
       ${{mediaThumb(item)}}
       <span class="check" aria-hidden="true">✓</span>
       <span class="eye" data-eye role="button" aria-label="Preview ${{escapeHtml(item.title)}}" title="Preview">⛶</span>
+      ${{mark ? `<span class="by" title="Picked by ${{escapeHtml(mark.by)}}">${{escapeHtml(mark.by)}}</span>` : ""}}
       <span class="meta">
         <span class="title">${{escapeHtml(item.title)}}</span>
         <span class="folder">${{escapeHtml(item.folder)}}</span>
@@ -604,12 +813,25 @@ function render() {{
   updateActions();
 }}
 
-function toggle(id, card) {{
-  if (selected.has(id)) selected.delete(id);
-  else selected.add(id);
+async function toggle(id, card) {{
+  const adding = !selected.has(id);
+  // A pick is worthless without knowing whose it is, so get a name up front.
+  if (adding && syncOn() && !(await ensureReviewer())) return;
+
+  if (adding) selected.add(id); else selected.delete(id);   // optimistic
   saveSelected();
-  if (card) card.setAttribute("aria-pressed", selected.has(id) ? "true" : "false");
+  if (card) card.setAttribute("aria-pressed", String(adding));
   updateActions();
+
+  const ok = adding ? await pushPick(id) : await dropPick(id);
+  if (!ok) {{
+    // Roll the UI back so it never claims a pick the shared list didn't take.
+    if (adding) selected.delete(id); else selected.add(id);
+    saveSelected();
+    render();
+  }} else {{
+    render();
+  }}
 }}
 
 function selectedItems() {{
@@ -854,19 +1076,46 @@ async function downloadFeed() {{
   els.status.textContent = `Storefront feed downloaded - ${{selected.size}} asset(s) in "${{channel}}". Send it to the studio to update the store.`;
 }}
 
+document.getElementById("adoptYes").addEventListener("click", adoptLocal);
+document.getElementById("adoptNo").addEventListener("click", () => {{
+  localStorage.setItem(adoptedKey, "1");
+  document.getElementById("adoptBanner").hidden = true;
+}});
+document.getElementById("whoami").addEventListener("click", async () => {{
+  reviewer = "";
+  localStorage.removeItem(reviewerKey);
+  await ensureReviewer();
+}});
+
 fillFolders();
 render();
+updateSyncStatus();
+if (syncOn()) {{
+  pullPicks();
+  // Reviewers are in different places, so poll to surface each other's picks.
+  setInterval(() => {{ if (!document.hidden && !inFlight.size) pullPicks(); }}, 15000);
+  window.addEventListener("focus", () => {{ if (!inFlight.size) pullPicks(); }});
+}}
 for (const el of [els.q, els.mediaType, els.folder, els.sort]) el.addEventListener("input", render);
 for (const el of [els.apiKey, els.platform, els.accountId, els.subId, els.postMode]) el.addEventListener("input", saveSettings);
 els.platform.addEventListener("change", () => {{ els.accountId.value = ""; els.accounts.innerHTML = ""; saveSettings(); }});
-els.selectVisible.addEventListener("click", () => {{
-  visibleIds.forEach(id => selected.add(id));
+els.selectVisible.addEventListener("click", async () => {{
+  if (syncOn() && !(await ensureReviewer())) return;
+  const adding = visibleIds.filter(id => !selected.has(id));
+  adding.forEach(id => selected.add(id));
   saveSelected();
   render();
+  for (const id of adding) await pushPick(id);
+  render();
 }});
-els.clear.addEventListener("click", () => {{
+els.clear.addEventListener("click", async () => {{
+  const removing = [...selected];
+  if (syncOn() && removing.length && !window.confirm(
+      "Clear removes all " + removing.length + " picks from the shared list for everyone. Continue?")) return;
   selected.clear();
   saveSelected();
+  render();
+  for (const id of removing) await dropPick(id);
   render();
 }});
 els.selectedOnly.addEventListener("click", () => {{

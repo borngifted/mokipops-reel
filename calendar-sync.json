@@ -1,0 +1,7 @@
+{
+  "_comment": "Supabase connection for shared calendar picks. Both values are safe to commit: the anon key is designed to be public in browser JS and is constrained by the row-level-security policies on calendar_picks. Never put the service_role key here. Leave the values empty to fall back to browser-only (localStorage) selections.",
+  "_setup": "Supabase > Project Settings > API > Project URL + anon/public key",
+  "supabaseUrl": "",
+  "anonKey": "",
+  "table": "calendar_picks"
+}
