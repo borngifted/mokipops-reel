@@ -337,6 +337,9 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
 .field label {{ display:block; color:var(--sub); font-size:11px; font-weight:850; letter-spacing:.07em; text-transform:uppercase; margin:0 0 6px 2px; }}
 .field input,.field select,.field textarea {{ width:100%; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); border-radius:12px; padding:10px 12px; min-height:42px; }}
 .draft-grid {{ display:grid; grid-template-columns:1.2fr .75fr .85fr .85fr .75fr; gap:10px; align-items:end; }}
+.sched {{ display:flex; flex-wrap:wrap; gap:12px; align-items:flex-end; margin-top:12px; padding:12px 14px; border:1.5px solid var(--line); border-radius:12px; background:rgba(245,166,35,.06); }}
+.sched .field {{ margin:0; }}
+.schedPlan {{ flex:1 1 100%; margin:2px 0 0; color:var(--sub); font-size:13px; font-weight:700; }}
 .actions {{ display:flex; flex-wrap:wrap; gap:9px; align-items:center; }}
 .btn {{ border:1.5px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; min-height:42px; padding:10px 16px; font-weight:850; cursor:pointer; }}
 .btn.primary {{ border-color:transparent; color:#fff; background:linear-gradient(90deg,var(--mango),var(--chili)); }}
@@ -457,7 +460,13 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
         </select></div>
         <div class="field"><label for="accountId">Account ID</label><input id="accountId" list="accounts" placeholder="Load or paste ID"><datalist id="accounts"></datalist></div>
         <div class="field"><label for="subId" id="subLabel">Page / board ID</label><input id="subId" placeholder="If required"></div>
-        <div class="field"><label for="postMode">Post mode</label><select id="postMode"><option value="draft">Draft only</option><option value="next">Next free slot</option></select></div>
+        <div class="field"><label for="postMode">Post mode</label><select id="postMode"><option value="draft">Draft only</option><option value="next">Next free slot</option><option value="schedule">Schedule, spaced</option></select></div>
+      </div>
+      <div class="sched" id="schedConfig" hidden>
+        <div class="field"><label for="schedStart">Start date</label><input type="date" id="schedStart"></div>
+        <div class="field"><label for="schedSlot1">Time 1</label><input type="time" id="schedSlot1" value="12:00"></div>
+        <div class="field"><label for="schedSlot2">Time 2 (blank = 1/day)</label><input type="time" id="schedSlot2" value="18:00"></div>
+        <p class="schedPlan" id="schedPlan"></p>
       </div>
       <div class="actions" style="margin-top:12px">
         <button class="btn" id="loadAccounts" type="button">Load Accounts</button>
@@ -705,6 +714,11 @@ const els = {{
   subId: document.getElementById("subId"),
   subLabel: document.getElementById("subLabel"),
   postMode: document.getElementById("postMode"),
+  schedConfig: document.getElementById("schedConfig"),
+  schedStart: document.getElementById("schedStart"),
+  schedSlot1: document.getElementById("schedSlot1"),
+  schedSlot2: document.getElementById("schedSlot2"),
+  schedPlan: document.getElementById("schedPlan"),
   loadAccounts: document.getElementById("loadAccounts"),
   createDrafts: document.getElementById("createDrafts"),
   createDraftsBottom: document.getElementById("createDraftsBottom"),
@@ -723,7 +737,7 @@ const els = {{
 }};
 
 const settings = JSON.parse(localStorage.getItem(settingsKey) || "{{}}");
-for (const key of ["apiKey", "platform", "accountId", "subId", "postMode"]) {{
+for (const key of ["apiKey", "platform", "accountId", "subId", "postMode", "schedStart", "schedSlot1", "schedSlot2"]) {{
   if (settings[key]) els[key].value = settings[key];
 }}
 
@@ -741,7 +755,10 @@ function saveSettings() {{
     platform: els.platform.value,
     accountId: els.accountId.value.trim(),
     subId: els.subId.value.trim(),
-    postMode: els.postMode.value
+    postMode: els.postMode.value,
+    schedStart: els.schedStart.value,
+    schedSlot1: els.schedSlot1.value,
+    schedSlot2: els.schedSlot2.value
   }};
   localStorage.setItem(settingsKey, JSON.stringify(next));
   updateActions();
@@ -857,6 +874,17 @@ function updateActions() {{
   els.createDraftsBottom.disabled = !canDraft;
   els.downloadPayloads.disabled = selected.size === 0;
   updateSubLabel();
+  reflectMode();
+}}
+
+// Keep the schedule config, button labels, and live plan in step with the mode.
+function reflectMode() {{
+  const scheduling = els.postMode.value === "schedule";
+  if (els.schedConfig) els.schedConfig.hidden = !scheduling;
+  const label = scheduling ? "Schedule Posts" : "Create Drafts";
+  if (els.createDrafts) els.createDrafts.textContent = label;
+  if (els.createDraftsBottom) els.createDraftsBottom.textContent = label;
+  if (scheduling) renderSchedulePlan();
 }}
 
 function updateSubLabel() {{
@@ -896,7 +924,7 @@ function targetFor(platform) {{
   return target;
 }}
 
-function payloadFor(item) {{
+function payloadFor(item, scheduledTime) {{
   const platform = els.platform.value;
   const payload = {{
     post: {{
@@ -909,8 +937,53 @@ function payloadFor(item) {{
       target: targetFor(platform)
     }}
   }};
-  if (els.postMode.value === "next") payload.useNextFreeSlot = true;
+  // scheduledTime is a top-level sibling of "post" (Blotato API). Present it and
+  // Blotato queues the post for that time; omit it and the post publishes now.
+  if (scheduledTime) payload.scheduledTime = scheduledTime;
+  else if (els.postMode.value === "next") payload.useNextFreeSlot = true;
   return payload;
+}}
+
+// Build one ISO timestamp per selected post, walking the chosen daily time
+// slots forward day by day. Times are in the operator's local zone (Atlanta =
+// ET); toISOString converts to UTC for Blotato. Past slots today are skipped so
+// nothing publishes on submit. This is what makes a blast impossible: every
+// post carries a distinct future time.
+function buildSchedule(count) {{
+  const slots = [els.schedSlot1.value, els.schedSlot2.value]
+    .filter(Boolean)
+    .sort();
+  if (!slots.length) return {{ error: "Add at least one time." }};
+  const base = els.schedStart.value
+    ? new Date(els.schedStart.value + "T00:00:00")
+    : new Date();
+  if (isNaN(base)) return {{ error: "Pick a valid start date." }};
+  const times = [];
+  const floor = Date.now() + 60000; // never schedule in the past-ish
+  for (let day = 0; times.length < count && day < 500; day++) {{
+    for (const s of slots) {{
+      if (times.length >= count) break;
+      const parts = s.split(":");
+      const d = new Date(base);
+      d.setDate(d.getDate() + day);
+      d.setHours(Number(parts[0]), Number(parts[1]) || 0, 0, 0);
+      if (d.getTime() > floor) times.push(d);
+    }}
+  }}
+  return {{ times: times, perDay: slots.length }};
+}}
+
+function renderSchedulePlan() {{
+  if (els.postMode.value !== "schedule") {{ els.schedPlan.textContent = ""; return; }}
+  const n = selected.size;
+  if (!n) {{ els.schedPlan.textContent = "Select posts to see the schedule."; return; }}
+  const plan = buildSchedule(n);
+  if (plan.error) {{ els.schedPlan.textContent = plan.error; return; }}
+  const first = plan.times[0], last = plan.times[plan.times.length - 1];
+  const fmt = (d) => d.toLocaleString([], {{ month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }});
+  els.schedPlan.textContent =
+    n + " post" + (n === 1 ? "" : "s") + " · " + plan.perDay + "/day · "
+    + fmt(first) + " → " + fmt(last) + " (your local time)";
 }}
 
 async function blotato(path, options = {{}}) {{
@@ -980,27 +1053,50 @@ async function createDrafts() {{
   const chosen = selectedItems();
   if (!chosen.length) return;
   saveSettings();
+
+  const scheduling = els.postMode.value === "schedule";
+  let times = null;
+  const fmt = (d) => d.toLocaleString([], {{ month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }});
+  if (scheduling) {{
+    const plan = buildSchedule(chosen.length);
+    if (plan.error) {{ els.status.textContent = plan.error; return; }}
+    times = plan.times;
+    // Confirm the whole plan before anything is sent — the guard against a
+    // surprise blast is that you see the first and last time and must agree.
+    const msg = "Schedule " + chosen.length + " post" + (chosen.length === 1 ? "" : "s")
+      + " at " + plan.perDay + "/day?\\n\\nFirst: " + fmt(times[0])
+      + "\\nLast:  " + fmt(times[times.length - 1])
+      + "\\n\\nEach publishes automatically at its own time (your local zone). Nothing posts right now.";
+    if (!window.confirm(msg)) {{ els.status.textContent = "Cancelled — nothing scheduled."; return; }}
+  }}
+
   els.log.innerHTML = "";
   setBusy(true);
   let ok = 0;
   let failed = 0;
-  els.status.textContent = `Creating ${{chosen.length}} Blotato draft${{chosen.length === 1 ? "" : "s"}}...`;
+  const verb = scheduling ? "Scheduling" : "Creating";
+  els.status.textContent = verb + " " + chosen.length + " Blotato post" + (chosen.length === 1 ? "" : "s") + "...";
   for (const [index, item] of chosen.entries()) {{
     try {{
+      const when = times ? times[index].toISOString() : null;
       const result = await blotato("/posts", {{
         method: "POST",
-        body: JSON.stringify(payloadFor(item))
+        body: JSON.stringify(payloadFor(item, when))
       }});
       ok += 1;
-      logLine(`${{item.filename}} - draft queued${{result.postSubmissionId ? " (" + result.postSubmissionId + ")" : ""}}`, "ok");
+      const note = when
+        ? " - scheduled " + fmt(times[index])
+        : " - draft queued" + (result.postSubmissionId ? " (" + result.postSubmissionId + ")" : "");
+      logLine(item.filename + note, "ok");
     }} catch (error) {{
       failed += 1;
-      logLine(`${{item.filename}} failed - ${{error.message || error}}`, "bad");
+      logLine(item.filename + " failed - " + (error.message || error), "bad");
       if (/401|403/.test(String(error.message))) break;
     }}
-    if (index < chosen.length - 1) await sleep(2200);
+    if (index < chosen.length - 1) await sleep(1200);
   }}
-  els.status.textContent = `${{ok}} draft${{ok === 1 ? "" : "s"}} created${{failed ? ", " + failed + " failed" : ""}}.`;
+  const noun = scheduling ? "scheduled" : "created";
+  els.status.textContent = ok + " post" + (ok === 1 ? "" : "s") + " " + noun + (failed ? ", " + failed + " failed" : "") + ".";
   setBusy(false);
 }}
 
@@ -1098,6 +1194,16 @@ document.getElementById("whoami").addEventListener("click", async () => {{
   localStorage.removeItem(reviewerKey);
   await ensureReviewer();
 }});
+
+// Default the schedule start to tomorrow so a same-day accident can't publish now.
+if (els.schedStart && !els.schedStart.value) {{
+  const t = new Date();
+  t.setDate(t.getDate() + 1);
+  els.schedStart.value = t.toISOString().slice(0, 10);
+}}
+for (const el of [els.postMode, els.schedStart, els.schedSlot1, els.schedSlot2]) {{
+  el.addEventListener("input", () => {{ saveSettings(); reflectMode(); }});
+}}
 
 fillFolders();
 render();
