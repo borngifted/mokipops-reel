@@ -284,7 +284,16 @@ def build_payload(records, scan):
 
 
 def render_page(payload):
-    sync_json = json.dumps(sync_settings())
+    sync = sync_settings()
+    sync_json = json.dumps(sync)
+    # Blotato blocks browser calls from any origin but its own app, so route the
+    # calendar's Blotato requests through the Supabase edge proxy that adds the
+    # CORS header. With no Supabase URL configured, fall back to calling Blotato
+    # directly (works for local server-side testing, blocked in a browser).
+    if sync.get("supabaseUrl"):
+        blotato_base = sync["supabaseUrl"].rstrip("/") + "/functions/v1/blotato-proxy"
+    else:
+        blotato_base = "https://backend.blotato.com/v2"
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -507,7 +516,7 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
 
 <script src="assets/library/library-data.js"></script>
 <script>
-const API_BASE = "https://backend.blotato.com/v2";
+const API_BASE = "{blotato_base}";
 const data = window.MOKIPOPS_LIBRARY;
 const items = data.items;
 const byId = new Map(items.map(item => [item.id, item]));
