@@ -586,9 +586,12 @@ async function pushPick(id) {{
   if (!syncOn()) return true;
   inFlight.add(id);
   try {{
+    // ignore-duplicates, not merge: if someone already added this item the row
+    // stays credited to them. merge would rewrite picked_by to whoever raced in
+    // last, and it also needs an UPDATE policy the table deliberately lacks.
     const res = await sbFetch("", {{
       method: "POST",
-      headers: {{ Prefer: "resolution=merge-duplicates" }},
+      headers: {{ Prefer: "resolution=ignore-duplicates" }},
       body: JSON.stringify([{{ item_id: id, picked_by: reviewer || "unknown" }}])
     }});
     if (!res.ok) throw new Error("HTTP " + res.status);

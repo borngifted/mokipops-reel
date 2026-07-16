@@ -242,7 +242,7 @@ let visibleIds = [];
    itself. Picks live in a Supabase table instead, which is what lets several
    reviewers in different places build one shared list. With no credentials
    configured everything below no-ops and selections stay browser-only.       */
-const SYNC = {"supabaseUrl": "", "anonKey": "", "table": "calendar_picks"};
+const SYNC = {"supabaseUrl": "https://uhurulietrunmvwwxong.supabase.co", "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVodXJ1bGlldHJ1bm12d3d4b25nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNTYyNjMsImV4cCI6MjA5OTczMjI2M30.fzt0nbFnMA0dSo4FcfO-MqZQgjmkI8gjiLYa5uS4hRg", "table": "calendar_picks"};
 const syncOn = () => Boolean(SYNC.supabaseUrl && SYNC.anonKey);
 const pickedBy = new Map();      // item id -> { by, at }
 const inFlight = new Set();      // ids mid-write; a poll must not clobber them
@@ -299,9 +299,12 @@ async function pushPick(id) {
   if (!syncOn()) return true;
   inFlight.add(id);
   try {
+    // ignore-duplicates, not merge: if someone already added this item the row
+    // stays credited to them. merge would rewrite picked_by to whoever raced in
+    // last, and it also needs an UPDATE policy the table deliberately lacks.
     const res = await sbFetch("", {
       method: "POST",
-      headers: { Prefer: "resolution=merge-duplicates" },
+      headers: { Prefer: "resolution=ignore-duplicates" },
       body: JSON.stringify([{ item_id: id, picked_by: reviewer || "unknown" }])
     });
     if (!res.ok) throw new Error("HTTP " + res.status);
