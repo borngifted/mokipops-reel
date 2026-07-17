@@ -39,6 +39,45 @@ EXTERNAL_SKIP = {
 }
 MAX_VIDEO_BYTES = 100 * 1024 * 1024
 
+# Rotating caption bank. Every post used to share ONE identical caption, which
+# reads as duplicate-content spam (a factor in the 2026-07-16 Facebook blast).
+# These are assigned round-robin per asset in build_payload so no two adjacent
+# posts read alike. Voice per brand book: warm, joyful, proud of what's NOT in
+# the pop — real whole fruit; no dairy, no dyes, no refined sugar; family recipe
+# since 2016. No hype words, no "Bliss on a stick" (brand book's own "don't say").
+CAPTIONS = [
+    "Made with real whole fruit — and nothing you can't pronounce. \U0001F353 mokipops.com  #mokipops #realfruit #atlanta #fruitpops",
+    "No dairy. No dyes. No refined sugar. Just fruit, done right. \U0001F9E1 @mokipops  #mokipops #cleanlabel #fruitpops #atlanta",
+    "A family recipe since 2016, still made with love (and real fruit). \U0001F468‍\U0001F469‍\U0001F467 @mokipops · mokipops.com  #mokipops #familyowned #atlanta",
+    "Real fruit, real moments. That's the whole idea. ☀️ mokipops.com  #mokipops #fruitpops #realfruit #summer",
+    "Cool down with something you can feel good about. \U0001F349 @mokipops  #mokipops #cleanlabel #atlanta #frozentreats",
+    "Sun-ripened flavor, frozen at its peak. \U0001F96D mokipops.com  #mokipops #realfruit #fruitpops #atlanta",
+    "The good stuff — and none of the stuff you don't want. \U0001F331 @mokipops  #mokipops #nodyes #fruitpops #cleanlabel",
+    "Handmade in Atlanta, one real-fruit pop at a time. \U0001F3D9️ @mokipops · mokipops.com  #mokipops #atlantasmallbusiness #fruitpops",
+    "Whole fruit in, everything artificial out. \U0001F34A mokipops.com  #mokipops #realfruit #cleanlabel #atlanta",
+    "Because dessert should be a little joyful and a lot real. \U0001F90D @mokipops  #mokipops #fruitpops #joyful #atlanta",
+    "Fruit you know, frozen the way it should be. ❄️ mokipops.com  #mokipops #realfruit #frozentreats #atlanta",
+    "Family-made, fruit-forward, always. \U0001F468‍\U0001F469‍\U0001F467 @mokipops  #mokipops #familyowned #fruitpops #atlanta",
+    "Bright, clean, and made with real whole fruit. \U0001F308 @mokipops · mokipops.com  #mokipops #cleanlabel #fruitpops",
+    "No shortcuts. Just real fruit and a little Atlanta sunshine. ☀️ mokipops.com  #mokipops #atlanta #realfruit #summer",
+    "Every pop starts with fruit — real, whole, and ripe. \U0001F353 @mokipops  #mokipops #realfruit #fruitpops #atlanta",
+    "Treat yourself to something that treats you right. \U0001F9E1 mokipops.com  #mokipops #cleanlabel #frozentreats #fruitpops",
+    "Made for the moments worth sharing. \U0001F468‍\U0001F469‍\U0001F467 @mokipops  #mokipops #familyowned #atlanta #fruitpops",
+    "Real fruit flavor, no dairy or dyes in sight. \U0001F96D mokipops.com  #mokipops #nodairy #nodyes #fruitpops",
+    "Cold, colorful, and completely real. \U0001F308 @mokipops · mokipops.com  #mokipops #realfruit #fruitpops #atlanta",
+    "Summer in Atlanta tastes like real fruit on a stick. \U0001F349 @mokipops  #mokipops #atlanta #summer #fruitpops",
+    "Clean label never tasted this good. \U0001F331 mokipops.com  #mokipops #cleanlabel #realfruit #fruitpops",
+    "From our family freezer to yours, since 2016. \U0001F90D @mokipops  #mokipops #familyowned #atlanta #fruitpops",
+    "Real fruit is the only ingredient list we're proud of. \U0001F34A mokipops.com  #mokipops #realfruit #cleanlabel #fruitpops",
+    "Joyful by the bite, honest to the core. ☀️ @mokipops · mokipops.com  #mokipops #joyful #fruitpops #atlanta",
+    "Nothing fake, nothing hidden — just fruit. \U0001F353 @mokipops  #mokipops #cleanlabel #realfruit #atlanta",
+    "Your freezer's new favorite, made with real whole fruit. ❄️ mokipops.com  #mokipops #fruitpops #realfruit #frozentreats",
+    "Ripe fruit, frozen bright. That's a MOKIPOP. \U0001F96D @mokipops  #mokipops #realfruit #fruitpops #atlanta",
+    "Made in Atlanta with fruit and a whole lot of heart. \U0001F3D9️ @mokipops · mokipops.com  #mokipops #atlanta #familyowned",
+    "Good for a hot day, good all around. ☀️ mokipops.com  #mokipops #cleanlabel #fruitpops #summer",
+    "Real fruit. Real family. Real good. \U0001F9E1 @mokipops  #mokipops #familyowned #realfruit #atlanta",
+]
+
 VIDEO_POSTERS = {
     "reel-anthem.mp4": "assets/poster-v1.jpg",
     "reel-beat.mp4": "assets/poster-v2.jpg",
@@ -226,7 +265,7 @@ def scan_public_media():
             "sizeMb": round(path.stat().st_size / 1024 / 1024, 2),
             "mediaUrl": relative,
             "thumbnail": relative if media_type == "photo" else poster_for_video(path),
-            "text": "MOKIPOPS — Bliss on a Stick\n\n#mokipops #blissonastick #atlanta #fruitpops",
+            "text": "",  # assigned round-robin from CAPTIONS in build_payload
         }
         records.append(record)
     return records
@@ -260,12 +299,15 @@ def scan_external_videos(start_index):
             "sizeMb": entry.get("sizeMb", 0),
             "mediaUrl": entry["mediaUrl"],
             "thumbnail": thumb,
-            "text": "MOKIPOPS — Bliss on a Stick\n\n#mokipops #blissonastick #atlanta #fruitpops",
+            "text": "",  # assigned round-robin from CAPTIONS in build_payload
         })
     return records
 
 
 def build_payload(records, scan):
+    # Assign a rotating caption per asset so no two adjacent posts share text.
+    for index, record in enumerate(records):
+        record["text"] = CAPTIONS[index % len(CAPTIONS)]
     folders = sorted({record["folder"] for record in records})
     counts = {
         "total": len(records),
