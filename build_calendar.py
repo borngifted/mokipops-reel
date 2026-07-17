@@ -507,9 +507,9 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
       <div class="sched" id="schedConfig" hidden>
         <div class="field"><label for="schedStart">Start date</label><input type="date" id="schedStart"></div>
         <div class="field"><label for="schedSlot1">Time 1</label><input type="time" id="schedSlot1" value="10:00"></div>
-        <div class="field"><label for="schedSlot2">Time 2 (blank to skip)</label><input type="time" id="schedSlot2" value="13:00"></div>
+        <div class="field"><label for="schedSlot2">Time 2 (blank to skip)</label><input type="time" id="schedSlot2" value="12:00"></div>
         <div class="field"><label for="schedSlot3">Time 3 (blank to skip)</label><input type="time" id="schedSlot3" value="16:00"></div>
-        <div class="field"><label for="schedSlot4">Time 4 (blank to skip)</label><input type="time" id="schedSlot4" value="19:00"></div>
+        <div class="field"><label for="schedSlot4">Time 4 (blank to skip)</label><input type="time" id="schedSlot4" value="18:00"></div>
         <p class="schedPlan" id="schedPlan"></p>
       </div>
       <div class="actions" style="margin-top:12px">
