@@ -506,8 +506,10 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
       </div>
       <div class="sched" id="schedConfig" hidden>
         <div class="field"><label for="schedStart">Start date</label><input type="date" id="schedStart"></div>
-        <div class="field"><label for="schedSlot1">Time 1</label><input type="time" id="schedSlot1" value="12:00"></div>
-        <div class="field"><label for="schedSlot2">Time 2 (blank = 1/day)</label><input type="time" id="schedSlot2" value="18:00"></div>
+        <div class="field"><label for="schedSlot1">Time 1</label><input type="time" id="schedSlot1" value="10:00"></div>
+        <div class="field"><label for="schedSlot2">Time 2 (blank to skip)</label><input type="time" id="schedSlot2" value="13:00"></div>
+        <div class="field"><label for="schedSlot3">Time 3 (blank to skip)</label><input type="time" id="schedSlot3" value="16:00"></div>
+        <div class="field"><label for="schedSlot4">Time 4 (blank to skip)</label><input type="time" id="schedSlot4" value="19:00"></div>
         <p class="schedPlan" id="schedPlan"></p>
       </div>
       <div class="actions" style="margin-top:12px">
@@ -760,6 +762,8 @@ const els = {{
   schedStart: document.getElementById("schedStart"),
   schedSlot1: document.getElementById("schedSlot1"),
   schedSlot2: document.getElementById("schedSlot2"),
+  schedSlot3: document.getElementById("schedSlot3"),
+  schedSlot4: document.getElementById("schedSlot4"),
   schedPlan: document.getElementById("schedPlan"),
   loadAccounts: document.getElementById("loadAccounts"),
   createDrafts: document.getElementById("createDrafts"),
@@ -779,7 +783,7 @@ const els = {{
 }};
 
 const settings = JSON.parse(localStorage.getItem(settingsKey) || "{{}}");
-for (const key of ["apiKey", "platform", "accountId", "subId", "postMode", "schedStart", "schedSlot1", "schedSlot2"]) {{
+for (const key of ["apiKey", "platform", "accountId", "subId", "postMode", "schedStart", "schedSlot1", "schedSlot2", "schedSlot3", "schedSlot4"]) {{
   if (settings[key]) els[key].value = settings[key];
 }}
 
@@ -800,7 +804,9 @@ function saveSettings() {{
     postMode: els.postMode.value,
     schedStart: els.schedStart.value,
     schedSlot1: els.schedSlot1.value,
-    schedSlot2: els.schedSlot2.value
+    schedSlot2: els.schedSlot2.value,
+    schedSlot3: els.schedSlot3.value,
+    schedSlot4: els.schedSlot4.value
   }};
   localStorage.setItem(settingsKey, JSON.stringify(next));
   updateActions();
@@ -992,7 +998,7 @@ function payloadFor(item, scheduledTime) {{
 // nothing publishes on submit. This is what makes a blast impossible: every
 // post carries a distinct future time.
 function buildSchedule(count) {{
-  const slots = [els.schedSlot1.value, els.schedSlot2.value]
+  const slots = [els.schedSlot1.value, els.schedSlot2.value, els.schedSlot3.value, els.schedSlot4.value]
     .filter(Boolean)
     .sort();
   if (!slots.length) return {{ error: "Add at least one time." }};
@@ -1243,7 +1249,7 @@ if (els.schedStart && !els.schedStart.value) {{
   t.setDate(t.getDate() + 1);
   els.schedStart.value = t.toISOString().slice(0, 10);
 }}
-for (const el of [els.postMode, els.schedStart, els.schedSlot1, els.schedSlot2]) {{
+for (const el of [els.postMode, els.schedStart, els.schedSlot1, els.schedSlot2, els.schedSlot3, els.schedSlot4]) {{
   el.addEventListener("input", () => {{ saveSettings(); reflectMode(); }});
 }}
 
