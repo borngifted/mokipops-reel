@@ -84,6 +84,7 @@ def build_video_items():
             "id": f"vid-{stem[:40]}", "label": label, "section": "Video Library",
             "thumb": v["thumbnail"],
             "source": v.get("mediaUrl") or f"icloud-photos/{v['filename']}",
+            "video": True,
         })
     return items
 
@@ -114,9 +115,10 @@ def build_items():
 def render_section(title, eyebrow, items):
     cards = []
     for it in items:
+        play = '<span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span>' if it.get("video") else ''
         cards.append(f'''
         <button class="pcard" data-id="{html.escape(it["id"])}" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="{it["thumb"]}" alt="{html.escape(it["label"])}" loading="lazy"></span>
+          <span class="pthumb"><img src="{it["thumb"]}" alt="{html.escape(it["label"])}" loading="lazy">{play}</span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">{html.escape(it["label"])}</span>
         </button>''')
@@ -213,6 +215,22 @@ a {{ color:var(--chili); }}
   cursor:pointer; border:1.5px solid var(--hairline); background:var(--card); color:var(--ink); }}
 .btn.primary {{ border-color:transparent; color:#fff; background:linear-gradient(90deg,var(--mango),var(--chili)); }}
 .btn:disabled {{ opacity:.45; cursor:not-allowed; }}
+.playbtn {{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:46px; height:46px;
+  border-radius:50%; display:grid; place-items:center; font-size:17px; padding-left:4px; color:#fff;
+  background:rgba(42,26,18,.55); border:1.5px solid rgba(255,255,255,.7); backdrop-filter:blur(4px);
+  transition:transform .12s ease, background .15s ease; }}
+.playbtn:hover {{ transform:translate(-50%,-50%) scale(1.08); background:rgba(226,58,35,.85); }}
+.pthumb {{ position:relative; }}
+.lightbox {{ position:fixed; inset:0; z-index:60; display:none; align-items:center; justify-content:center;
+  background:rgba(20,10,6,.82); backdrop-filter:blur(8px); padding:clamp(10px,3vw,32px); }}
+.lightbox.open {{ display:flex; }}
+.lightbox__panel {{ position:relative; max-width:min(92vw,520px); width:100%; }}
+.lightbox__panel video {{ width:100%; max-height:76vh; border-radius:18px; background:#000; display:block; }}
+.lightbox__bar {{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:12px; }}
+.lightbox__label {{ color:#FFF6E9; font-weight:800; font-size:15px; }}
+.lightbox__close {{ position:absolute; top:-14px; right:-14px; width:36px; height:36px; border-radius:50%;
+  border:none; cursor:pointer; font-size:16px; font-weight:900; color:var(--ink); background:#FFF6E9;
+  box-shadow:0 4px 14px rgba(0,0,0,.4); }}
 footer {{ margin-top:56px; background:var(--ink); color:#FBEAD0; text-align:center; padding:34px 20px; }}
 footer .fline {{ font-size:14px; color:#e6d6c4; }}
 footer .fline b {{ color:#fff; font-family:'Fraunces',Georgia,serif; }}
@@ -263,6 +281,17 @@ footer .fsmall {{ margin-top:14px; font-size:12px; color:#cdbba8; opacity:.85; }
   </div>
 </div>
 
+<div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+  <div class="lightbox__panel">
+    <button class="lightbox__close" id="lbclose" type="button" aria-label="Close preview">✕</button>
+    <video id="lbvideo" controls playsinline preload="auto"></video>
+    <div class="lightbox__bar">
+      <span class="lightbox__label" id="lblabel"></span>
+      <button class="btn primary" id="lbselect" type="button">Select</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const DATA = {data_json};
 const STUDIO = {json.dumps(STUDIO_EMAIL)};
@@ -282,15 +311,55 @@ function refresh() {{
   document.getElementById('n').textContent = sel.size;
   document.getElementById('email').disabled = sel.size === 0;
 }}
+function toggle(id) {{
+  const card = document.querySelector('.pcard[data-id="' + CSS.escape(id) + '"]');
+  if (sel.has(id)) {{ sel.delete(id); card && card.setAttribute('aria-pressed','false'); }}
+  else {{ sel.add(id); card && card.setAttribute('aria-pressed','true'); }}
+  save(); refresh();
+}}
 document.querySelectorAll('.pcard').forEach(card => {{
   const id = card.dataset.id;
   if (sel.has(id)) card.setAttribute('aria-pressed', 'true');
-  card.addEventListener('click', () => {{
-    if (sel.has(id)) {{ sel.delete(id); card.setAttribute('aria-pressed','false'); }}
-    else {{ sel.add(id); card.setAttribute('aria-pressed','true'); }}
-    save(); refresh();
+  card.addEventListener('click', (e) => {{
+    if (e.target.closest('.playbtn')) return;   // play button opens the lightbox instead
+    toggle(id);
   }});
 }});
+
+// --- Video preview lightbox ---
+const lb = document.getElementById('lightbox');
+const lbVideo = document.getElementById('lbvideo');
+const lbLabel = document.getElementById('lblabel');
+const lbSelect = document.getElementById('lbselect');
+let lbId = null;
+function lbRefresh() {{
+  lbSelect.textContent = sel.has(lbId) ? '✓ Selected' : 'Select';
+}}
+function openLightbox(id) {{
+  const it = DATA[id]; if (!it) return;
+  lbId = id;
+  lbLabel.textContent = it.label;
+  lbVideo.src = it.source;
+  lb.classList.add('open');
+  lbRefresh();
+  lbVideo.play().catch(() => {{}});
+}}
+function closeLightbox() {{
+  lb.classList.remove('open');
+  lbVideo.pause();
+  lbVideo.removeAttribute('src');
+  lbVideo.load();
+  lbId = null;
+}}
+document.querySelectorAll('.playbtn').forEach(btn => {{
+  const open = (e) => {{ e.stopPropagation(); e.preventDefault(); openLightbox(btn.closest('.pcard').dataset.id); }};
+  btn.addEventListener('click', open);
+  btn.addEventListener('keydown', (e) => {{ if (e.key === 'Enter' || e.key === ' ') open(e); }});
+}});
+lbSelect.addEventListener('click', () => {{ if (lbId) {{ toggle(lbId); lbRefresh(); }} }});
+document.getElementById('lbclose').addEventListener('click', closeLightbox);
+lb.addEventListener('click', (e) => {{ if (e.target === lb) closeLightbox(); }});
+document.addEventListener('keydown', (e) => {{ if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox(); }});
 who.addEventListener('input', save);
 notes.addEventListener('input', save);
 

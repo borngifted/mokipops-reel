@@ -72,6 +72,22 @@ a { color:var(--chili); }
   cursor:pointer; border:1.5px solid var(--hairline); background:var(--card); color:var(--ink); }
 .btn.primary { border-color:transparent; color:#fff; background:linear-gradient(90deg,var(--mango),var(--chili)); }
 .btn:disabled { opacity:.45; cursor:not-allowed; }
+.playbtn { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:46px; height:46px;
+  border-radius:50%; display:grid; place-items:center; font-size:17px; padding-left:4px; color:#fff;
+  background:rgba(42,26,18,.55); border:1.5px solid rgba(255,255,255,.7); backdrop-filter:blur(4px);
+  transition:transform .12s ease, background .15s ease; }
+.playbtn:hover { transform:translate(-50%,-50%) scale(1.08); background:rgba(226,58,35,.85); }
+.pthumb { position:relative; }
+.lightbox { position:fixed; inset:0; z-index:60; display:none; align-items:center; justify-content:center;
+  background:rgba(20,10,6,.82); backdrop-filter:blur(8px); padding:clamp(10px,3vw,32px); }
+.lightbox.open { display:flex; }
+.lightbox__panel { position:relative; max-width:min(92vw,520px); width:100%; }
+.lightbox__panel video { width:100%; max-height:76vh; border-radius:18px; background:#000; display:block; }
+.lightbox__bar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:12px; }
+.lightbox__label { color:#FFF6E9; font-weight:800; font-size:15px; }
+.lightbox__close { position:absolute; top:-14px; right:-14px; width:36px; height:36px; border-radius:50%;
+  border:none; cursor:pointer; font-size:16px; font-weight:900; color:var(--ink); background:#FFF6E9;
+  box-shadow:0 4px 14px rgba(0,0,0,.4); }
 footer { margin-top:56px; background:var(--ink); color:#FBEAD0; text-align:center; padding:34px 20px; }
 footer .fline { font-size:14px; color:#e6d6c4; }
 footer .fline b { color:#fff; font-family:'Fraunces',Georgia,serif; }
@@ -270,1307 +286,1307 @@ footer .fsmall { margin-top:14px; font-size:12px; color:#cdbba8; opacity:.85; }
       </div>
       <div class="pgrid">
         <button class="pcard" data-id="vid-0012746cc66a4024bb4b2b17cdd5a5cd" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/0012746cc66a4024bb4b2b17cdd5a5cd.jpg" alt="Clip 001 · 8s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/0012746cc66a4024bb4b2b17cdd5a5cd.jpg" alt="Clip 001 · 8s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 001 · 8s</span>
         </button>
         <button class="pcard" data-id="vid-024DE733-485B-4F73-9423-D10DBFF556D4" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/024de733-485b-4f73-9423-d10dbff556d4.jpg" alt="Clip 002 · 22s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/024de733-485b-4f73-9423-d10dbff556d4.jpg" alt="Clip 002 · 22s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 002 · 22s</span>
         </button>
         <button class="pcard" data-id="vid-04d432f64d3c4693aca98100c54cccb6" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/04d432f64d3c4693aca98100c54cccb6.jpg" alt="Clip 003 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/04d432f64d3c4693aca98100c54cccb6.jpg" alt="Clip 003 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 003 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-08cf805877b14cf6b71f3c11df73c48e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/08cf805877b14cf6b71f3c11df73c48e.jpg" alt="Clip 004 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/08cf805877b14cf6b71f3c11df73c48e.jpg" alt="Clip 004 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 004 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-09d0b5ed41294a348b8ee5f7de297e29" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/09d0b5ed41294a348b8ee5f7de297e29.jpg" alt="Clip 005 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/09d0b5ed41294a348b8ee5f7de297e29.jpg" alt="Clip 005 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 005 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-0aca5810a99e4e69a6f10d30a0b06b8b" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/0aca5810a99e4e69a6f10d30a0b06b8b.jpg" alt="Clip 006 · 8s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/0aca5810a99e4e69a6f10d30a0b06b8b.jpg" alt="Clip 006 · 8s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 006 · 8s</span>
         </button>
         <button class="pcard" data-id="vid-170e302230284212b408d015eaf7b71b" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/170e302230284212b408d015eaf7b71b.jpg" alt="Clip 007 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/170e302230284212b408d015eaf7b71b.jpg" alt="Clip 007 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 007 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-1f1527d15e6e49de97f4297508c0acde" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/1f1527d15e6e49de97f4297508c0acde.jpg" alt="Clip 008 · 8s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/1f1527d15e6e49de97f4297508c0acde.jpg" alt="Clip 008 · 8s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 008 · 8s</span>
         </button>
         <button class="pcard" data-id="vid-2db8142cf1cb46d69ccc403a902c456f" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/2db8142cf1cb46d69ccc403a902c456f.jpg" alt="Clip 009 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/2db8142cf1cb46d69ccc403a902c456f.jpg" alt="Clip 009 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 009 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-2f3d360c5e24486a8b4fb023af152a76" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/2f3d360c5e24486a8b4fb023af152a76.jpg" alt="Clip 010 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/2f3d360c5e24486a8b4fb023af152a76.jpg" alt="Clip 010 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 010 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-3E8977F1-6718-434E-B15E-1C55B9B59B02" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/3e8977f1-6718-434e-b15e-1c55b9b59b02.jpg" alt="Clip 011 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/3e8977f1-6718-434e-b15e-1c55b9b59b02.jpg" alt="Clip 011 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 011 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-46a1bc4463be4302b11a642b6bd86e2d" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/46a1bc4463be4302b11a642b6bd86e2d.jpg" alt="Clip 012 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/46a1bc4463be4302b11a642b6bd86e2d.jpg" alt="Clip 012 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 012 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-47169fa7e9c24e3d802d2d9c7879c5e2" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/47169fa7e9c24e3d802d2d9c7879c5e2.jpg" alt="Clip 013 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/47169fa7e9c24e3d802d2d9c7879c5e2.jpg" alt="Clip 013 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 013 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-52dbcccdcf9446e1a26a302a5dad58ae" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/52dbcccdcf9446e1a26a302a5dad58ae.jpg" alt="Clip 014 · 13s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/52dbcccdcf9446e1a26a302a5dad58ae.jpg" alt="Clip 014 · 13s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 014 · 13s</span>
         </button>
         <button class="pcard" data-id="vid-54AC948B-7937-49A4-9EE2-42DF3DCE5394" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/54ac948b-7937-49a4-9ee2-42df3dce5394.jpg" alt="Clip 015 · 45s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/54ac948b-7937-49a4-9ee2-42df3dce5394.jpg" alt="Clip 015 · 45s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 015 · 45s</span>
         </button>
         <button class="pcard" data-id="vid-5f4c3a9774854015bc553d5fa8418f71" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/5f4c3a9774854015bc553d5fa8418f71.jpg" alt="Clip 016 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/5f4c3a9774854015bc553d5fa8418f71.jpg" alt="Clip 016 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 016 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-65AB7570-1813-4828-AC21-2CEE6F1D17A9" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/65ab7570-1813-4828-ac21-2cee6f1d17a9.jpg" alt="Clip 017 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/65ab7570-1813-4828-ac21-2cee6f1d17a9.jpg" alt="Clip 017 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 017 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-687A9EE3-60E4-4AE0-8D3D-9E67B44CAB25" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/687a9ee3-60e4-4ae0-8d3d-9e67b44cab25.jpg" alt="Clip 018 · 35s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/687a9ee3-60e4-4ae0-8d3d-9e67b44cab25.jpg" alt="Clip 018 · 35s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 018 · 35s</span>
         </button>
         <button class="pcard" data-id="vid-711d01966c3b565daacda9de0e55ef48" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/711d01966c3b565daacda9de0e55ef48.jpg" alt="Clip 019 · 27s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/711d01966c3b565daacda9de0e55ef48.jpg" alt="Clip 019 · 27s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 019 · 27s</span>
         </button>
         <button class="pcard" data-id="vid-73342c3078304594997c202af2fa118b" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/73342c3078304594997c202af2fa118b.jpg" alt="Clip 020 · 9s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/73342c3078304594997c202af2fa118b.jpg" alt="Clip 020 · 9s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 020 · 9s</span>
         </button>
         <button class="pcard" data-id="vid-7506b8d5113d4137b121b968c5b30ddb" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7506b8d5113d4137b121b968c5b30ddb.jpg" alt="Clip 021 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7506b8d5113d4137b121b968c5b30ddb.jpg" alt="Clip 021 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 021 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-7834e85fb1a648b9ae94f0452cd26cbb" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7834e85fb1a648b9ae94f0452cd26cbb.jpg" alt="Clip 022 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7834e85fb1a648b9ae94f0452cd26cbb.jpg" alt="Clip 022 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 022 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-7d11bf763e324d07b8730055a745b644" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7d11bf763e324d07b8730055a745b644.jpg" alt="Clip 023 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7d11bf763e324d07b8730055a745b644.jpg" alt="Clip 023 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 023 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-7e1495b3-8ea5-4942-8715-e1204b7ffa35" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7e1495b3-8ea5-4942-8715-e1204b7ffa35.jpg" alt="Clip 024 · 11s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/7e1495b3-8ea5-4942-8715-e1204b7ffa35.jpg" alt="Clip 024 · 11s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 024 · 11s</span>
         </button>
         <button class="pcard" data-id="vid-83520f47-73fc-4654-b625-d31b5a594e65" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/83520f47-73fc-4654-b625-d31b5a594e65.jpg" alt="Clip 025 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/83520f47-73fc-4654-b625-d31b5a594e65.jpg" alt="Clip 025 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 025 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-878e623887df4143a3e04647f0b3359b" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/878e623887df4143a3e04647f0b3359b.jpg" alt="Clip 026 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/878e623887df4143a3e04647f0b3359b.jpg" alt="Clip 026 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 026 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-8F8CCA54-2F04-4D86-BE1A-706E33813225" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/8f8cca54-2f04-4d86-be1a-706e33813225.jpg" alt="Clip 027 · 16s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/8f8cca54-2f04-4d86-be1a-706e33813225.jpg" alt="Clip 027 · 16s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 027 · 16s</span>
         </button>
         <button class="pcard" data-id="vid-90b761aafdf644858b1bf38150f0349a" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/90b761aafdf644858b1bf38150f0349a.jpg" alt="Clip 028 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/90b761aafdf644858b1bf38150f0349a.jpg" alt="Clip 028 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 028 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-9189ad21cb544886a76c4c3488c7e638" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/9189ad21cb544886a76c4c3488c7e638.jpg" alt="Clip 029 · 13s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/9189ad21cb544886a76c4c3488c7e638.jpg" alt="Clip 029 · 13s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 029 · 13s</span>
         </button>
         <button class="pcard" data-id="vid-924f77cc6e9f4d6e8b2f1012f4934ef0" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/924f77cc6e9f4d6e8b2f1012f4934ef0.jpg" alt="Clip 030 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/924f77cc6e9f4d6e8b2f1012f4934ef0.jpg" alt="Clip 030 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 030 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-98100090-C7EB-4A51-9C23-538B78EFE0D9 Cop" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/98100090-c7eb-4a51-9c23-538b78efe0d9-copy.jpg" alt="98100090-C7EB-4A51-9C23-538B78EFE0D9 Copy · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/98100090-c7eb-4a51-9c23-538b78efe0d9-copy.jpg" alt="98100090-C7EB-4A51-9C23-538B78EFE0D9 Copy · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">98100090-C7EB-4A51-9C23-538B78EFE0D9 Copy · 7s</span>
         </button>
         <button class="pcard" data-id="vid-9d67b6222a244b4d9f8e39e9a18e6423" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/9d67b6222a244b4d9f8e39e9a18e6423.jpg" alt="Clip 032 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/9d67b6222a244b4d9f8e39e9a18e6423.jpg" alt="Clip 032 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 032 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-a16ff7f255394b41a6f06378129e2180" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/a16ff7f255394b41a6f06378129e2180.jpg" alt="Clip 033 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/a16ff7f255394b41a6f06378129e2180.jpg" alt="Clip 033 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 033 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-A38BFCF2-0826-470C-BB90-F6285262F23E" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/a38bfcf2-0826-470c-bb90-f6285262f23e.jpg" alt="Clip 034 · 30s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/a38bfcf2-0826-470c-bb90-f6285262f23e.jpg" alt="Clip 034 · 30s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 034 · 30s</span>
         </button>
         <button class="pcard" data-id="vid-a5902532f58247d7a3ebab3fc7096199" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/a5902532f58247d7a3ebab3fc7096199.jpg" alt="Clip 035 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/a5902532f58247d7a3ebab3fc7096199.jpg" alt="Clip 035 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 035 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-b85afaed8eaf464083c2f401975310f2" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/b85afaed8eaf464083c2f401975310f2.jpg" alt="Clip 036 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/b85afaed8eaf464083c2f401975310f2.jpg" alt="Clip 036 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 036 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-copy_CD94731A-C452-4C86-840B-98AB9A209AE" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/copy-cd94731a-c452-4c86-840b-98ab9a209ae8.jpg" alt="Clip 037 · 33s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/copy-cd94731a-c452-4c86-840b-98ab9a209ae8.jpg" alt="Clip 037 · 33s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 037 · 33s</span>
         </button>
         <button class="pcard" data-id="vid-copy_E2CE1CA9-C752-453A-A08E-0322AB49EF4" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/copy-e2ce1ca9-c752-453a-a08e-0322ab49ef47.jpg" alt="Clip 038 · 33s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/copy-e2ce1ca9-c752-453a-a08e-0322ab49ef47.jpg" alt="Clip 038 · 33s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 038 · 33s</span>
         </button>
         <button class="pcard" data-id="vid-copy_FB15DD9D-E71B-46DF-9301-41627E0A3B7" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/copy-fb15dd9d-e71b-46df-9301-41627e0a3b78.jpg" alt="Clip 039 · 26s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/copy-fb15dd9d-e71b-46df-9301-41627e0a3b78.jpg" alt="Clip 039 · 26s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 039 · 26s</span>
         </button>
         <button class="pcard" data-id="vid-d072314327764c86b3ac93d3dd618d16" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/d072314327764c86b3ac93d3dd618d16.jpg" alt="Clip 040 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/d072314327764c86b3ac93d3dd618d16.jpg" alt="Clip 040 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 040 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-d4a7680d0fbf4a519b21218322d007e2" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/d4a7680d0fbf4a519b21218322d007e2.jpg" alt="Clip 041 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/d4a7680d0fbf4a519b21218322d007e2.jpg" alt="Clip 041 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 041 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-DJI_20230817_201903_536_video" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/dji-20230817-201903-536-video.jpg" alt="Clip 042 · 2:43" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/dji-20230817-201903-536-video.jpg" alt="Clip 042 · 2:43" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 042 · 2:43</span>
         </button>
         <button class="pcard" data-id="vid-ef0350961b5946539e6a723c80a134e7" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/ef0350961b5946539e6a723c80a134e7.jpg" alt="Clip 043 · 32s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/ef0350961b5946539e6a723c80a134e7.jpg" alt="Clip 043 · 32s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 043 · 32s</span>
         </button>
         <button class="pcard" data-id="vid-efead69da1694de0bf84e07379b13a58" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/efead69da1694de0bf84e07379b13a58.jpg" alt="Clip 044 · 1:16" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/efead69da1694de0bf84e07379b13a58.jpg" alt="Clip 044 · 1:16" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 044 · 1:16</span>
         </button>
         <button class="pcard" data-id="vid-f30a592100f94c9bbe9f63093a854962" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/f30a592100f94c9bbe9f63093a854962.jpg" alt="Clip 045 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/f30a592100f94c9bbe9f63093a854962.jpg" alt="Clip 045 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 045 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-f5976f6518624e9da95d001af320375f" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/f5976f6518624e9da95d001af320375f.jpg" alt="Clip 046 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/f5976f6518624e9da95d001af320375f.jpg" alt="Clip 046 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 046 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-fcfc5ef83a3c4506a1b0aea5730b10bf" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/fcfc5ef83a3c4506a1b0aea5730b10bf.jpg" alt="Clip 047 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/fcfc5ef83a3c4506a1b0aea5730b10bf.jpg" alt="Clip 047 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 047 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0013" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0013.jpg" alt="Clip 048 · 19s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0013.jpg" alt="Clip 048 · 19s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 048 · 19s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0039" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0039.jpg" alt="Clip 049 · 1s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0039.jpg" alt="Clip 049 · 1s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 049 · 1s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0042" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0042.jpg" alt="Clip 050 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0042.jpg" alt="Clip 050 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 050 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0050" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0050.jpg" alt="Clip 051 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0050.jpg" alt="Clip 051 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 051 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0054" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0054.jpg" alt="Clip 052 · 24s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0054.jpg" alt="Clip 052 · 24s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 052 · 24s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0056" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0056.jpg" alt="Clip 053 · 25s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0056.jpg" alt="Clip 053 · 25s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 053 · 25s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0102" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0102.jpg" alt="Clip 054 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0102.jpg" alt="Clip 054 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 054 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0461" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0461.jpg" alt="Clip 055 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0461.jpg" alt="Clip 055 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 055 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0462" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0462.jpg" alt="Clip 056 · 48s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0462.jpg" alt="Clip 056 · 48s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 056 · 48s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0463" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0463.jpg" alt="Clip 057 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0463.jpg" alt="Clip 057 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 057 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0466" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0466.jpg" alt="Clip 058 · 1:22" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0466.jpg" alt="Clip 058 · 1:22" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 058 · 1:22</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0475" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0475.jpg" alt="Clip 059 · 1:26" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0475.jpg" alt="Clip 059 · 1:26" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 059 · 1:26</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0496" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0496.jpg" alt="Clip 060 · 2s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0496.jpg" alt="Clip 060 · 2s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 060 · 2s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0500" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0500.jpg" alt="Clip 061 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0500.jpg" alt="Clip 061 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 061 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0510" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0510.jpg" alt="Clip 062 · 1s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0510.jpg" alt="Clip 062 · 1s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 062 · 1s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0536" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0536.jpg" alt="Clip 063 · 10s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0536.jpg" alt="Clip 063 · 10s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 063 · 10s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0540" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0540.jpg" alt="Clip 064 · 8s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0540.jpg" alt="Clip 064 · 8s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 064 · 8s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0547" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0547.jpg" alt="Clip 065 · 11s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0547.jpg" alt="Clip 065 · 11s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 065 · 11s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0548" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0548.jpg" alt="Clip 066 · 13s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0548.jpg" alt="Clip 066 · 13s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 066 · 13s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0769" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0769.jpg" alt="Clip 067 · 1:00" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0769.jpg" alt="Clip 067 · 1:00" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 067 · 1:00</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0774" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0774.jpg" alt="Clip 068 · 24s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0774.jpg" alt="Clip 068 · 24s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 068 · 24s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0778" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0778.jpg" alt="Clip 069 · 2:11" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0778.jpg" alt="Clip 069 · 2:11" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 069 · 2:11</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0792" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0792.jpg" alt="Clip 070 · 1:12" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0792.jpg" alt="Clip 070 · 1:12" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 070 · 1:12</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0905" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0905.jpg" alt="Clip 071 · 19s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0905.jpg" alt="Clip 071 · 19s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 071 · 19s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_0912" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0912.jpg" alt="Clip 072 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-0912.jpg" alt="Clip 072 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 072 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1282" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1282.jpg" alt="Clip 073 · 1:05" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1282.jpg" alt="Clip 073 · 1:05" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 073 · 1:05</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1283" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1283.jpg" alt="Clip 074 · 50s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1283.jpg" alt="Clip 074 · 50s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 074 · 50s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1296" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1296.jpg" alt="Clip 075 · 16s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1296.jpg" alt="Clip 075 · 16s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 075 · 16s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1407" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1407.jpg" alt="Clip 076 · 1:13" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1407.jpg" alt="Clip 076 · 1:13" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 076 · 1:13</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1666" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1666.jpg" alt="Clip 077 · 16s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1666.jpg" alt="Clip 077 · 16s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 077 · 16s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1719" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1719.jpg" alt="Clip 078 · 18s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1719.jpg" alt="Clip 078 · 18s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 078 · 18s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1754" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1754.jpg" alt="Clip 079 · 3:31" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1754.jpg" alt="Clip 079 · 3:31" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 079 · 3:31</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1764" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1764.jpg" alt="Clip 080 · 46s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1764.jpg" alt="Clip 080 · 46s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 080 · 46s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_1775" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1775.jpg" alt="Clip 081 · 9s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-1775.jpg" alt="Clip 081 · 9s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 081 · 9s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2021" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2021.jpg" alt="Clip 082 · 1:58" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2021.jpg" alt="Clip 082 · 1:58" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 082 · 1:58</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2030" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2030.jpg" alt="Clip 083 · 24s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2030.jpg" alt="Clip 083 · 24s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 083 · 24s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2247" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2247.jpg" alt="Clip 084 · 19s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2247.jpg" alt="Clip 084 · 19s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 084 · 19s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2268" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2268.jpg" alt="Clip 085 · 27s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2268.jpg" alt="Clip 085 · 27s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 085 · 27s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2356" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2356.jpg" alt="Clip 086 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2356.jpg" alt="Clip 086 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 086 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2380" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2380.jpg" alt="Clip 087 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2380.jpg" alt="Clip 087 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 087 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2461" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2461.jpg" alt="Clip 088 · 30s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2461.jpg" alt="Clip 088 · 30s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 088 · 30s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2465" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2465.jpg" alt="Clip 089 · 1:12" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2465.jpg" alt="Clip 089 · 1:12" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 089 · 1:12</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2466" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2466.jpg" alt="Clip 090 · 34s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2466.jpg" alt="Clip 090 · 34s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 090 · 34s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2469" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2469.jpg" alt="Clip 091 · 20s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2469.jpg" alt="Clip 091 · 20s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 091 · 20s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2478" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2478.jpg" alt="Clip 092 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2478.jpg" alt="Clip 092 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 092 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2521" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2521.jpg" alt="Clip 093 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2521.jpg" alt="Clip 093 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 093 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2649" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2649.jpg" alt="Clip 094 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2649.jpg" alt="Clip 094 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 094 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2799" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2799.jpg" alt="Clip 095 · 8s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2799.jpg" alt="Clip 095 · 8s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 095 · 8s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2808" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2808.jpg" alt="Clip 096 · 2s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2808.jpg" alt="Clip 096 · 2s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 096 · 2s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2809" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2809.jpg" alt="Clip 097 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2809.jpg" alt="Clip 097 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 097 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2813" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2813.jpg" alt="Clip 098 · 13s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2813.jpg" alt="Clip 098 · 13s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 098 · 13s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2818" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2818.jpg" alt="Clip 099 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2818.jpg" alt="Clip 099 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 099 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2877" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2877.jpg" alt="Clip 100 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2877.jpg" alt="Clip 100 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 100 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2886" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2886.jpg" alt="Clip 101 · 21s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2886.jpg" alt="Clip 101 · 21s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 101 · 21s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2904" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2904.jpg" alt="Clip 102 · 16s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2904.jpg" alt="Clip 102 · 16s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 102 · 16s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2908" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2908.jpg" alt="Clip 103 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2908.jpg" alt="Clip 103 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 103 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_2912" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2912.jpg" alt="Clip 104 · 30s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-2912.jpg" alt="Clip 104 · 30s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 104 · 30s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_3229" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3229.jpg" alt="Clip 105 · 1:31" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3229.jpg" alt="Clip 105 · 1:31" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 105 · 1:31</span>
         </button>
         <button class="pcard" data-id="vid-IMG_3260" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3260.jpg" alt="Clip 106 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3260.jpg" alt="Clip 106 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 106 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_3388" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3388.jpg" alt="Clip 107 · 9s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3388.jpg" alt="Clip 107 · 9s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 107 · 9s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_3462" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3462.jpg" alt="Clip 108 · 1:14" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3462.jpg" alt="Clip 108 · 1:14" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 108 · 1:14</span>
         </button>
         <button class="pcard" data-id="vid-IMG_3928" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3928.jpg" alt="Clip 109 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-3928.jpg" alt="Clip 109 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 109 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_4254" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-4254.jpg" alt="Clip 110 · 10s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-4254.jpg" alt="Clip 110 · 10s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 110 · 10s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_4653" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-4653.jpg" alt="Clip 111 · 3:11" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-4653.jpg" alt="Clip 111 · 3:11" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 111 · 3:11</span>
         </button>
         <button class="pcard" data-id="vid-IMG_5183" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5183.jpg" alt="Clip 112 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5183.jpg" alt="Clip 112 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 112 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_5191" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5191.jpg" alt="Clip 113 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5191.jpg" alt="Clip 113 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 113 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_5575" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5575.jpg" alt="Clip 114 · 2s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5575.jpg" alt="Clip 114 · 2s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 114 · 2s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_5846" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5846.jpg" alt="Clip 115 · 19s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5846.jpg" alt="Clip 115 · 19s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 115 · 19s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_5850" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5850.jpg" alt="Clip 116 · 40s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5850.jpg" alt="Clip 116 · 40s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 116 · 40s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_5981" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5981.jpg" alt="Clip 117 · 59s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-5981.jpg" alt="Clip 117 · 59s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 117 · 59s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_6320" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-6320.jpg" alt="Clip 118 · 1:00" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-6320.jpg" alt="Clip 118 · 1:00" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 118 · 1:00</span>
         </button>
         <button class="pcard" data-id="vid-IMG_6328" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-6328.jpg" alt="Clip 119 · 1:35" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-6328.jpg" alt="Clip 119 · 1:35" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 119 · 1:35</span>
         </button>
         <button class="pcard" data-id="vid-IMG_6339" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-6339.jpg" alt="Clip 120 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-6339.jpg" alt="Clip 120 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 120 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_7481" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-7481.jpg" alt="Clip 121 · 29s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-7481.jpg" alt="Clip 121 · 29s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 121 · 29s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_7849" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-7849.jpg" alt="Clip 122 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-7849.jpg" alt="Clip 122 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 122 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_8819" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-8819.jpg" alt="Clip 123 · 27s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-8819.jpg" alt="Clip 123 · 27s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 123 · 27s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_8998" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-8998.jpg" alt="Clip 124 · 35s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-8998.jpg" alt="Clip 124 · 35s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 124 · 35s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9002" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9002.jpg" alt="Clip 125 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9002.jpg" alt="Clip 125 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 125 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9003" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9003.jpg" alt="Clip 126 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9003.jpg" alt="Clip 126 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 126 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9007" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9007.jpg" alt="Clip 127 · 18s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9007.jpg" alt="Clip 127 · 18s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 127 · 18s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9044" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9044.jpg" alt="Clip 128 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9044.jpg" alt="Clip 128 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 128 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9371" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9371.jpg" alt="Clip 129 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9371.jpg" alt="Clip 129 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 129 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9374" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9374.jpg" alt="Clip 130 · 32s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9374.jpg" alt="Clip 130 · 32s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 130 · 32s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9411" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9411.jpg" alt="Clip 131 · 24s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9411.jpg" alt="Clip 131 · 24s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 131 · 24s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9459" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9459.jpg" alt="Clip 132 · 10s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9459.jpg" alt="Clip 132 · 10s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 132 · 10s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9547" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9547.jpg" alt="Clip 133 · 7:48" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9547.jpg" alt="Clip 133 · 7:48" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 133 · 7:48</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9571" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9571.jpg" alt="Clip 134 · 49s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9571.jpg" alt="Clip 134 · 49s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 134 · 49s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9572" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9572.jpg" alt="Clip 135 · 1:26" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9572.jpg" alt="Clip 135 · 1:26" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 135 · 1:26</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9659" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9659.jpg" alt="Clip 136 · 1:04" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9659.jpg" alt="Clip 136 · 1:04" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 136 · 1:04</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9666" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9666.jpg" alt="Clip 137 · 40s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9666.jpg" alt="Clip 137 · 40s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 137 · 40s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9668" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9668.jpg" alt="Clip 138 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9668.jpg" alt="Clip 138 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 138 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9671" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9671.jpg" alt="Clip 139 · 10s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9671.jpg" alt="Clip 139 · 10s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 139 · 10s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9672" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9672.jpg" alt="Clip 140 · 1s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9672.jpg" alt="Clip 140 · 1s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 140 · 1s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9673" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9673.jpg" alt="Clip 141 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9673.jpg" alt="Clip 141 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 141 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9677" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9677.jpg" alt="Clip 142 · 43s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9677.jpg" alt="Clip 142 · 43s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 142 · 43s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9678" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9678.jpg" alt="Clip 143 · 34s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9678.jpg" alt="Clip 143 · 34s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 143 · 34s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9679" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9679.jpg" alt="Clip 144 · 56s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9679.jpg" alt="Clip 144 · 56s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 144 · 56s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9680" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9680.jpg" alt="Clip 145 · 1:24" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9680.jpg" alt="Clip 145 · 1:24" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 145 · 1:24</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9682" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9682.jpg" alt="Clip 146 · 13s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9682.jpg" alt="Clip 146 · 13s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 146 · 13s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9691" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9691.jpg" alt="Clip 147 · 2:11" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9691.jpg" alt="Clip 147 · 2:11" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 147 · 2:11</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9696" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9696.jpg" alt="Clip 148 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9696.jpg" alt="Clip 148 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 148 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9697" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9697.jpg" alt="Clip 149 · 55s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9697.jpg" alt="Clip 149 · 55s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 149 · 55s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9745" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9745.jpg" alt="Clip 150 · 1:53" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9745.jpg" alt="Clip 150 · 1:53" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 150 · 1:53</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9746" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9746.jpg" alt="Clip 151 · 23s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9746.jpg" alt="Clip 151 · 23s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 151 · 23s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9747" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9747.jpg" alt="Clip 152 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9747.jpg" alt="Clip 152 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 152 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9832" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9832.jpg" alt="Clip 153 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9832.jpg" alt="Clip 153 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 153 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-IMG_9979" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9979.jpg" alt="Clip 154 · 1:01" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/img-9979.jpg" alt="Clip 154 · 1:01" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 154 · 1:01</span>
         </button>
         <button class="pcard" data-id="vid-joined_video_0e88e1828ad64dc190090634856" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-0e88e1828ad64dc19009063485669a55.jpg" alt="Clip 155 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-0e88e1828ad64dc19009063485669a55.jpg" alt="Clip 155 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 155 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-joined_video_789797bd3ee248938ae826a14ea" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-789797bd3ee248938ae826a14eaac562.jpg" alt="Clip 156 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-789797bd3ee248938ae826a14eaac562.jpg" alt="Clip 156 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 156 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-joined_video_cc66ca4042d14680babe155a29a" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-cc66ca4042d14680babe155a29a5b1ae.jpg" alt="Clip 157 · 10s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-cc66ca4042d14680babe155a29a5b1ae.jpg" alt="Clip 157 · 10s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 157 · 10s</span>
         </button>
         <button class="pcard" data-id="vid-joined_video_d5e4418e259b454ca8af09aa9e4" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-d5e4418e259b454ca8af09aa9e4d2aa5.jpg" alt="Clip 158 · 10s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-d5e4418e259b454ca8af09aa9e4d2aa5.jpg" alt="Clip 158 · 10s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 158 · 10s</span>
         </button>
         <button class="pcard" data-id="vid-joined_video_fd957c05e87442949a497665736" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-fd957c05e87442949a49766573619c3c.jpg" alt="Clip 159 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/joined-video-fd957c05e87442949a49766573619c3c.jpg" alt="Clip 159 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 159 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-media" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/media.jpg" alt="Clip 160 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/media.jpg" alt="Clip 160 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 160 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-Mokipops new branded packaging 2026" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/mokipops-new-branded-packaging-2026.jpg" alt="Mokipops new branded packaging 2026 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/mokipops-new-branded-packaging-2026.jpg" alt="Mokipops new branded packaging 2026 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Mokipops new branded packaging 2026 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-PXL_20240921_161710903" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-161710903.jpg" alt="Clip 162 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-161710903.jpg" alt="Clip 162 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 162 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-PXL_20240921_161851825" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-161851825.jpg" alt="Clip 163 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-161851825.jpg" alt="Clip 163 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 163 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-PXL_20240921_204343540.TS" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-204343540-ts.jpg" alt="Clip 164 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-204343540-ts.jpg" alt="Clip 164 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 164 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-PXL_20240921_205056946" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-205056946.jpg" alt="Clip 165 · 58s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-205056946.jpg" alt="Clip 165 · 58s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 165 · 58s</span>
         </button>
         <button class="pcard" data-id="vid-PXL_20240921_210557456.TS~3" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-210557456-ts-3.jpg" alt="Clip 166 · 40s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-210557456-ts-3.jpg" alt="Clip 166 · 40s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 166 · 40s</span>
         </button>
         <button class="pcard" data-id="vid-PXL_20240921_210557456.TS~4" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-210557456-ts-4.jpg" alt="Clip 167 · 43s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/pxl-20240921-210557456-ts-4.jpg" alt="Clip 167 · 43s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 167 · 43s</span>
         </button>
         <button class="pcard" data-id="vid-RPReplay_Final1702394794" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/rpreplay-final1702394794.jpg" alt="Clip 168 · 25s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/rpreplay-final1702394794.jpg" alt="Clip 168 · 25s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 168 · 25s</span>
         </button>
         <button class="pcard" data-id="vid-ScreenRecording_06-02-2026 03-10-30_1" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/screenrecording-06-02-2026-03-10-30-1.jpg" alt="ScreenRecording_06-02-2026 03-10-30_1 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/screenrecording-06-02-2026-03-10-30-1.jpg" alt="ScreenRecording_06-02-2026 03-10-30_1 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">ScreenRecording_06-02-2026 03-10-30_1 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_01796469313b4c8e8c41d76d72532a19" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-01796469313b4c8e8c41d76d72532a19.jpg" alt="Clip 170 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-01796469313b4c8e8c41d76d72532a19.jpg" alt="Clip 170 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 170 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_0434f35a5b6a4de8aa45a5aefb70cfc9" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-0434f35a5b6a4de8aa45a5aefb70cfc9.jpg" alt="Clip 171 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-0434f35a5b6a4de8aa45a5aefb70cfc9.jpg" alt="Clip 171 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 171 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_0d6d29650d6540469790ad8d028ddf0e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-0d6d29650d6540469790ad8d028ddf0e.jpg" alt="Clip 172 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-0d6d29650d6540469790ad8d028ddf0e.jpg" alt="Clip 172 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 172 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_28b10737fcb74b429436ce7832b84a51" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-28b10737fcb74b429436ce7832b84a51.jpg" alt="Clip 173 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-28b10737fcb74b429436ce7832b84a51.jpg" alt="Clip 173 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 173 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_3272da3ad14c4c33ab9105dcd4dbc44a" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-3272da3ad14c4c33ab9105dcd4dbc44a.jpg" alt="Clip 174 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-3272da3ad14c4c33ab9105dcd4dbc44a.jpg" alt="Clip 174 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 174 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_357c1beefad64652b8f0716e625d7574" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-357c1beefad64652b8f0716e625d7574.jpg" alt="Clip 175 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-357c1beefad64652b8f0716e625d7574.jpg" alt="Clip 175 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 175 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_38cbb1b9fe8f4503a11c9fd9df20bbdb" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-38cbb1b9fe8f4503a11c9fd9df20bbdb.jpg" alt="Clip 176 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-38cbb1b9fe8f4503a11c9fd9df20bbdb.jpg" alt="Clip 176 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 176 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_3afca581bb3f4c86a82d095491eeba29" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-3afca581bb3f4c86a82d095491eeba29.jpg" alt="Clip 177 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-3afca581bb3f4c86a82d095491eeba29.jpg" alt="Clip 177 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 177 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_4ce43cde3f43423a948349eb5699ed54" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-4ce43cde3f43423a948349eb5699ed54.jpg" alt="Clip 178 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-4ce43cde3f43423a948349eb5699ed54.jpg" alt="Clip 178 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 178 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_5a0623f793c446e9acc59159bcab67cf" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-5a0623f793c446e9acc59159bcab67cf.jpg" alt="Clip 179 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-5a0623f793c446e9acc59159bcab67cf.jpg" alt="Clip 179 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 179 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_5a79163d17dc4add8f420a6481488998" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-5a79163d17dc4add8f420a6481488998.jpg" alt="Clip 180 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-5a79163d17dc4add8f420a6481488998.jpg" alt="Clip 180 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 180 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_67e9542cdc834d5a9c87b1530b483faf" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-67e9542cdc834d5a9c87b1530b483faf.jpg" alt="Clip 181 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-67e9542cdc834d5a9c87b1530b483faf.jpg" alt="Clip 181 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 181 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_680067001ac44a8c915eb50981c35eca" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-680067001ac44a8c915eb50981c35eca.jpg" alt="Clip 182 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-680067001ac44a8c915eb50981c35eca.jpg" alt="Clip 182 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 182 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_6aa82d342f3d44239c1e427b7312bbdf" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-6aa82d342f3d44239c1e427b7312bbdf.jpg" alt="Clip 183 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-6aa82d342f3d44239c1e427b7312bbdf.jpg" alt="Clip 183 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 183 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_79e1313c4b404a60ac4abb957cc80bc0" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-79e1313c4b404a60ac4abb957cc80bc0.jpg" alt="Clip 184 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-79e1313c4b404a60ac4abb957cc80bc0.jpg" alt="Clip 184 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 184 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_83235c9718d7454a86c6a90f96965921" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-83235c9718d7454a86c6a90f96965921.jpg" alt="Clip 185 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-83235c9718d7454a86c6a90f96965921.jpg" alt="Clip 185 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 185 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_8e0904d96e9140158f5bcb688371baac" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-8e0904d96e9140158f5bcb688371baac.jpg" alt="Clip 186 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-8e0904d96e9140158f5bcb688371baac.jpg" alt="Clip 186 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 186 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_91437732a08042bcaf00c98aa1e5bbe8" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-91437732a08042bcaf00c98aa1e5bbe8.jpg" alt="Clip 187 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-91437732a08042bcaf00c98aa1e5bbe8.jpg" alt="Clip 187 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 187 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_92c9d0327d244a03bde71f46becdc36d" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-92c9d0327d244a03bde71f46becdc36d.jpg" alt="Clip 188 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-92c9d0327d244a03bde71f46becdc36d.jpg" alt="Clip 188 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 188 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_9486d395ccdc44058659bdfa93c12849" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-9486d395ccdc44058659bdfa93c12849.jpg" alt="Clip 189 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-9486d395ccdc44058659bdfa93c12849.jpg" alt="Clip 189 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 189 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_972f403431a44328bcb76b33b685a24d" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-972f403431a44328bcb76b33b685a24d.jpg" alt="Clip 190 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-972f403431a44328bcb76b33b685a24d.jpg" alt="Clip 190 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 190 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_988273089ca64b858215cfacd076a788" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-988273089ca64b858215cfacd076a788.jpg" alt="Clip 191 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-988273089ca64b858215cfacd076a788.jpg" alt="Clip 191 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 191 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_9c38026a9c2b4992a24659f02fbdd409" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-9c38026a9c2b4992a24659f02fbdd409.jpg" alt="Clip 192 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-9c38026a9c2b4992a24659f02fbdd409.jpg" alt="Clip 192 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 192 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_a559c1eb7c3342a89161d43c684b4279" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-a559c1eb7c3342a89161d43c684b4279.jpg" alt="Clip 193 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-a559c1eb7c3342a89161d43c684b4279.jpg" alt="Clip 193 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 193 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_a6f2c3e045454625bd572eb6a1376c0b" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-a6f2c3e045454625bd572eb6a1376c0b.jpg" alt="Clip 194 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-a6f2c3e045454625bd572eb6a1376c0b.jpg" alt="Clip 194 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 194 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_ac6281ddcc3f48cabf989ec6e82def02" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-ac6281ddcc3f48cabf989ec6e82def02.jpg" alt="Clip 195 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-ac6281ddcc3f48cabf989ec6e82def02.jpg" alt="Clip 195 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 195 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_b1839557bc8a4884b938790208b8132a" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-b1839557bc8a4884b938790208b8132a.jpg" alt="Clip 196 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-b1839557bc8a4884b938790208b8132a.jpg" alt="Clip 196 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 196 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_ba93337e730040a58be9c91a5334a521" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-ba93337e730040a58be9c91a5334a521.jpg" alt="Clip 197 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-ba93337e730040a58be9c91a5334a521.jpg" alt="Clip 197 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 197 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_bb0ef9482aee46e58864e3f7ddcfab4e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-bb0ef9482aee46e58864e3f7ddcfab4e.jpg" alt="Clip 198 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-bb0ef9482aee46e58864e3f7ddcfab4e.jpg" alt="Clip 198 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 198 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_c2e3b9fe11874c179a425ce40765a638" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-c2e3b9fe11874c179a425ce40765a638.jpg" alt="Clip 199 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-c2e3b9fe11874c179a425ce40765a638.jpg" alt="Clip 199 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 199 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_c37a225fd9c840a38424c17c7b9ee30e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-c37a225fd9c840a38424c17c7b9ee30e.jpg" alt="Clip 200 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-c37a225fd9c840a38424c17c7b9ee30e.jpg" alt="Clip 200 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 200 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_c6c6ce92c21f499f9757f0730c222647" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-c6c6ce92c21f499f9757f0730c222647.jpg" alt="Clip 201 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-c6c6ce92c21f499f9757f0730c222647.jpg" alt="Clip 201 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 201 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_ca5f1478b02147a0a0aa8805a092afa8" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-ca5f1478b02147a0a0aa8805a092afa8.jpg" alt="Clip 202 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-ca5f1478b02147a0a0aa8805a092afa8.jpg" alt="Clip 202 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 202 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_d6067947a2284afa814869efd17d5852" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-d6067947a2284afa814869efd17d5852.jpg" alt="Clip 203 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-d6067947a2284afa814869efd17d5852.jpg" alt="Clip 203 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 203 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_d79f98ddc41b4a8ab37ba0c039da728e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-d79f98ddc41b4a8ab37ba0c039da728e.jpg" alt="Clip 204 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-d79f98ddc41b4a8ab37ba0c039da728e.jpg" alt="Clip 204 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 204 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_dd9a7d46071748e69520c57bf2616d68" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-dd9a7d46071748e69520c57bf2616d68.jpg" alt="Clip 205 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-dd9a7d46071748e69520c57bf2616d68.jpg" alt="Clip 205 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 205 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_e0079b6b0c6b4a9eb1aa58b2ea0972f2" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e0079b6b0c6b4a9eb1aa58b2ea0972f2.jpg" alt="Clip 206 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e0079b6b0c6b4a9eb1aa58b2ea0972f2.jpg" alt="Clip 206 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 206 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_e04f780c63994de28b4ae583d60c7ddf" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e04f780c63994de28b4ae583d60c7ddf.jpg" alt="Clip 207 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e04f780c63994de28b4ae583d60c7ddf.jpg" alt="Clip 207 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 207 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_e13198f6822141e98896302cd04e689f" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e13198f6822141e98896302cd04e689f.jpg" alt="Clip 208 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e13198f6822141e98896302cd04e689f.jpg" alt="Clip 208 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 208 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_e4150ac218424c8cabc6fd65aea0dd88" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e4150ac218424c8cabc6fd65aea0dd88.jpg" alt="Clip 209 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e4150ac218424c8cabc6fd65aea0dd88.jpg" alt="Clip 209 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 209 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_e57004ed133e40b681469cda1c2ff87f" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e57004ed133e40b681469cda1c2ff87f.jpg" alt="Clip 210 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e57004ed133e40b681469cda1c2ff87f.jpg" alt="Clip 210 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 210 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_e68b5846b8794392bd194b3f52478b6d" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e68b5846b8794392bd194b3f52478b6d.jpg" alt="Clip 211 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e68b5846b8794392bd194b3f52478b6d.jpg" alt="Clip 211 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 211 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_e75c0b8322cd4e54af2ec81eb130e683" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e75c0b8322cd4e54af2ec81eb130e683.jpg" alt="Clip 212 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-e75c0b8322cd4e54af2ec81eb130e683.jpg" alt="Clip 212 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 212 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_eb26fc39377c405fbfa22bcec1f90d40" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-eb26fc39377c405fbfa22bcec1f90d40.jpg" alt="Clip 213 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-eb26fc39377c405fbfa22bcec1f90d40.jpg" alt="Clip 213 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 213 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_efa2c2b71d3c4a6da7e2b04cd598ceba" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-efa2c2b71d3c4a6da7e2b04cd598ceba.jpg" alt="Clip 214 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-efa2c2b71d3c4a6da7e2b04cd598ceba.jpg" alt="Clip 214 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 214 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_f14baac913114320b601fba4cdf81db2" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-f14baac913114320b601fba4cdf81db2.jpg" alt="Clip 215 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-f14baac913114320b601fba4cdf81db2.jpg" alt="Clip 215 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 215 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_0_fa53a01554574226a34f6540376a9bac" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-fa53a01554574226a34f6540376a9bac.jpg" alt="Clip 216 · 6s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-0-fa53a01554574226a34f6540376a9bac.jpg" alt="Clip 216 · 6s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 216 · 6s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_013ee0393c02441eb787e98fa321a57a" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-013ee0393c02441eb787e98fa321a57a.jpg" alt="Clip 217 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-013ee0393c02441eb787e98fa321a57a.jpg" alt="Clip 217 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 217 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_030ae1f683a040ee990a20cf2fc25ca4" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-030ae1f683a040ee990a20cf2fc25ca4.jpg" alt="Clip 218 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-030ae1f683a040ee990a20cf2fc25ca4.jpg" alt="Clip 218 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 218 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_10c4eb64273e4208899cdbf602b49be6" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-10c4eb64273e4208899cdbf602b49be6.jpg" alt="Clip 219 · 25s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-10c4eb64273e4208899cdbf602b49be6.jpg" alt="Clip 219 · 25s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 219 · 25s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_126d05169d844bf7b672e6968823758c" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-126d05169d844bf7b672e6968823758c.jpg" alt="Clip 220 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-126d05169d844bf7b672e6968823758c.jpg" alt="Clip 220 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 220 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_12fb8cf12f2e443a8a400b6fa54550d0" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-12fb8cf12f2e443a8a400b6fa54550d0.jpg" alt="Clip 221 · 11s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-12fb8cf12f2e443a8a400b6fa54550d0.jpg" alt="Clip 221 · 11s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 221 · 11s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_1bda465d567545d9a1a8a64cbf077c8e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-1bda465d567545d9a1a8a64cbf077c8e.jpg" alt="Clip 222 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-1bda465d567545d9a1a8a64cbf077c8e.jpg" alt="Clip 222 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 222 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_25dc8e9af5f2418d80781f1e4b3f96bf" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-25dc8e9af5f2418d80781f1e4b3f96bf.jpg" alt="Clip 223 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-25dc8e9af5f2418d80781f1e4b3f96bf.jpg" alt="Clip 223 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 223 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_2abb613b6f924ce591cad79463cb4ecd" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-2abb613b6f924ce591cad79463cb4ecd.jpg" alt="Clip 224 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-2abb613b6f924ce591cad79463cb4ecd.jpg" alt="Clip 224 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 224 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_2dec2390d47046b28aff7986c391cd16" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-2dec2390d47046b28aff7986c391cd16.jpg" alt="Clip 225 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-2dec2390d47046b28aff7986c391cd16.jpg" alt="Clip 225 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 225 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_329be30cdc5347c0b9f26e4e124e6ed2" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-329be30cdc5347c0b9f26e4e124e6ed2.jpg" alt="Clip 226 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-329be30cdc5347c0b9f26e4e124e6ed2.jpg" alt="Clip 226 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 226 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_4292c5c99a10421b83024c28d49368e2" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-4292c5c99a10421b83024c28d49368e2.jpg" alt="Clip 227 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-4292c5c99a10421b83024c28d49368e2.jpg" alt="Clip 227 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 227 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_5c7df2736ec341d1a6546c8a259c7acc" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-5c7df2736ec341d1a6546c8a259c7acc.jpg" alt="Clip 228 · 4s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-5c7df2736ec341d1a6546c8a259c7acc.jpg" alt="Clip 228 · 4s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 228 · 4s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_6343f9e942c04517b4c394e88a117863" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6343f9e942c04517b4c394e88a117863.jpg" alt="Clip 229 · 5s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6343f9e942c04517b4c394e88a117863.jpg" alt="Clip 229 · 5s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 229 · 5s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_6779a55bdf18479bb12704e626de38f0" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6779a55bdf18479bb12704e626de38f0.jpg" alt="Clip 230 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6779a55bdf18479bb12704e626de38f0.jpg" alt="Clip 230 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 230 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_6ae8cd62b7ea4dbeb9d4e279d2d8583d" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6ae8cd62b7ea4dbeb9d4e279d2d8583d.jpg" alt="Clip 231 · 11s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6ae8cd62b7ea4dbeb9d4e279d2d8583d.jpg" alt="Clip 231 · 11s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 231 · 11s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_6c87e380a82c46e59f4dabb98bd746f9" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6c87e380a82c46e59f4dabb98bd746f9.jpg" alt="Clip 232 · 10s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6c87e380a82c46e59f4dabb98bd746f9.jpg" alt="Clip 232 · 10s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 232 · 10s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_6e7418882b1140b19d57cf51a70f6838" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6e7418882b1140b19d57cf51a70f6838.jpg" alt="Clip 233 · 9s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-6e7418882b1140b19d57cf51a70f6838.jpg" alt="Clip 233 · 9s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 233 · 9s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_7732ba5bdac4470db4f41b0813b9d90e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-7732ba5bdac4470db4f41b0813b9d90e.jpg" alt="Clip 234 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-7732ba5bdac4470db4f41b0813b9d90e.jpg" alt="Clip 234 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 234 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_7c0e490336504131823510d2462813a7" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-7c0e490336504131823510d2462813a7.jpg" alt="Clip 235 · 34s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-7c0e490336504131823510d2462813a7.jpg" alt="Clip 235 · 34s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 235 · 34s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_7df6a40183ad40b99cf0d9bf4ee2973c" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-7df6a40183ad40b99cf0d9bf4ee2973c.jpg" alt="Clip 236 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-7df6a40183ad40b99cf0d9bf4ee2973c.jpg" alt="Clip 236 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 236 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_835f535a19174fc9ad15033032d8703b" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-835f535a19174fc9ad15033032d8703b.jpg" alt="Clip 237 · 1s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-835f535a19174fc9ad15033032d8703b.jpg" alt="Clip 237 · 1s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 237 · 1s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_84d10a0c8d8a4396b065aac13d45f695" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-84d10a0c8d8a4396b065aac13d45f695.jpg" alt="Clip 238 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-84d10a0c8d8a4396b065aac13d45f695.jpg" alt="Clip 238 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 238 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_8928d3b6d2d6488385d4d225cf0b91ab" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-8928d3b6d2d6488385d4d225cf0b91ab.jpg" alt="Clip 239 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-8928d3b6d2d6488385d4d225cf0b91ab.jpg" alt="Clip 239 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 239 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_978986ef4cad4c2f8dc6fde8ec361406" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-978986ef4cad4c2f8dc6fde8ec361406.jpg" alt="Clip 240 · 2s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-978986ef4cad4c2f8dc6fde8ec361406.jpg" alt="Clip 240 · 2s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 240 · 2s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_a17ab02427ea43f9a69c6bc3fe0c0178" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a17ab02427ea43f9a69c6bc3fe0c0178.jpg" alt="Clip 241 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a17ab02427ea43f9a69c6bc3fe0c0178.jpg" alt="Clip 241 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 241 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_a4960babdcd247d79d63a2d39f03ce99" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a4960babdcd247d79d63a2d39f03ce99.jpg" alt="Clip 242 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a4960babdcd247d79d63a2d39f03ce99.jpg" alt="Clip 242 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 242 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_a6e179833de340299296865cf9bd8d82" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a6e179833de340299296865cf9bd8d82.jpg" alt="Clip 243 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a6e179833de340299296865cf9bd8d82.jpg" alt="Clip 243 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 243 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_a9dea4ccde824d5cbd06593859aefd3e" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a9dea4ccde824d5cbd06593859aefd3e.jpg" alt="Clip 244 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-a9dea4ccde824d5cbd06593859aefd3e.jpg" alt="Clip 244 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 244 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_aca90edfb4104fa49c723f555251e037" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-aca90edfb4104fa49c723f555251e037.jpg" alt="Clip 245 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-aca90edfb4104fa49c723f555251e037.jpg" alt="Clip 245 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 245 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_b2dfa7012c3c4fde8edce77432b8c98c" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-b2dfa7012c3c4fde8edce77432b8c98c.jpg" alt="Clip 246 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-b2dfa7012c3c4fde8edce77432b8c98c.jpg" alt="Clip 246 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 246 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_b5a2277f7e9948c3a4d3dcf0ef400cb1" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-b5a2277f7e9948c3a4d3dcf0ef400cb1.jpg" alt="Clip 247 · 3s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-b5a2277f7e9948c3a4d3dcf0ef400cb1.jpg" alt="Clip 247 · 3s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 247 · 3s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_badd4a8cd4324285bddc5f2ca19607c4" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-badd4a8cd4324285bddc5f2ca19607c4.jpg" alt="Clip 248 · 18s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-badd4a8cd4324285bddc5f2ca19607c4.jpg" alt="Clip 248 · 18s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 248 · 18s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_be2d1fce454647dbb0861386e11044a1" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-be2d1fce454647dbb0861386e11044a1.jpg" alt="Clip 249 · 2s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-be2d1fce454647dbb0861386e11044a1.jpg" alt="Clip 249 · 2s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 249 · 2s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_c12ac82997324f0db8b3fa36fa53dba4" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-c12ac82997324f0db8b3fa36fa53dba4.jpg" alt="Clip 250 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-c12ac82997324f0db8b3fa36fa53dba4.jpg" alt="Clip 250 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 250 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_c3b464f4c2694d8aa336ad135865ba18" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-c3b464f4c2694d8aa336ad135865ba18.jpg" alt="Clip 251 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-c3b464f4c2694d8aa336ad135865ba18.jpg" alt="Clip 251 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 251 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_d06618c8f1ea4389b894db63ae9267be" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d06618c8f1ea4389b894db63ae9267be.jpg" alt="Clip 252 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d06618c8f1ea4389b894db63ae9267be.jpg" alt="Clip 252 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 252 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_d0afe69fe1f04538b6bcab829c46f46b" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d0afe69fe1f04538b6bcab829c46f46b.jpg" alt="Clip 253 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d0afe69fe1f04538b6bcab829c46f46b.jpg" alt="Clip 253 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 253 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_d0e9c311c86f4a5faf40cd586df20f12" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d0e9c311c86f4a5faf40cd586df20f12.jpg" alt="Clip 254 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d0e9c311c86f4a5faf40cd586df20f12.jpg" alt="Clip 254 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 254 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_d1198b13e84840e192c37814bcfe61c8" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d1198b13e84840e192c37814bcfe61c8.jpg" alt="Clip 255 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-d1198b13e84840e192c37814bcfe61c8.jpg" alt="Clip 255 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 255 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_dc27e1a2fcf34dae9753bfecd2869863" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-dc27e1a2fcf34dae9753bfecd2869863.jpg" alt="Clip 256 · 14s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-dc27e1a2fcf34dae9753bfecd2869863.jpg" alt="Clip 256 · 14s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 256 · 14s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_df565c398bc5454f8b479c073786d1e3" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-df565c398bc5454f8b479c073786d1e3.jpg" alt="Clip 257 · 18s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-df565c398bc5454f8b479c073786d1e3.jpg" alt="Clip 257 · 18s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 257 · 18s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_e187625b60b942dda0589a9cf47c68f0" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-e187625b60b942dda0589a9cf47c68f0.jpg" alt="Clip 258 · 12s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-e187625b60b942dda0589a9cf47c68f0.jpg" alt="Clip 258 · 12s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 258 · 12s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_e931387bd1914b7a901cfbeeebbe3fe8" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-e931387bd1914b7a901cfbeeebbe3fe8.jpg" alt="Clip 259 · 7s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-e931387bd1914b7a901cfbeeebbe3fe8.jpg" alt="Clip 259 · 7s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 259 · 7s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_f4d2bda36ee04ea7829b9be486c778b0" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-f4d2bda36ee04ea7829b9be486c778b0.jpg" alt="Clip 260 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-f4d2bda36ee04ea7829b9be486c778b0.jpg" alt="Clip 260 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 260 · 15s</span>
         </button>
         <button class="pcard" data-id="vid-video_1_fec02fc8546345f88c1293f7d8a67524" type="button" aria-pressed="false">
-          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-fec02fc8546345f88c1293f7d8a67524.jpg" alt="Clip 261 · 15s" loading="lazy"></span>
+          <span class="pthumb"><img src="assets/library/imported/video-thumbs/video-1-fec02fc8546345f88c1293f7d8a67524.jpg" alt="Clip 261 · 15s" loading="lazy"><span class="playbtn" role="button" tabindex="0" aria-label="Preview video">▶</span></span>
           <span class="check" aria-hidden="true">✓</span>
           <span class="plabel">Clip 261 · 15s</span>
         </button></div>
@@ -1587,6 +1603,17 @@ footer .fsmall { margin-top:14px; font-size:12px; color:#cdbba8; opacity:.85; }
   <div class="actions">
     <button class="btn" id="clear" type="button">Clear</button>
     <button class="btn primary" id="email" type="button" disabled>Email my picks</button>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+  <div class="lightbox__panel">
+    <button class="lightbox__close" id="lbclose" type="button" aria-label="Close preview">✕</button>
+    <video id="lbvideo" controls playsinline preload="auto"></video>
+    <div class="lightbox__bar">
+      <span class="lightbox__label" id="lblabel"></span>
+      <button class="btn primary" id="lbselect" type="button">Select</button>
+    </div>
   </div>
 </div>
 
@@ -1609,15 +1636,55 @@ function refresh() {
   document.getElementById('n').textContent = sel.size;
   document.getElementById('email').disabled = sel.size === 0;
 }
+function toggle(id) {
+  const card = document.querySelector('.pcard[data-id="' + CSS.escape(id) + '"]');
+  if (sel.has(id)) { sel.delete(id); card && card.setAttribute('aria-pressed','false'); }
+  else { sel.add(id); card && card.setAttribute('aria-pressed','true'); }
+  save(); refresh();
+}
 document.querySelectorAll('.pcard').forEach(card => {
   const id = card.dataset.id;
   if (sel.has(id)) card.setAttribute('aria-pressed', 'true');
-  card.addEventListener('click', () => {
-    if (sel.has(id)) { sel.delete(id); card.setAttribute('aria-pressed','false'); }
-    else { sel.add(id); card.setAttribute('aria-pressed','true'); }
-    save(); refresh();
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('.playbtn')) return;   // play button opens the lightbox instead
+    toggle(id);
   });
 });
+
+// --- Video preview lightbox ---
+const lb = document.getElementById('lightbox');
+const lbVideo = document.getElementById('lbvideo');
+const lbLabel = document.getElementById('lblabel');
+const lbSelect = document.getElementById('lbselect');
+let lbId = null;
+function lbRefresh() {
+  lbSelect.textContent = sel.has(lbId) ? '✓ Selected' : 'Select';
+}
+function openLightbox(id) {
+  const it = DATA[id]; if (!it) return;
+  lbId = id;
+  lbLabel.textContent = it.label;
+  lbVideo.src = it.source;
+  lb.classList.add('open');
+  lbRefresh();
+  lbVideo.play().catch(() => {});
+}
+function closeLightbox() {
+  lb.classList.remove('open');
+  lbVideo.pause();
+  lbVideo.removeAttribute('src');
+  lbVideo.load();
+  lbId = null;
+}
+document.querySelectorAll('.playbtn').forEach(btn => {
+  const open = (e) => { e.stopPropagation(); e.preventDefault(); openLightbox(btn.closest('.pcard').dataset.id); };
+  btn.addEventListener('click', open);
+  btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') open(e); });
+});
+lbSelect.addEventListener('click', () => { if (lbId) { toggle(lbId); lbRefresh(); } });
+document.getElementById('lbclose').addEventListener('click', closeLightbox);
+lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox(); });
 who.addEventListener('input', save);
 notes.addEventListener('input', save);
 
