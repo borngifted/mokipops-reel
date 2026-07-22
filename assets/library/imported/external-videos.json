@@ -4,1833 +4,2095 @@
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a5b33190-917c-46d8-ae50-6bd8d327acad.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/0012746cc66a4024bb4b2b17cdd5a5cd.jpg",
-  "sizeMb": 2.8
+  "sizeMb": 2.8,
+  "durationSec": 7.9
  },
  {
   "filename": "024DE733-485B-4F73-9423-D10DBFF556D4.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6e97dfc6-fa09-4570-ba53-abd71674ff9a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/024de733-485b-4f73-9423-d10dbff556d4.jpg",
-  "sizeMb": 8.07
+  "sizeMb": 8.07,
+  "durationSec": 21.8
  },
  {
   "filename": "04d432f64d3c4693aca98100c54cccb6.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d65c5dcd-8520-4f17-b38e-81358a5b1918.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/04d432f64d3c4693aca98100c54cccb6.jpg",
-  "sizeMb": 1.14
+  "sizeMb": 1.14,
+  "durationSec": 3.4
  },
  {
   "filename": "08cf805877b14cf6b71f3c11df73c48e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/76d877b2-5e1e-4047-91bc-474a28bf6f91.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/08cf805877b14cf6b71f3c11df73c48e.jpg",
-  "sizeMb": 4.26
+  "sizeMb": 4.26,
+  "durationSec": 12.0
  },
  {
   "filename": "09d0b5ed41294a348b8ee5f7de297e29.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/92cb9bcc-b622-4de2-ba65-46877b66532b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/09d0b5ed41294a348b8ee5f7de297e29.jpg",
-  "sizeMb": 4.95
+  "sizeMb": 4.95,
+  "durationSec": 13.8
  },
  {
   "filename": "0aca5810a99e4e69a6f10d30a0b06b8b.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/26e4500e-698d-425d-b246-cbbc6dd68df7.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/0aca5810a99e4e69a6f10d30a0b06b8b.jpg",
-  "sizeMb": 2.84
+  "sizeMb": 2.84,
+  "durationSec": 7.9
  },
  {
   "filename": "170e302230284212b408d015eaf7b71b.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/de659f26-3337-41db-8fd6-3a58368213fd.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/170e302230284212b408d015eaf7b71b.jpg",
-  "sizeMb": 5.41
+  "sizeMb": 5.41,
+  "durationSec": 15.0
  },
  {
   "filename": "1f1527d15e6e49de97f4297508c0acde.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6e5c87ef-af14-4d40-af08-73f32b1630d5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/1f1527d15e6e49de97f4297508c0acde.jpg",
-  "sizeMb": 2.38
+  "sizeMb": 2.38,
+  "durationSec": 7.8
  },
  {
   "filename": "2db8142cf1cb46d69ccc403a902c456f.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6c947fb9-4834-43a1-90a9-985f2b39e666.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/2db8142cf1cb46d69ccc403a902c456f.jpg",
-  "sizeMb": 2.19
+  "sizeMb": 2.19,
+  "durationSec": 6.0
  },
  {
   "filename": "2f3d360c5e24486a8b4fb023af152a76.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/8424b4c4-883b-42f0-8af7-e794b5ee658d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/2f3d360c5e24486a8b4fb023af152a76.jpg",
-  "sizeMb": 2.14
+  "sizeMb": 2.14,
+  "durationSec": 6.0
  },
  {
   "filename": "3E8977F1-6718-434E-B15E-1C55B9B59B02.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a87df06e-e9f5-462c-b876-60573352df81.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/3e8977f1-6718-434e-b15e-1c55b9b59b02.jpg",
-  "sizeMb": 1.79
+  "sizeMb": 1.79,
+  "durationSec": 5.1
  },
  {
   "filename": "46a1bc4463be4302b11a642b6bd86e2d.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ce2f9a96-554f-433e-aed8-f5afa22bea2e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/46a1bc4463be4302b11a642b6bd86e2d.jpg",
-  "sizeMb": 1.77
+  "sizeMb": 1.77,
+  "durationSec": 5.0
  },
  {
   "filename": "47169fa7e9c24e3d802d2d9c7879c5e2.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/641a8121-dce2-4732-bccc-96a4bce7b540.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/47169fa7e9c24e3d802d2d9c7879c5e2.jpg",
-  "sizeMb": 5.43
+  "sizeMb": 5.43,
+  "durationSec": 15.0
  },
  {
   "filename": "52dbcccdcf9446e1a26a302a5dad58ae.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e64d00b6-4de6-427c-8978-1b2023ed1bdc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/52dbcccdcf9446e1a26a302a5dad58ae.jpg",
-  "sizeMb": 4.74
+  "sizeMb": 4.74,
+  "durationSec": 13.1
  },
  {
   "filename": "54AC948B-7937-49A4-9EE2-42DF3DCE5394.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/78330d37-09f0-4002-81eb-c83574177e7c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/54ac948b-7937-49a4-9ee2-42df3dce5394.jpg",
-  "sizeMb": 16.39
+  "sizeMb": 16.39,
+  "durationSec": 44.7
  },
  {
   "filename": "5f4c3a9774854015bc553d5fa8418f71.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/56a83033-90d4-4c2e-8ada-436be3db7c9d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/5f4c3a9774854015bc553d5fa8418f71.jpg",
-  "sizeMb": 1.94
+  "sizeMb": 1.94,
+  "durationSec": 5.0
  },
  {
   "filename": "65AB7570-1813-4828-AC21-2CEE6F1D17A9.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e3f275a1-60f1-4efb-844a-3acb70ce91db.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/65ab7570-1813-4828-ac21-2cee6f1d17a9.jpg",
-  "sizeMb": 0.75
+  "sizeMb": 0.75,
+  "durationSec": 5.0
  },
  {
   "filename": "687A9EE3-60E4-4AE0-8D3D-9E67B44CAB25.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/86d54fe0-4a35-475c-aa7a-d3347608eeb0.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/687a9ee3-60e4-4ae0-8d3d-9e67b44cab25.jpg",
-  "sizeMb": 11.47
+  "sizeMb": 11.47,
+  "durationSec": 34.8
  },
  {
   "filename": "711d01966c3b565daacda9de0e55ef48.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/077f1bf8-8d10-48b4-938c-34fd923b3eba.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/711d01966c3b565daacda9de0e55ef48.jpg",
-  "sizeMb": 1.05
+  "sizeMb": 1.05,
+  "durationSec": 26.6
  },
  {
   "filename": "73342c3078304594997c202af2fa118b.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/74c4117f-49b1-4a5c-800a-760416facf1d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/73342c3078304594997c202af2fa118b.jpg",
-  "sizeMb": 1.75
+  "sizeMb": 1.75,
+  "durationSec": 9.4
  },
  {
   "filename": "7506b8d5113d4137b121b968c5b30ddb.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d5231d61-df14-411b-97b6-4f1539ca7a9b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/7506b8d5113d4137b121b968c5b30ddb.jpg",
-  "sizeMb": 2.17
+  "sizeMb": 2.17,
+  "durationSec": 6.0
  },
  {
   "filename": "7834e85fb1a648b9ae94f0452cd26cbb.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4e6a2f7e-95f4-4703-936a-7989b2e406de.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/7834e85fb1a648b9ae94f0452cd26cbb.jpg",
-  "sizeMb": 2.18
+  "sizeMb": 2.18,
+  "durationSec": 6.0
  },
  {
   "filename": "7d11bf763e324d07b8730055a745b644.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9d473e80-8dce-47bd-a4a6-c7b4c33c1f88.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/7d11bf763e324d07b8730055a745b644.jpg",
-  "sizeMb": 2.22
+  "sizeMb": 2.22,
+  "durationSec": 6.0
  },
  {
   "filename": "7e1495b3-8ea5-4942-8715-e1204b7ffa35.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/eaa986ee-4e68-4e63-aa77-769450647f44.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/7e1495b3-8ea5-4942-8715-e1204b7ffa35.jpg",
-  "sizeMb": 3.95
+  "sizeMb": 3.95,
+  "durationSec": 10.9
  },
  {
   "filename": "83520f47-73fc-4654-b625-d31b5a594e65.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e3ad1ba1-1d2c-4cca-9a47-e94f3867942b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/83520f47-73fc-4654-b625-d31b5a594e65.jpg",
-  "sizeMb": 1.88
+  "sizeMb": 1.88,
+  "durationSec": 12.0
  },
  {
   "filename": "878e623887df4143a3e04647f0b3359b.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/fed5f477-553e-4664-a429-6072208b5f0e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/878e623887df4143a3e04647f0b3359b.jpg",
-  "sizeMb": 2.16
+  "sizeMb": 2.16,
+  "durationSec": 6.0
  },
  {
   "filename": "8F8CCA54-2F04-4D86-BE1A-706E33813225.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/786dc441-0dd1-4a4c-9dad-d558b6775ec0.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/8f8cca54-2f04-4d86-be1a-706e33813225.jpg",
-  "sizeMb": 5.8
+  "sizeMb": 5.8,
+  "durationSec": 15.8
  },
  {
   "filename": "90b761aafdf644858b1bf38150f0349a.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/906b1c0c-abdb-43e1-8d15-e726dac293f3.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/90b761aafdf644858b1bf38150f0349a.jpg",
-  "sizeMb": 1.08
+  "sizeMb": 1.08,
+  "durationSec": 3.0
  },
  {
   "filename": "9189ad21cb544886a76c4c3488c7e638.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2becc1f2-ee5c-415c-8631-5a73a8bdac95.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/9189ad21cb544886a76c4c3488c7e638.jpg",
-  "sizeMb": 4.59
+  "sizeMb": 4.59,
+  "durationSec": 12.7
  },
  {
   "filename": "924f77cc6e9f4d6e8b2f1012f4934ef0.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9e4bfed3-5cf1-404e-916d-aa0d7523b5dc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/924f77cc6e9f4d6e8b2f1012f4934ef0.jpg",
-  "sizeMb": 1.34
+  "sizeMb": 1.34,
+  "durationSec": 3.8
  },
  {
   "filename": "98100090-C7EB-4A51-9C23-538B78EFE0D9 Copy.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/627bdfa9-9323-4727-bda9-bf8f5a68bbab.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/98100090-c7eb-4a51-9c23-538b78efe0d9-copy.jpg",
-  "sizeMb": 2.48
+  "sizeMb": 2.48,
+  "durationSec": 6.8
  },
  {
   "filename": "9d67b6222a244b4d9f8e39e9a18e6423.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f3951971-19eb-4a18-9566-96738196197b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/9d67b6222a244b4d9f8e39e9a18e6423.jpg",
-  "sizeMb": 1.19
+  "sizeMb": 1.19,
+  "durationSec": 3.0
  },
  {
   "filename": "a16ff7f255394b41a6f06378129e2180.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/747a9ef8-7edf-4630-8918-123ec0686f8d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/a16ff7f255394b41a6f06378129e2180.jpg",
-  "sizeMb": 1.07
+  "sizeMb": 1.07,
+  "durationSec": 5.0
  },
  {
   "filename": "A38BFCF2-0826-470C-BB90-F6285262F23E.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/60dadcd0-0629-43ff-b086-f70790a57441.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/a38bfcf2-0826-470c-bb90-f6285262f23e.jpg",
-  "sizeMb": 11.26
+  "sizeMb": 11.26,
+  "durationSec": 30.5
  },
  {
   "filename": "a5902532f58247d7a3ebab3fc7096199.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6bc5de4a-2c0e-4760-bf92-ee641226cf11.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/a5902532f58247d7a3ebab3fc7096199.jpg",
-  "sizeMb": 0.24
+  "sizeMb": 0.24,
+  "durationSec": 5.0
  },
  {
   "filename": "b85afaed8eaf464083c2f401975310f2.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/35fca3ef-8e4c-4dee-93c7-78c1a6bd5222.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/b85afaed8eaf464083c2f401975310f2.jpg",
-  "sizeMb": 1.1
+  "sizeMb": 1.1,
+  "durationSec": 5.0
  },
  {
   "filename": "copy_CD94731A-C452-4C86-840B-98AB9A209AE8.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/cdefb5ed-93a4-4767-bf79-177c692d9ec2.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/copy-cd94731a-c452-4c86-840b-98ab9a209ae8.jpg",
-  "sizeMb": 11.9
+  "sizeMb": 11.9,
+  "durationSec": 32.9
  },
  {
   "filename": "copy_E2CE1CA9-C752-453A-A08E-0322AB49EF47.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d9e47a7c-3a15-4274-a00a-775812a02e9f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/copy-e2ce1ca9-c752-453a-a08e-0322ab49ef47.jpg",
-  "sizeMb": 11.89
+  "sizeMb": 11.89,
+  "durationSec": 32.9
  },
  {
   "filename": "copy_FB15DD9D-E71B-46DF-9301-41627E0A3B78.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/31a47210-01ae-4d8f-8620-6eee01d4daf1.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/copy-fb15dd9d-e71b-46df-9301-41627e0a3b78.jpg",
-  "sizeMb": 7.64
+  "sizeMb": 7.64,
+  "durationSec": 25.8
  },
  {
   "filename": "d072314327764c86b3ac93d3dd618d16.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/55fcf285-631c-45cc-bb0b-d498617f0696.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/d072314327764c86b3ac93d3dd618d16.jpg",
-  "sizeMb": 2.19
+  "sizeMb": 2.19,
+  "durationSec": 6.0
  },
  {
   "filename": "d4a7680d0fbf4a519b21218322d007e2.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/dad7c891-eafa-4716-9939-bc1c2dc47976.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/d4a7680d0fbf4a519b21218322d007e2.jpg",
-  "sizeMb": 2.19
+  "sizeMb": 2.19,
+  "durationSec": 6.0
  },
  {
   "filename": "DJI_20230817_201903_536_video.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b0566f91-dac6-446c-b0cd-e2718723b6a5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/dji-20230817-201903-536-video.jpg",
-  "sizeMb": 59.53
+  "sizeMb": 59.53,
+  "durationSec": 162.8
  },
  {
   "filename": "ef0350961b5946539e6a723c80a134e7.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/985c3e81-7cb7-441b-9c10-f83198a1c69b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/ef0350961b5946539e6a723c80a134e7.jpg",
-  "sizeMb": 11.59
+  "sizeMb": 11.59,
+  "durationSec": 32.4
  },
  {
   "filename": "efead69da1694de0bf84e07379b13a58.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/302d6511-68bc-4c82-8299-9f414b2a3728.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/efead69da1694de0bf84e07379b13a58.jpg",
-  "sizeMb": 27.53
+  "sizeMb": 27.53,
+  "durationSec": 76.4
  },
  {
   "filename": "f30a592100f94c9bbe9f63093a854962.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/555ff5d8-7de8-4f98-9a4b-79575ea400c2.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/f30a592100f94c9bbe9f63093a854962.jpg",
-  "sizeMb": 2.15
+  "sizeMb": 2.15,
+  "durationSec": 6.0
  },
  {
   "filename": "f5976f6518624e9da95d001af320375f.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c1fa65d8-36e7-43b4-bd36-83a22f33f00f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/f5976f6518624e9da95d001af320375f.jpg",
-  "sizeMb": 5.39
+  "sizeMb": 5.39,
+  "durationSec": 15.0
  },
  {
   "filename": "fcfc5ef83a3c4506a1b0aea5730b10bf.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/085df043-8180-4907-8123-9ef874830fd9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/fcfc5ef83a3c4506a1b0aea5730b10bf.jpg",
-  "sizeMb": 1.1
+  "sizeMb": 1.1,
+  "durationSec": 5.0
  },
  {
   "filename": "IMG_0013.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e17df23a-c5ec-4673-9187-5dc7ea6bd332.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0013.jpg",
-  "sizeMb": 6.91
+  "sizeMb": 6.91,
+  "durationSec": 19.4
  },
  {
   "filename": "IMG_0039.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4cdd8e92-8091-4ca1-81bf-7cc330f1cad8.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0039.jpg",
-  "sizeMb": 0.39
+  "sizeMb": 0.39,
+  "durationSec": 1.0
  },
  {
   "filename": "IMG_0042.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c35476d5-64e0-4842-b255-e8909782f6c8.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0042.jpg",
-  "sizeMb": 5.62
+  "sizeMb": 5.62,
+  "durationSec": 14.5
  },
  {
   "filename": "IMG_0050.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/8b6f9073-6d1a-431c-aabe-f27538b65adc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0050.jpg",
-  "sizeMb": 2.46
+  "sizeMb": 2.46,
+  "durationSec": 6.5
  },
  {
   "filename": "IMG_0054.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/086d6089-5eb7-47ee-99cc-3a8b6d0a663f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0054.jpg",
-  "sizeMb": 8.91
+  "sizeMb": 8.91,
+  "durationSec": 23.6
  },
  {
   "filename": "IMG_0056.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/80c893ff-b69d-4371-ba4f-5de6b4bdeeb5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0056.jpg",
-  "sizeMb": 9.62
+  "sizeMb": 9.62,
+  "durationSec": 25.4
  },
  {
   "filename": "IMG_0102.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ef008130-b356-462b-8294-e41c5d08a261.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0102.jpg",
-  "sizeMb": 2.27
+  "sizeMb": 2.27,
+  "durationSec": 6.0
  },
  {
   "filename": "IMG_0461.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/edbe09e2-ef2a-43bb-814a-cf9c8e8dce39.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0461.jpg",
-  "sizeMb": 1.33
+  "sizeMb": 1.33,
+  "durationSec": 3.7
  },
  {
   "filename": "IMG_0462.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9ebf4351-b142-4e76-8e5d-b51c8b45618a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0462.jpg",
-  "sizeMb": 17.15
+  "sizeMb": 17.15,
+  "durationSec": 47.8
  },
  {
   "filename": "IMG_0463.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/bbb0ba1c-ce85-4d5d-aa12-d96e4b948ea7.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0463.jpg",
-  "sizeMb": 4.39
+  "sizeMb": 4.39,
+  "durationSec": 12.1
  },
  {
   "filename": "IMG_0466.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c5539262-0ea8-4923-991e-27e325d85a44.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0466.jpg",
-  "sizeMb": 29.25
+  "sizeMb": 29.25,
+  "durationSec": 81.5
  },
  {
   "filename": "IMG_0475.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d4e7bf9b-82bb-475f-9bce-b1c5ab8c62e9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0475.jpg",
-  "sizeMb": 30.78
+  "sizeMb": 30.78,
+  "durationSec": 86.1
  },
  {
   "filename": "IMG_0496.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0d3fcb0c-0b4f-4e74-89e3-46a17a56ea26.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0496.jpg",
-  "sizeMb": 0.6
+  "sizeMb": 0.6,
+  "durationSec": 1.5
  },
  {
   "filename": "IMG_0500.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2996dd23-c3c9-4a6b-bae1-5aea34ad362e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0500.jpg",
-  "sizeMb": 1.64
+  "sizeMb": 1.64,
+  "durationSec": 4.3
  },
  {
   "filename": "IMG_0510.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9d11052d-7640-408f-9e00-0e41c1adb556.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0510.jpg",
-  "sizeMb": 0.47
+  "sizeMb": 0.47,
+  "durationSec": 1.3
  },
  {
   "filename": "IMG_0536.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6f137045-94a0-45ba-ab51-9cebff5d15d9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0536.jpg",
-  "sizeMb": 3.93
+  "sizeMb": 3.93,
+  "durationSec": 10.4
  },
  {
   "filename": "IMG_0540.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4cd93b5e-4ce8-4bf5-9c37-be57bdcb5117.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0540.jpg",
-  "sizeMb": 3.04
+  "sizeMb": 3.04,
+  "durationSec": 8.5
  },
  {
   "filename": "IMG_0547.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a729ed6a-90fa-43e9-890a-7a06a6090dc7.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0547.jpg",
-  "sizeMb": 4.05
+  "sizeMb": 4.05,
+  "durationSec": 11.1
  },
  {
   "filename": "IMG_0548.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/79822500-742c-48b9-abfe-9935c457669d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0548.jpg",
-  "sizeMb": 4.78
+  "sizeMb": 4.78,
+  "durationSec": 13.1
  },
  {
   "filename": "IMG_0769.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9c9adfc5-b97e-4ad5-80fe-f67bb8a36427.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0769.jpg",
-  "sizeMb": 21.37
+  "sizeMb": 21.37,
+  "durationSec": 59.5
  },
  {
   "filename": "IMG_0774.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ab80ea7a-1fbb-4ba3-a809-9901aa24dd55.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0774.jpg",
-  "sizeMb": 8.62
+  "sizeMb": 8.62,
+  "durationSec": 23.8
  },
  {
   "filename": "IMG_0778.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/43bcfb12-a7a3-4247-8d33-25511d5a2267.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0778.jpg",
-  "sizeMb": 46.79
+  "sizeMb": 46.79,
+  "durationSec": 130.6
  },
  {
   "filename": "IMG_0792.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/97457e6f-67b6-47ea-ac8a-ddc4288cd07f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0792.jpg",
-  "sizeMb": 25.72
+  "sizeMb": 25.72,
+  "durationSec": 72.0
  },
  {
   "filename": "IMG_0905.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/642dd11f-5184-4e0a-88c7-0063a3174b6f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0905.jpg",
-  "sizeMb": 7.09
+  "sizeMb": 7.09,
+  "durationSec": 19.2
  },
  {
   "filename": "IMG_0912.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/251be661-b015-4322-aa57-2f94443334a0.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-0912.jpg",
-  "sizeMb": 4.68
+  "sizeMb": 4.68,
+  "durationSec": 12.2
  },
  {
   "filename": "IMG_1282.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c3ab768b-f11e-4394-8ea2-d72396f59332.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1282.jpg",
-  "sizeMb": 23.42
+  "sizeMb": 23.42,
+  "durationSec": 65.2
  },
  {
   "filename": "IMG_1283.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1f86222a-e963-4abe-a1d7-ab383fc6b393.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1283.jpg",
-  "sizeMb": 18.02
+  "sizeMb": 18.02,
+  "durationSec": 50.1
  },
  {
   "filename": "IMG_1296.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/edddad2e-4aae-43ca-8b14-69a4bd1288a8.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1296.jpg",
-  "sizeMb": 5.53
+  "sizeMb": 5.53,
+  "durationSec": 15.5
  },
  {
   "filename": "IMG_1407.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e1f11e6d-0da6-4bcb-bb72-a683d5cb4421.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1407.jpg",
-  "sizeMb": 26.65
+  "sizeMb": 26.65,
+  "durationSec": 72.7
  },
  {
   "filename": "IMG_1666.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/586a7b3f-a0d8-4408-bdc7-8d7a4d9642c2.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1666.jpg",
-  "sizeMb": 5.87
+  "sizeMb": 5.87,
+  "durationSec": 16.4
  },
  {
   "filename": "IMG_1719.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c57d5bd8-4943-484a-9109-002e2d03abf5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1719.jpg",
-  "sizeMb": 6.3
+  "sizeMb": 6.3,
+  "durationSec": 17.5
  },
  {
   "filename": "IMG_1754.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4c974f10-63c1-41a3-9114-9dfe84afd474.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1754.jpg",
-  "sizeMb": 75.91
+  "sizeMb": 75.91,
+  "durationSec": 211.3
  },
  {
   "filename": "IMG_1764.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/da406695-c374-439f-b32b-73e86fb94d7b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1764.jpg",
-  "sizeMb": 16.48
+  "sizeMb": 16.48,
+  "durationSec": 45.8
  },
  {
   "filename": "IMG_1775.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4869a11e-dc17-4309-832d-fdcd55620f72.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-1775.jpg",
-  "sizeMb": 3.43
+  "sizeMb": 3.43,
+  "durationSec": 9.1
  },
  {
   "filename": "IMG_2021.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e209b670-7788-4d6b-9c5b-a84aeea5404c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2021.jpg",
-  "sizeMb": 44.43
+  "sizeMb": 44.43,
+  "durationSec": 118.3
  },
  {
   "filename": "IMG_2030.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a478cdc5-347d-4886-8507-4bd93e564863.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2030.jpg",
-  "sizeMb": 8.73
+  "sizeMb": 8.73,
+  "durationSec": 24.4
  },
  {
   "filename": "IMG_2247.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1bfb0062-f2c6-4a7f-91ff-b86f7d530afc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2247.jpg",
-  "sizeMb": 6.92
+  "sizeMb": 6.92,
+  "durationSec": 19.2
  },
  {
   "filename": "IMG_2268.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7b89a16c-3d75-475a-bf7e-4d556078000f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2268.jpg",
-  "sizeMb": 9.81
+  "sizeMb": 9.81,
+  "durationSec": 27.3
  },
  {
   "filename": "IMG_2356.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c01de970-4772-4de1-9b28-6f52a424b376.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2356.jpg",
-  "sizeMb": 5.43
+  "sizeMb": 5.43,
+  "durationSec": 14.7
  },
  {
   "filename": "IMG_2380.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d13eec5d-d2c2-4ea4-999d-ebf59a19599d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2380.jpg",
-  "sizeMb": 2.71
+  "sizeMb": 2.71,
+  "durationSec": 7.4
  },
  {
   "filename": "IMG_2461.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/3681a7c4-c4d7-4426-ab7f-b595a0c76515.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2461.jpg",
-  "sizeMb": 10.68
+  "sizeMb": 10.68,
+  "durationSec": 29.5
  },
  {
   "filename": "IMG_2465.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/5fc1039e-65cb-45a2-9321-78287fc61e68.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2465.jpg",
-  "sizeMb": 25.79
+  "sizeMb": 25.79,
+  "durationSec": 71.8
  },
  {
   "filename": "IMG_2466.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/728bc32b-54d5-4dd8-9be2-6f6ddc3565b9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2466.jpg",
-  "sizeMb": 12.57
+  "sizeMb": 12.57,
+  "durationSec": 33.6
  },
  {
   "filename": "IMG_2469.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/55d811b9-8d7b-4c08-8dba-100a93ba4bca.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2469.jpg",
-  "sizeMb": 7.42
+  "sizeMb": 7.42,
+  "durationSec": 19.5
  },
  {
   "filename": "IMG_2478.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c93af0cf-4b9b-4167-8dd2-779ed9d629b4.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2478.jpg",
-  "sizeMb": 5.23
+  "sizeMb": 5.23,
+  "durationSec": 14.6
  },
  {
   "filename": "IMG_2521.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/eccbe90c-9905-47bf-b413-7e3d18522551.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2521.jpg",
-  "sizeMb": 2.62
+  "sizeMb": 2.62,
+  "durationSec": 7.0
  },
  {
   "filename": "IMG_2649.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/65828a1e-c79c-4380-992e-e7ea87b0eb0c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2649.jpg",
-  "sizeMb": 2.45
+  "sizeMb": 2.45,
+  "durationSec": 6.7
  },
  {
   "filename": "IMG_2799.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c5a488c0-3f3d-4bce-b8a5-e989cc396630.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2799.jpg",
-  "sizeMb": 2.99
+  "sizeMb": 2.99,
+  "durationSec": 8.1
  },
  {
   "filename": "IMG_2808.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e13717b9-151c-4292-9602-ed6f0272c3bf.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2808.jpg",
-  "sizeMb": 0.65
+  "sizeMb": 0.65,
+  "durationSec": 1.7
  },
  {
   "filename": "IMG_2809.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/dcc08c1a-86f3-4cf7-974a-f4e0d8780dfb.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2809.jpg",
-  "sizeMb": 5.07
+  "sizeMb": 5.07,
+  "durationSec": 13.7
  },
  {
   "filename": "IMG_2813.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7ebe0e56-68da-4b7c-a736-937121d3d3ae.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2813.jpg",
-  "sizeMb": 4.65
+  "sizeMb": 4.65,
+  "durationSec": 12.9
  },
  {
   "filename": "IMG_2818.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/75efc709-4ac8-4c65-bc87-812af094c25f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2818.jpg",
-  "sizeMb": 1.56
+  "sizeMb": 1.56,
+  "durationSec": 4.0
  },
  {
   "filename": "IMG_2877.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9c0dd08f-1aa4-4931-8e03-0cb567a943fd.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2877.jpg",
-  "sizeMb": 4.3
+  "sizeMb": 4.3,
+  "durationSec": 12.0
  },
  {
   "filename": "IMG_2886.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7eb7c267-ce23-4451-ac93-96c354e7fc51.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2886.jpg",
-  "sizeMb": 7.45
+  "sizeMb": 7.45,
+  "durationSec": 20.7
  },
  {
   "filename": "IMG_2904.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/03b68ee1-17e1-4d48-8005-4163b12f2296.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2904.jpg",
-  "sizeMb": 5.69
+  "sizeMb": 5.69,
+  "durationSec": 16.0
  },
  {
   "filename": "IMG_2908.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f6823cb3-9224-486c-8e1b-9e2847f0537d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2908.jpg",
-  "sizeMb": 5.41
+  "sizeMb": 5.41,
+  "durationSec": 14.6
  },
  {
   "filename": "IMG_2912.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1ee9ebca-f380-48e0-a027-e2a6c96cc378.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-2912.jpg",
-  "sizeMb": 10.9
+  "sizeMb": 10.9,
+  "durationSec": 30.2
  },
  {
   "filename": "IMG_3229.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/48f0b237-7e43-4408-9a11-5b227467aec5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-3229.jpg",
-  "sizeMb": 33.6
+  "sizeMb": 33.6,
+  "durationSec": 91.3
  },
  {
   "filename": "IMG_3260.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/420e7dcd-d4ef-4e25-9cb3-00865bc9549d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-3260.jpg",
-  "sizeMb": 2.0
+  "sizeMb": 2.0,
+  "durationSec": 5.5
  },
  {
   "filename": "IMG_3388.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/17859490-9b4b-48ca-bd11-15471246e04d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-3388.jpg",
-  "sizeMb": 3.28
+  "sizeMb": 3.28,
+  "durationSec": 8.7
  },
  {
   "filename": "IMG_3462.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/87d7e841-b818-46e7-88e2-ea5cf0a28552.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-3462.jpg",
-  "sizeMb": 27.29
+  "sizeMb": 27.29,
+  "durationSec": 74.4
  },
  {
   "filename": "IMG_3928.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/eb8e29a7-d9e6-4f6e-928a-308bb8a0aaac.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-3928.jpg",
-  "sizeMb": 2.26
+  "sizeMb": 2.26,
+  "durationSec": 6.3
  },
  {
   "filename": "IMG_4254.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4e5ccb39-48b2-4a5f-9db9-9bba6c0335ef.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-4254.jpg",
-  "sizeMb": 3.64
+  "sizeMb": 3.64,
+  "durationSec": 9.7
  },
  {
   "filename": "IMG_4653.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a5225adb-2414-4d0e-842e-d467a5cf3fa8.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-4653.jpg",
-  "sizeMb": 69.92
+  "sizeMb": 69.92,
+  "durationSec": 190.8
  },
  {
   "filename": "IMG_5183.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1923d472-3f59-44ad-bd26-9e4bc8acaa8b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-5183.jpg",
-  "sizeMb": 2.12
+  "sizeMb": 2.12,
+  "durationSec": 5.8
  },
  {
   "filename": "IMG_5191.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1b3ce80b-413d-4c9a-b310-9b21e1b32501.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-5191.jpg",
-  "sizeMb": 2.21
+  "sizeMb": 2.21,
+  "durationSec": 5.9
  },
  {
   "filename": "IMG_5575.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6857d2eb-193d-4b8d-81aa-63a12692c3df.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-5575.jpg",
-  "sizeMb": 0.81
+  "sizeMb": 0.81,
+  "durationSec": 2.1
  },
  {
   "filename": "IMG_5846.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/54c0f03f-855f-4836-aa3e-a24d4f25910a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-5846.jpg",
-  "sizeMb": 6.71
+  "sizeMb": 6.71,
+  "durationSec": 18.7
  },
  {
   "filename": "IMG_5850.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/16ac812f-01cc-4c1f-9f88-4cfa1adb531a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-5850.jpg",
-  "sizeMb": 14.6
+  "sizeMb": 14.6,
+  "durationSec": 39.5
  },
  {
   "filename": "IMG_5981.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/3039e7e7-97eb-4265-b909-5533e4639a8c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-5981.jpg",
-  "sizeMb": 20.99
+  "sizeMb": 20.99,
+  "durationSec": 58.9
  },
  {
   "filename": "IMG_6320.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f7f78f5d-a2e9-470b-b184-4bf9d586dccb.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-6320.jpg",
-  "sizeMb": 21.65
+  "sizeMb": 21.65,
+  "durationSec": 59.6
  },
  {
   "filename": "IMG_6328.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1e7cf11b-e570-4406-a188-800d329474cf.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-6328.jpg",
-  "sizeMb": 34.47
+  "sizeMb": 34.47,
+  "durationSec": 95.4
  },
  {
   "filename": "IMG_6339.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/031102a4-2d05-4929-b2b3-ce88b837d41c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-6339.jpg",
-  "sizeMb": 5.33
+  "sizeMb": 5.33,
+  "durationSec": 14.7
  },
  {
   "filename": "IMG_7481.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/105f6616-058f-44f5-b04c-4a9e3fb0b37a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-7481.jpg",
-  "sizeMb": 11.16
+  "sizeMb": 11.16,
+  "durationSec": 29.1
  },
  {
   "filename": "IMG_7849.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/652d7ad1-0587-45b6-b9ff-07d1237e07b2.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-7849.jpg",
-  "sizeMb": 5.01
+  "sizeMb": 5.01,
+  "durationSec": 13.7
  },
  {
   "filename": "IMG_8819.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1beec402-dbb0-4a87-8880-d3026e07e4ba.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-8819.jpg",
-  "sizeMb": 9.91
+  "sizeMb": 9.91,
+  "durationSec": 26.8
  },
  {
   "filename": "IMG_8998.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/41c769eb-40b5-43f4-87f9-77e909d7bb45.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-8998.jpg",
-  "sizeMb": 12.48
+  "sizeMb": 12.48,
+  "durationSec": 34.8
  },
  {
   "filename": "IMG_9002.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/80c7a294-f04a-422a-ad1d-a021e43ea7ae.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9002.jpg",
-  "sizeMb": 2.78
+  "sizeMb": 2.78,
+  "durationSec": 7.0
  },
  {
   "filename": "IMG_9003.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2233c79d-84ff-42ec-bbd2-72bb8646e859.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9003.jpg",
-  "sizeMb": 5.03
+  "sizeMb": 5.03,
+  "durationSec": 14.0
  },
  {
   "filename": "IMG_9007.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0bd7d95d-a15e-4f7c-8f51-0d0bda75648d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9007.jpg",
-  "sizeMb": 6.38
+  "sizeMb": 6.38,
+  "durationSec": 17.8
  },
  {
   "filename": "IMG_9044.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6faa86e7-9562-43b3-9898-9eff7219eef1.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9044.jpg",
-  "sizeMb": 5.33
+  "sizeMb": 5.33,
+  "durationSec": 14.4
  },
  {
   "filename": "IMG_9371.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/271d222d-f7d7-4174-ac24-33e1013d1dbe.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9371.jpg",
-  "sizeMb": 1.26
+  "sizeMb": 1.26,
+  "durationSec": 3.1
  },
  {
   "filename": "IMG_9374.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7ec4b890-014b-483e-a9c7-1d72be39306a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9374.jpg",
-  "sizeMb": 12.07
+  "sizeMb": 12.07,
+  "durationSec": 32.0
  },
  {
   "filename": "IMG_9411.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/33107f36-4fb5-4a4b-9c50-77ed6378e2d4.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9411.jpg",
-  "sizeMb": 8.84
+  "sizeMb": 8.84,
+  "durationSec": 23.7
  },
  {
   "filename": "IMG_9459.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b5dc9988-04af-40f6-a3b6-94e3d6350661.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9459.jpg",
-  "sizeMb": 3.8
+  "sizeMb": 3.8,
+  "durationSec": 10.1
  },
  {
   "filename": "IMG_9547.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7bdc9fcd-fb00-4803-b145-5a89ef9c7511.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9547.jpg",
-  "sizeMb": 175.24
+  "sizeMb": 175.24,
+  "durationSec": 468.2
  },
  {
   "filename": "IMG_9571.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/bac82c4d-3c99-4a28-88bb-e65a0ae7811b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9571.jpg",
-  "sizeMb": 18.53
+  "sizeMb": 18.53,
+  "durationSec": 49.2
  },
  {
   "filename": "IMG_9572.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2bc31a8a-4bd9-471f-a861-76c9d3710ab2.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9572.jpg",
-  "sizeMb": 31.96
+  "sizeMb": 31.96,
+  "durationSec": 85.5
  },
  {
   "filename": "IMG_9659.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a3844c8c-d4d8-4784-abbf-ccceee9aae09.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9659.jpg",
-  "sizeMb": 23.67
+  "sizeMb": 23.67,
+  "durationSec": 63.6
  },
  {
   "filename": "IMG_9666.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/203178e2-ef13-4ee8-a48e-719f31f341e1.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9666.jpg",
-  "sizeMb": 15.25
+  "sizeMb": 15.25,
+  "durationSec": 40.4
  },
  {
   "filename": "IMG_9668.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/fa724ece-2a52-4ba9-9197-7821a197b72b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9668.jpg",
-  "sizeMb": 5.84
+  "sizeMb": 5.84,
+  "durationSec": 15.4
  },
  {
   "filename": "IMG_9671.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6c71d90d-4d3d-46b6-acb5-85a6c2a40301.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9671.jpg",
-  "sizeMb": 3.75
+  "sizeMb": 3.75,
+  "durationSec": 10.0
  },
  {
   "filename": "IMG_9672.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c037064d-3db3-421e-a816-6f07c238c136.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9672.jpg",
-  "sizeMb": 0.57
+  "sizeMb": 0.57,
+  "durationSec": 0.9
  },
  {
   "filename": "IMG_9673.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d807fc50-44a3-4149-adbd-faeca2dd68f9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9673.jpg",
-  "sizeMb": 1.38
+  "sizeMb": 1.38,
+  "durationSec": 3.7
  },
  {
   "filename": "IMG_9677.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/aac228cc-9dbb-4f2c-aefd-1ffa8657f04c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9677.jpg",
-  "sizeMb": 16.36
+  "sizeMb": 16.36,
+  "durationSec": 43.4
  },
  {
   "filename": "IMG_9678.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f149fbe6-d506-40f3-b2b3-df3dfd9a6412.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9678.jpg",
-  "sizeMb": 10.9
+  "sizeMb": 10.9,
+  "durationSec": 34.0
  },
  {
   "filename": "IMG_9679.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/44d16234-eff7-4a2d-a5f6-74580698529a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9679.jpg",
-  "sizeMb": 20.96
+  "sizeMb": 20.96,
+  "durationSec": 55.9
  },
  {
   "filename": "IMG_9680.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/473a0aeb-9331-4610-b9cd-4a5627b75470.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9680.jpg",
-  "sizeMb": 31.27
+  "sizeMb": 31.27,
+  "durationSec": 83.6
  },
  {
   "filename": "IMG_9682.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e71cc228-cd4e-4bb5-b74c-2dd90169c908.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9682.jpg",
-  "sizeMb": 4.85
+  "sizeMb": 4.85,
+  "durationSec": 12.6
  },
  {
   "filename": "IMG_9691.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f05f9407-724c-4a1a-8a05-ff92156f2b7f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9691.jpg",
-  "sizeMb": 49.14
+  "sizeMb": 49.14,
+  "durationSec": 131.3
  },
  {
   "filename": "IMG_9696.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/67faaaf6-e7de-4b42-9562-b5c36f2214a1.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9696.jpg",
-  "sizeMb": 1.38
+  "sizeMb": 1.38,
+  "durationSec": 3.6
  },
  {
   "filename": "IMG_9697.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2c011ac1-f206-45fb-8a83-1c5d48c3f707.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9697.jpg",
-  "sizeMb": 20.71
+  "sizeMb": 20.71,
+  "durationSec": 55.0
  },
  {
   "filename": "IMG_9745.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/57f86f45-a0aa-456a-9041-ddce55fd10ee.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9745.jpg",
-  "sizeMb": 42.15
+  "sizeMb": 42.15,
+  "durationSec": 112.6
  },
  {
   "filename": "IMG_9746.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/fb8c465c-eb37-4b15-a4be-18403f340107.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9746.jpg",
-  "sizeMb": 8.5
+  "sizeMb": 8.5,
+  "durationSec": 23.1
  },
  {
   "filename": "IMG_9747.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/3d0e4a54-5dea-4637-a5eb-6cd63915927d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9747.jpg",
-  "sizeMb": 5.11
+  "sizeMb": 5.11,
+  "durationSec": 13.8
  },
  {
   "filename": "IMG_9832.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/88d62742-67fb-4ac0-bb09-9e65f29c5ae6.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9832.jpg",
-  "sizeMb": 1.28
+  "sizeMb": 1.28,
+  "durationSec": 3.5
  },
  {
   "filename": "IMG_9979.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/50714a6f-cef0-4422-9e98-8eac7db1f75e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/img-9979.jpg",
-  "sizeMb": 23.02
+  "sizeMb": 23.02,
+  "durationSec": 60.7
  },
  {
   "filename": "joined_video_0e88e1828ad64dc19009063485669a55.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/55a458d8-ec0d-448e-b081-df8182070d40.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/joined-video-0e88e1828ad64dc19009063485669a55.jpg",
-  "sizeMb": 5.47
+  "sizeMb": 5.47,
+  "durationSec": 15.1
  },
  {
   "filename": "joined_video_789797bd3ee248938ae826a14eaac562.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/72d837bb-6ed8-4bf2-bf9b-8a3669e701e8.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/joined-video-789797bd3ee248938ae826a14eaac562.jpg",
-  "sizeMb": 4.16
+  "sizeMb": 4.16,
+  "durationSec": 11.8
  },
  {
   "filename": "joined_video_cc66ca4042d14680babe155a29a5b1ae.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/5cfc0c26-5d95-43ec-b1d1-c24bcc4e2d53.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/joined-video-cc66ca4042d14680babe155a29a5b1ae.jpg",
-  "sizeMb": 2.68
+  "sizeMb": 2.68,
+  "durationSec": 10.3
  },
  {
   "filename": "joined_video_d5e4418e259b454ca8af09aa9e4d2aa5.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0f22e2f6-50e1-4ccf-aef7-041ae9fdfe0f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/joined-video-d5e4418e259b454ca8af09aa9e4d2aa5.jpg",
-  "sizeMb": 3.45
+  "sizeMb": 3.45,
+  "durationSec": 9.7
  },
  {
   "filename": "joined_video_fd957c05e87442949a49766573619c3c.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/31e86725-869a-4e2c-a9cb-c33610b7c8ad.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/joined-video-fd957c05e87442949a49766573619c3c.jpg",
-  "sizeMb": 5.06
+  "sizeMb": 5.06,
+  "durationSec": 13.7
  },
  {
   "filename": "media.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e00a242a-c047-47bf-ac11-5a33882f1fb9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/media.jpg",
-  "sizeMb": 2.09
+  "sizeMb": 2.09,
+  "durationSec": 5.8
  },
  {
   "filename": "Mokipops new branded packaging 2026.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9261c11c-e799-46ad-9eab-b6ce36770e48.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/mokipops-new-branded-packaging-2026.jpg",
-  "sizeMb": 1.24
+  "sizeMb": 1.24,
+  "durationSec": 7.1
  },
  {
   "filename": "PXL_20240921_161710903.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ca8b83dd-5c66-4699-b60f-a5f1c4a20980.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/pxl-20240921-161710903.jpg",
-  "sizeMb": 1.91
+  "sizeMb": 1.91,
+  "durationSec": 5.1
  },
  {
   "filename": "PXL_20240921_161851825.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ade1ad80-a876-4dd8-81ed-75685b3fcacf.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/pxl-20240921-161851825.jpg",
-  "sizeMb": 1.25
+  "sizeMb": 1.25,
+  "durationSec": 3.3
  },
  {
   "filename": "PXL_20240921_204343540.TS.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4045ab7b-c37b-43f2-a99f-587900fc7bf6.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/pxl-20240921-204343540-ts.jpg",
-  "sizeMb": 2.42
+  "sizeMb": 2.42,
+  "durationSec": 6.4
  },
  {
   "filename": "PXL_20240921_205056946.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/779fd238-85ce-496b-916a-2e8f8af0487c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/pxl-20240921-205056946.jpg",
-  "sizeMb": 20.38
+  "sizeMb": 20.38,
+  "durationSec": 58.3
  },
  {
   "filename": "PXL_20240921_210557456.TS~3.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/568cf748-ea1a-4eb8-9a28-5dcb5f97eca5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/pxl-20240921-210557456-ts-3.jpg",
-  "sizeMb": 15.09
+  "sizeMb": 15.09,
+  "durationSec": 40.2
  },
  {
   "filename": "PXL_20240921_210557456.TS~4.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/87567d4e-34aa-481b-941c-283fc30a1cc3.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/pxl-20240921-210557456-ts-4.jpg",
-  "sizeMb": 16.13
+  "sizeMb": 16.13,
+  "durationSec": 42.9
  },
  {
   "filename": "RPReplay_Final1702394794.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/139075ce-6eb1-4749-a704-ad7f580bb50a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/rpreplay-final1702394794.jpg",
-  "sizeMb": 9.25
+  "sizeMb": 9.25,
+  "durationSec": 25.3
  },
  {
   "filename": "ScreenRecording_06-02-2026 03-10-30_1.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/db899ed9-644f-4410-8b86-7f745eb20148.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/screenrecording-06-02-2026-03-10-30-1.jpg",
-  "sizeMb": 2.54
+  "sizeMb": 2.54,
+  "durationSec": 6.8
  },
  {
   "filename": "video_0_01796469313b4c8e8c41d76d72532a19.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6888b67d-d26b-4526-85f3-3a92dfd7b57d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-01796469313b4c8e8c41d76d72532a19.jpg",
-  "sizeMb": 2.19
+  "sizeMb": 2.19,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_0434f35a5b6a4de8aa45a5aefb70cfc9.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0abb63e3-dcbc-4f56-bd5a-80b2a0a96b5e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-0434f35a5b6a4de8aa45a5aefb70cfc9.jpg",
-  "sizeMb": 1.21
+  "sizeMb": 1.21,
+  "durationSec": 3.2
  },
  {
   "filename": "video_0_0d6d29650d6540469790ad8d028ddf0e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b16d7767-fc9e-4b11-8d8b-2e057526d507.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-0d6d29650d6540469790ad8d028ddf0e.jpg",
-  "sizeMb": 1.0
+  "sizeMb": 1.0,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_28b10737fcb74b429436ce7832b84a51.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/80ec58fa-0a25-4bdd-9cf3-42d8ac8c815a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-28b10737fcb74b429436ce7832b84a51.jpg",
-  "sizeMb": 1.06
+  "sizeMb": 1.06,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_3272da3ad14c4c33ab9105dcd4dbc44a.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a72f4ddc-d538-4945-b670-7eae3d72bc2a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-3272da3ad14c4c33ab9105dcd4dbc44a.jpg",
-  "sizeMb": 1.41
+  "sizeMb": 1.41,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_357c1beefad64652b8f0716e625d7574.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7c7ea8e2-0461-4c13-abaf-1ec5fa9fcff4.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-357c1beefad64652b8f0716e625d7574.jpg",
-  "sizeMb": 1.0
+  "sizeMb": 1.0,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_38cbb1b9fe8f4503a11c9fd9df20bbdb.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7870fb4b-83f3-4ed5-be05-35bbd3bc9e31.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-38cbb1b9fe8f4503a11c9fd9df20bbdb.jpg",
-  "sizeMb": 2.21
+  "sizeMb": 2.21,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_3afca581bb3f4c86a82d095491eeba29.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c929685f-cd7c-4144-9f24-1c496c528c76.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-3afca581bb3f4c86a82d095491eeba29.jpg",
-  "sizeMb": 0.6
+  "sizeMb": 0.6,
+  "durationSec": 3.0
  },
  {
   "filename": "video_0_4ce43cde3f43423a948349eb5699ed54.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e82e4855-f8c6-4b40-84f8-9df6161383dc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-4ce43cde3f43423a948349eb5699ed54.jpg",
-  "sizeMb": 2.18
+  "sizeMb": 2.18,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_5a0623f793c446e9acc59159bcab67cf.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d9c9a8d2-f8bf-48c0-9e34-3a056e88290d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-5a0623f793c446e9acc59159bcab67cf.jpg",
-  "sizeMb": 0.93
+  "sizeMb": 0.93,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_5a79163d17dc4add8f420a6481488998.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/34223d78-de13-429c-9951-1650174a07fb.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-5a79163d17dc4add8f420a6481488998.jpg",
-  "sizeMb": 2.23
+  "sizeMb": 2.23,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_67e9542cdc834d5a9c87b1530b483faf.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b23839ba-b0f4-4019-94f1-0929537e6981.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-67e9542cdc834d5a9c87b1530b483faf.jpg",
-  "sizeMb": 2.22
+  "sizeMb": 2.22,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_680067001ac44a8c915eb50981c35eca.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9d42746b-bca0-494e-ba38-0eb50b3899c0.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-680067001ac44a8c915eb50981c35eca.jpg",
-  "sizeMb": 0.95
+  "sizeMb": 0.95,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_6aa82d342f3d44239c1e427b7312bbdf.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2ce7315c-2e81-4031-adff-5a4e0af279f7.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-6aa82d342f3d44239c1e427b7312bbdf.jpg",
-  "sizeMb": 0.75
+  "sizeMb": 0.75,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_79e1313c4b404a60ac4abb957cc80bc0.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ee6395c9-ce3f-44a4-b2ef-97a5b6282332.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-79e1313c4b404a60ac4abb957cc80bc0.jpg",
-  "sizeMb": 1.44
+  "sizeMb": 1.44,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_83235c9718d7454a86c6a90f96965921.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/54448d56-7bd1-4447-b56a-44a662305d2c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-83235c9718d7454a86c6a90f96965921.jpg",
-  "sizeMb": 0.81
+  "sizeMb": 0.81,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_8e0904d96e9140158f5bcb688371baac.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/fe271bf4-0deb-4491-8f1e-ea18fc6030b2.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-8e0904d96e9140158f5bcb688371baac.jpg",
-  "sizeMb": 2.24
+  "sizeMb": 2.24,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_91437732a08042bcaf00c98aa1e5bbe8.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1430bd8f-72a5-49d3-aea0-31a3dc6b8e6d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-91437732a08042bcaf00c98aa1e5bbe8.jpg",
-  "sizeMb": 1.42
+  "sizeMb": 1.42,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_92c9d0327d244a03bde71f46becdc36d.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/fd48abef-ef5c-470f-be6e-b307a43647e4.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-92c9d0327d244a03bde71f46becdc36d.jpg",
-  "sizeMb": 0.92
+  "sizeMb": 0.92,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_9486d395ccdc44058659bdfa93c12849.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2484734a-cd55-4692-9bdb-0aa35c97905e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-9486d395ccdc44058659bdfa93c12849.jpg",
-  "sizeMb": 0.94
+  "sizeMb": 0.94,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_972f403431a44328bcb76b33b685a24d.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/671014a7-0104-4bc2-bfe3-56b921035d3e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-972f403431a44328bcb76b33b685a24d.jpg",
-  "sizeMb": 1.33
+  "sizeMb": 1.33,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_988273089ca64b858215cfacd076a788.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/501dc2e5-6aaa-41e4-ad9e-6b29aa0d3065.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-988273089ca64b858215cfacd076a788.jpg",
-  "sizeMb": 0.95
+  "sizeMb": 0.95,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_9c38026a9c2b4992a24659f02fbdd409.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/791cd90d-ce46-4f77-bfc5-10796f325cb7.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-9c38026a9c2b4992a24659f02fbdd409.jpg",
-  "sizeMb": 1.11
+  "sizeMb": 1.11,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_a559c1eb7c3342a89161d43c684b4279.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/cbf700c5-97be-45cb-b487-843cd51a7fcf.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-a559c1eb7c3342a89161d43c684b4279.jpg",
-  "sizeMb": 0.87
+  "sizeMb": 0.87,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_a6f2c3e045454625bd572eb6a1376c0b.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/30f0a887-fcc1-4f5a-ba1e-ce2d38624d8a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-a6f2c3e045454625bd572eb6a1376c0b.jpg",
-  "sizeMb": 1.33
+  "sizeMb": 1.33,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_ac6281ddcc3f48cabf989ec6e82def02.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7b55069c-3924-447f-9bc4-c6ef59996b54.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-ac6281ddcc3f48cabf989ec6e82def02.jpg",
-  "sizeMb": 2.1
+  "sizeMb": 2.1,
+  "durationSec": 5.7
  },
  {
   "filename": "video_0_b1839557bc8a4884b938790208b8132a.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/51ff4a04-af1e-472e-b568-28ec33cef6f2.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-b1839557bc8a4884b938790208b8132a.jpg",
-  "sizeMb": 1.95
+  "sizeMb": 1.95,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_ba93337e730040a58be9c91a5334a521.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4f76d5a5-feb8-4afa-888c-c55dc7200e25.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-ba93337e730040a58be9c91a5334a521.jpg",
-  "sizeMb": 0.82
+  "sizeMb": 0.82,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_bb0ef9482aee46e58864e3f7ddcfab4e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/19e85c58-6602-40c3-9eb8-fa23021995b6.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-bb0ef9482aee46e58864e3f7ddcfab4e.jpg",
-  "sizeMb": 1.22
+  "sizeMb": 1.22,
+  "durationSec": 3.2
  },
  {
   "filename": "video_0_c2e3b9fe11874c179a425ce40765a638.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/8a66183d-bb28-4070-9418-98ddaed9b377.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-c2e3b9fe11874c179a425ce40765a638.jpg",
-  "sizeMb": 2.29
+  "sizeMb": 2.29,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_c37a225fd9c840a38424c17c7b9ee30e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c5d02b5a-fdf0-4f77-9d99-f618206e3e7b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-c37a225fd9c840a38424c17c7b9ee30e.jpg",
-  "sizeMb": 0.75
+  "sizeMb": 0.75,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_c6c6ce92c21f499f9757f0730c222647.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/cf3c3c08-17e4-4199-aeaa-b3d6287f62ba.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-c6c6ce92c21f499f9757f0730c222647.jpg",
-  "sizeMb": 1.75
+  "sizeMb": 1.75,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_ca5f1478b02147a0a0aa8805a092afa8.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/42276853-4d21-4922-b7df-a81cfef5cdf9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-ca5f1478b02147a0a0aa8805a092afa8.jpg",
-  "sizeMb": 1.23
+  "sizeMb": 1.23,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_d6067947a2284afa814869efd17d5852.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/90f4bc9f-26c8-427d-8bc2-11e246b9c7eb.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-d6067947a2284afa814869efd17d5852.jpg",
-  "sizeMb": 2.13
+  "sizeMb": 2.13,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_d79f98ddc41b4a8ab37ba0c039da728e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/419a923c-0339-43a9-aaae-50ba89190ed4.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-d79f98ddc41b4a8ab37ba0c039da728e.jpg",
-  "sizeMb": 1.03
+  "sizeMb": 1.03,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_dd9a7d46071748e69520c57bf2616d68.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ee3ad156-4115-41c6-802f-7f8e83c89fdf.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-dd9a7d46071748e69520c57bf2616d68.jpg",
-  "sizeMb": 1.48
+  "sizeMb": 1.48,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_e0079b6b0c6b4a9eb1aa58b2ea0972f2.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/99392dc7-82ca-4f9e-a48c-6088547f3237.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-e0079b6b0c6b4a9eb1aa58b2ea0972f2.jpg",
-  "sizeMb": 2.22
+  "sizeMb": 2.22,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_e04f780c63994de28b4ae583d60c7ddf.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2a31287b-9bf5-4e75-9c60-7d2eb9e55a64.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-e04f780c63994de28b4ae583d60c7ddf.jpg",
-  "sizeMb": 2.21
+  "sizeMb": 2.21,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_e13198f6822141e98896302cd04e689f.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e8207dae-de06-4c27-b885-243bfc500161.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-e13198f6822141e98896302cd04e689f.jpg",
-  "sizeMb": 1.16
+  "sizeMb": 1.16,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_e4150ac218424c8cabc6fd65aea0dd88.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7a67fae0-1b98-4ca8-8e3e-dba548987eb1.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-e4150ac218424c8cabc6fd65aea0dd88.jpg",
-  "sizeMb": 0.77
+  "sizeMb": 0.77,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_e57004ed133e40b681469cda1c2ff87f.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d4cf47d6-4a08-4e10-8727-87b6607e119e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-e57004ed133e40b681469cda1c2ff87f.jpg",
-  "sizeMb": 2.17
+  "sizeMb": 2.17,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_e68b5846b8794392bd194b3f52478b6d.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1534b0e4-489c-449a-b470-e9953a7f0ce5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-e68b5846b8794392bd194b3f52478b6d.jpg",
-  "sizeMb": 1.21
+  "sizeMb": 1.21,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_e75c0b8322cd4e54af2ec81eb130e683.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/203babf5-9119-4e45-a4c1-06ead01bd716.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-e75c0b8322cd4e54af2ec81eb130e683.jpg",
-  "sizeMb": 2.13
+  "sizeMb": 2.13,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_eb26fc39377c405fbfa22bcec1f90d40.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e72cfc6d-b195-4bff-a656-d6b7525cfeea.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-eb26fc39377c405fbfa22bcec1f90d40.jpg",
-  "sizeMb": 2.17
+  "sizeMb": 2.17,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_efa2c2b71d3c4a6da7e2b04cd598ceba.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/654ee684-db03-40cc-8677-ec240f8e4961.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-efa2c2b71d3c4a6da7e2b04cd598ceba.jpg",
-  "sizeMb": 2.24
+  "sizeMb": 2.24,
+  "durationSec": 6.0
  },
  {
   "filename": "video_0_f14baac913114320b601fba4cdf81db2.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/03d8f6a0-d1a4-47ad-958d-08eb260fc06b.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-f14baac913114320b601fba4cdf81db2.jpg",
-  "sizeMb": 0.75
+  "sizeMb": 0.75,
+  "durationSec": 5.0
  },
  {
   "filename": "video_0_fa53a01554574226a34f6540376a9bac.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/49d78663-b287-48ed-b920-86c27de18010.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-0-fa53a01554574226a34f6540376a9bac.jpg",
-  "sizeMb": 2.21
+  "sizeMb": 2.21,
+  "durationSec": 6.0
  },
  {
   "filename": "video_1_013ee0393c02441eb787e98fa321a57a.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/84db8a14-e099-40c1-af60-6793add87d72.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-013ee0393c02441eb787e98fa321a57a.jpg",
-  "sizeMb": 5.5
+  "sizeMb": 5.5,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_030ae1f683a040ee990a20cf2fc25ca4.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ca4daedf-32b2-44d6-bf42-c7cff8241c6f.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-030ae1f683a040ee990a20cf2fc25ca4.jpg",
-  "sizeMb": 1.81
+  "sizeMb": 1.81,
+  "durationSec": 5.1
  },
  {
   "filename": "video_1_10c4eb64273e4208899cdbf602b49be6.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/58cfcc62-a172-4984-80a7-27785139d5dc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-10c4eb64273e4208899cdbf602b49be6.jpg",
-  "sizeMb": 9.15
+  "sizeMb": 9.15,
+  "durationSec": 24.8
  },
  {
   "filename": "video_1_126d05169d844bf7b672e6968823758c.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d6b737eb-5484-4c33-9cf9-456ba354063d.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-126d05169d844bf7b672e6968823758c.jpg",
-  "sizeMb": 5.14
+  "sizeMb": 5.14,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_12fb8cf12f2e443a8a400b6fa54550d0.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ed971257-e08d-46b4-9058-46d2becaddfc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-12fb8cf12f2e443a8a400b6fa54550d0.jpg",
-  "sizeMb": 3.99
+  "sizeMb": 3.99,
+  "durationSec": 10.8
  },
  {
   "filename": "video_1_1bda465d567545d9a1a8a64cbf077c8e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/5bdd1180-9409-4825-b4dc-456459b233f4.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-1bda465d567545d9a1a8a64cbf077c8e.jpg",
-  "sizeMb": 0.92
+  "sizeMb": 0.92,
+  "durationSec": 2.7
  },
  {
   "filename": "video_1_25dc8e9af5f2418d80781f1e4b3f96bf.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f506568c-4f9e-436a-8913-ffcda36931de.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-25dc8e9af5f2418d80781f1e4b3f96bf.jpg",
-  "sizeMb": 2.03
+  "sizeMb": 2.03,
+  "durationSec": 5.4
  },
  {
   "filename": "video_1_2abb613b6f924ce591cad79463cb4ecd.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/742de2ed-b23a-42c8-8624-7820dcbe2913.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-2abb613b6f924ce591cad79463cb4ecd.jpg",
-  "sizeMb": 1.47
+  "sizeMb": 1.47,
+  "durationSec": 4.1
  },
  {
   "filename": "video_1_2dec2390d47046b28aff7986c391cd16.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/4b6bacd1-7e59-4caa-b2c9-c0866a3d4312.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-2dec2390d47046b28aff7986c391cd16.jpg",
-  "sizeMb": 3.33
+  "sizeMb": 3.33,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_329be30cdc5347c0b9f26e4e124e6ed2.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/62ccacde-e08e-4b89-abd9-0d43d1b231cc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-329be30cdc5347c0b9f26e4e124e6ed2.jpg",
-  "sizeMb": 1.1
+  "sizeMb": 1.1,
+  "durationSec": 3.0
  },
  {
   "filename": "video_1_4292c5c99a10421b83024c28d49368e2.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/44b46b48-0487-43ac-a8e0-71103cb77e74.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-4292c5c99a10421b83024c28d49368e2.jpg",
-  "sizeMb": 5.32
+  "sizeMb": 5.32,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_5c7df2736ec341d1a6546c8a259c7acc.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/48a20311-bd89-460a-ac84-02e721ece62e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-5c7df2736ec341d1a6546c8a259c7acc.jpg",
-  "sizeMb": 1.3
+  "sizeMb": 1.3,
+  "durationSec": 3.6
  },
  {
   "filename": "video_1_6343f9e942c04517b4c394e88a117863.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f6c249d2-fa34-4531-b210-0334de16a341.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-6343f9e942c04517b4c394e88a117863.jpg",
-  "sizeMb": 2.04
+  "sizeMb": 2.04,
+  "durationSec": 5.4
  },
  {
   "filename": "video_1_6779a55bdf18479bb12704e626de38f0.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/efa81787-e173-4d6d-8700-74b261cf28b0.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-6779a55bdf18479bb12704e626de38f0.jpg",
-  "sizeMb": 5.4
+  "sizeMb": 5.4,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_6ae8cd62b7ea4dbeb9d4e279d2d8583d.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/fdad5f6a-04f8-42b5-9d59-9d75ecd3e6b4.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-6ae8cd62b7ea4dbeb9d4e279d2d8583d.jpg",
-  "sizeMb": 4.09
+  "sizeMb": 4.09,
+  "durationSec": 11.2
  },
  {
   "filename": "video_1_6c87e380a82c46e59f4dabb98bd746f9.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/9d2d123f-5687-4a28-bde2-e158a01b03b1.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-6c87e380a82c46e59f4dabb98bd746f9.jpg",
-  "sizeMb": 3.76
+  "sizeMb": 3.76,
+  "durationSec": 10.2
  },
  {
   "filename": "video_1_6e7418882b1140b19d57cf51a70f6838.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/bf6a2abf-edf4-4636-adfd-7b7b29ebaecf.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-6e7418882b1140b19d57cf51a70f6838.jpg",
-  "sizeMb": 3.42
+  "sizeMb": 3.42,
+  "durationSec": 9.4
  },
  {
   "filename": "video_1_7732ba5bdac4470db4f41b0813b9d90e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/5737664d-bf81-4fd3-9ded-75f2069ee4e0.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-7732ba5bdac4470db4f41b0813b9d90e.jpg",
-  "sizeMb": 1.13
+  "sizeMb": 1.13,
+  "durationSec": 3.0
  },
  {
   "filename": "video_1_7c0e490336504131823510d2462813a7.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7bd0e294-bb8c-4720-b09e-5ca608101b3e.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-7c0e490336504131823510d2462813a7.jpg",
-  "sizeMb": 12.17
+  "sizeMb": 12.17,
+  "durationSec": 33.9
  },
  {
   "filename": "video_1_7df6a40183ad40b99cf0d9bf4ee2973c.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/bf410dbb-70c8-4d9c-82fd-2c4eb01a2033.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-7df6a40183ad40b99cf0d9bf4ee2973c.jpg",
-  "sizeMb": 5.56
+  "sizeMb": 5.56,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_835f535a19174fc9ad15033032d8703b.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b9271788-a43e-42cb-a5a8-8d4eaf4d649c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-835f535a19174fc9ad15033032d8703b.jpg",
-  "sizeMb": 0.43
+  "sizeMb": 0.43,
+  "durationSec": 1.2
  },
  {
   "filename": "video_1_84d10a0c8d8a4396b065aac13d45f695.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0f5b6225-9396-4bf8-96ec-ece5081b67c5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-84d10a0c8d8a4396b065aac13d45f695.jpg",
-  "sizeMb": 0.23
+  "sizeMb": 0.23,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_8928d3b6d2d6488385d4d225cf0b91ab.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/8a095f6f-178a-45d0-a0ba-219b885272d9.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-8928d3b6d2d6488385d4d225cf0b91ab.jpg",
-  "sizeMb": 4.39
+  "sizeMb": 4.39,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_978986ef4cad4c2f8dc6fde8ec361406.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/dabbe4a7-4f07-438b-841b-b1e688ca7f06.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-978986ef4cad4c2f8dc6fde8ec361406.jpg",
-  "sizeMb": 0.52
+  "sizeMb": 0.52,
+  "durationSec": 1.5
  },
  {
   "filename": "video_1_a17ab02427ea43f9a69c6bc3fe0c0178.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/f161b63a-9818-4ade-bfb9-f4cfddb51b08.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-a17ab02427ea43f9a69c6bc3fe0c0178.jpg",
-  "sizeMb": 3.33
+  "sizeMb": 3.33,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_a4960babdcd247d79d63a2d39f03ce99.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/dd922be5-2026-4b23-afaa-32e54ea4e6df.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-a4960babdcd247d79d63a2d39f03ce99.jpg",
-  "sizeMb": 4.34
+  "sizeMb": 4.34,
+  "durationSec": 11.8
  },
  {
   "filename": "video_1_a6e179833de340299296865cf9bd8d82.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/fe520ef4-5b3b-40d8-ab60-426e3a5dd428.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-a6e179833de340299296865cf9bd8d82.jpg",
-  "sizeMb": 3.7
+  "sizeMb": 3.7,
+  "durationSec": 14.2
  },
  {
   "filename": "video_1_a9dea4ccde824d5cbd06593859aefd3e.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/356f511b-bb55-4d3b-ac64-73c893ae6213.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-a9dea4ccde824d5cbd06593859aefd3e.jpg",
-  "sizeMb": 5.5
+  "sizeMb": 5.5,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_aca90edfb4104fa49c723f555251e037.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d4da933e-9aa0-4741-a4fb-38f1f1af7692.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-aca90edfb4104fa49c723f555251e037.jpg",
-  "sizeMb": 5.43
+  "sizeMb": 5.43,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_b2dfa7012c3c4fde8edce77432b8c98c.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2f975acb-0c84-4444-8ed8-5b500e65b7bc.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-b2dfa7012c3c4fde8edce77432b8c98c.jpg",
-  "sizeMb": 5.52
+  "sizeMb": 5.52,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_b5a2277f7e9948c3a4d3dcf0ef400cb1.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/64fc9747-d052-47e8-a187-a9318bef3299.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-b5a2277f7e9948c3a4d3dcf0ef400cb1.jpg",
-  "sizeMb": 1.09
+  "sizeMb": 1.09,
+  "durationSec": 3.0
  },
  {
   "filename": "video_1_badd4a8cd4324285bddc5f2ca19607c4.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/80ba5f9a-e346-4f62-a6e4-cf2c950cdca5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-badd4a8cd4324285bddc5f2ca19607c4.jpg",
-  "sizeMb": 5.43
+  "sizeMb": 5.43,
+  "durationSec": 17.9
  },
  {
   "filename": "video_1_be2d1fce454647dbb0861386e11044a1.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0e220e5a-793c-4f69-93a1-e7ef989c4c49.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-be2d1fce454647dbb0861386e11044a1.jpg",
-  "sizeMb": 0.52
+  "sizeMb": 0.52,
+  "durationSec": 1.5
  },
  {
   "filename": "video_1_c12ac82997324f0db8b3fa36fa53dba4.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/cdb4b39a-3378-46cf-a7aa-e89d371876fa.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-c12ac82997324f0db8b3fa36fa53dba4.jpg",
-  "sizeMb": 4.6
+  "sizeMb": 4.6,
+  "durationSec": 13.9
  },
  {
   "filename": "video_1_c3b464f4c2694d8aa336ad135865ba18.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c4e0cee4-de4f-48d1-a55e-c8b7733e49ef.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-c3b464f4c2694d8aa336ad135865ba18.jpg",
-  "sizeMb": 5.51
+  "sizeMb": 5.51,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_d06618c8f1ea4389b894db63ae9267be.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b67696e0-42f6-4df9-bfd3-ba9a1b2d8a50.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-d06618c8f1ea4389b894db63ae9267be.jpg",
-  "sizeMb": 2.08
+  "sizeMb": 2.08,
+  "durationSec": 6.8
  },
  {
   "filename": "video_1_d0afe69fe1f04538b6bcab829c46f46b.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/20978c27-fe4b-4bc0-b284-f02a4aeb9752.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-d0afe69fe1f04538b6bcab829c46f46b.jpg",
-  "sizeMb": 3.77
+  "sizeMb": 3.77,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_d0e9c311c86f4a5faf40cd586df20f12.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/bd381954-6303-4447-8f1d-9a3ef2b60ac0.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-d0e9c311c86f4a5faf40cd586df20f12.jpg",
-  "sizeMb": 2.08
+  "sizeMb": 2.08,
+  "durationSec": 6.8
  },
  {
   "filename": "video_1_d1198b13e84840e192c37814bcfe61c8.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b68162b0-56f2-4aad-a5d7-57e8d09ab353.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-d1198b13e84840e192c37814bcfe61c8.jpg",
-  "sizeMb": 4.42
+  "sizeMb": 4.42,
+  "durationSec": 12.5
  },
  {
   "filename": "video_1_dc27e1a2fcf34dae9753bfecd2869863.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/74b9af34-fe2b-45ba-a08e-9a6faf6803e5.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-dc27e1a2fcf34dae9753bfecd2869863.jpg",
-  "sizeMb": 5.06
+  "sizeMb": 5.06,
+  "durationSec": 13.7
  },
  {
   "filename": "video_1_df565c398bc5454f8b479c073786d1e3.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/ce727cfe-623a-40bd-ae95-ec914fa6f8d8.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-df565c398bc5454f8b479c073786d1e3.jpg",
-  "sizeMb": 5.5
+  "sizeMb": 5.5,
+  "durationSec": 17.8
  },
  {
   "filename": "video_1_e187625b60b942dda0589a9cf47c68f0.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/1b582d3c-a176-4bf0-92bc-88c1c210fa8a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-e187625b60b942dda0589a9cf47c68f0.jpg",
-  "sizeMb": 4.34
+  "sizeMb": 4.34,
+  "durationSec": 11.8
  },
  {
   "filename": "video_1_e931387bd1914b7a901cfbeeebbe3fe8.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/a396f029-788f-4452-8a20-1305d41aeb7c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-e931387bd1914b7a901cfbeeebbe3fe8.jpg",
-  "sizeMb": 2.58
+  "sizeMb": 2.58,
+  "durationSec": 7.0
  },
  {
   "filename": "video_1_f4d2bda36ee04ea7829b9be486c778b0.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b7702137-e604-4ccf-ba57-3eb45f4d421c.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-f4d2bda36ee04ea7829b9be486c778b0.jpg",
-  "sizeMb": 5.57
+  "sizeMb": 5.57,
+  "durationSec": 15.0
  },
  {
   "filename": "video_1_fec02fc8546345f88c1293f7d8a67524.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/e531dc5d-6b0f-4e4d-aca1-d77c19d4f1b8.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/video-1-fec02fc8546345f88c1293f7d8a67524.jpg",
-  "sizeMb": 5.59
+  "sizeMb": 5.59,
+  "durationSec": 14.7
  },
  {
   "filename": "Yaaaay! Mokipops new branded packaging 2026.mp4",
   "folder": "icloud-photos",
   "mediaUrl": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/519fb4fc-e64a-479b-9c26-49b5f5c9035a.mp4",
   "thumbnail": "assets/library/imported/video-thumbs/yaaaay-mokipops-new-branded-packaging-2026.jpg",
-  "sizeMb": 2.45
+  "sizeMb": 2.45,
+  "durationSec": 15.2
  }
 ]

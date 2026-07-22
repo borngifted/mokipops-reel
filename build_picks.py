@@ -39,6 +39,13 @@ BRAND = [
     ("youtube-thumbnail",  "YouTube Thumbnail"),
 ]
 
+# Archive videos already published on Facebook / Instagram (matched against the
+# 2026-07-21 Instagram export + assets/facebook) — kept out of the picker so the
+# client can't re-pick content that already ran.
+USED_ON_SOCIALS = {
+    "Yaaaay! Mokipops new branded packaging 2026.mp4",  # FB fb-921647757546415 + IG reel 18236106001309444
+}
+
 PRODUCT = [
     ("basil-lemonade",       "Basil Lemonade"),
     ("blackberry-lemonade",  "Blackberry Lemonade"),
@@ -51,6 +58,34 @@ PRODUCT = [
     ("rosy-raspberry",       "Rosy Raspberry"),
     ("watermelon-splasher",  "Watermelon Splasher"),
 ]
+
+
+def is_wordy(stem):
+    """True when a filename stem reads like a title (not a hex/UUID id)."""
+    letters = sum(c.isalpha() for c in stem)
+    return " " in stem and letters >= 6
+
+
+def build_video_items():
+    """Archive videos (iCloud library, hosted on Blotato) minus published ones."""
+    vids = json.load(open("assets/library/imported/external-videos.json"))
+    items = []
+    n = 0
+    for v in vids:
+        if v["filename"] in USED_ON_SOCIALS:
+            continue
+        n += 1
+        stem = v["filename"].rsplit(".", 1)[0]
+        label = stem if is_wordy(stem) else f"Clip {n:03d}"
+        if v.get("durationSec"):
+            secs = int(round(v["durationSec"]))
+            label += f" · {secs//60}:{secs%60:02d}" if secs >= 60 else f" · {secs}s"
+        items.append({
+            "id": f"vid-{stem[:40]}", "label": label, "section": "Video Library",
+            "thumb": v["thumbnail"],
+            "source": v.get("mediaUrl") or f"icloud-photos/{v['filename']}",
+        })
+    return items
 
 
 def build_items():
@@ -96,12 +131,13 @@ def render_section(title, eyebrow, items):
 
 
 def main():
-    items = build_items()
+    items = build_items() + build_video_items()
     data_json = json.dumps({it["id"]: {"label": it["label"], "section": it["section"], "source": it["source"]} for it in items})
 
     lifestyle = [i for i in items if i["section"] == "Lifestyle Photos"]
     brand = [i for i in items if i["section"] == "Brand Graphics"]
     product = [i for i in items if i["section"] == "Product Shots"]
+    videos = [i for i in items if i["section"] == "Video Library"]
 
     page = f'''<!doctype html>
 <html lang="en">
@@ -211,6 +247,7 @@ footer .fsmall {{ margin-top:14px; font-size:12px; color:#cdbba8; opacity:.85; }
   {render_section("Lifestyle Photos", "Real people · real pops", lifestyle)}
   {render_section("Brand Graphics", "Templated · ready to post", brand)}
   {render_section("Product Shots", "Every flavor", product)}
+  {render_section("Video Library", f"{len(videos)} archived clips · never posted", videos)}
 </div>
 
 <footer>
