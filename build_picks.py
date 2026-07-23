@@ -134,7 +134,11 @@ def render_section(title, eyebrow, items):
 
 def main():
     items = build_items() + build_video_items()
-    data_json = json.dumps({it["id"]: {"label": it["label"], "section": it["section"], "source": it["source"]} for it in items})
+    data_map = {it["id"]: {"label": it["label"], "section": it["section"], "source": it["source"]} for it in items}
+    data_json = json.dumps(data_map)
+    # Machine-readable copy for external consumers (Google Sheet sync, Blotato prep).
+    with open("picks-data.json", "w") as f:
+        json.dump(data_map, f, indent=1)
 
     lifestyle = [i for i in items if i["section"] == "Lifestyle Photos"]
     brand = [i for i in items if i["section"] == "Brand Graphics"]
