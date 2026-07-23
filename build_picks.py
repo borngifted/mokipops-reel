@@ -210,6 +210,9 @@ a {{ color:var(--chili); }}
   border-top:1px solid var(--hairline); }}
 .count {{ font-size:15px; font-weight:800; }}
 .count b {{ color:var(--chili); font-variant-numeric:tabular-nums; }}
+.syncstate {{ font-size:12px; font-weight:700; color:var(--sub); margin-left:8px; }}
+.syncstate.ok {{ color:#3e8e57; }}
+.syncstate.err {{ color:var(--chili); }}
 .actions {{ display:flex; gap:10px; }}
 .btn {{ font-family:inherit; font-size:14px; font-weight:800; border-radius:100px; padding:11px 20px;
   cursor:pointer; border:1.5px solid var(--hairline); background:var(--card); color:var(--ink); }}
@@ -247,9 +250,10 @@ footer .fsmall {{ margin-top:14px; font-size:12px; color:#cdbba8; opacity:.85; }
   <div class="hero">
     <span class="eyebrow">Content Picker</span>
     <h1>Pick your <span class="soft">posts.</span></h1>
-    <p class="lede">Tap every image you'd like us to schedule. When you're done, hit
-      <b>Email my picks</b> at the bottom — it opens a ready-to-send email back to us,
-      and we'll load them into the calendar.</p>
+    <p class="lede">Tap everything you'd like us to schedule — videos have a ▶ button so you
+      can watch before you pick. <b>Every tap saves automatically</b> and we see your
+      selections instantly; no need to send anything. (The email button is there as an
+      optional extra note.)</p>
     <div class="meta">
       <div>
         <label for="who">Your name</label>
@@ -274,9 +278,10 @@ footer .fsmall {{ margin-top:14px; font-size:12px; color:#cdbba8; opacity:.85; }
 </footer>
 
 <div class="bar">
-  <div class="count"><b id="n">0</b> selected</div>
+  <div class="count"><b id="n">0</b> selected <span id="syncstate" class="syncstate"></span></div>
   <div class="actions">
     <button class="btn" id="clear" type="button">Clear</button>
+    <button class="btn" id="copylist" type="button" title="Copy the picked items + source links">Copy list</button>
     <button class="btn primary" id="email" type="button" disabled>Email my picks</button>
   </div>
 </div>
@@ -311,10 +316,86 @@ function refresh() {{
   document.getElementById('n').textContent = sel.size;
   document.getElementById('email').disabled = sel.size === 0;
 }}
+/* ---- shared picks (Supabase) -------------------------------------------
+   Same backing store as calendar.html: picks are rows in the calendar_picks
+   table, so the studio sees the client's selections instantly — no email
+   needed. Picker ids (vid-/life-/brand-/prod-) can't collide with the
+   calendar's asset-ids; each page only reads ids it knows.                  */
+const SYNC = {{"supabaseUrl": "https://uhurulietrunmvwwxong.supabase.co", "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVodXJ1bGlldHJ1bm12d3d4b25nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNTYyNjMsImV4cCI6MjA5OTczMjI2M30.fzt0nbFnMA0dSo4FcfO-MqZQgjmkI8gjiLYa5uS4hRg", "table": "calendar_picks"}};
+const syncOn = () => Boolean(SYNC.supabaseUrl && SYNC.anonKey);
+const inFlight = new Set();
+let syncErr = null, synced = false;
+
+function sbFetch(qs, options) {{
+  const opts = options || {{}};
+  return fetch(SYNC.supabaseUrl + "/rest/v1/" + SYNC.table + (qs ? "?" + qs : ""), Object.assign({{}}, opts, {{
+    headers: Object.assign({{
+      apikey: SYNC.anonKey,
+      Authorization: "Bearer " + SYNC.anonKey,
+      "Content-Type": "application/json"
+    }}, opts.headers || {{}})
+  }}));
+}}
+
+function updateSyncStatus() {{
+  const el = document.getElementById('syncstate');
+  if (!syncOn()) {{ el.textContent = ''; return; }}
+  if (syncErr) {{ el.textContent = '· not saved — check connection'; el.className = 'syncstate err'; }}
+  else if (inFlight.size) {{ el.textContent = '· saving…'; el.className = 'syncstate'; }}
+  else if (synced) {{ el.textContent = '· saved to studio'; el.className = 'syncstate ok'; }}
+  else {{ el.textContent = ''; }}
+}}
+
+async function pullPicks() {{
+  if (!syncOn()) return;
+  try {{
+    const res = await sbFetch('select=item_id,picked_by,picked_at');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const rows = await res.json();
+    const remote = new Set();
+    for (const row of rows) if (DATA[row.item_id]) remote.add(row.item_id);
+    for (const id of sel) if (inFlight.has(id)) remote.add(id);
+    for (const id of inFlight) if (!sel.has(id)) remote.delete(id);
+    sel.clear();
+    remote.forEach(id => sel.add(id));
+    document.querySelectorAll('.pcard').forEach(c =>
+      c.setAttribute('aria-pressed', sel.has(c.dataset.id) ? 'true' : 'false'));
+    save(); refresh();
+    synced = true; syncErr = null;
+  }} catch (err) {{ syncErr = err.message; }}
+  updateSyncStatus();
+}}
+
+async function pushPick(id) {{
+  if (!syncOn()) return;
+  inFlight.add(id); updateSyncStatus();
+  try {{
+    const res = await sbFetch('', {{
+      method: 'POST',
+      headers: {{ Prefer: 'resolution=ignore-duplicates' }},
+      body: JSON.stringify([{{ item_id: id, picked_by: who.value.trim() || 'client' }}])
+    }});
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    synced = true; syncErr = null;
+  }} catch (err) {{ syncErr = err.message; }}
+  finally {{ inFlight.delete(id); updateSyncStatus(); }}
+}}
+
+async function dropPick(id) {{
+  if (!syncOn()) return;
+  inFlight.add(id); updateSyncStatus();
+  try {{
+    const res = await sbFetch('item_id=eq.' + encodeURIComponent(id), {{ method: 'DELETE' }});
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    synced = true; syncErr = null;
+  }} catch (err) {{ syncErr = err.message; }}
+  finally {{ inFlight.delete(id); updateSyncStatus(); }}
+}}
+
 function toggle(id) {{
   const card = document.querySelector('.pcard[data-id="' + CSS.escape(id) + '"]');
-  if (sel.has(id)) {{ sel.delete(id); card && card.setAttribute('aria-pressed','false'); }}
-  else {{ sel.add(id); card && card.setAttribute('aria-pressed','true'); }}
+  if (sel.has(id)) {{ sel.delete(id); card && card.setAttribute('aria-pressed','false'); dropPick(id); }}
+  else {{ sel.add(id); card && card.setAttribute('aria-pressed','true'); pushPick(id); }}
   save(); refresh();
 }}
 document.querySelectorAll('.pcard').forEach(card => {{
@@ -364,9 +445,26 @@ who.addEventListener('input', save);
 notes.addEventListener('input', save);
 
 document.getElementById('clear').addEventListener('click', () => {{
+  [...sel].forEach(id => dropPick(id));
   sel.clear();
   document.querySelectorAll('.pcard').forEach(c => c.setAttribute('aria-pressed','false'));
   save(); refresh();
+}});
+
+document.getElementById('copylist').addEventListener('click', async (e) => {{
+  let text = 'MOKIPOPS — Picked content (' + sel.size + ')\\n';
+  const groups = {{}};
+  [...sel].forEach(id => {{
+    const it = DATA[id]; if (!it) return;
+    (groups[it.section] = groups[it.section] || []).push(it);
+  }});
+  for (const section of Object.keys(groups)) {{
+    text += '\\n' + section + '\\n';
+    groups[section].forEach(it => {{ text += it.label + '\\n' + it.source + '\\n'; }});
+  }}
+  try {{ await navigator.clipboard.writeText(text); e.target.textContent = 'Copied ✓'; }}
+  catch {{ e.target.textContent = 'Copy failed'; }}
+  setTimeout(() => {{ e.target.textContent = 'Copy list'; }}, 1600);
 }});
 
 document.getElementById('email').addEventListener('click', () => {{
@@ -390,6 +488,25 @@ document.getElementById('email').addEventListener('click', () => {{
 }});
 
 refresh();
+
+/* Boot: lift any picks made before sync existed into the shared list once,
+   then let the shared list drive. Poll so studio and client stay in step. */
+(async () => {{
+  if (!syncOn()) return;
+  const localAtBoot = [...sel];
+  await pullPicks();
+  if (!localStorage.getItem(KEY + '-adopted')) {{
+    const orphans = localAtBoot.filter(id => DATA[id] && !sel.has(id));
+    for (const id of orphans) {{ sel.add(id); await pushPick(id); }}
+    if (orphans.length) {{
+      document.querySelectorAll('.pcard').forEach(c =>
+        c.setAttribute('aria-pressed', sel.has(c.dataset.id) ? 'true' : 'false'));
+      save(); refresh();
+    }}
+    localStorage.setItem(KEY + '-adopted', '1');
+  }}
+  setInterval(() => {{ if (!document.hidden && !inFlight.size) pullPicks(); }}, 15000);
+}})();
 </script>
 </body>
 </html>'''
