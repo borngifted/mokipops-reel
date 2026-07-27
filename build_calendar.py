@@ -459,6 +459,7 @@ h1 {{ font-size:clamp(34px,7vw,62px); line-height:1.02; font-weight:900; }}
     <a href="index.html">Reel</a>
     <a href="picks.html">Quick Picks</a>
     <a href="status.html">Posting Status</a>
+    <a href="calls.html">Call List</a>
   </nav>
 </div>
 

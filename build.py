@@ -205,7 +205,7 @@ footer .fsmall {{ margin-top:22px; font-size:12px; color:#cdbba8; opacity:.85; }
 
 <div class="topbar"><div class="wrap">
   <span class="wordmark">{site["wordmark_top"]}<em>{site["wordmark_accent"]}</em></span>
-  <span class="topnav"><a href="https://www.faire.com/apply/r/gf4mdp8kxd" target="_blank" rel="noopener">Wholesale &middot; Faire</a><a href="calendar.html">Content Calendar</a><a href="picks.html">Quick Picks</a><a href="status.html">Posting Status</a><span class="topmeta">Updated {updated}</span></span>
+  <span class="topnav"><a href="https://www.faire.com/apply/r/gf4mdp8kxd" target="_blank" rel="noopener">Wholesale &middot; Faire</a><a href="calendar.html">Content Calendar</a><a href="picks.html">Quick Picks</a><a href="status.html">Posting Status</a><a href="calls.html">Call List</a><span class="topmeta">Updated {updated}</span></span>
 </div></div>
 
 <header class="hero wrap">
