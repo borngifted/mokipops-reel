@@ -99,11 +99,12 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
   <header class="hero">
     <span class="eyebrow">Sales Outreach</span>
     <h1>Call <span class="soft">List</span></h1>
-    <p class="lede">Every store contact with <b>no email on file</b> — the only way to reach them is by phone.
-    Work the list top-down: numbers first. Mark each call so nobody gets dialed twice.</p>
+    <p class="lede">Two lists in one: every <b>HubSpot contact</b> (with email, phone &amp; company), plus store customers with <b>no email on file</b>.
+    Work numbers first — opportunities on top. Mark each call so nobody gets dialed twice.</p>
     <div class="stats">
       <div class="stat"><b id="stTotal">–</b><span>Contacts</span></div>
       <div class="stat"><b id="stPhone">–</b><span>Have a number</span></div>
+      <div class="stat"><b id="stOpp">–</b><span>Opportunities</span></div>
       <div class="stat"><b id="stCalled">–</b><span>Called</span></div>
       <div class="stat"><b id="stLeft">–</b><span>To call</span></div>
     </div>
@@ -157,8 +158,11 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
   </section>
 
   <div class="controls">
-    <input type="search" id="q" placeholder="Search name, city, note…">
+    <input type="search" id="q" placeholder="Search name, company, email, city, note…">
     <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="hubspot">HubSpot</button>
+    <button class="chip" data-f="shopify">No-email (store)</button>
+    <button class="chip" data-f="opp">Opportunities</button>
     <button class="chip" data-f="phone">Has number</button>
     <button class="chip" data-f="tocall">To call</button>
     <button class="chip" data-f="called">Called</button>
@@ -168,12 +172,12 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
 
   <div class="tablewrap"><table id="tbl">
     <thead><tr>
-      <th>Status</th><th>Name</th><th>Phone</th><th class="hidesm">City</th><th class="hidesm">History</th><th>Call notes</th><th>Actions</th>
+      <th>Status</th><th>Name</th><th>Phone</th><th class="hidesm">Company</th><th class="hidesm">Email</th><th class="hidesm">City</th><th>Call notes</th><th>Actions</th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table></div>
 
-  <p class="footer">Data: Shopify customers with no email (synced check vs HubSpot, July 27 2026). Call status saves in this browser and to the shared log when exported. Rebuild data: see the <code>mokipops-call-list</code> skill.</p>
+  <p class="footer">Data: all 629 HubSpot contacts + 73 store customers with no email (July 27 2026). Call status saves in this browser and to the shared log when exported. For HubSpot contacts, also log the call on the record (link on each row). Rebuild data: see the <code>mokipops-call-list</code> skill.</p>
 </main>
 
 <dialog id="dlg">
@@ -191,6 +195,7 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
 <script>
 const LS_KEY = 'moki-calls-v1';
 const ADMIN = 'https://admin.shopify.com/store/547ac9-2/customers/';
+const HS = 'https://app.hubspot.com/contacts/51058060/record/0-1/';
 let DATA = [], LOG = {}, SHARED = {}, filter = 'all', query = '';
 
 function loadLocal(){ try { LOG = JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch(e){ LOG = {}; } }
@@ -199,8 +204,13 @@ function state(id){ return LOG[id] || SHARED[id] || null; }
 
 async function boot(){
   loadLocal();
-  const d = await fetch('calls-data.json').then(r=>r.json());
-  DATA = d.contacts.map(c => ({id:c[0], name:c[1], phone:c[2], city:c[3], orders:c[4], spent:c[5], tags:c[6]}));
+  const [shop, hub] = await Promise.all([
+    fetch('calls-data.json').then(r=>r.json()),
+    fetch('calls-hubspot.json').then(r=>r.ok?r.json():{contacts:[]}).catch(()=>({contacts:[]}))
+  ]);
+  const shopRows = shop.contacts.map(c => ({src:'shopify', id:c[0], name:c[1], phone:c[2], email:'', company:'', city:c[3], orders:c[4], spent:c[5], tags:c[6], lifecycle:''}));
+  const hubRows = hub.contacts.map(c => ({src:'hubspot', id:c[0], name:c[1]||c[2], email:c[2], phone:c[3], company:c[4], city:c[5], lifecycle:c[6], orders:0, spent:'0.00', tags:''}));
+  DATA = [...hubRows, ...shopRows];
   try { SHARED = await fetch('calls-log.json', {cache:'no-store'}).then(r=>r.ok?r.json():{}); } catch(e){ SHARED = {}; }
   render();
 }
@@ -216,30 +226,36 @@ function render(){
     if (filter==='phone' && !c.phone) return;
     if (filter==='called' && !called) return;
     if (filter==='tocall' && (called || !c.phone)) return;
-    const hay = (c.name+' '+c.city+' '+c.tags+' '+(st?st.note+' '+st.by:'' )).toLowerCase();
+    if (filter==='hubspot' && c.src!=='hubspot') return;
+    if (filter==='shopify' && c.src!=='shopify') return;
+    if (filter==='opp' && c.lifecycle!=='opportunity') return;
+    const hay = (c.name+' '+c.email+' '+c.company+' '+c.city+' '+c.tags+' '+(st?st.note+' '+st.by:'' )).toLowerCase();
     if (q && !hay.includes(q)) return;
     shown++;
     const tr = document.createElement('tr');
     if (called) tr.className = 'done';
     const noteHtml = st ? `<div class="callnote">${esc(st.note||'')}<br><span class="meta">${esc(st.by||'')} · ${st.at ? new Date(st.at).toLocaleDateString() : ''}</span></div>` : '<span class="meta">—</span>';
+    const sub = [c.lifecycle==='opportunity' ? '⭐ opportunity' : '', c.tags, c.orders>0 ? `${c.orders} order · $${c.spent}` : ''].filter(Boolean).join(' · ');
+    const recLink = c.src==='hubspot' ? `<a class="mini" href="${HS}${c.id}" target="_blank" rel="noopener">HubSpot</a>` : `<a class="mini" href="${ADMIN}${c.id}" target="_blank" rel="noopener">Shopify</a>`;
     tr.innerHTML = `
       <td>${called ? '<span class="pill called">Called</span>' : '<span class="pill new">New</span>'}</td>
-      <td><span class="name">${esc(c.name)}</span>${c.tags ? `<div class="meta">${esc(c.tags)}</div>`:''}</td>
-      <td class="phone">${c.phone ? `<a href="tel:${c.phone}">${fmtPhone(c.phone)}</a>` : '<span class="nophone">no number — look up</span>'}</td>
+      <td><span class="name">${esc(c.name||'—')}</span>${sub ? `<div class="meta">${esc(sub)}</div>`:''}</td>
+      <td class="phone">${c.phone ? `<a href="tel:${c.phone}">${fmtPhone(c.phone)}</a>` : '<span class="nophone">no number</span>'}</td>
+      <td class="hidesm">${esc(c.company||'—')}</td>
+      <td class="hidesm meta">${c.email ? `<a href="mailto:${c.email}" style="color:var(--sub)">${esc(c.email)}</a>` : '—'}</td>
       <td class="hidesm">${esc(c.city||'—')}</td>
-      <td class="hidesm meta">${c.orders>0 ? `${c.orders} order · $${c.spent}` : 'no orders'}</td>
       <td>${noteHtml}</td>
       <td><div class="rowbtns">
         ${called ? `<button class="mini" onclick="unmark(${c.id})">Undo</button>` : `<button class="mini green" onclick="mark(${c.id})">Mark called</button>`}
-        <a class="mini" href="${ADMIN}${c.id}" target="_blank" rel="noopener">Shopify</a>
+        ${recLink}
       </div></td>`;
     rows.appendChild(tr);
   });
-  if (!shown) rows.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--sub)">Nothing matches.</td></tr>';
+  if (!shown) rows.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--sub)">Nothing matches.</td></tr>';
   const calledCt = DATA.filter(c => state(c.id) && state(c.id).called).length;
-  const phoneCt = DATA.filter(c => c.phone).length;
   document.getElementById('stTotal').textContent = DATA.length;
-  document.getElementById('stPhone').textContent = phoneCt;
+  document.getElementById('stPhone').textContent = DATA.filter(c => c.phone).length;
+  document.getElementById('stOpp').textContent = DATA.filter(c => c.lifecycle==='opportunity').length;
   document.getElementById('stCalled').textContent = calledCt;
   document.getElementById('stLeft').textContent = DATA.filter(c => c.phone && !(state(c.id)&&state(c.id).called)).length;
 }
