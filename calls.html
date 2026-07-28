@@ -100,7 +100,7 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
   <header class="hero">
     <span class="eyebrow">Sales Outreach</span>
     <h1>Call <span class="soft">List</span></h1>
-    <p class="lede">Two lists in one: every <b>HubSpot contact</b> (with email, phone &amp; company), plus store customers with <b>no email on file</b>.
+    <p class="lede">Three lists in one: <b>708 retail prospect locations</b> (via P10 Foods), every <b>HubSpot contact</b>, and store customers with <b>no email on file</b>.
     Work numbers first — opportunities on top. Mark each call so nobody gets dialed twice.</p>
     <div class="stats">
       <div class="stat"><b id="stTotal">–</b><span>Contacts</span></div>
@@ -163,6 +163,7 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
     <button class="chip on" data-f="all">All</button>
     <button class="chip" data-f="hubspot">HubSpot</button>
     <button class="chip" data-f="shopify">No-email (store)</button>
+    <button class="chip" data-f="prospects">Retail prospects</button>
     <button class="chip" data-f="opp">Opportunities</button>
     <button class="chip" data-f="phone">Has number</button>
     <button class="chip" data-f="tocall">To call</button>
@@ -205,13 +206,15 @@ function state(id){ return LOG[id] || SHARED[id] || null; }
 
 async function boot(){
   loadLocal();
-  const [shop, hub] = await Promise.all([
+  const [shop, hub, pros] = await Promise.all([
     fetch('calls-data.json').then(r=>r.json()),
-    fetch('calls-hubspot.json').then(r=>r.ok?r.json():{contacts:[]}).catch(()=>({contacts:[]}))
+    fetch('calls-hubspot.json').then(r=>r.ok?r.json():{contacts:[]}).catch(()=>({contacts:[]})),
+    fetch('calls-prospects.json').then(r=>r.ok?r.json():{contacts:[]}).catch(()=>({contacts:[]}))
   ]);
   const shopRows = shop.contacts.map(c => ({src:'shopify', id:c[0], name:c[1], phone:c[2], email:'', company:'', city:c[3], orders:c[4], spent:c[5], tags:c[6], lifecycle:''}));
   const hubRows = hub.contacts.map(c => ({src:'hubspot', id:c[0], name:c[1]||c[2], email:c[2], phone:c[3], company:c[4], city:c[5], lifecycle:c[6], orders:0, spent:'0.00', tags:''}));
-  DATA = [...hubRows, ...shopRows];
+  const prosRows = pros.contacts.map(c => ({src:'prospect', id:c[0], name:c[1], phone:c[2], company:c[3], city:c[4], tags:c[5], email:'', orders:0, spent:'0.00', lifecycle:''}));
+  DATA = [...prosRows, ...hubRows, ...shopRows];
   try { SHARED = await fetch('calls-log.json', {cache:'no-store'}).then(r=>r.ok?r.json():{}); } catch(e){ SHARED = {}; }
   render();
 }
@@ -229,6 +232,7 @@ function render(){
     if (filter==='tocall' && (called || !c.phone)) return;
     if (filter==='hubspot' && c.src!=='hubspot') return;
     if (filter==='shopify' && c.src!=='shopify') return;
+    if (filter==='prospects' && c.src!=='prospect') return;
     if (filter==='opp' && c.lifecycle!=='opportunity') return;
     const hay = (c.name+' '+c.email+' '+c.company+' '+c.city+' '+c.tags+' '+(st?st.note+' '+st.by:'' )).toLowerCase();
     if (q && !hay.includes(q)) return;
@@ -237,7 +241,7 @@ function render(){
     if (called) tr.className = 'done';
     const noteHtml = st ? `<div class="callnote">${esc(st.note||'')}<br><span class="meta">${esc(st.by||'')} · ${st.at ? new Date(st.at).toLocaleDateString() : ''}</span></div>` : '<span class="meta">—</span>';
     const sub = [c.lifecycle==='opportunity' ? '⭐ opportunity' : '', c.tags, c.orders>0 ? `${c.orders} order · $${c.spent}` : ''].filter(Boolean).join(' · ');
-    const recLink = c.src==='hubspot' ? `<a class="mini" href="${HS}${c.id}" target="_blank" rel="noopener">HubSpot</a>` : `<a class="mini" href="${ADMIN}${c.id}" target="_blank" rel="noopener">Shopify</a>`;
+    const recLink = c.src==='hubspot' ? `<a class="mini" href="${HS}${c.id}" target="_blank" rel="noopener">HubSpot</a>` : c.src==='prospect' ? `<a class="mini" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.name+' '+c.tags+' '+c.city)}" target="_blank" rel="noopener">Map</a>` : `<a class="mini" href="${ADMIN}${c.id}" target="_blank" rel="noopener">Shopify</a>`;
     tr.innerHTML = `
       <td>${called ? '<span class="pill called">Called</span>' : '<span class="pill new">New</span>'}</td>
       <td><span class="name">${esc(c.name||'—')}</span>${sub ? `<div class="meta">${esc(sub)}</div>`:''}</td>
