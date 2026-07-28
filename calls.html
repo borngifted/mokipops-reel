@@ -256,7 +256,7 @@ function render(){
     tr.innerHTML = `
       <td>${called ? '<span class="pill called">Called</span>' : '<span class="pill new">New</span>'}</td>
       <td><span class="name">${esc(c.name||'—')}</span>${sub ? `<div class="meta">${esc(sub)}</div>`:''}</td>
-      <td class="phone">${c.phone ? `<a href="tel:${c.phone}">${fmtPhone(c.phone)}</a>` : '<span class="nophone">no number</span>'}</td>
+      <td class="phone">${c.phone ? `<a href="tel:${c.phone}">${fmtPhone(c.phone)}</a>` : `<span class="nophone">${c.src==='crm' ? 'no number — use portal' : 'no number'}</span>`}</td>
       <td class="hidesm">${esc(c.company||'—')}</td>
       <td class="hidesm meta">${c.email ? `<a href="mailto:${c.email}" style="color:var(--sub)">${esc(c.email)}</a>` : '—'}</td>
       <td class="hidesm">${esc(c.city||'—')}</td>
