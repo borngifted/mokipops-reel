@@ -59,6 +59,7 @@ tr.done .name { text-decoration:line-through; }
 .pill { display:inline-block; font-size:11px; font-weight:800; border-radius:100px; padding:3px 10px; white-space:nowrap; }
 .pill.new { background:rgba(245,166,35,.18); color:var(--orange); }
 .pill.called { background:rgba(79,182,105,.18); color:var(--leaf); }
+.pill.cust { background:rgba(226,58,35,.14); color:var(--chili); }
 .callnote { font-size:12.5px; color:var(--sub); margin-top:4px; max-width:260px; }
 .rowbtns { display:flex; gap:6px; flex-wrap:wrap; }
 .mini { font-size:11.5px; font-weight:800; padding:5px 10px; border-radius:8px; border:1px solid var(--hairline); background:var(--bg); color:var(--ink); cursor:pointer; white-space:nowrap; }
@@ -100,12 +101,13 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
   <header class="hero">
     <span class="eyebrow">Sales Outreach</span>
     <h1>Call <span class="soft">List</span></h1>
-    <p class="lede">Three lists in one: <b>708 retail prospect locations</b> (via P10 Foods), every <b>HubSpot contact</b>, and store customers with <b>no email on file</b>.
+    <p class="lede">Every prospect and customer in one place — retail CRM targets, 708 store locations, HubSpot contacts, and store customers. <b>★ Customer</b> marks anyone who has already bought. Log every call: outcome, contact, email, follow-up.
     Work numbers first — opportunities on top. Mark each call so nobody gets dialed twice.</p>
     <div class="stats">
       <div class="stat"><b id="stTotal">–</b><span>Contacts</span></div>
       <div class="stat"><b id="stPhone">–</b><span>Have a number</span></div>
       <div class="stat"><b id="stOpp">–</b><span>Opportunities</span></div>
+      <div class="stat"><b id="stCust">–</b><span>★ Customers</span></div>
       <div class="stat"><b id="stCalled">–</b><span>Called</span></div>
       <div class="stat"><b id="stLeft">–</b><span>To call</span></div>
     </div>
@@ -165,6 +167,8 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
     <button class="chip" data-f="shopify">No-email (store)</button>
     <button class="chip" data-f="prospects">Retail prospects</button>
     <button class="chip" data-f="crm">Retail CRM</button>
+    <button class="chip" data-f="customers">★ Existing customers</button>
+    <button class="chip" data-f="new">Not yet customers</button>
     <select id="segSel" style="font:inherit;font-size:12.5px;font-weight:800;padding:8px 12px;border-radius:100px;border:1px solid var(--hairline);background:var(--card);color:var(--sub);max-width:260px">
       <option value="">All categories</option>
     </select>
@@ -187,11 +191,32 @@ dialog .drow { display:flex; gap:10px; justify-content:flex-end; margin-top:16px
 </main>
 
 <dialog id="dlg">
-  <h3 style="font-size:18px">Mark called — <span id="dlgName"></span></h3>
+  <h3 style="font-size:18px">Log call — <span id="dlgName"></span></h3>
   <label>Agent name / initials</label>
   <input id="dlgAgent" placeholder="e.g. TJ">
-  <label>Note (outcome, email captured, follow-up)</label>
-  <textarea id="dlgNote" rows="3" placeholder="e.g. Ordered 1 case · email: name@x.com · follow up Fri"></textarea>
+  <label>Outcome</label>
+  <select id="dlgOutcome" style="width:100%;padding:9px 12px;border-radius:10px;border:1px solid var(--hairline);background:var(--bg);color:var(--ink);font:inherit;font-size:14px">
+    <option value="">— select —</option>
+    <option>Interested — send info</option>
+    <option>Ordered / placed order</option>
+    <option>Callback scheduled</option>
+    <option>Left voicemail</option>
+    <option>No answer</option>
+    <option>Wrong number</option>
+    <option>Not interested</option>
+    <option>Do not call</option>
+  </select>
+  <label>Contact name at company</label>
+  <input id="dlgContact" placeholder="Who you spoke with">
+  <label>Email captured</label>
+  <input id="dlgEmail" type="email" placeholder="name@company.com">
+  <label>Better phone number</label>
+  <input id="dlgPhone" placeholder="(404) 555-0123">
+  <label>Follow-up date</label>
+  <input id="dlgFollow" type="date">
+  <label>Notes</label>
+  <textarea id="dlgNote" rows="3" placeholder="What was said, what they need, next step…"></textarea>
+  <label style="display:flex;align-items:center;gap:8px;margin-top:14px"><input type="checkbox" id="dlgCust" style="width:auto"> Mark as an existing customer (they've bought)</label>
   <div class="drow">
     <button class="btn" id="dlgCancel">Cancel</button>
     <button class="btn primary" id="dlgSave">Save</button>
@@ -210,12 +235,14 @@ function state(id){ return LOG[id] || SHARED[id] || null; }
 
 async function boot(){
   loadLocal();
-  const [shop, hub, pros, crm] = await Promise.all([
+  const [shop, hub, pros, crm, cust] = await Promise.all([
     fetch('calls-data.json').then(r=>r.json()),
     fetch('calls-hubspot.json').then(r=>r.ok?r.json():{contacts:[]}).catch(()=>({contacts:[]})),
     fetch('calls-prospects.json').then(r=>r.ok?r.json():{contacts:[]}).catch(()=>({contacts:[]})),
-    fetch('calls-retailcrm.json').then(r=>r.ok?r.json():{contacts:[],segments:[]}).catch(()=>({contacts:[],segments:[]}))
+    fetch('calls-retailcrm.json').then(r=>r.ok?r.json():{contacts:[],segments:[]}).catch(()=>({contacts:[],segments:[]})),
+    fetch('calls-customers.json').then(r=>r.ok?r.json():{emails:[]}).catch(()=>({emails:[]}))
   ]);
+  const CUST = new Set((cust.emails||[]).map(e=>e.toLowerCase()));
   const crmRows = crm.contacts.map(c => ({src:'crm', id:c[0], name:c[1], phone:c[2], company:c[3], segment:c[3], city:c[4], tags:c[5], url:c[6], email:'', orders:0, spent:'0.00', lifecycle:''}));
   const sel = document.getElementById('segSel');
   (crm.segments||[]).forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; sel.appendChild(o); });
@@ -224,6 +251,7 @@ async function boot(){
   const hubRows = hub.contacts.map(c => ({src:'hubspot', id:c[0], name:c[1]||c[2], email:c[2], phone:c[3], company:c[4], city:c[5], lifecycle:c[6], orders:0, spent:'0.00', tags:''}));
   const prosRows = pros.contacts.map(c => ({src:'prospect', id:c[0], name:c[1], phone:c[2], company:c[3], city:c[4], tags:c[5], email:'', orders:0, spent:'0.00', lifecycle:''}));
   DATA = [...crmRows, ...prosRows, ...hubRows, ...shopRows];
+  DATA.forEach(c => { c.customer = (c.email && CUST.has(c.email.toLowerCase())) || c.orders > 0 || c.lifecycle === 'customer'; });
   try { SHARED = await fetch('calls-log.json', {cache:'no-store'}).then(r=>r.ok?r.json():{}); } catch(e){ SHARED = {}; }
   render();
 }
@@ -243,6 +271,8 @@ function render(){
     if (filter==='shopify' && c.src!=='shopify') return;
     if (filter==='prospects' && c.src!=='prospect') return;
     if (filter==='crm' && c.src!=='crm') return;
+    if (filter==='customers' && !c.customer) return;
+    if (filter==='new' && c.customer) return;
     if (segFilter && c.segment!==segFilter) return;
     if (filter==='opp' && c.lifecycle!=='opportunity') return;
     const hay = (c.name+' '+c.email+' '+c.company+' '+c.city+' '+c.tags+' '+(st?st.note+' '+st.by:'' )).toLowerCase();
@@ -250,19 +280,19 @@ function render(){
     shown++;
     const tr = document.createElement('tr');
     if (called) tr.className = 'done';
-    const noteHtml = st ? `<div class="callnote">${esc(st.note||'')}<br><span class="meta">${esc(st.by||'')} · ${st.at ? new Date(st.at).toLocaleDateString() : ''}</span></div>` : '<span class="meta">—</span>';
+    const noteHtml = st ? `<div class="callnote">${st.outcome?`<b style="color:var(--orange)">${esc(st.outcome)}</b><br>`:''}${st.contact?`Spoke with ${esc(st.contact)}<br>`:''}${esc(st.note||'')}${st.follow?`<br><b>Follow up: ${esc(st.follow)}</b>`:''}<br><span class="meta">${esc(st.by||'')} · ${st.at ? new Date(st.at).toLocaleDateString() : ''}</span></div>` : '<span class="meta">—</span>';
     const sub = [c.lifecycle==='opportunity' ? '⭐ opportunity' : '', c.tags, c.orders>0 ? `${c.orders} order · $${c.spent}` : ''].filter(Boolean).join(' · ');
     const recLink = c.src==='hubspot' ? `<a class="mini" href="${HS}${c.id}" target="_blank" rel="noopener">HubSpot</a>` : c.src==='prospect' ? `<a class="mini" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.name+' '+c.tags+' '+c.city)}" target="_blank" rel="noopener">Map</a>` : c.src==='crm' ? `<a class="mini" href="${c.url || 'https://www.google.com/search?q='+encodeURIComponent(c.name)}" target="_blank" rel="noopener">Site</a>` : `<a class="mini" href="${ADMIN}${c.id}" target="_blank" rel="noopener">Shopify</a>`;
     tr.innerHTML = `
-      <td>${called ? '<span class="pill called">Called</span>' : '<span class="pill new">New</span>'}</td>
+      <td>${called ? '<span class="pill called">Called</span>' : '<span class="pill new">New</span>'}${c.customer ? '<div style="margin-top:4px"><span class="pill cust">★ Customer</span></div>' : ''}</td>
       <td><span class="name">${esc(c.name||'—')}</span>${sub ? `<div class="meta">${esc(sub)}</div>`:''}</td>
-      <td class="phone">${c.phone ? `<a href="tel:${c.phone}">${fmtPhone(c.phone)}</a>` : `<span class="nophone">${c.src==='crm' ? 'no number — use portal' : 'no number'}</span>`}</td>
+      <td class="phone">${(st&&st.phone) || c.phone ? `<a href="tel:${(st&&st.phone)||c.phone}">${fmtPhone((st&&st.phone)||c.phone)}</a>${st&&st.phone?'<div class="meta">added by agent</div>':''}` : `<span class="nophone">${c.src==='crm' ? 'no number — use portal' : 'no number'}</span>`}</td>
       <td class="hidesm">${esc(c.company||'—')}</td>
-      <td class="hidesm meta">${c.email ? `<a href="mailto:${c.email}" style="color:var(--sub)">${esc(c.email)}</a>` : '—'}</td>
+      <td class="hidesm meta">${(st&&st.email) || c.email ? `<a href="mailto:${(st&&st.email)||c.email}" style="color:var(--sub)">${esc((st&&st.email)||c.email)}</a>${st&&st.email?'<div class="meta">added by agent</div>':''}` : '—'}</td>
       <td class="hidesm">${esc(c.city||'—')}</td>
       <td>${noteHtml}</td>
       <td><div class="rowbtns">
-        ${called ? `<button class="mini" onclick="unmark(${c.id})">Undo</button>` : `<button class="mini green" onclick="mark(${c.id})">Mark called</button>`}
+        ${called ? `<button class="mini" onclick="mark(${c.id})">Edit</button><button class="mini" onclick="unmark(${c.id})">Undo</button>` : `<button class="mini green" onclick="mark(${c.id})">Log call</button>`}
         ${recLink}
       </div></td>`;
     rows.appendChild(tr);
@@ -272,6 +302,7 @@ function render(){
   document.getElementById('stTotal').textContent = DATA.length;
   document.getElementById('stPhone').textContent = DATA.filter(c => c.phone).length;
   document.getElementById('stOpp').textContent = DATA.filter(c => c.lifecycle==='opportunity').length;
+  document.getElementById('stCust').textContent = DATA.filter(c => c.customer).length;
   document.getElementById('stCalled').textContent = calledCt;
   document.getElementById('stLeft').textContent = DATA.filter(c => c.phone && !(state(c.id)&&state(c.id).called)).length;
 }
@@ -282,18 +313,27 @@ function fmtPhone(p){ const m = String(p).replace(/\D/g,'').match(/^1?(\d{3})(\d
 let dlgId = null;
 function mark(id){
   dlgId = id;
-  const c = DATA.find(x=>x.id===id);
+  const c = DATA.find(x=>x.id===id), st = state(id) || {};
   document.getElementById('dlgName').textContent = c.name;
-  document.getElementById('dlgAgent').value = localStorage.getItem('moki-agent') || '';
-  document.getElementById('dlgNote').value = '';
+  document.getElementById('dlgAgent').value = st.by || localStorage.getItem('moki-agent') || '';
+  document.getElementById('dlgOutcome').value = st.outcome || '';
+  document.getElementById('dlgContact').value = st.contact || '';
+  document.getElementById('dlgEmail').value = st.email || '';
+  document.getElementById('dlgPhone').value = st.phone || '';
+  document.getElementById('dlgFollow').value = st.follow || '';
+  document.getElementById('dlgNote').value = st.note || '';
+  document.getElementById('dlgCust').checked = !!(st.customer ?? c.customer);
   document.getElementById('dlg').showModal();
 }
 function unmark(id){ delete LOG[id]; if (SHARED[id]) SHARED[id] = {...SHARED[id], called:false}; saveLocal(); render(); }
 document.getElementById('dlgSave').onclick = () => {
-  const by = document.getElementById('dlgAgent').value.trim();
-  const note = document.getElementById('dlgNote').value.trim();
+  const v = id => document.getElementById(id).value.trim();
+  const by = v('dlgAgent');
   if (by) localStorage.setItem('moki-agent', by);
-  LOG[dlgId] = {called:true, by, note, at:new Date().toISOString()};
+  const cust = document.getElementById('dlgCust').checked;
+  LOG[dlgId] = {called:true, by, outcome:v('dlgOutcome'), contact:v('dlgContact'), email:v('dlgEmail'),
+                phone:v('dlgPhone'), follow:v('dlgFollow'), note:v('dlgNote'), customer:cust, at:new Date().toISOString()};
+  const row = DATA.find(x=>x.id===dlgId); if (row) row.customer = cust;
   saveLocal(); document.getElementById('dlg').close(); render();
 };
 document.getElementById('dlgCancel').onclick = () => document.getElementById('dlg').close();
