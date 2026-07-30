@@ -1,1213 +1,601 @@
 {
 "generated": "2026-07-29",
-"note": "Business phone research queue. Public corporate/store numbers only \u2014 never research private individuals.",
-"batch_size": 25,
+"note": "Public business numbers only \u2014 never research private individuals.",
 "crm_remaining": [
 [
-900100008,
-"Ahold Delhaize USA",
-"https://www.aholddelhaize.com/en/contact/",
-"Mass / National Grocery & Club"
-],
-[
-900100015,
-"Aldi US",
-"https://corporate.aldi.us/en/suppliers/",
-"Mass / National Grocery & Club"
+900100115,
+"KeHE Distributors",
+"https://www.kehe.com/suppliers/"
 ],
 [
 900100117,
 "Associated Wholesale Grocers",
-"https://awginc.com/products/vendor-partners/",
-"Distributor / Wholesale Gateway"
+"https://awginc.com/products/vendor-partners/"
 ],
 [
-900100115,
-"KeHE Distributors",
-"https://www.kehe.com/suppliers/",
-"Distributor / Wholesale Gateway"
+900100008,
+"Ahold Delhaize USA",
+"https://www.aholddelhaize.com/en/contact/"
 ],
 [
-900100075,
-"99 Ranch Market",
-"https://www.99ranch.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100140,
-"ASM Global",
-"https://www.asmglobal.com/contact",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100129,
-"Ace Endico",
-"https://www.aceendico.com/contact-us",
-"Distributor / Wholesale Gateway"
-],
-[
-900100099,
-"Allsup's",
-"https://allsups.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100168,
-"Alon's Bakery & Market",
-"https://alons.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100135,
-"Aramark Collegiate Hospitality",
-"https://www.aramark.com/contact-us",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100151,
-"Arthur M. Blank Sports + Entertainment",
-"https://www.ambse.com/contact/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100152,
-"Atlanta Braves / Truist Park",
-"https://www.mlb.com/braves/official-information/contact",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100158,
-"Atlanta State Farmers Market Retailers",
-"https://agr.georgia.gov/atlanta-state-farmers-market",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100153,
-"Atlanta United FC",
-"https://www.atlutd.com/club/contact-us",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100068,
-"Balducci's",
-"https://www.balduccis.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100053,
-"Bashas'",
-"https://www.bashas.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100175,
-"Berkeley Bowl",
-"https://www.berkeleybowl.com/contact-us",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100173,
-"Bi-Rite Market",
-"https://biritemarket.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100119,
-"Bozzuto's",
-"https://bozzutos.com/contact-us/",
-"Distributor / Wholesale Gateway"
-],
-[
-900100057,
-"Bristol Farms",
-"https://www.bristolfarms.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100036,
-"Brookshire Brothers",
-"https://www.brookshirebrothers.com/contact",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100035,
-"Brookshire Grocery Company",
-"https://www.brookshires.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100105,
-"Buc-ee's",
-"https://buc-ees.com/contact/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100160,
-"Buford Highway Farmers Market",
-"https://www.aofwc.com/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100112,
-"CEFCO Convenience Stores",
-"https://www.cefcostores.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100162,
-"Candler Park Market",
-"https://candlerparkmarket.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100039,
-"Cardenas Markets",
-"https://www.cardenasmarkets.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100143,
-"Centerplate / Sodexo Live!",
-"https://www.sodexolive.com/contact",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100178,
-"Central Market",
-"https://www.centralmarket.com/contact-us",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100130,
-"Chef's Warehouse",
-"https://www.chefswarehouse.com/contact-us/",
-"Distributor / Wholesale Gateway"
-],
-[
-900100052,
-"City Market",
-"https://www.citymarket.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100078,
-"Coborn's",
-"https://www.coborns.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100137,
-"Compass Group / Chartwells Higher Ed",
-"https://www.compass-usa.com/contact/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100107,
-"Cumberland Farms",
-"https://www.cumberlandfarms.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100198,
-"Daily Groceries Co-op",
-"https://www.dailygroceries.org/contact-us",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100186,
-"Dawson's Market",
-"https://dawsonsmarket.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100201,
-"Deep Roots Market",
-"https://www.deeprootsmarket.com/contact-us",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100139,
-"Delaware North Sportservice",
-"https://www.delawarenorth.com/contact-us",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100171,
-"Di Bruno Bros.",
-"https://dibruno.com/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100029,
-"Dierbergs",
-"https://www.dierbergs.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100126,
-"Dot Foods",
-"https://www.dotfoods.com/contact-us",
-"Distributor / Wholesale Gateway"
-],
-[
-900100092,
-"EG America",
-"https://www.eg-america.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100061,
-"Earth Fare",
-"https://www.earthfare.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100122,
-"Eby-Brown / Performance Food Group",
-"https://www.pfgc.com/contact-us/",
-"Distributor / Wholesale Gateway"
-],
-[
-900100073,
-"El Super",
-"https://elsupermarkets.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100113,
-"Enmarket",
-"https://enmarket.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100176,
-"Erewhon Market",
-"https://erewhon.com/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100199,
-"Ever'man Cooperative Grocery",
-"https://www.everman.org/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100156,
-"FMI Member Retailers",
-"https://www.fmi.org/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100066,
-"Fairway Market",
-"https://www.fairwaymarket.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100038,
-"Fiesta Mart",
-"https://www.fiestamart.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100071,
-"Food 4 Less",
-"https://www.food4less.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100030,
-"Food City / K-VA-T",
-"https://www.foodcity.com/contact/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100102,
-"Foxtrot / Outfox Hospitality",
-"https://foxtrotco.com/pages/contact",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100170,
-"Foxtrot Market",
-"https://foxtrotco.com/pages/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100050,
-"Fred Meyer",
-"https://www.fredmeyer.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100200,
-"French Broad Food Co-op",
-"https://frenchbroadfood.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100042,
-"Fresco y M\u00e1s",
-"https://www.frescoymas.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100169,
-"Fresh Market Place",
-"https://www.freshmarketplace.com/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100062,
-"Fresh Thyme Market",
-"https://www.freshthyme.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100063,
-"FreshDirect",
-"https://www.freshdirect.com/help/index.jsp",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100047,
-"Fry's Food Stores",
-"https://www.frysfood.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100110,
-"GPM Investments",
-"https://www.gpminvestments.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100058,
-"Gelson's Markets",
-"https://www.gelsons.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100144,
-"Georgia World Congress Center",
-"https://www.gwcca.org/contact",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100093,
-"GetGo Cafe + Market",
-"https://www.getgocafe.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100021,
-"Giant Eagle",
-"https://www.gianteagle.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100183,
-"Good Earth Natural Foods",
-"https://www.genatural.com/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100189,
-"Good Foods Co-op",
-"https://goodfoods.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100133,
-"Gordon Food Service",
-"https://www.gfs.com/en-us/contact-us",
-"Distributor / Wholesale Gateway"
-],
-[
-900100165,
-"Grant Park Market",
-"https://grantparkmarket.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100195,
-"GreenStar Food Co-op",
-"https://greenstar.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100064,
-"Gristedes / D'Agostino",
-"https://www.gristedes.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100069,
-"Grocery Outlet",
-"https://www.groceryoutlet.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100074,
-"H Mart",
-"https://www.hmart.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100054,
-"Harmons Grocery",
-"https://www.harmonsgrocery.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100045,
-"Harris Teeter",
-"https://www.harristeeter.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100044,
-"Harveys Supermarket",
-"https://www.harveyssupermarkets.com/about/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100096,
-"Holiday Stationstores",
-"https://www.holidaystationstores.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100196,
-"Honest Weight Food Co-op",
-"https://www.honestweight.coop/page/contact-us-5.html",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100022,
-"Hy-Vee",
-"https://www.hy-vee.com/corporate/contact-us/default.aspx",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100154,
-"INFRA Independent Natural Food Retailers Association",
-"https://www.naturalfoodretailers.com/retailers/directory",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100123,
-"Imperial Trading",
-"https://www.imperialtrading.com/contact-us",
-"Distributor / Wholesale Gateway"
-],
-[
-900100031,
-"Ingles Markets",
-"https://www.ingles-markets.com/contact",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100124,
-"J Polep Distribution Services",
-"https://www.jpolep.com/contact-us/",
-"Distributor / Wholesale Gateway"
-],
-[
-900100111,
-"Jacksons Food Stores",
-"https://jacksons.com/contact/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100145,
-"Javits Center",
-"https://javitscenter.com/contact/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100060,
-"Jimbo's Naturally",
-"https://jimbos.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100164,
-"Kelly's Market",
-"https://kellysmarketatl.com/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100187,
-"Kimberton Whole Foods",
-"https://www.kimbertonwholefoods.com/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100046,
-"King Soopers",
-"https://www.kingsoopers.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100067,
-"Kings Food Markets",
-"https://www.kingsfoodmarkets.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100095,
-"Kwik Trip / Kwik Star",
-"https://www.kwiktrip.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100192,
-"Lakewinds Food Co-op",
-"https://www.lakewinds.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100147,
-"Las Vegas Convention Center",
-"https://www.vegasmeansbusiness.com/contact-us/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100177,
-"Lassens Natural Foods",
-"https://www.lassens.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100059,
-"Lazy Acres Natural Market",
-"https://www.lazyacres.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100138,
-"Legends Hospitality",
-"https://www.legends.net/contact",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100134,
-"Levy Restaurants",
-"https://www.levyrestaurants.com/contact/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100127,
-"Lipari Foods",
-"https://www.liparifoods.com/contact-us",
-"Distributor / Wholesale Gateway"
-],
-[
-900100088,
-"Love's Travel Stops",
-"https://www.loves.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100032,
-"Lowes Foods",
-"https://www.lowesfoods.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100166,
-"Lucy\u2019s Market",
-"https://lucysmarket.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100077,
-"Lunds & Byerlys",
-"https://lundsandbyerlys.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100184,
-"MOM's Organic Market",
-"https://momsorganicmarket.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100104,
-"Mapco",
-"https://www.mapcorewards.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100024,
-"Market Basket",
-"https://www.shopmarketbasket.com/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100082,
-"Maverik / Kum & Go",
-"https://maverik.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100146,
-"McCormick Place",
-"https://www.mccormickplace.com/contact/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100120,
-"McLane Company",
-"https://www.mclaneco.com/contact-us/",
-"Distributor / Wholesale Gateway"
-],
-[
-900100149,
-"Mercedes-Benz Stadium",
-"https://mercedesbenzstadium.com/contact-us/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100056,
-"Metropolitan Market",
-"https://metropolitan-market.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100194,
-"Mississippi Market Co-op",
-"https://msmarket.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100065,
-"Morton Williams",
-"https://www.mortonwilliams.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100089,
-"Murphy USA",
-"https://www.murphyusa.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100155,
-"National Grocers Association Member Network",
-"https://www.nationalgrocers.org/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100182,
-"New Leaf Community Markets",
-"https://www.newleaf.com/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100055,
-"New Seasons Market",
-"https://www.newseasonsmarket.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100141,
-"Oak View Group",
-"https://www.oakviewgroup.com/contact/",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100108,
-"OnCue",
-"https://oncueexpress.com/contact/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100148,
-"Orange County Convention Center",
-"https://www.occc.net/About-Us-Contact-Us",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100190,
-"Outpost Natural Foods",
-"https://www.outpost.coop/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100180,
-"PCC Community Markets",
-"https://www.pccmarkets.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100101,
-"Parker's Kitchen",
-"https://parkerskitchen.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100193,
-"People's Food Co-op",
-"https://www.pfc.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100034,
-"Piggly Wiggly",
-"https://www.pigglywiggly.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100087,
-"Pilot Flying J",
-"https://pilotflyingj.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100103,
-"Plaid Pantry",
-"https://www.plaidpantry.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100051,
-"QFC",
-"https://www.qfc.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100085,
-"QuikTrip",
-"https://www.quiktrip.com/contact/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100086,
-"RaceTrac",
-"https://www.racetrac.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100174,
-"Rainbow Grocery Cooperative",
-"https://www.rainbow.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100027,
-"Raley's",
-"https://www.raleys.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100049,
-"Ralphs",
-"https://www.ralphs.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100179,
-"Royal Blue Grocery",
-"https://royalbluegrocery.com/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100090,
-"Royal Farms",
-"https://www.royalfarms.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100094,
-"Rutter's",
-"https://www.rutters.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100070,
-"Save A Lot",
-"https://savealot.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100026,
-"Save Mart / Lucky / FoodMaxx",
-"https://www.thesavemartcompanies.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100163,
-"Savi Provisions",
-"https://saviprovisions.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100028,
-"Schnucks",
-"https://nourish.schnucks.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100076,
-"Seafood City Supermarket",
-"https://www.seafoodcity.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100041,
-"Sedano's",
-"https://sedanos.com/contact/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100161,
-"Sevananda Natural Foods Market",
-"https://sevananda.coop/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100084,
-"Sheetz",
-"https://www.sheetz.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100020,
-"ShopRite / Wakefern",
-"https://www2.wakefern.com/suppliers/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100048,
-"Smith's Food and Drug",
-"https://www.smithsfoodanddrug.com/i/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100136,
-"Sodexo Campus",
-"https://us.sodexo.com/contact-us.html",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100142,
-"Sodexo Live!",
-"https://us.sodexo.com/contact-us.html",
-"Venue / Campus / Sports Foodservice"
+900100015,
+"Aldi US",
+"https://corporate.aldi.us/en/suppliers/"
 ],
 [
 900100118,
 "SpartanNash",
-"https://www.spartannash.com/",
-"Distributor / Wholesale Gateway"
+"https://www.spartannash.com/"
 ],
 [
-900100157,
-"Specialty Food Association Member Buyers",
-"https://www.specialtyfood.com/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100097,
-"Speedway",
-"https://www.speedway.com/about/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100150,
-"State Farm Arena",
-"https://www.statefarmarena.com/connect-with-us/contact-us",
-"Venue / Campus / Sports Foodservice"
-],
-[
-900100025,
-"Stater Bros. Markets",
-"https://www.staterbros.com/contact/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100106,
-"Stewart's Shops",
-"https://www.stewartsshops.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100072,
-"Superior Grocers",
-"https://superiorgrocers.com/contact-us/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100131,
-"Sysco",
-"https://www.sysco.com/contact-us.html",
-"Distributor / Wholesale Gateway"
-],
-[
-900100033,
-"The Fresh Market",
-"https://www.thefreshmarket.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100167,
-"The Mercantile Atlanta",
-"https://www.themercantileatlanta.com/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100091,
-"Thorntons",
-"https://www.mythorntons.com/contact-us",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100128,
-"Tony's Fine Foods / UNFI",
-"https://www.unfi.com/",
-"Distributor / Wholesale Gateway"
-],
-[
-900100181,
-"Town & Country Markets",
-"https://townandcountrymarkets.com/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100098,
-"TravelCenters of America",
-"https://www.ta-petro.com/contact",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100132,
-"US Foods",
-"https://www.usfoods.com/contact-us.html",
-"Distributor / Wholesale Gateway"
-],
-[
-900100100,
-"United Dairy Farmers",
-"https://www.udfinc.com/contact-us/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100037,
-"United Supermarkets / Market Street",
-"https://www.unitedsupermarkets.com/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100040,
-"Vallarta Supermarkets",
-"https://vallartasupermarkets.com/en/contact-us/",
-"Regional Grocery / Specialty Retail"
+900100120,
+"McLane Company",
+"https://www.mclaneco.com/contact-us/"
 ],
 [
 900100125,
 "Vistar / Performance Food Group",
-"https://www.vistar.com/contact-us",
-"Distributor / Wholesale Gateway"
+"https://www.vistar.com/contact-us"
 ],
 [
-900100083,
-"Wawa",
-"https://www.wawa.com/contact",
-"Convenience / Fuel / Travel Centers"
+900100128,
+"Tony's Fine Foods / UNFI",
+"https://www.unfi.com/"
 ],
 [
-900100188,
-"Weavers Way Co-op",
-"https://weaversway.coop/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
+900100131,
+"Sysco",
+"https://www.sysco.com/contact-us.html"
 ],
 [
-900100019,
-"Wegmans",
-"https://www.wegmans.com/",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100197,
-"Wheatsville Food Co-op",
-"https://wheatsville.coop/contact/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100191,
-"Willy Street Co-op",
-"https://www.willystreet.coop/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100023,
-"WinCo Foods",
-"https://www.wincofoods.com/contact",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100043,
-"Winn-Dixie",
-"https://www.winndixie.com/about/contact-us",
-"Regional Grocery / Specialty Retail"
-],
-[
-900100185,
-"Yes! Organic Market",
-"https://www.yesorganicmarket.com/contact",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100109,
-"Yesway / Allsup's",
-"https://yesway.com/contact/",
-"Convenience / Fuel / Travel Centers"
-],
-[
-900100159,
-"Your Dekalb Farmers Market",
-"https://www.dekalbfarmersmarket.com/contact-us.html",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100172,
-"Zingerman's",
-"https://www.zingermanscommunity.com/contact-us/",
-"Independent / Mom & Pop / Co-op / Specialty"
-],
-[
-900100018,
-"Instacart Business / Retail Media",
-"https://www.instacart.com/company/contact/",
-"Mass / National Grocery & Club"
-],
-[
-900200030,
-"Bravo Supermarkets Southeast",
-"https://www.bravosupermarkets.com",
-"Southeast \u00b7 Regional Grocery"
+900100132,
+"US Foods",
+"https://www.usfoods.com/contact-us.html"
 ],
 [
 900200026,
 "Piggly Wiggly Southeast",
-"https://www.pigglywiggly.com",
-"Southeast \u00b7 Regional Grocery"
+"https://www.pigglywiggly.com"
 ],
 [
-900200062,
-"7 Stars Retail / Market",
-"https://www.google.com/search?q=7+Stars+Market+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900200030,
+"Bravo Supermarkets Southeast",
+"https://www.bravosupermarkets.com"
 ],
 [
-900200058,
-"Delta Smoke & Vape",
-"https://www.google.com/search?q=Delta+Smoke+Vape+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100019,
+"Wegmans",
+"https://www.wegmans.com/"
 ],
 [
-900200054,
-"Free Smoke Retail",
-"https://www.google.com/search?q=Free+Smoke+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100020,
+"ShopRite / Wakefern",
+"https://www2.wakefern.com/suppliers/"
 ],
 [
-900200051,
-"Good Roots Market",
-"https://www.google.com/search?q=Good+Roots+Market+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100023,
+"WinCo Foods",
+"https://www.wincofoods.com/contact"
 ],
 [
-900200053,
-"Good Vibes Smoke & Market",
-"https://www.google.com/search?q=Good+Vibes+Smoke+Market+Georgia",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100024,
+"Market Basket",
+"https://www.shopmarketbasket.com/"
 ],
 [
-900200087,
-"Gulf Coast Produce / Specialty Food Buyers",
-"https://www.google.com/search?q=Gulf+Coast+specialty+grocery",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100025,
+"Stater Bros. Markets",
+"https://www.staterbros.com/contact/"
 ],
 [
-900200060,
-"Hydropops / Beverage Retail",
-"https://www.google.com/search?q=Hydropops+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100026,
+"Save Mart / Lucky / FoodMaxx",
+"https://www.thesavemartcompanies.com/contact-us/"
 ],
 [
-900200050,
-"Kelly\u2019s Market & Deli",
-"https://www.google.com/search?q=Kelly%27s+Market+%26+Deli+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100027,
+"Raley's",
+"https://www.raleys.com/contact-us/"
 ],
 [
-900200055,
-"KingClouds CBD / Market",
-"https://www.google.com/search?q=KingClouds+CBD+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100028,
+"Schnucks",
+"https://nourish.schnucks.com/contact-us/"
 ],
 [
-900200067,
-"Lucky's Market",
-"https://www.luckysmarket.com",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100032,
+"Lowes Foods",
+"https://www.lowesfoods.com/contact-us"
 ],
 [
-900200043,
-"Nam Dae Mun Farmers Market",
-"https://www.ndmmarket.com",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100033,
+"The Fresh Market",
+"https://www.thefreshmarket.com/contact-us"
 ],
 [
-900200047,
-"Patel Brothers Southeast",
-"https://www.patelbros.com",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100034,
+"Piggly Wiggly",
+"https://www.pigglywiggly.com/contact-us"
 ],
 [
-900200059,
-"Puff Smoke Shops",
-"https://www.google.com/search?q=Puff+Smoke+Shops+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100037,
+"United Supermarkets / Market Street",
+"https://www.unitedsupermarkets.com/contact-us"
 ],
 [
-900200057,
-"Route Tobacco & Gift",
-"https://www.google.com/search?q=Route+Tobacco+Gift+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900100040,
+"Vallarta Supermarkets",
+"https://vallartasupermarkets.com/en/contact-us/"
+],
+[
+900100041,
+"Sedano's",
+"https://sedanos.com/contact/"
+],
+[
+900100043,
+"Winn-Dixie",
+"https://www.winndixie.com/about/contact-us"
+],
+[
+900100048,
+"Smith's Food and Drug",
+"https://www.smithsfoodanddrug.com/i/contact-us"
+],
+[
+900100049,
+"Ralphs",
+"https://www.ralphs.com/i/contact-us"
+],
+[
+900100051,
+"QFC",
+"https://www.qfc.com/i/contact-us"
+],
+[
+900100055,
+"New Seasons Market",
+"https://www.newseasonsmarket.com/contact-us/"
+],
+[
+900100056,
+"Metropolitan Market",
+"https://metropolitan-market.com/contact-us/"
+],
+[
+900100064,
+"Gristedes / D'Agostino",
+"https://www.gristedes.com/contact-us/"
+],
+[
+900100065,
+"Morton Williams",
+"https://www.mortonwilliams.com/contact-us/"
+],
+[
+900100070,
+"Save A Lot",
+"https://savealot.com/contact-us/"
+],
+[
+900100072,
+"Superior Grocers",
+"https://superiorgrocers.com/contact-us/"
+],
+[
+900100076,
+"Seafood City Supermarket",
+"https://www.seafoodcity.com/contact-us/"
+],
+[
+900100077,
+"Lunds & Byerlys",
+"https://lundsandbyerlys.com/contact-us/"
+],
+[
+900100082,
+"Maverik / Kum & Go",
+"https://maverik.com/contact-us/"
+],
+[
+900100083,
+"Wawa",
+"https://www.wawa.com/contact"
+],
+[
+900100084,
+"Sheetz",
+"https://www.sheetz.com/contact-us"
+],
+[
+900100085,
+"QuikTrip",
+"https://www.quiktrip.com/contact/"
+],
+[
+900100086,
+"RaceTrac",
+"https://www.racetrac.com/contact-us"
+],
+[
+900100087,
+"Pilot Flying J",
+"https://pilotflyingj.com/contact-us/"
+],
+[
+900100088,
+"Love's Travel Stops",
+"https://www.loves.com/contact-us"
+],
+[
+900100089,
+"Murphy USA",
+"https://www.murphyusa.com/contact-us"
+],
+[
+900100090,
+"Royal Farms",
+"https://www.royalfarms.com/contact-us/"
+],
+[
+900100091,
+"Thorntons",
+"https://www.mythorntons.com/contact-us"
+],
+[
+900100094,
+"Rutter's",
+"https://www.rutters.com/contact-us/"
+],
+[
+900100097,
+"Speedway",
+"https://www.speedway.com/about/contact-us"
+],
+[
+900100098,
+"TravelCenters of America",
+"https://www.ta-petro.com/contact"
+],
+[
+900100099,
+"Allsup's",
+"https://allsups.com/contact-us/"
+],
+[
+900100100,
+"United Dairy Farmers",
+"https://www.udfinc.com/contact-us/"
+],
+[
+900100101,
+"Parker's Kitchen",
+"https://parkerskitchen.com/contact-us/"
+],
+[
+900100102,
+"Foxtrot / Outfox Hospitality",
+"https://foxtrotco.com/pages/contact"
+],
+[
+900100103,
+"Plaid Pantry",
+"https://www.plaidpantry.com/contact-us/"
+],
+[
+900100104,
+"Mapco",
+"https://www.mapcorewards.com/contact-us"
+],
+[
+900100105,
+"Buc-ee's",
+"https://buc-ees.com/contact/"
+],
+[
+900100106,
+"Stewart's Shops",
+"https://www.stewartsshops.com/contact-us/"
+],
+[
+900100108,
+"OnCue",
+"https://oncueexpress.com/contact/"
+],
+[
+900100109,
+"Yesway / Allsup's",
+"https://yesway.com/contact/"
+],
+[
+900100134,
+"Levy Restaurants",
+"https://www.levyrestaurants.com/contact/"
+],
+[
+900100136,
+"Sodexo Campus",
+"https://us.sodexo.com/contact-us.html"
+],
+[
+900100137,
+"Compass Group / Chartwells Higher Ed",
+"https://www.compass-usa.com/contact/"
+],
+[
+900100138,
+"Legends Hospitality",
+"https://www.legends.net/contact"
+],
+[
+900100140,
+"ASM Global",
+"https://www.asmglobal.com/contact"
+],
+[
+900100141,
+"Oak View Group",
+"https://www.oakviewgroup.com/contact/"
+],
+[
+900100142,
+"Sodexo Live!",
+"https://us.sodexo.com/contact-us.html"
+],
+[
+900100143,
+"Centerplate / Sodexo Live!",
+"https://www.sodexolive.com/contact"
+],
+[
+900100146,
+"McCormick Place",
+"https://www.mccormickplace.com/contact/"
+],
+[
+900100148,
+"Orange County Convention Center",
+"https://www.occc.net/About-Us-Contact-Us"
+],
+[
+900100149,
+"Mercedes-Benz Stadium",
+"https://mercedesbenzstadium.com/contact-us/"
+],
+[
+900100150,
+"State Farm Arena",
+"https://www.statefarmarena.com/connect-with-us/contact-us"
+],
+[
+900100151,
+"Arthur M. Blank Sports + Entertainment",
+"https://www.ambse.com/contact/"
+],
+[
+900100155,
+"National Grocers Association Member Network",
+"https://www.nationalgrocers.org/"
+],
+[
+900100157,
+"Specialty Food Association Member Buyers",
+"https://www.specialtyfood.com/"
+],
+[
+900100159,
+"Your Dekalb Farmers Market",
+"https://www.dekalbfarmersmarket.com/contact-us.html"
+],
+[
+900100161,
+"Sevananda Natural Foods Market",
+"https://sevananda.coop/contact/"
+],
+[
+900100162,
+"Candler Park Market",
+"https://candlerparkmarket.com/contact/"
+],
+[
+900100163,
+"Savi Provisions",
+"https://saviprovisions.com/contact/"
+],
+[
+900100164,
+"Kelly's Market",
+"https://kellysmarketatl.com/"
+],
+[
+900100165,
+"Grant Park Market",
+"https://grantparkmarket.com/contact/"
+],
+[
+900100166,
+"Lucy\u2019s Market",
+"https://lucysmarket.com/contact/"
+],
+[
+900100167,
+"The Mercantile Atlanta",
+"https://www.themercantileatlanta.com/contact"
+],
+[
+900100170,
+"Foxtrot Market",
+"https://foxtrotco.com/pages/contact"
+],
+[
+900100172,
+"Zingerman's",
+"https://www.zingermanscommunity.com/contact-us/"
+],
+[
+900100174,
+"Rainbow Grocery Cooperative",
+"https://www.rainbow.coop/contact-us/"
+],
+[
+900100179,
+"Royal Blue Grocery",
+"https://royalbluegrocery.com/contact"
+],
+[
+900100180,
+"PCC Community Markets",
+"https://www.pccmarkets.com/contact/"
+],
+[
+900100181,
+"Town & Country Markets",
+"https://townandcountrymarkets.com/contact/"
+],
+[
+900100182,
+"New Leaf Community Markets",
+"https://www.newleaf.com/contact-us/"
+],
+[
+900100184,
+"MOM's Organic Market",
+"https://momsorganicmarket.com/contact/"
+],
+[
+900100185,
+"Yes! Organic Market",
+"https://www.yesorganicmarket.com/contact"
+],
+[
+900100188,
+"Weavers Way Co-op",
+"https://weaversway.coop/contact"
+],
+[
+900100190,
+"Outpost Natural Foods",
+"https://www.outpost.coop/contact"
+],
+[
+900100191,
+"Willy Street Co-op",
+"https://www.willystreet.coop/contact-us/"
+],
+[
+900100193,
+"People's Food Co-op",
+"https://www.pfc.coop/contact-us/"
+],
+[
+900100194,
+"Mississippi Market Co-op",
+"https://msmarket.coop/contact-us/"
+],
+[
+900100197,
+"Wheatsville Food Co-op",
+"https://wheatsville.coop/contact/"
+],
+[
+900100018,
+"Instacart Business / Retail Media",
+"https://www.instacart.com/company/contact/"
 ],
 [
 900200042,
 "Talpa Supermercados",
-"https://talpasupermercados.com",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+"https://talpasupermercados.com"
 ],
 [
-900200061,
-"Tizaze Market",
-"https://www.google.com/search?q=Tizaze+Market+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900200043,
+"Nam Dae Mun Farmers Market",
+"https://www.ndmmarket.com"
 ],
 [
-900200080,
-"Turnrow Appalachian Farm Collective Retail Partners",
-"https://www.google.com/search?q=Appalachian+local+grocery+Tennessee",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900200047,
+"Patel Brothers Southeast",
+"https://www.patelbros.com"
 ],
 [
-900200056,
-"Vape Atlanta / Market",
-"https://www.google.com/search?q=Vape+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+900200050,
+"Kelly\u2019s Market & Deli",
+"https://www.google.com/search?q=Kelly%27s+Market+%26+Deli+Atlanta"
+],
+[
+900200051,
+"Good Roots Market",
+"https://www.google.com/search?q=Good+Roots+Market+Atlanta"
 ],
 [
 900200052,
 "World of Smoke / Convenience Retail",
-"https://www.google.com/search?q=World+of+Smoke+Atlanta",
-"Southeast \u00b7 Independent / Mom-and-Pop / Specialty"
+"https://www.google.com/search?q=World+of+Smoke+Atlanta"
+],
+[
+900200053,
+"Good Vibes Smoke & Market",
+"https://www.google.com/search?q=Good+Vibes+Smoke+Market+Georgia"
+],
+[
+900200054,
+"Free Smoke Retail",
+"https://www.google.com/search?q=Free+Smoke+Atlanta"
+],
+[
+900200055,
+"KingClouds CBD / Market",
+"https://www.google.com/search?q=KingClouds+CBD+Atlanta"
+],
+[
+900200056,
+"Vape Atlanta / Market",
+"https://www.google.com/search?q=Vape+Atlanta"
+],
+[
+900200057,
+"Route Tobacco & Gift",
+"https://www.google.com/search?q=Route+Tobacco+Gift+Atlanta"
+],
+[
+900200058,
+"Delta Smoke & Vape",
+"https://www.google.com/search?q=Delta+Smoke+Vape+Atlanta"
+],
+[
+900200059,
+"Puff Smoke Shops",
+"https://www.google.com/search?q=Puff+Smoke+Shops+Atlanta"
+],
+[
+900200060,
+"Hydropops / Beverage Retail",
+"https://www.google.com/search?q=Hydropops+Atlanta"
+],
+[
+900200061,
+"Tizaze Market",
+"https://www.google.com/search?q=Tizaze+Market+Atlanta"
+],
+[
+900200062,
+"7 Stars Retail / Market",
+"https://www.google.com/search?q=7+Stars+Market+Atlanta"
+],
+[
+900200067,
+"Lucky's Market",
+"https://www.luckysmarket.com"
+],
+[
+900200080,
+"Turnrow Appalachian Farm Collective Retail Partners",
+"https://www.google.com/search?q=Appalachian+local+grocery+Tennessee"
+],
+[
+900200087,
+"Gulf Coast Produce / Specialty Food Buyers",
+"https://www.google.com/search?q=Gulf+Coast+specialty+grocery"
 ]
 ],
 "store_remaining": [
