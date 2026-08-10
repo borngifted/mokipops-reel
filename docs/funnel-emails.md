@@ -103,3 +103,42 @@ If frozen fruit pops for your shop, office, or event are even a maybe, one reply
 Either way — thanks for reading, and stay cool out there.
 
 — MOKIPOPS Wholesale
+
+---
+
+## B0-V — B2B Prospects + Warm Opportunities · "Video opener" (HTML)
+**Lists:** B2B Prospects + Warm Opportunities (exclude Suppression) · **Send:** day 0, in place of or before B1
+**Subject:** 12 years in 38 seconds · **Alt subject:** A $2 pop your customers pay $4 for — watch why
+**Preview:** 38 seconds on how a kid-founded Atlanta pop brand got to retail — then the margin math.
+
+Full HTML lives in **`docs/funnel-video-email.html`** — paste into HubSpot via
+Email editor → the rich-text module's `</>` source view, or a Custom HTML module.
+`docs/funnel-video-email.PREVIEW.html` is the same file with local asset paths and a
+sample first name, for eyeballing in a browser only — never paste that one.
+
+Merge tokens already in place: `{{contact.firstname}}`, `{{ unsubscribe_link }}`,
+`{{ site_settings.company_* }}`.
+
+### Why it's a GIF and not a `<video>` tag
+Gmail, Outlook and Yahoo strip `<video>` — an embedded player silently renders as
+nothing for the large majority of recipients. The email uses the standard pattern instead:
+an animated GIF (which does play inline in Gmail, Apple Mail and Yahoo; Outlook shows the
+first frame) with a play badge baked in, click-through to the hosted player at `video.html`.
+The Faire URL is **also burned into the video itself**, so it survives being watched muted,
+screen-recorded, or forwarded.
+
+### Links used
+- Video page: `video.html` (+ UTM `utm_campaign=wholesale_funnel`)
+- Primary CTA: `https://www.faire.com/apply/r/gf4mdp8kxd`
+- Secondary CTA: `wholesale.html`
+
+### ⚠ Blocker before sending
+`video.html` and `assets/funnel/` are **not live** — both return 404 on GitHub Pages
+(verified 2026-08-10). They are untracked in git and have never been published. Sending
+before publishing gives every recipient a broken thumbnail and a dead watch link.
+Run `./publish.sh` from `mokipops-reel-site/` first, then re-check:
+
+```bash
+curl -o /dev/null -w "%{http_code}\n" https://borngifted.github.io/mokipops-reel/video.html
+curl -o /dev/null -w "%{http_code}\n" https://borngifted.github.io/mokipops-reel/assets/funnel/funnel-preview.gif
+```
