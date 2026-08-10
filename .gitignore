@@ -1,2 +1,16 @@
 .DS_Store
 __pycache__/
+
+# Customer/prospect contact data — must never be published to the public site
+calls-data.json
+calls-customers.json
+calls-hubspot.json
+calls-prospects.json
+calls-retailcrm.json
+calls-log.json
+
+# Internal tooling — not for the public site
+calls.html
+status.html
+calendar.html
+calendar-sync.json
