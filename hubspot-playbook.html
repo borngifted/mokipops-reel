@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MOKIPOPS HubSpot Playbook</title>
-<meta name="description" content="What the MOKIPOPS HubSpot account actually includes, what is going unused, and the highest-value ways to put it to work.">
+<title>MOKIPOPS Systems Report</title>
+<meta name="description" content="When the emails went out, what the social posting did, and where HubSpot, Blotato, Faire and Shopify stand as of September 3, 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap">
@@ -20,7 +20,7 @@
   html,body{margin:0;padding:0}
   body{background:var(--cream);color:var(--inksoft);font-family:var(--body);
        font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:860px;margin:0 auto;padding:0 22px 100px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px 100px}
   .bar{height:7px;background:linear-gradient(90deg,var(--mango) 0 55%,var(--chili) 55% 100%)}
   header{padding:52px 0 6px;text-align:center}
   .mark{font-family:var(--display);font-weight:900;font-size:30px;letter-spacing:-.6px;color:var(--ink)}
@@ -28,7 +28,7 @@
   .eyebrow{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--chili);font-weight:700;margin-top:10px}
   h1{font-family:var(--display);font-weight:900;font-size:clamp(30px,5.2vw,46px);line-height:1.12;
      color:var(--ink);margin:24px 0 14px;text-wrap:balance;text-align:center}
-  .lede{font-size:19px;text-align:center;max-width:62ch;margin:0 auto}
+  .lede{font-size:19px;text-align:center;max-width:64ch;margin:0 auto}
   .stamp{text-align:center;font-size:13px;opacity:.8;margin:20px 0 0}
   h2{font-family:var(--display);font-weight:900;font-size:27px;color:var(--ink);
      margin:56px 0 4px;letter-spacing:-.3px}
@@ -37,33 +37,44 @@
   .card{background:var(--white);border:1px solid var(--cream2);border-radius:14px;padding:22px 24px;margin:14px 0}
   .alert{background:#FFF1EF;border:1px solid #F3C4BD;border-left:5px solid var(--chili)}
   .flag{background:#FFF9EC;border:1px solid #F2DFB4;border-left:5px solid var(--mango)}
+  .good{background:#F1F9F2;border:1px solid #CBE5CF;border-left:5px solid var(--green)}
   table{width:100%;border-collapse:collapse;font-size:15.5px;margin:6px 0}
   th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
   th{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--inksoft);font-weight:700}
   td b{color:var(--ink)}
   .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .r{text-align:right}
   .scroll{overflow-x:auto}
   .chip{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;
         padding:4px 10px;border-radius:999px;white-space:nowrap}
-  .paid{background:var(--green);color:#fff}
-  .unused{background:var(--chili);color:#fff}
-  .partial{background:var(--mango);color:var(--ink)}
-  .gone{background:#E7DED3;color:var(--inksoft)}
+  .sent{background:var(--green);color:#fff}
+  .bad{background:var(--chili);color:#fff}
+  .warn{background:var(--mango);color:var(--ink)}
+  .test{background:#E7DED3;color:var(--inksoft)}
+  .live{background:var(--teal);color:#fff}
+  .why{font-size:15.5px;margin:8px 0 0}
+  .cap{font-size:13px;opacity:.85}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+  .kpi{background:var(--white);border:1px solid var(--cream2);border-radius:14px;padding:16px 18px}
+  .kpi .v{font-family:var(--display);font-weight:900;font-size:30px;color:var(--ink);line-height:1.05;font-variant-numeric:tabular-nums}
+  .kpi .l{font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;margin-top:6px}
+  .kpi .d{font-size:13px;opacity:.85;margin-top:4px}
+  .up{color:var(--green)} .down{color:var(--chili)}
+  .bars{margin:10px 0 0}
+  .brow{display:grid;grid-template-columns:150px 1fr 70px;gap:12px;align-items:center;font-size:14.5px;margin:7px 0}
+  .brow .t{height:14px;background:var(--cream2);border-radius:999px;overflow:hidden}
+  .brow .t i{display:block;height:100%;background:var(--mango)}
+  .brow .t i.ig{background:var(--berry)}
+  .brow .t i.fb{background:var(--teal)}
+  .brow .n{font-variant-numeric:tabular-nums;text-align:right;color:var(--ink);font-weight:700}
   .play{border:1px solid var(--cream2);background:var(--white);border-radius:14px;padding:20px 22px;margin:12px 0}
   .play .top{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
   .play .top h3{flex:1 1 320px}
   .rank{font-family:var(--display);font-weight:900;font-size:22px;color:var(--mango);line-height:1}
-  .why{font-size:15.5px;margin:8px 0 0}
-  .how{font-size:15px;margin:12px 0 0;padding-left:20px}
-  .how li{margin:6px 0}
-  .gauge{height:9px;background:var(--cream2);border-radius:999px;overflow:hidden;margin:8px 0 2px}
-  .gauge i{display:block;height:100%;background:var(--mango)}
-  .gauge.lo i{background:var(--green)}
-  .cap{font-size:13px;opacity:.85}
   ul.plain{padding-left:20px} ul.plain li{margin:7px 0}
   a{color:var(--chili);font-weight:700}
   footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--cream2);text-align:center;font-size:13px;opacity:.75}
-  @media (max-width:560px){ .card,.play{padding:18px} th,td{padding:9px 6px} }
+  @media (max-width:560px){ .card,.play{padding:18px} th,td{padding:9px 6px} .brow{grid-template-columns:110px 1fr 60px} }
 </style>
 </head>
 <body>
@@ -72,170 +83,267 @@
 
 <header>
   <div class="mark">MOKI<span>POPS</span></div>
-  <div class="eyebrow">HubSpot Playbook</div>
-  <h1>You&rsquo;re paying for far more than you&rsquo;re using.</h1>
-  <p class="lede">Verified against the live account on August 28, 2026. Roughly four fifths of the
-  monthly bill buys commerce tooling that has never been switched on, while every campaign so far
-  has run on the cheapest part of the plan.</p>
-  <p class="stamp">Hub ID 51058060 &middot; all figures read directly from Account &amp; Billing</p>
+  <div class="eyebrow">Systems Report</div>
+  <h1>Emails went out August 26. Then two systems stopped.</h1>
+  <p class="lede">The first two funnel emails reached 255 people on the night of August 26. Since then
+  the HubSpot account has been locked for non-payment, so the three follow-ups have not gone out, and the
+  social calendar ran dry on August 20 with nothing queued behind it. Everything below is read from the live
+  accounts today.</p>
+  <p class="stamp">Verified September 3, 2026 &middot; HubSpot 51058060 &middot; Blotato &middot; Shopify 547ac9-2 &middot; Faire</p>
 </header>
 
 <div class="card alert">
-  <h3>Do this first: the account is past due</h3>
-  <p class="why"><b>$66.25</b> was due <b>August 19, 2026</b> and has not been paid. HubSpot's own
-  banner warns this can affect access to the account. Everything else in this document depends on
-  the account staying open &mdash; the emails, the contact records, the twelve years of history.
-  Clear it before anything else.</p>
-  <p class="why">Next scheduled bill: <b>September 19, 2026</b>. Card on file: Visa &bull;&bull;&bull;&bull;3972 (Amber Khan).</p>
+  <h3>Two things are stopped right now</h3>
+  <p class="why"><b>HubSpot is locked.</b> The $66.25 that was due August 19 is still unpaid, and HubSpot has
+  moved from a warning banner to a full lock: &ldquo;Your account is temporarily locked because of outstanding
+  payments.&rdquo; No emails can be sent, and the open and click reports for the August 26 sends cannot be
+  opened until it is paid. The follow-ups that were due August 31 and September 2 did not go out.</p>
+  <p class="why"><b>Social posting has been dark for 14 days.</b> The last MOKIPOPS post published on August 20
+  at 6:00 PM ET. Blotato has zero posts scheduled. Nothing has appeared on Facebook or Instagram since.</p>
 </div>
 
-<h2>What you actually pay for</h2>
-<p class="sub">Two products, billed monthly, on a one-year commitment running Feb 19 2026 &ndash; Feb 18 2027.</p>
+<h2>When the emails went out</h2>
+<p class="sub">Every send traced through the HubSpot preview inbox and the sending log. Times are Eastern.</p>
 <div class="card">
 <div class="scroll">
 <table>
-  <tr><th>Product</th><th>List</th><th>You pay</th><th>Status</th></tr>
-  <tr>
-    <td><b>Starter Customer Platform</b><br><span class="cap">Marketing, Sales, Service, Content and Data Hub &mdash; all Starter. 1 core seat. Includes 1,000 marketing contacts.</span></td>
-    <td class="num">$20.00</td><td class="num"><b>$14.00</b><br><span class="cap">30% discount</span></td>
-    <td><span class="chip partial">Partly used</span></td>
-  </tr>
-  <tr>
-    <td><b>Revenue Hub Professional</b><br><span class="cap">1 revenue seat. Commerce tooling &mdash; invoices, quotes, payment links, subscriptions, deal pipelines.</span></td>
-    <td class="num">$95.00</td><td class="num"><b>$52.25</b><br><span class="cap">40% early-adopter + 5% custom</span></td>
-    <td><span class="chip unused">Not used</span></td>
-  </tr>
-  <tr><td><b>Total</b></td><td class="num">$115.00</td><td class="num"><b>$66.25</b><br><span class="cap">saving $48.75</span></td><td></td></tr>
+  <tr><th>Date</th><th>Email</th><th>To</th><th>Status</th></tr>
+  <tr><td class="num">Aug 12</td><td><b>12 years in 38 seconds</b> <span class="cap">(video opener)</span></td><td>Owner inbox only</td>
+      <td><span class="chip test">Preview</span> <span class="cap">landed in spam &ndash; domain not yet authenticated</span></td></tr>
+  <tr><td class="num">Aug 20 &middot; 10:23 AM</td><td><b>12 years in 38 seconds</b> <span class="cap">(video opener, re-sent)</span></td><td>Owner inbox only</td>
+      <td><span class="chip test">Preview</span> <span class="cap">arrived in inbox from moreflavor@mokipops.com</span></td></tr>
+  <tr><td class="num">Aug 25 &middot; 4:54&ndash;8:01 PM</td><td>All five funnel emails, test copies</td><td>Owner inbox only</td>
+      <td><span class="chip test">Preview</span></td></tr>
+  <tr><td class="num"><b>Aug 26 &middot; 11:20 PM</b></td><td><b>&ldquo;The pops got better since you left&rdquo;</b> <span class="cap">A1</span></td><td><b>51</b> past customers</td>
+      <td><span class="chip sent">Sent</span></td></tr>
+  <tr><td class="num"><b>Aug 26 &middot; 11:29 PM</b></td><td><b>&ldquo;All-natural pops your customers come back for&rdquo;</b> <span class="cap">B1</span></td><td><b>204</b> wholesale &amp; event prospects</td>
+      <td><span class="chip sent">Sent</span></td></tr>
+  <tr><td class="num">Aug 31 (planned)</td><td>&ldquo;120 cases, 3,000 pops, one Atlanta afternoon&rdquo; <span class="cap">B2</span></td><td>204 prospects</td>
+      <td><span class="chip bad">Not sent</span> <span class="cap">account locked</span></td></tr>
+  <tr><td class="num">Sep 2 (planned)</td><td>&ldquo;One case = your whole event, sorted&rdquo; <span class="cap">A2</span></td><td>51 past customers</td>
+      <td><span class="chip bad">Not sent</span> <span class="cap">account locked</span></td></tr>
+  <tr><td class="num">Sep 7 (planned)</td><td>&ldquo;Should I close your file?&rdquo; <span class="cap">B3</span></td><td>204 prospects</td>
+      <td><span class="chip warn">Waiting</span></td></tr>
 </table>
 </div>
-<p class="why"><b>Revenue Hub Professional is 79% of the bill.</b> Every piece of work to date &mdash; the
-five funnel emails, the lists, the suppression rules &mdash; has run on Marketing Hub Starter, which
-is the $14 half. The expensive half has produced nothing so far.</p>
+<p class="why">255 real recipients, 263 sends counted by HubSpot including the test copies. Everyone on the
+Do Not Market list was excluded. The sending domain is now fully authenticated: the SPF record carries the
+HubSpot include and the DKIM key for mokipops.com is in place, which is why the August 20 re-send reached the
+inbox where the August 12 one went to spam.</p>
 </div>
 
 <div class="card flag">
-  <h3>Heads up on renewal pricing</h3>
-  <p class="why">Those discounts are attached to the current term only. From <b>February 19, 2027</b>
-  the same two products auto-renew at <b>$115.00/month</b> &mdash; a 74% increase. Worth deciding well
-  before then whether Revenue Hub is earning its place, and worth a conversation with HubSpot about
-  extending the discount.</p>
+  <h3>What we cannot see yet</h3>
+  <p class="why">Open rate, click rate, replies logged in HubSpot and wholesale form submissions all sit behind
+  the lock. The moment the balance is paid those numbers can be added to this page. Replies to
+  moreflavor@mokipops.com should be checked directly in that mailbox in the meantime.</p>
 </div>
 
-<h2>Headroom you&rsquo;re not touching</h2>
-<p class="sub">Current usage against what the plan already allows.</p>
+<h2>Did the emails move anything?</h2>
+<p class="sub">Shopify store traffic, July 1 to September 3, compared with the previous 65 days.</p>
 <div class="card">
-  <p style="margin:0 0 4px"><b>Marketing email sends</b> &mdash; 263 of 5,000 this month</p>
-  <div class="gauge lo"><i style="width:5.3%"></i></div>
-  <p class="cap">4,737 sends left before September 1. Resets monthly.</p>
-
-  <p style="margin:22px 0 4px"><b>Marketing contacts</b> &mdash; 254 of 1,000</p>
-  <div class="gauge lo"><i style="width:25.4%"></i></div>
-  <p class="cap">746 more contacts can be marketed to at no extra cost. Included in the plan.</p>
-
-  <p style="margin:22px 0 4px"><b>API calls</b> &mdash; 0 of 625,000 per day</p>
-  <div class="gauge lo"><i style="width:1%"></i></div>
-  <p class="cap">Nothing is integrated yet. This is the entire Shopify&ndash;HubSpot connection sitting idle.</p>
-
-  <p style="margin:22px 0 4px"><b>HubSpot Credits</b> &mdash; 3,000 included</p>
-  <div class="gauge lo"><i style="width:2%"></i></div>
-  <p class="cap">Bundled AI credits. Effectively untouched.</p>
-</div>
-
-<h2>The plays, ranked</h2>
-<p class="sub">Ordered by return on the money already being spent.</p>
-
-<div class="play">
-  <div class="top"><span class="rank">01</span><h3>Turn on Commerce for wholesale ordering</h3><span class="chip unused">Paid, unused</span></div>
-  <p class="why">This is the single biggest gap. You are paying $52.25 a month for invoices, quotes,
-  payment links and subscriptions, and sending wholesale buyers to Faire instead &mdash; where a
-  commission is taken on every order. HubSpot Commerce lets a buyer pay you directly.</p>
-  <ul class="how">
-    <li>Build a reusable quote template for a standard wholesale case order.</li>
-    <li>Send payment links in the B-track follow-ups so a buyer can order without leaving the email.</li>
-    <li>Use subscriptions for recurring standing orders &mdash; the natural fit for a store that reorders monthly.</li>
-    <li>Keep Faire for discovery of <em>new</em> stockists; move repeat buyers onto direct invoicing.</li>
-  </ul>
-</div>
-
-<div class="play">
-  <div class="top"><span class="rank">02</span><h3>Run wholesale accounts through a deal pipeline</h3><span class="chip unused">Paid, unused</span></div>
-  <p class="why">You just emailed 204 prospects. Right now there is nowhere for a reply to live except
-  an inbox. A pipeline turns &ldquo;interested&rdquo; into a tracked stage with a value and a next step,
-  and tells you which of the three follow-ups is actually producing revenue.</p>
-  <ul class="how">
-    <li>Stages that match reality: Enquiry &rarr; Samples sent &rarr; First order &rarr; Reordering.</li>
-    <li>Attach the deal to the company, not just the person &mdash; buyers change jobs.</li>
-    <li>Forecast by stage so you know how much wholesale is genuinely in flight.</li>
-  </ul>
-</div>
-
-<div class="play">
-  <div class="top"><span class="rank">03</span><h3>Capture leads with forms and a meetings link</h3><span class="chip partial">Included, unused</span></div>
-  <p class="why">Sales Hub Starter includes a scheduling link and Marketing Starter includes forms.
-  The wholesale page currently asks people to email. A booking link converts far better than an
-  invitation to compose a message.</p>
-  <ul class="how">
-    <li>Put a &ldquo;Book 15 minutes&rdquo; link on the wholesale page and in the B3 final follow-up.</li>
-    <li>Replace the contact form on the announcement page with a HubSpot form so submissions create contacts automatically.</li>
-    <li>Every submission lands in the CRM already segmented &mdash; no manual list building.</li>
-  </ul>
-</div>
-
-<div class="play">
-  <div class="top"><span class="rank">04</span><h3>Connect Shopify to HubSpot</h3><span class="chip partial">Included, unused</span></div>
-  <p class="why">Data Hub Starter plus 625,000 daily API calls, and the two systems currently know
-  nothing about each other. Order history is what makes segmentation good rather than generic.</p>
-  <ul class="how">
-    <li>Sync customers and orders so &ldquo;Previous Buyers&rdquo; maintains itself instead of being hand-built.</li>
-    <li>Segment on real behaviour: last order date, flavours bought, order value.</li>
-    <li>Abandoned-cart and post-purchase emails become possible because the data is finally there.</li>
-  </ul>
-</div>
-
-<div class="play">
-  <div class="top"><span class="rank">05</span><h3>Use the shared inbox for wholesale support</h3><span class="chip partial">Included, unused</span></div>
-  <p class="why">Service Hub Starter gives a shared conversations inbox. When B3 asks
-  &ldquo;Should I close your file?&rdquo; and replies arrive, they should be visible to whoever is
-  handling wholesale, attached to the contact record &mdash; not sitting in one person's mail.</p>
-</div>
-
-<h2>What ended with the trial</h2>
-<p class="sub">The Marketing Hub Professional trial has lapsed. These are gone unless it is repurchased.</p>
-<div class="card">
-  <table>
-    <tr><td><b>Omni-channel marketing automation</b><br><span class="cap">The reason A2, B2 and B3 have to be sent by hand rather than dripping automatically.</span></td><td><span class="chip gone">Lost</span></td></tr>
-    <tr><td><b>Social media publishing</b></td><td><span class="chip gone">Lost</span></td></tr>
-    <tr><td><b>Marketing studio</b> <span class="cap">(beta)</span></td><td><span class="chip gone">Lost</span></td></tr>
-    <tr><td><b>AEO</b> <span class="cap">(beta)</span></td><td><span class="chip gone">Lost</span></td></tr>
-    <tr><td><b>Agent Hub</b></td><td><span class="chip gone">Lost</span></td></tr>
-  </table>
-  <p class="why" style="margin-top:16px">Professional can be restored any time before
-  <b>November 24, 2026</b>. My honest read: don&rsquo;t rush it. Automation is worth paying for once
-  there is a steady flow of leads to automate. With 254 marketing contacts and a funnel you can send
-  manually in about a minute per email, the money is better spent switching on the Commerce tooling
-  you already own.</p>
-</div>
-
-<h2>A sensible first 30 days</h2>
-<div class="card">
+  <p class="why" style="margin-top:0"><b>Yes, visibly.</b> After the mid-July launch spike, store traffic settled to
+  roughly 30 to 40 sessions a day. The only two spikes since then are <b>August 26 to 30</b>, when daily
+  sessions jumped to roughly 120 to 130 on two separate days. Nothing else changed that week: no posts were
+  going out, no ads were running. That is the email.</p>
   <ul class="plain">
-    <li><b>This week</b> &mdash; clear the $66.25 past-due balance. Send B2 around Aug 31 and A2 around Sep 2.</li>
-    <li><b>Week two</b> &mdash; connect Shopify. Let order history flow in and rebuild Previous Buyers as a self-maintaining list.</li>
-    <li><b>Week three</b> &mdash; stand up the wholesale deal pipeline and put every reply from the 204 into it.</li>
-    <li><b>Week four</b> &mdash; build one quote template and one payment link. Send B3 with a booking link and a direct order option.</li>
-    <li><b>Then decide</b> &mdash; with real pipeline numbers in front of you, judge whether Marketing Professional earns its cost before the November 24 deadline.</li>
+    <li><b>The announcement page</b> at mokipops.com/pages/watch recorded 33 sessions. It is linked only from the emails, so those are email readers who clicked through to watch the video.</li>
+    <li><b>The wholesale page</b> on the store recorded 22 sessions, up 175% on the prior period.</li>
+    <li><b>Add-to-cart</b> rose to 19 (up 46%) and <b>reached checkout</b> rose to 14 (up 56%) versus the prior period.</li>
+    <li><b>Completed online orders: 0.</b> Fourteen people got as far as checkout and none finished. That is the single most fixable number on this page, and it is covered under next steps.</li>
   </ul>
+  <p class="cap">Attribution is by timing. HubSpot&rsquo;s own click data will confirm it once the account is unlocked.</p>
+</div>
+
+<h2>Social to date</h2>
+<p class="sub">Every MOKIPOPS post pushed through Blotato to Facebook (MokiPops page) and Instagram (@mokipops), July 13 to August 20.</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">150</div><div class="l">Posts published</div><div class="d">94 Facebook &middot; 56 Instagram &middot; 30 posting days</div></div>
+  <div class="kpi"><div class="v">27,854</div><div class="l">Video views</div><div class="d">across the 57 posts with analytics</div></div>
+  <div class="kpi"><div class="v">18,422</div><div class="l">Accounts reached</div><div class="d">Instagram only; Facebook does not report reach</div></div>
+  <div class="kpi"><div class="v">855</div><div class="l">Likes</div><div class="d">74 comments &middot; 22 shares &middot; 15 saves</div></div>
+</div>
+
+<div class="card">
+  <h3>Where the views came from</h3>
+  <div class="bars">
+    <div class="brow"><span>Instagram</span><div class="t"><i class="ig" style="width:94%"></i></div><span class="n">26,055</span></div>
+    <div class="brow"><span>Facebook</span><div class="t"><i class="fb" style="width:6%"></i></div><span class="n">1,799</span></div>
+  </div>
+  <p class="why">Instagram carried 94% of all views. Facebook published more posts but Facebook only tracks
+  the handful that were uploaded as Reels; the rest post fine but report no numbers.</p>
+
+  <h3 style="margin-top:26px">What content worked</h3>
+  <p class="cap">Average views per post, by theme.</p>
+  <div class="bars">
+    <div class="brow"><span>New facility reel</span><div class="t"><i style="width:100%"></i></div><span class="n">2,777</span></div>
+    <div class="brow"><span>Kitchen behind the scenes</span><div class="t"><i style="width:63%"></i></div><span class="n">1,763</span></div>
+    <div class="brow"><span>Pop-up day with the crew</span><div class="t"><i style="width:58%"></i></div><span class="n">1,606</span></div>
+    <div class="brow"><span>Kids&rsquo; reactions</span><div class="t"><i style="width:20%"></i></div><span class="n">554</span></div>
+    <div class="brow"><span>Founders on camera</span><div class="t"><i style="width:15%"></i></div><span class="n">413</span></div>
+    <div class="brow"><span>Hawks / State Farm Arena</span><div class="t"><i style="width:12.5%"></i></div><span class="n">347</span></div>
+    <div class="brow"><span>Clean-label stills</span><div class="t"><i style="width:12.4%"></i></div><span class="n">344</span></div>
+    <div class="brow"><span>Dessert Wars win</span><div class="t"><i style="width:10.8%"></i></div><span class="n">299</span></div>
+  </div>
+  <p class="why">The pattern is unambiguous: <b>video of real people making or handing out pops</b> outperforms
+  a designed still by roughly eight to one. The single best post, the walk into the new manufacturing
+  facility on August 14, did 3,576 views, 143 likes and 17 comments, and it kept climbing for a week after
+  it posted. Award and recognition posts, which feel important internally, are the weakest performers.</p>
+
+  <h3 style="margin-top:26px">Momentum</h3>
+  <p class="cap">Views earned by posts published in each half-month.</p>
+  <div class="bars">
+    <div class="brow"><span>Jul 13&ndash;15</span><div class="t"><i style="width:3%"></i></div><span class="n">297</span></div>
+    <div class="brow"><span>Jul 16&ndash;31</span><div class="t"><i style="width:94%"></i></div><span class="n">9,394</span></div>
+    <div class="brow"><span>Aug 1&ndash;15</span><div class="t"><i style="width:81%"></i></div><span class="n">8,120</span></div>
+    <div class="brow"><span>Aug 16&ndash;20</span><div class="t"><i style="width:100%"></i></div><span class="n">10,043</span></div>
+  </div>
+  <p class="why">The final five days of posting earned more views than any full half-month before them. The
+  account was accelerating when the queue ran out.</p>
 </div>
 
 <div class="card flag">
-  <h3>Two things to confirm in-app</h3>
-  <p class="why">I verified the products, prices, terms and every usage figure above directly in
-  Account &amp; Billing. Two items are worth a quick look before you plan around them: the exact
-  Commerce features enabled on your Revenue seat, and whether Starter-tier landing pages carry
-  HubSpot branding. Both affect execution, neither changes the recommendation.</p>
+  <h3>Failures worth knowing about</h3>
+  <p class="why">88 scheduled posts failed. 83 of those were on a single day, July 16, when a bulk queue hit
+  Facebook&rsquo;s limit of 35 posts per page per 24 hours; the remaining five were media that Facebook or
+  Instagram could not process. Nothing failed after August 2. The July 16 pile-up is the reason the calendar
+  was later changed to one post a day.</p>
 </div>
 
-<footer>Prepared for MOKIPOPS &middot; August 28, 2026 &middot; figures verified against Hub ID 51058060</footer>
+<div class="card">
+  <h3>Social to store</h3>
+  <p class="why" style="margin-top:0">Instagram sent 32 sessions to the store (up 23%), Facebook sent 6, LinkedIn 1.
+  Against 27,854 views that is a click-through well under one percent, which is normal for Instagram
+  because captions are not clickable. Social did its job as awareness. It was never going to be the
+  channel that closes orders, and the numbers say so plainly.</p>
+</div>
+
+<h2>Shopify</h2>
+<p class="sub">July 1 to September 3, 2026, compared with April 27 to June 30.</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">3,310</div><div class="l">Sessions</div><div class="d"><span class="up">&uarr; 90%</span> vs prior period</div></div>
+  <div class="kpi"><div class="v">$164.40</div><div class="l">Total sales</div><div class="d">1 order, via Faire</div></div>
+  <div class="kpi"><div class="v">14</div><div class="l">Reached checkout</div><div class="d"><span class="up">&uarr; 56%</span> &middot; 0 completed</div></div>
+  <div class="kpi"><div class="v">$0</div><div class="l">Online store sales</div><div class="d"><span class="down">&darr; 100%</span> from $192.65 (2 orders)</div></div>
+</div>
+
+<div class="card">
+<div class="scroll">
+<table>
+  <tr><th>Traffic</th><th class="r">Sessions</th><th class="r">Change</th><th>Read</th></tr>
+  <tr><td><b>Homepage</b></td><td class="num r">1,833</td><td class="num r up">+136%</td><td>Launch, social and email all land here</td></tr>
+  <tr><td><b>Blog: how to keep popsicles frozen</b></td><td class="num r">985</td><td class="num r up">+62%</td><td>Steady Google search traffic, largely non-local</td></tr>
+  <tr><td><b>Case of 24 product page</b></td><td class="num r">63</td><td class="num r down">&minus;19%</td><td>The wholesale-size SKU</td></tr>
+  <tr><td><b>/pages/watch</b> (announcement video)</td><td class="num r">33</td><td class="num r">new</td><td>Email readers</td></tr>
+  <tr><td><b>/pages/event-request</b></td><td class="num r">28</td><td class="num r down">&minus;33%</td><td></td></tr>
+  <tr><td><b>/pages/wholesale</b></td><td class="num r">22</td><td class="num r up">+175%</td><td>Currently returns a 404, see next steps</td></tr>
+  <tr><td colspan="4" style="padding-top:18px"><b>By source</b></td></tr>
+  <tr><td>Direct &middot; Atlanta</td><td class="num r">150</td><td class="num r up">+159%</td><td>Local people typing the address in</td></tr>
+  <tr><td>Direct &middot; Marietta</td><td class="num r">118</td><td class="num r up">+973%</td><td></td></tr>
+  <tr><td>Google search</td><td class="num r">93</td><td class="num r up">+45%</td><td></td></tr>
+  <tr><td>Instagram</td><td class="num r">32</td><td class="num r up">+23%</td><td></td></tr>
+  <tr><td>Direct &middot; Council Bluffs, Iowa</td><td class="num r">1,000</td><td class="num r up">+1,100%</td><td><b>Treat as bot traffic.</b> Council Bluffs is a data-centre town; nobody there is buying pops. Remove it and real sessions are roughly 2,300, still well up.</td></tr>
+</table>
+</div>
+<p class="why">Sessions peaked at around 330 a day on July 15 and 16, the launch of the reel and the four-a-day
+posting burst. Atlanta and Marietta traffic more than doubled, which is exactly the audience the wholesale
+and event pitch is aimed at.</p>
+</div>
+
+<div class="card flag">
+  <h3>Housekeeping in the store</h3>
+  <p class="why">Shopify shows 53 open orders and 49 awaiting fulfilment, most dating back to late 2025. Those are
+  almost certainly already delivered and simply never marked fulfilled, but they distort every report and will
+  confuse anyone who opens the admin. Two of them carry &ldquo;chargeback lost&rdquo;. Worth an afternoon to clear.</p>
+</div>
+
+<h2>Faire</h2>
+<div class="card good">
+  <h3>First wholesale order came through Faire on August 10</h3>
+  <p class="why"><b>$164.40, three items, paid and fulfilled.</b> It is the only order of any kind in the period,
+  and it is the first Faire order the brand has received. It arrived four weeks into the social run and two
+  days before the first email preview, so it belongs to the awareness work rather than the email funnel.</p>
+</div>
+<div class="card">
+  <p class="why" style="margin-top:0"><b>The listing is live and correct.</b> Strawberry Lemonade, Lemon Lime, Creamy
+  Chocolate, Mango Lime and Basil Lemonade show at $2.25 a pop wholesale against a $4.50 suggested retail,
+  cases of 24, $150 minimum. Faire has already tagged Creamy Chocolate as a Bestseller.</p>
+  <p class="why">Brand-side numbers such as page views, followers, and retailer messages could not be pulled: the
+  Faire login available to this report is the retailer account, not the brand portal. A brand-portal login
+  would let those be added.</p>
+</div>
+
+<h2>System status</h2>
+<div class="card">
+<div class="scroll">
+<table>
+  <tr><th>System</th><th>Status</th><th>Detail</th></tr>
+  <tr><td><b>HubSpot</b></td><td><span class="chip bad">Locked</span></td><td>$66.25 past due since Aug 19. 254 of 1,000 marketing contacts. Domain authentication complete (SPF include and DKIM present; DMARC still at &ldquo;none&rdquo;, which is fine for now). Marketing Professional trial ended; restorable until Nov 24.</td></tr>
+  <tr><td><b>Blotato</b></td><td><span class="chip warn">Idle</span></td><td>Facebook and Instagram connected and healthy. 0 posts scheduled. Last post Aug 20. 19-asset evergreen library ready to rotate.</td></tr>
+  <tr><td><b>Shopify</b></td><td><span class="chip live">Live</span></td><td>Store and /pages/watch live. /pages/wholesale returns 404. 49 legacy orders unfulfilled. Facebook &amp; Instagram sales channel installed but 0 of 7 setup tasks done.</td></tr>
+  <tr><td><b>Faire</b></td><td><span class="chip live">Live</span></td><td>Listing live, 1 order to date. Brand-portal analytics not accessible from here.</td></tr>
+  <tr><td><b>Landing pages</b></td><td><span class="chip live">Live</span></td><td>wholesale.html, video.html and this report all return 200 on GitHub Pages.</td></tr>
+</table>
+</div>
+</div>
+
+<h2>What to do next, in order</h2>
+
+<div class="play">
+  <div class="top"><span class="rank">01</span><h3>Pay the $66.25 and unlock HubSpot</h3></div>
+  <p class="why">Everything else in the email lane is behind this. Account &amp; Billing &rarr; Pay now. The next bill of
+  $66.25 lands September 19, so both may be due together.</p>
+</div>
+
+<div class="play">
+  <div class="top"><span class="rank">02</span><h3>Send the two overdue follow-ups the same day</h3></div>
+  <p class="why">B2 (the Waymo activation story) to the 204 prospects and A2 (one case for your event) to the 51
+  past customers. Both are already built and tested; they are a minute each to send. Then B3, &ldquo;Should I
+  close your file?&rdquo;, roughly a week later. Pull the open and click numbers for A1 and B1 while in there and
+  add them to this page.</p>
+</div>
+
+<div class="play">
+  <div class="top"><span class="rank">03</span><h3>Refill the social calendar today</h3></div>
+  <p class="why">Fourteen dark days after a month of growth is the most expensive gap on this page. One post a day at
+  noon ET, September through October, weighted toward the formats that won: facility and kitchen video,
+  pop-up footage, kids reacting. Layer in fall and Halloween angles. Fewer designed stills.</p>
+</div>
+
+<div class="play">
+  <div class="top"><span class="rank">04</span><h3>Find out why 14 checkouts became 0 orders</h3></div>
+  <p class="why">Run a test checkout on the case of 24 from a phone. The usual suspects for frozen goods are a shipping
+  quote that appears late and is larger than the product, or a delivery area check that fails. Whatever it is,
+  the email traffic arrived, found the cart, and left at the last step.</p>
+</div>
+
+<div class="play">
+  <div class="top"><span class="rank">05</span><h3>Fix the wholesale page on the store</h3></div>
+  <p class="why">mokipops.com/pages/wholesale returned a 404 today yet still drew 22 visits. Either restore the page or
+  redirect it to the live wholesale page so no buyer hits a dead end.</p>
+</div>
+
+<div class="play">
+  <div class="top"><span class="rank">06</span><h3>Get brand-portal access to Faire</h3></div>
+  <p class="why">So page views, follows and retailer messages can sit alongside the order count in the next report.</p>
+</div>
+
+<div class="play">
+  <div class="top"><span class="rank">07</span><h3>Clear the 49 legacy unfulfilled orders in Shopify</h3></div>
+  <p class="why">Mark them fulfilled or archive them so the dashboard reflects reality.</p>
+</div>
+
+<div class="card">
+  <h3>Previous report</h3>
+  <p class="why">The August 28 review of what the HubSpot subscription includes and which paid features are unused is
+  preserved at <a href="hubspot-playbook-2026-08-28.html">hubspot-playbook-2026-08-28.html</a>. Its recommendations
+  (commerce tooling, a wholesale deal pipeline, forms and a booking link, the Shopify connection) still stand and pick
+  up once the account is unlocked.</p>
+</div>
+
+<footer>Prepared for MOKIPOPS &middot; September 3, 2026 &middot; figures read from HubSpot 51058060, Blotato, Shopify 547ac9-2 and Faire on the day</footer>
 </div>
 </body>
 </html>

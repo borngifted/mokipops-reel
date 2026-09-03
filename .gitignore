@@ -14,3 +14,6 @@ calls.html
 status.html
 calendar.html
 calendar-sync.json
+docs/_cdp-chrome-launch.sh
+docs/_funnel-email-fix-handoff.md
+docs/_dns-work-order.html
