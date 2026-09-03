@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MOKIPOPS Systems Report</title>
-<meta name="description" content="When the emails went out, what the social posting did, and where HubSpot, Blotato, Faire and Shopify stand as of September 3, 2026.">
+<meta name="description" content="A plain-English update for MOKIPOPS: when the emails went out, what the social posts did, how the online store and Faire are doing, and what to do next. As of September 3, 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap">
@@ -19,8 +19,8 @@
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{background:var(--cream);color:var(--inksoft);font-family:var(--body);
-       font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:900px;margin:0 auto;padding:0 22px 100px}
+       font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px 100px}
   .bar{height:7px;background:linear-gradient(90deg,var(--mango) 0 55%,var(--chili) 55% 100%)}
   header{padding:52px 0 6px;text-align:center}
   .mark{font-family:var(--display);font-weight:900;font-size:30px;letter-spacing:-.6px;color:var(--ink)}
@@ -28,7 +28,7 @@
   .eyebrow{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--chili);font-weight:700;margin-top:10px}
   h1{font-family:var(--display);font-weight:900;font-size:clamp(30px,5.2vw,46px);line-height:1.12;
      color:var(--ink);margin:24px 0 14px;text-wrap:balance;text-align:center}
-  .lede{font-size:19px;text-align:center;max-width:64ch;margin:0 auto}
+  .lede{font-size:19px;text-align:center;max-width:62ch;margin:0 auto}
   .stamp{text-align:center;font-size:13px;opacity:.8;margin:20px 0 0}
   h2{font-family:var(--display);font-weight:900;font-size:27px;color:var(--ink);
      margin:56px 0 4px;letter-spacing:-.3px}
@@ -38,6 +38,8 @@
   .alert{background:#FFF1EF;border:1px solid #F3C4BD;border-left:5px solid var(--chili)}
   .flag{background:#FFF9EC;border:1px solid #F2DFB4;border-left:5px solid var(--mango)}
   .good{background:#F1F9F2;border:1px solid #CBE5CF;border-left:5px solid var(--green)}
+  .means{background:var(--cream);border-radius:10px;padding:12px 16px;margin:16px 0 0;font-size:15.5px}
+  .means b{color:var(--ink)}
   table{width:100%;border-collapse:collapse;font-size:15.5px;margin:6px 0}
   th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
   th{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--inksoft);font-weight:700}
@@ -61,20 +63,26 @@
   .kpi .d{font-size:13px;opacity:.85;margin-top:4px}
   .up{color:var(--green)} .down{color:var(--chili)}
   .bars{margin:10px 0 0}
-  .brow{display:grid;grid-template-columns:150px 1fr 70px;gap:12px;align-items:center;font-size:14.5px;margin:7px 0}
+  .brow{display:grid;grid-template-columns:170px 1fr 70px;gap:12px;align-items:center;font-size:14.5px;margin:7px 0}
   .brow .t{height:14px;background:var(--cream2);border-radius:999px;overflow:hidden}
   .brow .t i{display:block;height:100%;background:var(--mango)}
   .brow .t i.ig{background:var(--berry)}
   .brow .t i.fb{background:var(--teal)}
   .brow .n{font-variant-numeric:tabular-nums;text-align:right;color:var(--ink);font-weight:700}
+  .summary{background:var(--white);border:1px solid var(--cream2);border-radius:14px;padding:24px 26px;margin:34px 0 0}
+  .summary ol{margin:8px 0 0;padding-left:22px}
+  .summary li{margin:9px 0;font-size:16.5px}
+  .summary li b{color:var(--ink)}
   .play{border:1px solid var(--cream2);background:var(--white);border-radius:14px;padding:20px 22px;margin:12px 0}
   .play .top{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
   .play .top h3{flex:1 1 320px}
   .rank{font-family:var(--display);font-weight:900;font-size:22px;color:var(--mango);line-height:1}
+  .who{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:var(--inksoft)}
   ul.plain{padding-left:20px} ul.plain li{margin:7px 0}
+  dl{margin:0} dt{font-weight:700;color:var(--ink);margin-top:14px} dd{margin:2px 0 0;font-size:15.5px}
   a{color:var(--chili);font-weight:700}
   footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--cream2);text-align:center;font-size:13px;opacity:.75}
-  @media (max-width:560px){ .card,.play{padding:18px} th,td{padding:9px 6px} .brow{grid-template-columns:110px 1fr 60px} }
+  @media (max-width:560px){ .card,.play,.summary{padding:18px} th,td{padding:9px 6px} .brow{grid-template-columns:120px 1fr 60px} }
 </style>
 </head>
 <body>
@@ -83,208 +91,230 @@
 
 <header>
   <div class="mark">MOKI<span>POPS</span></div>
-  <div class="eyebrow">Systems Report</div>
-  <h1>Emails went out August 26. Then two systems stopped.</h1>
-  <p class="lede">The first two funnel emails reached 255 people on the night of August 26. Since then
-  the HubSpot account has been locked for non-payment, so the three follow-ups have not gone out, and the
-  social calendar ran dry on August 20 with nothing queued behind it. Everything below is read from the live
-  accounts today.</p>
-  <p class="stamp">Verified September 3, 2026 &middot; HubSpot 51058060 &middot; Blotato &middot; Shopify 547ac9-2 &middot; Faire</p>
+  <div class="eyebrow">Systems Report &middot; Plain English</div>
+  <h1>Here&rsquo;s where everything stands.</h1>
+  <p class="lede">This page walks through what has been done for MOKIPOPS so far, what it produced, and what
+  needs to happen next. Everything was checked in the live accounts on September 3, 2026. If a word is
+  unfamiliar, there is a short glossary at the bottom.</p>
+  <p class="stamp">Checked September 3, 2026 &middot; email system, social posting tool, online store, Faire</p>
 </header>
 
-<div class="card alert">
-  <h3>Two things are stopped right now</h3>
-  <p class="why"><b>HubSpot is locked.</b> The $66.25 that was due August 19 is still unpaid, and HubSpot has
-  moved from a warning banner to a full lock: &ldquo;Your account is temporarily locked because of outstanding
-  payments.&rdquo; No emails can be sent, and the open and click reports for the August 26 sends cannot be
-  opened until it is paid. The follow-ups that were due August 31 and September 2 did not go out.</p>
-  <p class="why"><b>Social posting has been dark for 14 days.</b> The last MOKIPOPS post published on August 20
-  at 6:00 PM ET. Blotato has zero posts scheduled. Nothing has appeared on Facebook or Instagram since.</p>
+<div class="summary">
+  <h3>The one-minute version</h3>
+  <ol>
+    <li><b>The first two emails went out on the night of August 26</b> to 255 people: 51 past customers and 204 shops and event planners.</li>
+    <li><b>Store visits jumped the days after,</b> and 14 people got all the way to the checkout page. None finished buying. That&rsquo;s the biggest fixable thing on this page.</li>
+    <li><b>The email system is locked</b> because a $66.25 bill from August 19 hasn&rsquo;t been paid. The three follow-up emails are stuck until it is.</li>
+    <li><b>Social posting ran for five weeks, then stopped on August 20.</b> 150 posts, about 28,000 video views, and it was picking up speed when the queue ran out. Nothing has posted for two weeks.</li>
+    <li><b>Your first wholesale order came through Faire on August 10</b> for $164.40.</li>
+  </ol>
 </div>
 
-<h2>When the emails went out</h2>
-<p class="sub">Every send traced through the HubSpot preview inbox and the sending log. Times are Eastern.</p>
+<div class="card alert">
+  <h3>Two things need attention today</h3>
+  <p class="why"><b>1. The email system (HubSpot) is locked.</b> A $66.25 payment was due on August 19. It hasn&rsquo;t
+  been paid, so HubSpot has frozen the account. While it&rsquo;s frozen, no emails can go out and we can&rsquo;t see
+  how many people opened or clicked the ones already sent. Paying the bill unlocks everything immediately.</p>
+  <p class="why"><b>2. Nothing has posted to Facebook or Instagram since August 20.</b> The scheduling tool that
+  posts for you has an empty calendar. Two weeks of silence after five weeks of growth is momentum lost, and it
+  is easy to restart.</p>
+</div>
+
+<h2>The emails: when they went out and to whom</h2>
+<p class="sub">Times are Eastern. &ldquo;Preview&rdquo; means a test copy sent only to your own inbox to check how it looked.</p>
 <div class="card">
 <div class="scroll">
 <table>
-  <tr><th>Date</th><th>Email</th><th>To</th><th>Status</th></tr>
-  <tr><td class="num">Aug 12</td><td><b>12 years in 38 seconds</b> <span class="cap">(video opener)</span></td><td>Owner inbox only</td>
-      <td><span class="chip test">Preview</span> <span class="cap">landed in spam &ndash; domain not yet authenticated</span></td></tr>
-  <tr><td class="num">Aug 20 &middot; 10:23 AM</td><td><b>12 years in 38 seconds</b> <span class="cap">(video opener, re-sent)</span></td><td>Owner inbox only</td>
-      <td><span class="chip test">Preview</span> <span class="cap">arrived in inbox from moreflavor@mokipops.com</span></td></tr>
-  <tr><td class="num">Aug 25 &middot; 4:54&ndash;8:01 PM</td><td>All five funnel emails, test copies</td><td>Owner inbox only</td>
+  <tr><th>Date</th><th>Email</th><th>Who got it</th><th>Status</th></tr>
+  <tr><td class="num">Aug 12</td><td><b>&ldquo;12 years in 38 seconds&rdquo;</b> <span class="cap">the video announcement</span></td><td>Your inbox only</td>
+      <td><span class="chip test">Preview</span> <span class="cap">went to the spam folder</span></td></tr>
+  <tr><td class="num">Aug 20</td><td><b>&ldquo;12 years in 38 seconds&rdquo;</b> <span class="cap">re-sent after the fix below</span></td><td>Your inbox only</td>
+      <td><span class="chip test">Preview</span> <span class="cap">arrived in the inbox properly</span></td></tr>
+  <tr><td class="num">Aug 25</td><td>Test copies of all five emails</td><td>Your inbox only</td>
       <td><span class="chip test">Preview</span></td></tr>
-  <tr><td class="num"><b>Aug 26 &middot; 11:20 PM</b></td><td><b>&ldquo;The pops got better since you left&rdquo;</b> <span class="cap">A1</span></td><td><b>51</b> past customers</td>
+  <tr><td class="num"><b>Aug 26 &middot; 11:20 PM</b></td><td><b>&ldquo;The pops got better since you left&rdquo;</b></td><td><b>51</b> past customers</td>
       <td><span class="chip sent">Sent</span></td></tr>
-  <tr><td class="num"><b>Aug 26 &middot; 11:29 PM</b></td><td><b>&ldquo;All-natural pops your customers come back for&rdquo;</b> <span class="cap">B1</span></td><td><b>204</b> wholesale &amp; event prospects</td>
+  <tr><td class="num"><b>Aug 26 &middot; 11:29 PM</b></td><td><b>&ldquo;All-natural pops your customers come back for&rdquo;</b></td><td><b>204</b> shops &amp; event planners</td>
       <td><span class="chip sent">Sent</span></td></tr>
-  <tr><td class="num">Aug 31 (planned)</td><td>&ldquo;120 cases, 3,000 pops, one Atlanta afternoon&rdquo; <span class="cap">B2</span></td><td>204 prospects</td>
+  <tr><td class="num">Aug 31 <span class="cap">(planned)</span></td><td>&ldquo;120 cases, 3,000 pops, one Atlanta afternoon&rdquo; <span class="cap">the Waymo story</span></td><td>204 shops &amp; event planners</td>
       <td><span class="chip bad">Not sent</span> <span class="cap">account locked</span></td></tr>
-  <tr><td class="num">Sep 2 (planned)</td><td>&ldquo;One case = your whole event, sorted&rdquo; <span class="cap">A2</span></td><td>51 past customers</td>
+  <tr><td class="num">Sep 2 <span class="cap">(planned)</span></td><td>&ldquo;One case = your whole event, sorted&rdquo;</td><td>51 past customers</td>
       <td><span class="chip bad">Not sent</span> <span class="cap">account locked</span></td></tr>
-  <tr><td class="num">Sep 7 (planned)</td><td>&ldquo;Should I close your file?&rdquo; <span class="cap">B3</span></td><td>204 prospects</td>
+  <tr><td class="num">Sep 7 <span class="cap">(planned)</span></td><td>&ldquo;Should I close your file?&rdquo; <span class="cap">the last nudge</span></td><td>204 shops &amp; event planners</td>
       <td><span class="chip warn">Waiting</span></td></tr>
 </table>
 </div>
-<p class="why">255 real recipients, 263 sends counted by HubSpot including the test copies. Everyone on the
-Do Not Market list was excluded. The sending domain is now fully authenticated: the SPF record carries the
-HubSpot include and the DKIM key for mokipops.com is in place, which is why the August 20 re-send reached the
-inbox where the August 12 one went to spam.</p>
+  <div class="means"><b>What this means:</b> the plan was five emails spaced over two weeks. Two are out. Three are
+  waiting on the unpaid bill. The two that went out were sent late at night, which is fine for business inboxes:
+  they are at the top of the pile when people open their mail the next morning.</div>
+</div>
+
+<div class="card good">
+  <h3>A fix that happened along the way: your emails now pass the spam check</h3>
+  <p class="why">The August 12 preview went straight to spam. The reason: your web address, mokipops.com, had not
+  been set up to tell email providers &ldquo;yes, HubSpot is allowed to send mail on my behalf.&rdquo; Without that
+  permission slip, Gmail and Outlook treat the mail as suspicious. That permission has now been added, and
+  the August 20 re-send landed in the inbox, sent from moreflavor@mokipops.com. Every email since then has had
+  the same protection.</p>
 </div>
 
 <div class="card flag">
-  <h3>What we cannot see yet</h3>
-  <p class="why">Open rate, click rate, replies logged in HubSpot and wholesale form submissions all sit behind
-  the lock. The moment the balance is paid those numbers can be added to this page. Replies to
-  moreflavor@mokipops.com should be checked directly in that mailbox in the meantime.</p>
+  <h3>What we can&rsquo;t see until the bill is paid</h3>
+  <p class="why">How many people opened each email, how many clicked, and any replies or wholesale form
+  submissions logged inside HubSpot. Those reports are behind the lock. They&rsquo;ll be added to this page as
+  soon as it opens. In the meantime, replies will be sitting in the moreflavor@mokipops.com mailbox.</p>
 </div>
 
-<h2>Did the emails move anything?</h2>
-<p class="sub">Shopify store traffic, July 1 to September 3, compared with the previous 65 days.</p>
+<h2>Did the emails do anything? Yes.</h2>
+<p class="sub">We can see the effect in your online store&rsquo;s visitor numbers even with HubSpot locked.</p>
 <div class="card">
-  <p class="why" style="margin-top:0"><b>Yes, visibly.</b> After the mid-July launch spike, store traffic settled to
-  roughly 30 to 40 sessions a day. The only two spikes since then are <b>August 26 to 30</b>, when daily
-  sessions jumped to roughly 120 to 130 on two separate days. Nothing else changed that week: no posts were
-  going out, no ads were running. That is the email.</p>
+  <p class="why" style="margin-top:0">On an ordinary day in August the store got around <b>30 to 40 visits</b>. On
+  <b>August 26 through 30</b>, right after the emails, that jumped to roughly <b>120 to 130 visits</b> on two separate
+  days. Nothing else was running that week: no posts, no ads. The emails did that.</p>
   <ul class="plain">
-    <li><b>The announcement page</b> at mokipops.com/pages/watch recorded 33 sessions. It is linked only from the emails, so those are email readers who clicked through to watch the video.</li>
-    <li><b>The wholesale page</b> on the store recorded 22 sessions, up 175% on the prior period.</li>
-    <li><b>Add-to-cart</b> rose to 19 (up 46%) and <b>reached checkout</b> rose to 14 (up 56%) versus the prior period.</li>
-    <li><b>Completed online orders: 0.</b> Fourteen people got as far as checkout and none finished. That is the single most fixable number on this page, and it is covered under next steps.</li>
+    <li><b>33 people watched the announcement video</b> on mokipops.com/pages/watch. That page is only linked from the emails, so every one of those was an email reader.</li>
+    <li><b>22 people visited the wholesale page</b> on the store, nearly triple the previous period.</li>
+    <li><b>19 people put pops in their cart</b> and <b>14 went to the checkout page</b>, both up about half on the previous two months.</li>
+    <li><b>0 finished buying.</b></li>
   </ul>
-  <p class="cap">Attribution is by timing. HubSpot&rsquo;s own click data will confirm it once the account is unlocked.</p>
+  <div class="means"><b>What this means:</b> the emails got people interested enough to shop. Something at the
+  very last step is turning them away. That is almost always a shipping surprise (a big cost that only appears
+  at checkout, or a &ldquo;we don&rsquo;t ship to your area&rdquo; message) and it is usually a quick fix once we
+  know which one it is. See next steps.</div>
 </div>
 
-<h2>Social to date</h2>
-<p class="sub">Every MOKIPOPS post pushed through Blotato to Facebook (MokiPops page) and Instagram (@mokipops), July 13 to August 20.</p>
+<h2>Social media: what five weeks of posting produced</h2>
+<p class="sub">Posts went to your Facebook page and Instagram (@mokipops) through a scheduling tool, July 13 to August 20.</p>
 
 <div class="kpis">
-  <div class="kpi"><div class="v">150</div><div class="l">Posts published</div><div class="d">94 Facebook &middot; 56 Instagram &middot; 30 posting days</div></div>
-  <div class="kpi"><div class="v">27,854</div><div class="l">Video views</div><div class="d">across the 57 posts with analytics</div></div>
-  <div class="kpi"><div class="v">18,422</div><div class="l">Accounts reached</div><div class="d">Instagram only; Facebook does not report reach</div></div>
-  <div class="kpi"><div class="v">855</div><div class="l">Likes</div><div class="d">74 comments &middot; 22 shares &middot; 15 saves</div></div>
+  <div class="kpi"><div class="v">150</div><div class="l">Posts published</div><div class="d">94 on Facebook, 56 on Instagram, over 30 days</div></div>
+  <div class="kpi"><div class="v">27,854</div><div class="l">Video views</div><div class="d">times someone watched a MOKIPOPS video</div></div>
+  <div class="kpi"><div class="v">18,422</div><div class="l">People who saw a post</div><div class="d">on Instagram; Facebook doesn&rsquo;t report this</div></div>
+  <div class="kpi"><div class="v">855</div><div class="l">Likes</div><div class="d">plus 74 comments, 22 shares, 15 saves</div></div>
 </div>
 
 <div class="card">
-  <h3>Where the views came from</h3>
+  <h3>Instagram is where the audience is</h3>
   <div class="bars">
     <div class="brow"><span>Instagram</span><div class="t"><i class="ig" style="width:94%"></i></div><span class="n">26,055</span></div>
     <div class="brow"><span>Facebook</span><div class="t"><i class="fb" style="width:6%"></i></div><span class="n">1,799</span></div>
   </div>
-  <p class="why">Instagram carried 94% of all views. Facebook published more posts but Facebook only tracks
-  the handful that were uploaded as Reels; the rest post fine but report no numbers.</p>
+  <p class="why">94 out of every 100 video views happened on Instagram. Facebook is still worth posting to
+  because it&rsquo;s free and takes no extra effort, but Instagram is the channel that is actually growing.</p>
 
-  <h3 style="margin-top:26px">What content worked</h3>
-  <p class="cap">Average views per post, by theme.</p>
+  <h3 style="margin-top:26px">Which posts people watched</h3>
+  <p class="cap">Average views per post, by type of content.</p>
   <div class="bars">
-    <div class="brow"><span>New facility reel</span><div class="t"><i style="width:100%"></i></div><span class="n">2,777</span></div>
-    <div class="brow"><span>Kitchen behind the scenes</span><div class="t"><i style="width:63%"></i></div><span class="n">1,763</span></div>
+    <div class="brow"><span>Walking into the new facility</span><div class="t"><i style="width:100%"></i></div><span class="n">2,777</span></div>
+    <div class="brow"><span>Making pops in the kitchen</span><div class="t"><i style="width:63%"></i></div><span class="n">1,763</span></div>
     <div class="brow"><span>Pop-up day with the crew</span><div class="t"><i style="width:58%"></i></div><span class="n">1,606</span></div>
-    <div class="brow"><span>Kids&rsquo; reactions</span><div class="t"><i style="width:20%"></i></div><span class="n">554</span></div>
-    <div class="brow"><span>Founders on camera</span><div class="t"><i style="width:15%"></i></div><span class="n">413</span></div>
+    <div class="brow"><span>Kids reacting to real fruit</span><div class="t"><i style="width:20%"></i></div><span class="n">554</span></div>
+    <div class="brow"><span>Founders telling the story</span><div class="t"><i style="width:15%"></i></div><span class="n">413</span></div>
     <div class="brow"><span>Hawks / State Farm Arena</span><div class="t"><i style="width:12.5%"></i></div><span class="n">347</span></div>
-    <div class="brow"><span>Clean-label stills</span><div class="t"><i style="width:12.4%"></i></div><span class="n">344</span></div>
-    <div class="brow"><span>Dessert Wars win</span><div class="t"><i style="width:10.8%"></i></div><span class="n">299</span></div>
+    <div class="brow"><span>Designed product pictures</span><div class="t"><i style="width:12.4%"></i></div><span class="n">344</span></div>
+    <div class="brow"><span>Dessert Wars award</span><div class="t"><i style="width:10.8%"></i></div><span class="n">299</span></div>
   </div>
-  <p class="why">The pattern is unambiguous: <b>video of real people making or handing out pops</b> outperforms
-  a designed still by roughly eight to one. The single best post, the walk into the new manufacturing
-  facility on August 14, did 3,576 views, 143 likes and 17 comments, and it kept climbing for a week after
-  it posted. Award and recognition posts, which feel important internally, are the weakest performers.</p>
+  <div class="means"><b>What this means:</b> people want to see <b>real people making and handing out pops</b>. A
+  phone video of the kitchen gets about eight times the views of a polished product graphic. The single best post
+  was the walk into the new manufacturing facility on August 14: 3,576 views, 143 likes, 17 comments, and it kept
+  growing for a week. Award announcements, which feel important, are the posts people scroll past. More kitchen,
+  fewer trophies.</div>
 
-  <h3 style="margin-top:26px">Momentum</h3>
-  <p class="cap">Views earned by posts published in each half-month.</p>
+  <h3 style="margin-top:26px">It was speeding up when it stopped</h3>
+  <p class="cap">Total views earned by the posts published in each stretch.</p>
   <div class="bars">
     <div class="brow"><span>Jul 13&ndash;15</span><div class="t"><i style="width:3%"></i></div><span class="n">297</span></div>
     <div class="brow"><span>Jul 16&ndash;31</span><div class="t"><i style="width:94%"></i></div><span class="n">9,394</span></div>
     <div class="brow"><span>Aug 1&ndash;15</span><div class="t"><i style="width:81%"></i></div><span class="n">8,120</span></div>
     <div class="brow"><span>Aug 16&ndash;20</span><div class="t"><i style="width:100%"></i></div><span class="n">10,043</span></div>
   </div>
-  <p class="why">The final five days of posting earned more views than any full half-month before them. The
-  account was accelerating when the queue ran out.</p>
+  <p class="why">The last <b>five days</b> of posting earned more views than any full two-week stretch before them.
+  The account was building momentum when the calendar ran out on August 20.</p>
 </div>
 
 <div class="card flag">
-  <h3>Failures worth knowing about</h3>
-  <p class="why">88 scheduled posts failed. 83 of those were on a single day, July 16, when a bulk queue hit
-  Facebook&rsquo;s limit of 35 posts per page per 24 hours; the remaining five were media that Facebook or
-  Instagram could not process. Nothing failed after August 2. The July 16 pile-up is the reason the calendar
-  was later changed to one post a day.</p>
+  <h3>One bad day in July, explained</h3>
+  <p class="why">88 scheduled posts failed to publish. 83 of those were on a single day, July 16, when too many posts
+  were queued at once and Facebook cut them off (it allows 35 posts per page per day). The other five were
+  video files Facebook or Instagram couldn&rsquo;t process. Nothing has failed since August 2. That July 16 pile-up is
+  why the schedule was changed to one steady post a day.</p>
 </div>
 
 <div class="card">
-  <h3>Social to store</h3>
-  <p class="why" style="margin-top:0">Instagram sent 32 sessions to the store (up 23%), Facebook sent 6, LinkedIn 1.
-  Against 27,854 views that is a click-through well under one percent, which is normal for Instagram
-  because captions are not clickable. Social did its job as awareness. It was never going to be the
-  channel that closes orders, and the numbers say so plainly.</p>
+  <h3>Social brought attention, not clicks</h3>
+  <p class="why" style="margin-top:0">Instagram sent 32 visitors to the store, Facebook 6, LinkedIn 1. That&rsquo;s tiny
+  next to 27,854 views, and it&rsquo;s normal: Instagram doesn&rsquo;t let people click links in captions. Social&rsquo;s job
+  is to make people recognise MOKIPOPS. The emails and Faire are what turn that into orders. The numbers show
+  each channel doing its own job.</p>
 </div>
 
-<h2>Shopify</h2>
-<p class="sub">July 1 to September 3, 2026, compared with April 27 to June 30.</p>
+<h2>The online store (Shopify)</h2>
+<p class="sub">July 1 to September 3, compared with the two months before.</p>
 
 <div class="kpis">
-  <div class="kpi"><div class="v">3,310</div><div class="l">Sessions</div><div class="d"><span class="up">&uarr; 90%</span> vs prior period</div></div>
-  <div class="kpi"><div class="v">$164.40</div><div class="l">Total sales</div><div class="d">1 order, via Faire</div></div>
+  <div class="kpi"><div class="v">3,310</div><div class="l">Store visits</div><div class="d"><span class="up">&uarr; 90%</span> vs the two months before</div></div>
+  <div class="kpi"><div class="v">$164.40</div><div class="l">Total sales</div><div class="d">1 order, placed through Faire</div></div>
   <div class="kpi"><div class="v">14</div><div class="l">Reached checkout</div><div class="d"><span class="up">&uarr; 56%</span> &middot; 0 completed</div></div>
-  <div class="kpi"><div class="v">$0</div><div class="l">Online store sales</div><div class="d"><span class="down">&darr; 100%</span> from $192.65 (2 orders)</div></div>
+  <div class="kpi"><div class="v">$0</div><div class="l">Online store sales</div><div class="d"><span class="down">&darr; from $192.65</span> (2 orders) the period before</div></div>
 </div>
 
 <div class="card">
 <div class="scroll">
 <table>
-  <tr><th>Traffic</th><th class="r">Sessions</th><th class="r">Change</th><th>Read</th></tr>
-  <tr><td><b>Homepage</b></td><td class="num r">1,833</td><td class="num r up">+136%</td><td>Launch, social and email all land here</td></tr>
-  <tr><td><b>Blog: how to keep popsicles frozen</b></td><td class="num r">985</td><td class="num r up">+62%</td><td>Steady Google search traffic, largely non-local</td></tr>
-  <tr><td><b>Case of 24 product page</b></td><td class="num r">63</td><td class="num r down">&minus;19%</td><td>The wholesale-size SKU</td></tr>
-  <tr><td><b>/pages/watch</b> (announcement video)</td><td class="num r">33</td><td class="num r">new</td><td>Email readers</td></tr>
-  <tr><td><b>/pages/event-request</b></td><td class="num r">28</td><td class="num r down">&minus;33%</td><td></td></tr>
-  <tr><td><b>/pages/wholesale</b></td><td class="num r">22</td><td class="num r up">+175%</td><td>Currently returns a 404, see next steps</td></tr>
-  <tr><td colspan="4" style="padding-top:18px"><b>By source</b></td></tr>
-  <tr><td>Direct &middot; Atlanta</td><td class="num r">150</td><td class="num r up">+159%</td><td>Local people typing the address in</td></tr>
-  <tr><td>Direct &middot; Marietta</td><td class="num r">118</td><td class="num r up">+973%</td><td></td></tr>
+  <tr><th>Where visitors landed</th><th class="r">Visits</th><th class="r">Change</th><th>What it tells us</th></tr>
+  <tr><td><b>Home page</b></td><td class="num r">1,833</td><td class="num r up">+136%</td><td>Where social and email traffic arrives</td></tr>
+  <tr><td><b>Blog: how to keep popsicles frozen</b></td><td class="num r">985</td><td class="num r up">+62%</td><td>People finding you on Google, mostly from outside Atlanta</td></tr>
+  <tr><td><b>Case of 24 product page</b></td><td class="num r">63</td><td class="num r down">&minus;19%</td><td>The wholesale-size box</td></tr>
+  <tr><td><b>Announcement video page</b></td><td class="num r">33</td><td class="num r">new</td><td>Email readers</td></tr>
+  <tr><td><b>Event request page</b></td><td class="num r">28</td><td class="num r down">&minus;33%</td><td></td></tr>
+  <tr><td><b>Wholesale page</b></td><td class="num r">22</td><td class="num r up">+175%</td><td><b>This page is currently broken</b> (shows &ldquo;page not found&rdquo;). See next steps.</td></tr>
+  <tr><td colspan="4" style="padding-top:18px"><b>Where visitors came from</b></td></tr>
+  <tr><td>Typed the address in &middot; Atlanta</td><td class="num r">150</td><td class="num r up">+159%</td><td>Local people who already know the name</td></tr>
+  <tr><td>Typed the address in &middot; Marietta</td><td class="num r">118</td><td class="num r up">+973%</td><td></td></tr>
   <tr><td>Google search</td><td class="num r">93</td><td class="num r up">+45%</td><td></td></tr>
   <tr><td>Instagram</td><td class="num r">32</td><td class="num r up">+23%</td><td></td></tr>
-  <tr><td>Direct &middot; Council Bluffs, Iowa</td><td class="num r">1,000</td><td class="num r up">+1,100%</td><td><b>Treat as bot traffic.</b> Council Bluffs is a data-centre town; nobody there is buying pops. Remove it and real sessions are roughly 2,300, still well up.</td></tr>
+  <tr><td>Council Bluffs, Iowa</td><td class="num r">1,000</td><td class="num r up">+1,100%</td><td><b>Ignore this one.</b> Council Bluffs is home to giant computer data centres, not popsicle shoppers. These are automated visits, not people. Take them out and real visits are about 2,300, still way up.</td></tr>
 </table>
 </div>
-<p class="why">Sessions peaked at around 330 a day on July 15 and 16, the launch of the reel and the four-a-day
-posting burst. Atlanta and Marietta traffic more than doubled, which is exactly the audience the wholesale
-and event pitch is aimed at.</p>
+  <div class="means"><b>What this means:</b> a lot more real people, especially in Atlanta and Marietta, are looking
+  at MOKIPOPS than two months ago. The busiest days were July 15 and 16, when the launch video and the burst of
+  posts went out. The store is getting the attention; it just isn&rsquo;t closing the sale yet.</div>
 </div>
 
 <div class="card flag">
-  <h3>Housekeeping in the store</h3>
-  <p class="why">Shopify shows 53 open orders and 49 awaiting fulfilment, most dating back to late 2025. Those are
-  almost certainly already delivered and simply never marked fulfilled, but they distort every report and will
-  confuse anyone who opens the admin. Two of them carry &ldquo;chargeback lost&rdquo;. Worth an afternoon to clear.</p>
+  <h3>Some tidying up in the store</h3>
+  <p class="why">Shopify is showing 53 &ldquo;open&rdquo; orders and 49 marked as not yet shipped, most from late 2025. Those pops
+  were almost certainly delivered long ago and just never marked as done. It doesn&rsquo;t hurt anything, but it makes
+  every report look wrong and would confuse anyone else who logs in. Two of the old orders also show a lost
+  chargeback. An afternoon of clicking &ldquo;fulfilled&rdquo; clears it.</p>
 </div>
 
-<h2>Faire</h2>
+<h2>Faire (the wholesale marketplace)</h2>
 <div class="card good">
-  <h3>First wholesale order came through Faire on August 10</h3>
-  <p class="why"><b>$164.40, three items, paid and fulfilled.</b> It is the only order of any kind in the period,
-  and it is the first Faire order the brand has received. It arrived four weeks into the social run and two
-  days before the first email preview, so it belongs to the awareness work rather than the email funnel.</p>
+  <h3>Your first wholesale order arrived August 10</h3>
+  <p class="why"><b>$164.40, three items, paid and shipped.</b> It&rsquo;s the only order of any kind in this period, and it is the
+  first order MOKIPOPS has ever received through Faire. It came in four weeks into the social posting and before
+  any email went out, so it belongs to the awareness work.</p>
 </div>
 <div class="card">
-  <p class="why" style="margin-top:0"><b>The listing is live and correct.</b> Strawberry Lemonade, Lemon Lime, Creamy
-  Chocolate, Mango Lime and Basil Lemonade show at $2.25 a pop wholesale against a $4.50 suggested retail,
-  cases of 24, $150 minimum. Faire has already tagged Creamy Chocolate as a Bestseller.</p>
-  <p class="why">Brand-side numbers such as page views, followers, and retailer messages could not be pulled: the
-  Faire login available to this report is the retailer account, not the brand portal. A brand-portal login
-  would let those be added.</p>
+  <p class="why" style="margin-top:0"><b>Your listing looks right.</b> Strawberry Lemonade, Lemon Lime, Creamy Chocolate,
+  Mango Lime and Basil Lemonade are showing at $2.25 a pop wholesale (shops resell at $4.50), sold by the case of
+  24, with a $150 minimum order. Faire has already put a &ldquo;Bestseller&rdquo; badge on Creamy Chocolate.</p>
+  <p class="why">One gap: we could only view Faire the way a shop sees it, not through the brand&rsquo;s own dashboard.
+  That means numbers like how many shops viewed your page or followed you aren&rsquo;t in this report yet. A login
+  to the Faire brand dashboard would let us add them.</p>
 </div>
 
-<h2>System status</h2>
+<h2>Status of each system, at a glance</h2>
 <div class="card">
 <div class="scroll">
 <table>
-  <tr><th>System</th><th>Status</th><th>Detail</th></tr>
-  <tr><td><b>HubSpot</b></td><td><span class="chip bad">Locked</span></td><td>$66.25 past due since Aug 19. 254 of 1,000 marketing contacts. Domain authentication complete (SPF include and DKIM present; DMARC still at &ldquo;none&rdquo;, which is fine for now). Marketing Professional trial ended; restorable until Nov 24.</td></tr>
-  <tr><td><b>Blotato</b></td><td><span class="chip warn">Idle</span></td><td>Facebook and Instagram connected and healthy. 0 posts scheduled. Last post Aug 20. 19-asset evergreen library ready to rotate.</td></tr>
-  <tr><td><b>Shopify</b></td><td><span class="chip live">Live</span></td><td>Store and /pages/watch live. /pages/wholesale returns 404. 49 legacy orders unfulfilled. Facebook &amp; Instagram sales channel installed but 0 of 7 setup tasks done.</td></tr>
-  <tr><td><b>Faire</b></td><td><span class="chip live">Live</span></td><td>Listing live, 1 order to date. Brand-portal analytics not accessible from here.</td></tr>
-  <tr><td><b>Landing pages</b></td><td><span class="chip live">Live</span></td><td>wholesale.html, video.html and this report all return 200 on GitHub Pages.</td></tr>
+  <tr><th>System</th><th>What it does</th><th>Status</th><th>Notes</th></tr>
+  <tr><td><b>HubSpot</b></td><td>Sends the emails and keeps the customer list</td><td><span class="chip bad">Locked</span></td><td>$66.25 unpaid since Aug 19. 254 contacts on file. Spam-check setup is now complete.</td></tr>
+  <tr><td><b>Scheduling tool</b></td><td>Posts to Facebook and Instagram on a calendar</td><td><span class="chip warn">Empty</span></td><td>Accounts connected and working. Nothing scheduled. Last post Aug 20. 19 ready-to-use posts in the library.</td></tr>
+  <tr><td><b>Shopify</b></td><td>Your online store</td><td><span class="chip live">Working</span></td><td>Store and video page live. Wholesale page broken. 49 old orders need marking as shipped.</td></tr>
+  <tr><td><b>Faire</b></td><td>Where shops order wholesale</td><td><span class="chip live">Working</span></td><td>Listing live. 1 order so far.</td></tr>
+  <tr><td><b>Wholesale &amp; video pages</b></td><td>The pages the emails link to</td><td><span class="chip live">Working</span></td><td>All loading normally.</td></tr>
 </table>
 </div>
 </div>
@@ -292,58 +322,76 @@ and event pitch is aimed at.</p>
 <h2>What to do next, in order</h2>
 
 <div class="play">
-  <div class="top"><span class="rank">01</span><h3>Pay the $66.25 and unlock HubSpot</h3></div>
-  <p class="why">Everything else in the email lane is behind this. Account &amp; Billing &rarr; Pay now. The next bill of
-  $66.25 lands September 19, so both may be due together.</p>
+  <div class="top"><span class="rank">01</span><h3>Pay the $66.25 to unlock HubSpot</h3><span class="who">You &middot; 5 minutes</span></div>
+  <p class="why">Log in to HubSpot, go to Account &amp; Billing, click &ldquo;Pay now.&rdquo; Everything in the email plan is waiting
+  on this. Note the next monthly bill (another $66.25) is due September 19, so the two may land close together.</p>
 </div>
 
 <div class="play">
-  <div class="top"><span class="rank">02</span><h3>Send the two overdue follow-ups the same day</h3></div>
-  <p class="why">B2 (the Waymo activation story) to the 204 prospects and A2 (one case for your event) to the 51
-  past customers. Both are already built and tested; they are a minute each to send. Then B3, &ldquo;Should I
-  close your file?&rdquo;, roughly a week later. Pull the open and click numbers for A1 and B1 while in there and
-  add them to this page.</p>
+  <div class="top"><span class="rank">02</span><h3>Send the two overdue emails the same day</h3><span class="who">Us &middot; same day</span></div>
+  <p class="why">The Waymo story to the 204 shops and event planners, and the &ldquo;one case for your event&rdquo; email to the 51 past
+  customers. Both are written, tested and ready; they take about a minute each to send. The final &ldquo;Should I close
+  your file?&rdquo; email follows a week later. While we&rsquo;re in there we&rsquo;ll pull the open and click numbers for the
+  August 26 emails and add them here.</p>
 </div>
 
 <div class="play">
-  <div class="top"><span class="rank">03</span><h3>Refill the social calendar today</h3></div>
-  <p class="why">Fourteen dark days after a month of growth is the most expensive gap on this page. One post a day at
-  noon ET, September through October, weighted toward the formats that won: facility and kitchen video,
-  pop-up footage, kids reacting. Layer in fall and Halloween angles. Fewer designed stills.</p>
+  <div class="top"><span class="rank">03</span><h3>Restart the social posts</h3><span class="who">Us &middot; this week</span></div>
+  <p class="why">One post a day at noon, September through October, leaning on what worked: kitchen and facility video, pop-up
+  footage, kids reacting. We&rsquo;ll add fall and Halloween flavours to the captions. Fewer designed graphics, more
+  phone-shot video. If you can send a few new clips from the kitchen or an event, they will outperform anything we
+  already have.</p>
 </div>
 
 <div class="play">
-  <div class="top"><span class="rank">04</span><h3>Find out why 14 checkouts became 0 orders</h3></div>
-  <p class="why">Run a test checkout on the case of 24 from a phone. The usual suspects for frozen goods are a shipping
-  quote that appears late and is larger than the product, or a delivery area check that fails. Whatever it is,
-  the email traffic arrived, found the cart, and left at the last step.</p>
+  <div class="top"><span class="rank">04</span><h3>Find out why 14 people reached checkout and none bought</h3><span class="who">Us &middot; this week</span></div>
+  <p class="why">We&rsquo;ll go through a real checkout on a phone, exactly as a customer would, and see what they see at the
+  last step. For frozen products the culprit is usually a shipping cost that only shows up at the end, or a
+  message that says we don&rsquo;t deliver to their area. Whatever it is, fixing it turns the traffic you already have
+  into orders.</p>
 </div>
 
 <div class="play">
-  <div class="top"><span class="rank">05</span><h3>Fix the wholesale page on the store</h3></div>
-  <p class="why">mokipops.com/pages/wholesale returned a 404 today yet still drew 22 visits. Either restore the page or
-  redirect it to the live wholesale page so no buyer hits a dead end.</p>
+  <div class="top"><span class="rank">05</span><h3>Fix the broken wholesale page on the store</h3><span class="who">Us &middot; 1 hour</span></div>
+  <p class="why">mokipops.com/pages/wholesale shows &ldquo;page not found&rdquo; right now, and 22 people tried to open it anyway.
+  We&rsquo;ll either bring the page back or automatically send visitors to the working wholesale page so no buyer hits
+  a dead end.</p>
 </div>
 
 <div class="play">
-  <div class="top"><span class="rank">06</span><h3>Get brand-portal access to Faire</h3></div>
-  <p class="why">So page views, follows and retailer messages can sit alongside the order count in the next report.</p>
+  <div class="top"><span class="rank">06</span><h3>Share access to the Faire brand dashboard</h3><span class="who">You &middot; 5 minutes</span></div>
+  <p class="why">So the next report can show how many shops are viewing and following MOKIPOPS on Faire, alongside orders.</p>
 </div>
 
 <div class="play">
-  <div class="top"><span class="rank">07</span><h3>Clear the 49 legacy unfulfilled orders in Shopify</h3></div>
-  <p class="why">Mark them fulfilled or archive them so the dashboard reflects reality.</p>
+  <div class="top"><span class="rank">07</span><h3>Mark the 49 old orders as shipped</h3><span class="who">Us &middot; an afternoon</span></div>
+  <p class="why">Housekeeping so the store dashboard shows the real picture.</p>
+</div>
+
+<h2>Words used on this page</h2>
+<div class="card">
+  <dl>
+    <dt>HubSpot</dt><dd>The system that stores your customer and prospect list and sends the marketing emails.</dd>
+    <dt>Scheduling tool</dt><dd>Software that holds a calendar of posts and publishes them to Facebook and Instagram at set times, so nobody has to post by hand every day.</dd>
+    <dt>Faire</dt><dd>An online marketplace where independent shops order wholesale from brands like MOKIPOPS. Faire handles the payment and takes a commission.</dd>
+    <dt>Visit</dt><dd>One person opening your online store once. The same person coming back tomorrow counts as another visit.</dd>
+    <dt>Reached checkout</dt><dd>A shopper put something in the cart and got to the page where they enter payment and delivery details.</dd>
+    <dt>Views</dt><dd>How many times a video was watched. One person can watch more than once.</dd>
+    <dt>People who saw a post</dt><dd>The number of different people a post appeared in front of, counted once each. Also called &ldquo;reach.&rdquo;</dd>
+    <dt>Spam check</dt><dd>Email providers like Gmail check whether the sender is really allowed to send from that address. If the check fails, the email goes to spam. Yours now passes.</dd>
+    <dt>Preview / test send</dt><dd>A copy of an email sent only to your own inbox to make sure it looks right before real customers get it.</dd>
+    <dt>Automated visits</dt><dd>Computer programs, not people, loading your website. Common and harmless, but they inflate visitor counts, which is why we set the Iowa number aside.</dd>
+  </dl>
 </div>
 
 <div class="card">
   <h3>Previous report</h3>
-  <p class="why">The August 28 review of what the HubSpot subscription includes and which paid features are unused is
-  preserved at <a href="hubspot-playbook-2026-08-28.html">hubspot-playbook-2026-08-28.html</a>. Its recommendations
-  (commerce tooling, a wholesale deal pipeline, forms and a booking link, the Shopify connection) still stand and pick
-  up once the account is unlocked.</p>
+  <p class="why">On August 28 we reviewed what your HubSpot subscription includes and which paid features are going unused.
+  That review is kept at <a href="hubspot-playbook-2026-08-28.html">hubspot-playbook-2026-08-28.html</a>. Its
+  recommendations still stand and pick up once the account is unlocked.</p>
 </div>
 
-<footer>Prepared for MOKIPOPS &middot; September 3, 2026 &middot; figures read from HubSpot 51058060, Blotato, Shopify 547ac9-2 and Faire on the day</footer>
+<footer>Prepared for MOKIPOPS &middot; September 3, 2026 &middot; all figures read directly from the live accounts on the day</footer>
 </div>
 </body>
 </html>
