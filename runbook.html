@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOKIPOPS — Local Operations Runbook</title>
+<meta name="description" content="Everything needed to run MOKIPOPS social posting, funnel email and lead capture from one Mac — no Blotato, no HubSpot.">
+<style>
+@font-face { font-family:'Fraunces'; src:url(assets/fraunces.woff2) format('woff2'); font-weight:100 900; font-display:swap; }
+@font-face { font-family:'Archivo'; src:url(assets/archivo.woff2) format('woff2'); font-weight:100 900; font-display:swap; }
+:root { --bg:#FFF6E9; --panel:#FBEAD0; --ink:#2A1A12; --sub:#5A463B; --hairline:rgba(42,26,18,.12); --card:#ffffff;
+  --mango:#F5A623; --orange:#EE6C2B; --chili:#E23A23; --leaf:#4FB669; --code:#2A1A12; --codeink:#FFF6E9; --r:18px; }
+@media (prefers-color-scheme: dark) { :root { --bg:#211714; --panel:#2A1A12; --ink:#FFF6E9; --sub:#cdbba8; --hairline:rgba(255,246,233,.14); --card:#33211a; --code:#150e0b; --codeink:#FBEAD0; } }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased; }
+h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; line-height:1.15; }
+a { color:var(--chili); }
+.wrap { max-width:980px; margin:0 auto; padding:0 max(16px, env(safe-area-inset-left)); }
+.topbar { position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px);
+  background:color-mix(in srgb, var(--bg) 82%, transparent); border-bottom:1px solid var(--hairline); }
+.topbar .wrap { display:flex; align-items:center; justify-content:space-between; min-height:52px; gap:12px; flex-wrap:wrap; padding-top:6px; padding-bottom:6px; }
+.wordmark { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:17px; text-decoration:none; color:var(--ink); }
+.wordmark em { font-style:normal; color:var(--mango); }
+.topnav { display:flex; gap:14px; flex-wrap:wrap; }
+.topnav a { font-size:12.5px; font-weight:800; text-decoration:none; }
+.hero { padding:clamp(40px,7vw,72px) 0 24px; }
+.eyebrow { display:inline-block; font-size:12px; font-weight:800; color:var(--chili); letter-spacing:.09em; text-transform:uppercase; margin-bottom:10px; }
+.hero h1 { font-size:clamp(32px,6vw,54px); font-weight:900; letter-spacing:-.02em; margin-bottom:12px; }
+.hero p.lede { font-size:clamp(16px,2.2vw,19px); color:var(--sub); max-width:720px; }
+.pills { display:flex; gap:8px; flex-wrap:wrap; margin-top:18px; }
+.pill { font-size:12.5px; font-weight:800; padding:6px 11px; border-radius:999px; background:var(--panel); color:var(--ink); }
+.pill.ok { background:color-mix(in srgb, var(--leaf) 22%, transparent); }
+.pill.todo { background:color-mix(in srgb, var(--mango) 30%, transparent); }
+section { padding:34px 0 8px; }
+.sechead { margin-bottom:16px; }
+.sechead h2 { font-size:clamp(24px,4vw,34px); font-weight:800; letter-spacing:-.01em; }
+.sechead p { color:var(--sub); margin-top:6px; max-width:720px; }
+.card { background:var(--card); border:1px solid var(--hairline); border-radius:var(--r); padding:clamp(16px,3vw,24px); margin-bottom:14px; }
+.card h3 { font-size:20px; font-weight:800; margin-bottom:8px; }
+.card h4 { font-size:15px; font-weight:800; margin:14px 0 6px; font-family:'Archivo',sans-serif; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media (max-width:720px) { .grid2, .grid3 { grid-template-columns:1fr; } }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--hairline); vertical-align:top; }
+th { font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); }
+.tablewrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+ol.steps { counter-reset:s; list-style:none; }
+ol.steps > li { position:relative; padding:14px 0 14px 46px; border-bottom:1px solid var(--hairline); }
+ol.steps > li:last-child { border-bottom:0; }
+ol.steps > li::before { counter-increment:s; content:counter(s); position:absolute; left:0; top:14px; width:32px; height:32px; border-radius:50%;
+  background:var(--mango); color:#2A1A12; font-weight:900; display:grid; place-items:center; font-size:14px; }
+ol.steps b.t { display:block; font-size:16px; margin-bottom:4px; }
+ol.steps p, ol.steps li li { color:var(--sub); font-size:14.5px; }
+ol.steps ul { margin:6px 0 0 18px; }
+ol.steps ul li { margin:3px 0; }
+pre { position:relative; background:var(--code); color:var(--codeink); border-radius:12px; padding:14px 16px; font-size:13px; line-height:1.5; overflow-x:auto; margin:10px 0; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+pre .copy { position:absolute; top:8px; right:8px; font:inherit; font-size:11px; font-weight:700; background:rgba(255,255,255,.14); color:inherit; border:0; border-radius:8px; padding:4px 8px; cursor:pointer; }
+code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.92em; background:var(--panel); padding:1px 5px; border-radius:6px; }
+pre code { background:none; padding:0; }
+.kv { display:grid; grid-template-columns:max-content 1fr; gap:6px 16px; font-size:14px; }
+.kv b { color:var(--sub); font-weight:700; }
+.kv span { word-break:break-all; }
+.stat { background:var(--panel); border-radius:14px; padding:14px 16px; }
+.stat b { display:block; font-family:'Fraunces',Georgia,serif; font-size:28px; font-weight:900; line-height:1; }
+.stat span { font-size:12px; color:var(--sub); font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+.flow { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+@media (max-width:720px) { .flow { grid-template-columns:1fr 1fr; } }
+.flow div { background:var(--panel); border-radius:14px; padding:12px 14px; font-size:13.5px; }
+.flow div b { display:block; font-family:'Fraunces',Georgia,serif; font-size:16px; margin-bottom:4px; }
+.callout { border-left:4px solid var(--chili); background:color-mix(in srgb, var(--chili) 8%, var(--card)); padding:12px 16px; border-radius:0 12px 12px 0; margin:12px 0; font-size:14.5px; }
+.callout.ok { border-color:var(--leaf); background:color-mix(in srgb, var(--leaf) 10%, var(--card)); }
+.queue li { display:grid; grid-template-columns:96px 1fr; gap:10px; padding:8px 0; border-bottom:1px solid var(--hairline); font-size:14px; list-style:none; }
+.queue li:last-child { border-bottom:0; }
+.queue .d { font-weight:800; }
+.queue .k { font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--chili); }
+.queue .c { color:var(--sub); }
+.small { font-size:13px; color:var(--sub); }
+.footer { text-align:center; font-size:13px; color:var(--sub); padding:36px 0 48px; }
+.check li { list-style:none; padding:6px 0 6px 28px; position:relative; font-size:14.5px; }
+.check li::before { content:"☐"; position:absolute; left:2px; top:5px; color:var(--mango); font-size:16px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="wordmark" href="index.html">MOKI<em>POPS</em> · Runbook</a>
+  <nav class="topnav">
+    <a href="#stack">Stack</a><a href="#setup">Setup</a><a href="#social">Social</a><a href="#email">Email</a><a href="#leads">Leads</a><a href="#ops">Daily ops</a><a href="#fix">Fix-it</a>
+  </nav>
+</div></div>
+
+<main class="wrap">
+<header class="hero">
+  <span class="eyebrow">Living document · updated Sep 30, 2026</span>
+  <h1>Run MOKIPOPS marketing from one Mac.</h1>
+  <p class="lede">Blotato is gone and HubSpot is locked. Everything they did now runs locally in <b>n8n</b> on Docker Desktop: daily Facebook + Instagram posts, the wholesale email funnel, and the lead form on the wholesale page. Monthly software cost: <b>$0</b>.</p>
+  <div class="pills">
+    <span class="pill ok">Social workflow built &amp; tested</span>
+    <span class="pill ok">Email batch workflow built &amp; tested</span>
+    <span class="pill ok">Lead webhook built &amp; tested</span>
+    <span class="pill todo">Needs: Meta token · mailbox SMTP · ngrok domain</span>
+  </div>
+</header>
+
+<section id="stack">
+  <div class="sechead"><h2>What replaced what</h2><p>Same jobs, no subscriptions, nothing that can disappear out from under us.</p></div>
+  <div class="card tablewrap"><table>
+    <tr><th>Job</th><th>Before</th><th>Now</th><th>Cost</th></tr>
+    <tr><td>Daily FB + IG posts</td><td>Blotato (discontinued)</td><td>n8n → Meta Graph API, queue + media on GitHub Pages</td><td>$0</td></tr>
+    <tr><td>Contact segments</td><td>HubSpot lists (locked)</td><td><code>contacts/contacts.csv</code> built from the Shopify + HubSpot exports already on disk</td><td>$0</td></tr>
+    <tr><td>Funnel emails A2 · B2 · B3</td><td>HubSpot Marketing Email</td><td>n8n → moreflavor@mokipops.com over SMTP (Microsoft 365), 40/day</td><td>$0 (existing mailbox)</td></tr>
+    <tr><td>Wholesale &amp; events form</td><td>HubSpot embedded form</td><td>Native form → n8n webhook via ngrok → <code>contacts/leads.jsonl</code> + email alert</td><td>$0 (ngrok free tier)</td></tr>
+    <tr><td>Hosting</td><td>Blotato + HubSpot cloud</td><td>This Mac (already set to never sleep) + GitHub Pages</td><td>$0</td></tr>
+  </table></div>
+  <div class="card">
+    <h3>How the pieces connect</h3>
+    <div class="flow">
+      <div><b>GitHub Pages</b>social-queue.json · 19 media files · wholesale.html · this page</div>
+      <div><b>n8n on this Mac</b>3 workflows · Docker Desktop · reads <code>.env</code> + <code>contacts/</code></div>
+      <div><b>Meta Graph API</b>MokiPops page · @mokipops reels &amp; photos</div>
+      <div><b>Microsoft 365</b>moreflavor@mokipops.com sends funnel mail + lead alerts</div>
+    </div>
+    <p class="small" style="margin-top:12px">Repo on disk: <code>~/Documents/MOKIPOPS/mokipops-reel-site</code> · automation folder: <code>n8n/</code> · private data: <code>contacts/</code> (git-ignored, never published).</p>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Values you will be asked for</h3>
+      <div class="kv">
+        <b>Facebook Page ID</b><span>1779805528922936 (MokiPops)</span>
+        <b>Instagram</b><span>@mokipops (professional account linked to the page)</span>
+        <b>Queue URL</b><span>https://borngifted.github.io/mokipops-reel/social-queue.json</span>
+        <b>Landing page</b><span>https://borngifted.github.io/mokipops-reel/wholesale.html</span>
+        <b>Sender</b><span>MOKIPOPS &lt;moreflavor@mokipops.com&gt;</span>
+        <b>Store · Faire</b><span>mokipops.com · faire.com/apply/r/gf4mdp8kxd</span>
+        <b>n8n editor</b><span>http://localhost:5678 (this Mac only)</span>
+      </div></div>
+    <div class="card"><h3>Live status</h3>
+      <div class="grid3" id="stats"><div class="stat"><b>…</b><span>slots queued</span></div><div class="stat"><b>…</b><span>days of runway</span></div><div class="stat"><b>…</b><span>runway ends</span></div></div>
+      <p class="small" id="statnote" style="margin-top:10px">Reads social-queue.json from this site on every load.</p>
+    </div>
+  </div>
+</section>
+
+<section id="setup">
+  <div class="sechead"><h2>One-time setup</h2><p>About 90 minutes end to end. Steps 3, 5 and 6 need the MOKIPOPS Meta, Microsoft 365 and ngrok logins; everything else is copy-paste in Terminal.</p></div>
+  <div class="card"><ol class="steps">
+    <li><b class="t">Docker Desktop is installed and running</b><p>Menu bar whale icon. Docker Desktop → Settings → General → <b>Start Docker Desktop when you sign in</b>, so a reboot doesn't stop the poster. The Mac is already set to never sleep (<code>pmset -g</code> shows <code>sleep 0</code>).</p></li>
+    <li><b class="t">Create the private settings file</b>
+<pre><button class="copy">copy</button><code>cd ~/Documents/MOKIPOPS/mokipops-reel-site/n8n
+cp .env.example .env
+open -e .env</code></pre>
+      <p>Fill it in as you complete the next steps. Set <code>N8N_ENCRYPTION_KEY</code> to any long random string once and never change it.</p></li>
+    <li><b class="t">Meta app + permanent Page token (social posting)</b>
+      <ul>
+        <li>developers.facebook.com → <b>My Apps → Create App</b> → use case <i>Other</i> → type <b>Business</b> → connect the MOKIPOPS business portfolio. Name: <code>MOKIPOPS Poster</code>.</li>
+        <li>Add the products <b>Facebook Login for Business</b> and <b>Instagram</b>. No configuration needed inside them.</li>
+        <li><b>App settings → Basic</b>: privacy policy URL <code>https://mokipops.com/policies/privacy-policy</code>, an icon, a category → switch the top toggle from <b>Development to Live</b>. Posts from an app in Development mode are invisible to the public.</li>
+        <li>business.facebook.com → <b>Settings → Users → System users → Add</b>: name <code>n8n-poster</code>, role Admin → <b>Add assets</b>: MokiPops Page (full control) + @mokipops Instagram (full control).</li>
+        <li>On that system user → <b>Generate new token</b> → pick the app → expiration <b>Never</b> → tick <code>pages_show_list pages_read_engagement pages_manage_posts publish_video instagram_basic instagram_content_publish business_management</code>. Paste it into <code>META_PAGE_TOKEN</code>.</li>
+      </ul></li>
+    <li><b class="t">Verify Meta and get the Instagram id</b>
+<pre><button class="copy">copy</button><code>cd ~/Documents/MOKIPOPS/mokipops-reel-site/n8n
+./verify_meta.sh</code></pre>
+      <p>Copy <code>instagram_business_account.id</code> into <code>IG_USER_ID</code>. Every media URL must show 200. If the Instagram block is missing, link @mokipops to the page in Meta Business Suite → Settings → Instagram and re-run.</p></li>
+    <li><b class="t">Let the mailbox send from n8n (funnel + lead alerts)</b>
+      <ul>
+        <li>Microsoft 365 admin → Users → <b>moreflavor@mokipops.com</b> → Mail → <b>Manage email apps → Authenticated SMTP: on</b>.</li>
+        <li>If MFA is on: My Account → Security info → <b>App password</b>. Otherwise the mailbox password works.</li>
+        <li>Deliverability, do once: Microsoft Defender portal → Email authentication → DKIM → mokipops.com → <b>Enable</b>, then add the two <code>selector1/selector2._domainkey</code> CNAMEs it shows at GoDaddy. SPF already includes Outlook. Leave the HubSpot SPF include until HubSpot is fully retired.</li>
+      </ul></li>
+    <li><b class="t">ngrok static domain (so the wholesale form can reach this Mac)</b>
+      <p>dashboard.ngrok.com → <b>Your Authtoken</b> → <code>NGROK_AUTHTOKEN</code>. Then <b>Domains → New domain</b> (the free plan includes one static domain) → put it in <code>NGROK_DOMAIN</code> and set <code>WEBHOOK_URL=https://&lt;that domain&gt;/</code>. The tunnel only exposes <code>/webhook/*</code>; the editor stays local.</p></li>
+    <li><b class="t">Start n8n</b>
+<pre><button class="copy">copy</button><code>cd ~/Documents/MOKIPOPS/mokipops-reel-site/n8n
+docker compose --profile public up -d
+open http://localhost:5678</code></pre>
+      <p>Create the owner login the first time. Without the form tunnel, plain <code>docker compose up -d</code> is enough.</p></li>
+    <li><b class="t">Import the three workflows and the mail credential</b>
+      <ul>
+        <li>n8n → <b>Credentials → Add → SMTP</b>: name exactly <code>MOKIPOPS mail (SMTP)</code>, user <code>moreflavor@mokipops.com</code>, password / app password, host <code>smtp.office365.com</code>, port <code>587</code>, SSL/TLS off, STARTTLS on.</li>
+        <li>n8n → <b>Workflows → ⋯ → Import from file</b>, once each: <code>n8n/mokipops-daily-post.json</code>, <code>n8n/mokipops-funnel-send.json</code>, <code>n8n/mokipops-lead-webhook.json</code>.</li>
+        <li>Open the two email workflows, click the Send-email node and pick the credential if it isn't already selected.</li>
+      </ul></li>
+    <li><b class="t">Test each one, then switch on</b>
+      <ul>
+        <li><b>Posts</b>: set <code>DRY_RUN=true</code> in .env → <code>docker compose up -d</code> → open the daily-post workflow → <b>Execute workflow</b>. Then <code>DRY_RUN=false</code> + <code>FORCE_POST_ID=2026-10-01-facility</code> for one real post; check facebook.com/mokipops and instagram.com/mokipops; clear <code>FORCE_POST_ID</code>. Toggle the workflow <b>Active</b>.</li>
+        <li><b>Email</b>: <code>FUNNEL_CAMPAIGN=A2 FUNNEL_DAILY_CAP=1</code>, add your own address as the first <i>buyers</i> row in contacts.csv, execute, read it on your phone. Remove the row afterwards.</li>
+        <li><b>Form</b>: toggle the lead-form workflow <b>Active</b>, then submit the form on the wholesale page. You should get the alert email and a line in <code>contacts/leads.jsonl</code>.</li>
+      </ul></li>
+    <li><b class="t">Point the wholesale page at the webhook and publish</b>
+      <p>In <code>wholesale.html</code> set <code>const LEAD_ENDPOINT = "https://&lt;NGROK_DOMAIN&gt;/webhook/mokipops-lead";</code> then:</p>
+<pre><button class="copy">copy</button><code>cd ~/Documents/MOKIPOPS/mokipops-reel-site
+./publish.sh</code></pre>
+      <p>Until that constant is set, the form falls back to opening a pre-filled email to moreflavor@mokipops.com, so no lead is lost in the meantime.</p></li>
+  </ol></div>
+</section>
+
+<section id="social">
+  <div class="sechead"><h2>Social posting</h2><p>One post a day at 12:00 pm ET to both platforms. That cadence and the content mix come straight from the Jul 13 – Aug 20 run (150 posts, 27.9K views, 94% of them on Instagram).</p></div>
+  <div class="grid2">
+    <div class="card"><h3>Next up</h3><ul class="queue" id="next"><li><span class="d">…</span><span>loading queue</span></li></ul></div>
+    <div class="card"><h3>Rules that produced the numbers</h3>
+      <ul class="check" style="padding-left:0">
+        <li>1/day at noon ET. Four a day tripped Facebook's ~35 posts/24 h cap (83 failures on Jul 16).</li>
+        <li>Video of real people (facility, kitchen, pop-ups, kids) does 5–8× the views of designed stills, so it gets 4 slots per two-month window; Hawks/award clips 3; stills 1.</li>
+        <li>Fresh caption every time an asset repeats; at least 7 days between repeats.</li>
+        <li>Holiday hooks pinned: Halloween, NBA tip-off, Thanksgiving, Black Friday, Small Business Saturday.</li>
+      </ul></div>
+  </div>
+  <div class="card"><h3>Keeping it fed</h3>
+    <h4>Extend the calendar (before the runway ends)</h4>
+<pre><button class="copy">copy</button><code>cd ~/Documents/MOKIPOPS/mokipops-reel-site
+python3 n8n/build_queue.py 2026-12-01 2027-01-31
+./publish.sh</code></pre>
+    <p class="small">Add a round to <code>ROUNDS</code> in build_queue.py if the window is longer than 63 days; put holiday hooks in <code>OVERRIDES</code>. Captions can also be edited directly in social-queue.json; ids must stay unique.</p>
+    <h4>Add new footage</h4>
+    <p class="small">Drop a ≤90 s H.264 MP4 (9:16, at least 720 px wide) or a JPG into <code>assets/social-library/</code>, add it to <code>ASSETS</code> and <code>CAPTIONS</code> in build_queue.py, rebuild, publish. New clips of people making or handing out pops are the highest-value content we can add.</p>
+    <h4>Re-run one slot · skip a day</h4>
+    <p class="small">Set <code>FORCE_POST_ID=&lt;id&gt;</code> in .env, execute once, clear it. To skip a day delete that row from social-queue.json and publish. Posted ids are remembered inside n8n, so a re-run never double-posts.</p>
+  </div>
+</section>
+
+<section id="email">
+  <div class="sechead"><h2>Funnel email without HubSpot</h2><p>The same five emails, sent from the real MOKIPOPS mailbox instead of HubSpot's servers, which also fixes the From/DKIM mismatch that was landing mail in spam.</p></div>
+  <div class="grid2">
+    <div class="card"><h3>Segments (local)</h3><div class="tablewrap"><table>
+      <tr><th>Segment</th><th>Was</th><th>Contacts</th></tr>
+      <tr><td><code>buyers</code></td><td>Previous Buyers</td><td>50 active</td></tr>
+      <tr><td><code>b2b</code></td><td>B2B Prospects + Warm Opportunities</td><td>411 active · 28 suppressed</td></tr>
+      <tr><td><code>lead</code></td><td>(never mailed: no company known)</td><td>140 held</td></tr>
+    </table></div>
+      <p class="small" style="margin-top:8px">Rebuild any time with <code>python3 n8n/build_contacts.py</code>. Junk domains live in <code>contacts/suppress-domains.txt</code>; anyone who replies “unsubscribe” goes in <code>contacts/unsubscribed.txt</code>, one address per line.</p></div>
+    <div class="card"><h3>Campaign status</h3><div class="tablewrap"><table>
+      <tr><th>Email</th><th>To</th><th>Status</th></tr>
+      <tr><td>A1 “The pops got better since you left”</td><td>buyers</td><td>Sent Aug 26 (HubSpot)</td></tr>
+      <tr><td>B1 “A $2 pop your customers will pay $4 for”</td><td>b2b</td><td>Sent Aug 26 (HubSpot)</td></tr>
+      <tr><td>A2 “One case = your whole event, sorted”</td><td>buyers</td><td><b>Next</b></td></tr>
+      <tr><td>B2 “120 cases, 3,000 pops, one Atlanta afternoon”</td><td>b2b</td><td><b>Next</b> (same day as A2)</td></tr>
+      <tr><td>B3 “Should I close your file?”</td><td>b2b</td><td>~1 week after B2</td></tr>
+    </table></div></div>
+  </div>
+  <div class="card"><h3>Sending a batch</h3>
+    <p class="small">Each click of <b>Execute workflow</b> on “funnel email batch” sends up to <code>FUNNEL_DAILY_CAP</code> messages, 30 s apart, and remembers who got which campaign. Tomorrow's click carries on with the next people.</p>
+<pre><button class="copy">copy</button><code># in n8n/.env, then: docker compose up -d
+FUNNEL_CAMPAIGN=B2
+FUNNEL_DAILY_CAP=40</code></pre>
+    <div class="callout">A mailbox that has never done bulk mail needs a warm-up: 40 a day for the first week, then 60–80. Microsoft 365 hard-caps at 10,000 recipients per day, but reputation is what matters. Two or three spam complaints in a week can get the whole domain filtered, so the <code>lead</code> segment (no company known, never opted in) stays parked.</div>
+    <p class="small">Every send is appended to <code>contacts/send-log.jsonl</code>. Replies land in the moreflavor inbox like any other email.</p>
+  </div>
+</section>
+
+<section id="leads">
+  <div class="sechead"><h2>Wholesale &amp; events leads</h2><p>The form on the wholesale page posts to n8n on this Mac through the ngrok tunnel.</p></div>
+  <div class="grid2">
+    <div class="card"><h3>What happens on submit</h3>
+      <ol style="padding-left:20px;font-size:14.5px;color:var(--sub)">
+        <li>Browser POSTs JSON to <code>https://&lt;NGROK_DOMAIN&gt;/webhook/mokipops-lead</code>.</li>
+        <li>n8n validates it (name, real email, hidden honeypot field empty).</li>
+        <li>The lead is appended to <code>contacts/leads.jsonl</code>.</li>
+        <li>moreflavor@mokipops.com gets an alert with Reply-To set to the lead, so answering is one click.</li>
+        <li>The visitor sees a thank-you in place of the form.</li>
+      </ol></div>
+    <div class="card"><h3>Checking leads</h3>
+<pre><button class="copy">copy</button><code>cd ~/Documents/MOKIPOPS/mokipops-reel-site
+python3 -c "import json;[print(l['at'][:10],l['interest'],'·',l['name'],'·',l['email'],'·',l['company']) for l in map(json.loads,open('contacts/leads.jsonl'))]"</code></pre>
+      <p class="small">If ngrok or the Mac is down, the form automatically falls back to opening a pre-filled email to moreflavor@, so nothing is lost. The call list on <a href="calls.html">calls.html</a> is unchanged.</p></div>
+  </div>
+</section>
+
+<section id="ops">
+  <div class="sechead"><h2>Daily &amp; weekly</h2></div>
+  <div class="grid2">
+    <div class="card"><h3>Every day (2 minutes)</h3><ul class="check" style="padding-left:0">
+      <li>Glance at facebook.com/mokipops — today's noon post is there.</li>
+      <li>If you're mid-campaign: open n8n → funnel batch → Execute workflow.</li>
+      <li>Answer any lead-alert emails and replies.</li>
+    </ul></div>
+    <div class="card"><h3>Every week</h3><ul class="check" style="padding-left:0">
+      <li>n8n → Executions: all green. Any red run names the node that failed.</li>
+      <li>“Days of runway” above is greater than 21; otherwise extend the queue.</li>
+      <li>Add any new footage from the week to the library.</li>
+      <li>Move unsubscribe replies into <code>contacts/unsubscribed.txt</code> and rebuild contacts.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="fix">
+  <div class="sechead"><h2>When something breaks</h2></div>
+  <div class="card tablewrap"><table>
+    <tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr>
+    <tr><td>Nothing posted today, execution shows zero items</td><td>No row for today, or already posted</td><td>Check social-queue.json for today's date; extend the queue.</td></tr>
+    <tr><td>Instagram node error <code>(#10) … permission</code> or <code>OAuthException 190</code></td><td>Token expired / lost scopes</td><td>Regenerate the system-user token (step 3), paste into .env, <code>docker compose up -d</code>, run <code>verify_meta.sh</code>.</td></tr>
+    <tr><td>Facebook posted, Instagram “Media upload failed” / container ERROR</td><td>Meta couldn't fetch the video, or it's over 90 s / wrong codec</td><td>Open the media URL in a browser; re-encode with <code>ffmpeg -vcodec libx264 -acodec aac</code>; re-run with <code>FORCE_POST_ID</code>.</td></tr>
+    <tr><td>Posts visible only to you</td><td>App still in Development mode</td><td>Meta app dashboard → switch to Live.</td></tr>
+    <tr><td>Email node <code>535 Authentication unsuccessful</code></td><td>SMTP AUTH off or wrong app password</td><td>Step 5; re-enter the credential in n8n.</td></tr>
+    <tr><td>Funnel mail landing in spam</td><td>DKIM not enabled for mokipops.com</td><td>Enable DKIM in Defender portal + add the two CNAMEs at GoDaddy; keep volume ≤40/day for a week.</td></tr>
+    <tr><td>Form shows “Opening your email app”</td><td>Webhook unreachable (ngrok down, workflow inactive, or <code>LEAD_ENDPOINT</code> empty)</td><td><code>docker compose --profile public up -d</code>; workflow toggle Active; set the constant in wholesale.html and publish.</td></tr>
+    <tr><td>n8n not running after a reboot</td><td>Docker Desktop didn't start</td><td>Enable “Start Docker Desktop when you sign in”; containers are set to restart automatically.</td></tr>
+    <tr><td>Anything else</td><td>—</td><td>n8n → Executions → open the red run; the failing node shows the exact API response. Ask Claude with the <code>mokipops-posting</code> or <code>mokipops-funnel</code> runbook.</td></tr>
+  </table></div>
+  <div class="card"><h3>Files map</h3><div class="tablewrap"><table>
+    <tr><th>Path (inside mokipops-reel-site)</th><th>What</th></tr>
+    <tr><td><code>n8n/mokipops-daily-post.json</code></td><td>Daily FB + IG poster (schedule 12:00 ET)</td></tr>
+    <tr><td><code>n8n/mokipops-funnel-send.json</code></td><td>Funnel email batch (manual, capped)</td></tr>
+    <tr><td><code>n8n/mokipops-lead-webhook.json</code></td><td>Wholesale form receiver</td></tr>
+    <tr><td><code>n8n/build_queue.py</code> → <code>social-queue.json</code></td><td>Posting calendar generator and its output (public)</td></tr>
+    <tr><td><code>n8n/build_contacts.py</code> → <code>contacts/contacts.csv</code></td><td>Segments (private)</td></tr>
+    <tr><td><code>n8n/verify_meta.sh</code></td><td>Meta pre-flight</td></tr>
+    <tr><td><code>n8n/docker-compose.yml</code> · <code>n8n/.env</code> · <code>n8n/ngrok-policy.yml</code></td><td>Runtime; .env is the only file with secrets</td></tr>
+    <tr><td><code>assets/social-library/</code> · <code>social-library.json</code></td><td>The 19 proven assets and their caption variants</td></tr>
+    <tr><td><code>docs/funnel-*-template.html</code> · <code>docs/funnel-emails.md</code></td><td>Email HTML and copy</td></tr>
+    <tr><td><code>contacts/send-log.jsonl</code> · <code>contacts/leads.jsonl</code></td><td>What was sent, who came in (private)</td></tr>
+  </table></div></div>
+</section>
+</main>
+
+<p class="footer">MOKIPOPS · Atlanta, GA · Internal runbook · <a href="index.html">Brand reel</a> · <a href="wholesale.html">Wholesale page</a> · <a href="hubspot-playbook.html">Sep 3 systems report</a></p>
+
+<script>
+document.querySelectorAll('pre').forEach(p => { const b = p.querySelector('.copy'); if (!b) return;
+  b.addEventListener('click', async () => { try { await navigator.clipboard.writeText(p.querySelector('code').innerText); b.textContent = 'copied'; setTimeout(() => b.textContent = 'copy', 1200); } catch (e) { b.textContent = 'select & copy'; } }); });
+(async () => {
+  const stats = document.getElementById('stats'), next = document.getElementById('next'), note = document.getElementById('statnote');
+  try {
+    const q = await (await fetch('social-queue.json?t=' + Date.now())).json();
+    const posts = (q.posts || []).slice().sort((a, b) => a.date.localeCompare(b.date));
+    const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+    const upcoming = posts.filter(p => p.date >= today);
+    const last = posts[posts.length - 1];
+    const days = last ? Math.round((new Date(last.date) - new Date(today)) / 864e5) : 0;
+    const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    stats.innerHTML = `<div class="stat"><b>${upcoming.length}</b><span>slots queued</span></div>
+      <div class="stat"><b style="color:${days < 21 ? 'var(--chili)' : 'inherit'}">${days}</b><span>days of runway</span></div>
+      <div class="stat"><b>${last ? fmt(last.date) : '—'}</b><span>runway ends</span></div>`;
+    note.textContent = `Queue generated ${q.generated || '—'} · ${posts.length} rows total · ${days < 21 ? 'Extend the queue this week.' : 'Healthy.'}`;
+    next.innerHTML = upcoming.slice(0, 7).map(p => `<li><span class="d">${p.date === today ? 'Today' : fmt(p.date)}</span><span><span class="k">${p.key} · ${p.media_type}</span><br><span class="c">${p.caption.replace(/#\S+/g, '').trim()}</span></span></li>`).join('') || '<li><span class="d">—</span><span>Queue is empty. Extend it.</span></li>';
+  } catch (e) {
+    note.textContent = 'Could not load social-queue.json — publish the site (./publish.sh) and reload.';
+    next.innerHTML = '<li><span class="d">—</span><span>Queue not published yet.</span></li>';
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Fully local MOKIPOPS automation: n8n on this Mac (Docker Desktop), optional ngrok tunnel
+# so the public wholesale form can reach the lead webhook.
+#   cp .env.example .env                  # fill in the values
+#   docker compose up -d                  # n8n only  → http://localhost:5678
+#   docker compose --profile public up -d # n8n + ngrok (needed for the wholesale form)
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: mokipops-n8n
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5678:5678"            # editor only reachable from this Mac
+    env_file: .env
+    environment:
+      - GENERIC_TIMEZONE=America/New_York
+      - TZ=America/New_York
+      - N8N_SECURE_COOKIE=false
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_BLOCK_ENV_ACCESS_IN_NODE=false   # Config nodes read the .env values
+      - NODES_EXCLUDE=[]                     # re-enables Execute Command (appends send-log / leads files)
+      - N8N_RESTRICT_FILE_ACCESS_TO=/files;/data   # lets the Read/Write File node see the repo + contacts
+      - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678/}
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=720          # 30 days of run history
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ../:/files:ro                      # repo (queue, templates, contacts.csv) read-only
+      - ../contacts:/data/contacts         # send-log.jsonl + leads.jsonl are written here
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: mokipops-ngrok
+    restart: unless-stopped
+    profiles: ["public"]
+    depends_on: [n8n]
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command: ["http", "n8n:5678", "--url", "${NGROK_DOMAIN}", "--traffic-policy-file", "/policy.yml"]
+    volumes:
+      - ./ngrok-policy.yml:/policy.yml:ro
+volumes:
+  n8n_data:

@@ -1,0 +1,537 @@
+{
+ "id": "MokiPopsFunnelSend",
+ "versionId": "0001",
+ "name": "MOKIPOPS — funnel email batch (local CRM)",
+ "nodes": [
+  {
+   "parameters": {},
+   "id": "49d665bf-5be6-4b59-a9bb-eea2d790bebe",
+   "name": "Run a batch",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    300
+   ],
+   "notes": "Click once per day per campaign. FUNNEL_CAMPAIGN / FUNNEL_DAILY_CAP / DRY_RUN come from n8n/.env.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "assignments": {
+     "assignments": [
+      {
+       "id": "e1137e8a-0024-43dc-93b3-990ea5010ff8",
+       "name": "campaign",
+       "type": "string",
+       "value": "={{ ($env.FUNNEL_CAMPAIGN || 'A2').toUpperCase() }}"
+      },
+      {
+       "id": "b8dcaeb4-f7aa-4242-806d-6e56fec1a48f",
+       "name": "daily_cap",
+       "type": "number",
+       "value": "={{ Number($env.FUNNEL_DAILY_CAP || 40) }}"
+      },
+      {
+       "id": "72f471f5-3cd0-4483-85bb-ed9a66263fc5",
+       "name": "dry_run",
+       "type": "boolean",
+       "value": "={{ String($env.DRY_RUN || 'false') === 'true' }}"
+      },
+      {
+       "id": "543a8aef-2c5f-4f83-b974-175e470a9882",
+       "name": "from_email",
+       "type": "string",
+       "value": "={{ $env.FUNNEL_FROM || 'moreflavor@mokipops.com' }}"
+      },
+      {
+       "id": "611c8c20-6cd0-47a6-8114-f6628b2ba4b8",
+       "name": "from_name",
+       "type": "string",
+       "value": "MOKIPOPS"
+      },
+      {
+       "id": "390ceeee-2c26-4da9-9d28-d80fd0f67151",
+       "name": "pause_seconds",
+       "type": "number",
+       "value": "={{ Number($env.FUNNEL_PAUSE_SECONDS || 30) }}"
+      },
+      {
+       "id": "7fc5eee1-6dc0-4ca6-b2ed-f68ac70b882c",
+       "name": "contacts_path",
+       "type": "string",
+       "value": "/files/contacts/contacts.csv"
+      },
+      {
+       "id": "a4f24e11-8ebc-4b96-9418-d089bc01112d",
+       "name": "templates_dir",
+       "type": "string",
+       "value": "/files/docs"
+      },
+      {
+       "id": "e42d29b5-99ed-45d8-bac4-a54242430696",
+       "name": "landing_url",
+       "type": "string",
+       "value": "https://borngifted.github.io/mokipops-reel/wholesale.html"
+      }
+     ]
+    },
+    "options": {}
+   },
+   "id": "19a4312e-7cf1-4633-b322-f6205cbedaf4",
+   "name": "Config",
+   "type": "n8n-nodes-base.set",
+   "typeVersion": 3.4,
+   "position": [
+    220,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Campaign table — mirrors docs/funnel-emails.md. Segment names come from contacts/contacts.csv.\nconst T = {\n  A1: { segment: 'buyers', template: 'a1', subject: 'The pops got better since you left 🍉', preview: 'New flavors, same real fruit — and a way to never run out.' },\n  A2: { segment: 'buyers', template: 'a2', subject: 'One case = your whole event, sorted',    preview: '$53.50 for 24 pops. Offices, parties, teams, schools.' },\n  B1: { segment: 'b2b',    template: 'b1', subject: 'A $2 pop your customers will pay $4 for', preview: 'All-natural, Atlanta-made, margin at every level.' },\n  B2: { segment: 'b2b',    template: 'b2', subject: '120 cases, 3,000 pops, one Atlanta afternoon', preview: 'The activation playbook — staffed cart included.' },\n  B3: { segment: 'b2b',    template: 'b3', subject: 'Should I close your file?',              preview: 'One reply gets you the price sheet — or a call.' },\n};\nconst cfg = $input.first().json;\nconst c = T[cfg.campaign];\nif (!c) throw new Error(`Unknown campaign ${cfg.campaign}. Use one of ${Object.keys(T).join(', ')}`);\nreturn [{ json: { ...cfg, ...c, template_path: `${cfg.templates_dir}/funnel-${c.template}-template.html` } }];\n"
+   },
+   "id": "554103f1-b291-44f4-b8c4-66c0cc58d6b9",
+   "name": "Resolve campaign",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    440,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "fileSelector": "={{ $json.template_path }}",
+    "options": {}
+   },
+   "id": "f17dda3b-19d8-48a4-82d7-f73881a8fb5a",
+   "name": "Read template",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    660,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "text",
+    "options": {}
+   },
+   "id": "686a317e-e6d1-4bd1-af04-9af836407992",
+   "name": "Template → text",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    880,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "fileSelector": "={{ $('Resolve campaign').first().json.contacts_path }}",
+    "options": {}
+   },
+   "id": "0480c2f1-c872-4886-b1b8-5f5a2a132b2c",
+   "name": "Read contacts.csv",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    1100,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "csv",
+    "options": {}
+   },
+   "id": "a9becbcf-f7a2-483b-bdf1-176316419ee8",
+   "name": "Parse CSV",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    1320,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Segment filter + suppression + \"already got this campaign\" memory + daily cap.\nconst cfg = $('Resolve campaign').first().json;\nconst sd = $getWorkflowStaticData('global');\nsd.sent = sd.sent || {};\nconst sent = sd.sent[cfg.campaign] = sd.sent[cfg.campaign] || {};\nconst rows = $input.all().map(i => i.json);\nconst eligible = rows.filter(r =>\n  (r.segment || '').toLowerCase() === cfg.segment &&\n  (r.status || 'active') === 'active' &&\n  r.email && !sent[r.email.toLowerCase()]\n);\nconst batch = eligible.slice(0, cfg.daily_cap);\nconsole.log(`${cfg.campaign}: ${rows.length} contacts, ${eligible.length} eligible & unsent, sending ${batch.length} (dry_run=${cfg.dry_run})`);\nreturn batch.map(r => ({ json: { ...r, email: r.email.toLowerCase(), remaining_after_this_batch: eligible.length - batch.length } }));\n"
+   },
+   "id": "11113f88-22af-49d0-88db-9532808938e7",
+   "name": "Pick recipients",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1540,
+    300
+   ],
+   "notes": "Remembers who already received each campaign, so re-running tomorrow continues where it stopped.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "batchSize": 1,
+    "options": {}
+   },
+   "id": "d119ed64-5a1b-4b4b-832a-286421e4fed8",
+   "name": "One at a time",
+   "type": "n8n-nodes-base.splitInBatches",
+   "typeVersion": 3,
+   "position": [
+    1760,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const cfg = $('Resolve campaign').first().json;\nconst sd = $getWorkflowStaticData('global');\nconst sent = (sd.sent && sd.sent[cfg.campaign]) || {};\nconst all = Object.values(sent);\nreturn [{ json: { campaign: cfg.campaign, sent_total_all_time: all.filter(x => x.ok).length, failed_total: all.filter(x => !x.ok).length, dry_run: cfg.dry_run } }];\n"
+   },
+   "id": "d0af3972-e22c-433a-9470-7c90cc72b78d",
+   "name": "Summary",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1980,
+    120
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "9cdb1354-263d-4e39-ade7-8018d835dafb",
+       "leftValue": "={{ $('Resolve campaign').first().json.dry_run }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "39a969d1-ddd3-4517-9f0b-35b9865ebc16",
+   "name": "Dry run?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    1980,
+    400
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "55408afc-35cf-44cd-91b9-1391cabf33d0",
+   "name": "Dry run — would send",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    2200,
+    260
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Turn the HubSpot template into a plain HTML email + text version for this contact.\nconst cfg = $('Resolve campaign').first().json;\nconst contact = $input.first().json;\nlet html = $('Template → text').first().json.data;\nconst unsub = `mailto:${cfg.from_email}?subject=${encodeURIComponent('Unsubscribe ' + contact.email)}`;\nhtml = html\n  .replace(/<!--[\\s\\S]*?-->/g, '')\n  .replace(/\\{%\\s*text[^%]*value=\"([^\"]*)\"[^%]*%\\}/g, (_, v) => cfg.preview || v)\n  .replace(/\\{%[\\s\\S]*?%\\}/g, '')\n  .replace(/\\{\\{\\s*content\\.name\\s*\\}\\}/g, cfg.subject)\n  .replace(/\\{\\{\\s*contact\\.firstname\\s*\\}\\}/g, contact.firstname || 'there')\n  .replace(/\\{\\{\\s*unsubscribe_link(_all)?\\s*\\}\\}/g, unsub)\n  .replace(/\\{\\{\\s*site_settings\\.company_name\\s*\\}\\}/g, 'MOKIPOPS')\n  .replace(/\\{\\{\\s*site_settings\\.company_street_address_1\\s*\\}\\}/g, '')\n  .replace(/\\{\\{\\s*site_settings\\.company_street_address_2\\s*\\}\\}/g, '')\n  .replace(/\\{\\{\\s*site_settings\\.company_city\\s*\\}\\}/g, 'Atlanta')\n  .replace(/\\{\\{\\s*site_settings\\.company_state\\s*\\}\\}/g, 'GA')\n  .replace(/\\{\\{\\s*site_settings\\.company_zip\\s*\\}\\}/g, '')\n  .replace(/\\{\\{\\s*site_settings\\.company_country\\s*\\}\\}/g, 'USA')\n  .replace(/\\{\\{[^}]*\\}\\}/g, '');\nconst text = html\n  .replace(/<style[\\s\\S]*?<\\/style>/gi, '')\n  .replace(/<a [^>]*href=\"([^\"]+)\"[^>]*>([\\s\\S]*?)<\\/a>/gi, (_, h, t) => `${t.replace(/<[^>]+>/g, '').trim()} (${h})`)\n  .replace(/<\\/(p|div|tr|h\\d|li)>/gi, '\\n')\n  .replace(/<br\\s*\\/?>/gi, '\\n')\n  .replace(/<[^>]+>/g, '')\n  .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#39;/g, \"'\").replace(/&quot;/g, '\"')\n  .replace(/[ \\t]+\\n/g, '\\n').replace(/\\n{3,}/g, '\\n\\n').trim();\nreturn [{ json: { ...contact, subject: cfg.subject, html, text, from: `${cfg.from_name} <${cfg.from_email}>`, reply_to: cfg.from_email, campaign: cfg.campaign } }];\n"
+   },
+   "id": "ee4d2574-d361-4ab8-88e6-e81b920201a3",
+   "name": "Render email",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    2200,
+    520
+   ]
+  },
+  {
+   "parameters": {
+    "fromEmail": "={{ $json.from }}",
+    "toEmail": "={{ $json.email }}",
+    "subject": "={{ $json.subject }}",
+    "emailFormat": "both",
+    "html": "={{ $json.html }}",
+    "text": "={{ $json.text }}",
+    "options": {
+     "replyTo": "={{ $json.reply_to }}",
+     "appendAttribution": false
+    }
+   },
+   "id": "a458ad81-075b-4c3f-9441-180c8f2f283d",
+   "name": "Send email",
+   "type": "n8n-nodes-base.emailSend",
+   "typeVersion": 2.1,
+   "position": [
+    2420,
+    520
+   ],
+   "credentials": {
+    "smtp": {
+     "id": "MokiPopsSmtp",
+     "name": "MOKIPOPS mail (SMTP)"
+    }
+   },
+   "onError": "continueRegularOutput",
+   "notes": "SMTP credential = the moreflavor@mokipops.com mailbox (Microsoft 365: smtp.office365.com:587, STARTTLS).",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "jsCode": "const r = $('Render email').first().json;\nconst out = $input.first().json || {};\nconst ok = !out.error;\nconst sd = $getWorkflowStaticData('global');\nsd.sent = sd.sent || {}; sd.sent[r.campaign] = sd.sent[r.campaign] || {};\nconst rec = { at: new Date().toISOString(), campaign: r.campaign, email: r.email, segment: r.segment, ok, error: ok ? null : (out.error.message || JSON.stringify(out.error)) };\nsd.sent[r.campaign][r.email] = rec;\nreturn [{ json: { ...rec, log_b64: Buffer.from(JSON.stringify(rec) + '\\n').toString('base64') } }];\n"
+   },
+   "id": "8ef749a5-b8bd-4270-9177-9f557ba939f1",
+   "name": "Record result",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    2640,
+    520
+   ]
+  },
+  {
+   "parameters": {
+    "command": "=mkdir -p /data/contacts && echo '{{ $json.log_b64 }}' | base64 -d >> /data/contacts/send-log.jsonl"
+   },
+   "id": "9684820e-63ab-498c-beb0-a17f4e745249",
+   "name": "Append send-log.jsonl",
+   "type": "n8n-nodes-base.executeCommand",
+   "typeVersion": 1,
+   "position": [
+    2860,
+    520
+   ],
+   "onError": "continueRegularOutput"
+  },
+  {
+   "parameters": {
+    "amount": "={{ $('Resolve campaign').first().json.pause_seconds }}",
+    "unit": "seconds"
+   },
+   "id": "e6b44b38-091f-4742-aacf-d94acbce5789",
+   "name": "Pause between sends",
+   "type": "n8n-nodes-base.wait",
+   "typeVersion": 1.1,
+   "position": [
+    3080,
+    520
+   ],
+   "webhookId": "3de296a9-86f4-4fdd-bfdd-123aa8803e98"
+  }
+ ],
+ "connections": {
+  "Run a batch": {
+   "main": [
+    [
+     {
+      "node": "Config",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Config": {
+   "main": [
+    [
+     {
+      "node": "Resolve campaign",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Resolve campaign": {
+   "main": [
+    [
+     {
+      "node": "Read template",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read template": {
+   "main": [
+    [
+     {
+      "node": "Template → text",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Template → text": {
+   "main": [
+    [
+     {
+      "node": "Read contacts.csv",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read contacts.csv": {
+   "main": [
+    [
+     {
+      "node": "Parse CSV",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Parse CSV": {
+   "main": [
+    [
+     {
+      "node": "Pick recipients",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Pick recipients": {
+   "main": [
+    [
+     {
+      "node": "One at a time",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "One at a time": {
+   "main": [
+    [
+     {
+      "node": "Summary",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Dry run?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Dry run?": {
+   "main": [
+    [
+     {
+      "node": "Dry run — would send",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Render email",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Dry run — would send": {
+   "main": [
+    [
+     {
+      "node": "One at a time",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Render email": {
+   "main": [
+    [
+     {
+      "node": "Send email",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Send email": {
+   "main": [
+    [
+     {
+      "node": "Record result",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Record result": {
+   "main": [
+    [
+     {
+      "node": "Append send-log.jsonl",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Append send-log.jsonl": {
+   "main": [
+    [
+     {
+      "node": "Pause between sends",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Pause between sends": {
+   "main": [
+    [
+     {
+      "node": "One at a time",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "timezone": "America/New_York",
+  "executionOrder": "v1",
+  "saveManualExecutions": true
+ },
+ "staticData": null,
+ "pinData": {},
+ "active": false,
+ "meta": {
+  "templateCredsSetupCompleted": true
+ },
+ "tags": []
+}

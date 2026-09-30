@@ -67,6 +67,15 @@ section + section { border-top:1px solid var(--hairline); }
 .flavor { background:var(--card); border:1px solid var(--hairline); border-radius:100px; padding:10px 20px; font-weight:800; font-size:14px; }
 .terms { max-width:640px; margin:0 auto; }
 .terms li { margin:10px 0 10px 20px; font-size:15px; }
+.fgrid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (max-width:640px) { .fgrid { grid-template-columns:1fr; } }
+#leadform label { display:block; font-size:13px; font-weight:800; color:var(--sub); margin-bottom:14px; }
+#leadform input, #leadform select, #leadform textarea { display:block; width:100%; margin-top:6px; font:inherit; font-size:15px; font-weight:500; color:var(--ink);
+  background:var(--bg); border:1px solid var(--hairline); border-radius:12px; padding:11px 13px; }
+#leadform input:focus, #leadform select:focus, #leadform textarea:focus { outline:2px solid var(--mango); border-color:transparent; }
+#leadform .btn { width:100%; border:0; cursor:pointer; font:inherit; font-weight:800; font-size:16px; color:#fff; background:var(--chili); border-radius:14px; padding:14px; }
+#leadform .btn:disabled { opacity:.6; }
+.fnote { font-size:13px; color:var(--sub); text-align:center; margin-top:10px; }
 .formbox { background:var(--card); border:1px solid var(--hairline); border-radius:var(--r); padding:clamp(22px,4vw,36px); max-width:640px; margin:0 auto; }
 .footer { text-align:center; color:var(--sub); font-size:13px; padding:34px 0 54px; }
 .footer a { color:var(--chili); font-weight:800; }
@@ -152,13 +161,51 @@ section + section { border-top:1px solid var(--hairline); }
     <div class="sechead"><h2>Let's get you stocked</h2>
       <p>Tell us a little about you — we'll reply with the price sheet and next steps.</p></div>
     <div class="formbox">
-      <div class="hs-form-frame" data-region="na1" data-form-id="be66c5f9-90ae-4dda-b9f9-1787f4b3245d" data-portal-id="51058060"></div>
+      <form id="leadform" novalidate>
+        <div class="fgrid">
+          <label>Your name<input name="name" required autocomplete="name" placeholder="First and last"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email" placeholder="you@store.com"></label>
+          <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel" placeholder="(404) 555-0100"></label>
+          <label>Store / organization<input name="company" autocomplete="organization" placeholder="Shop, school, office, event…"></label>
+        </div>
+        <label>I'm interested in
+          <select name="interest">
+            <option>Wholesale</option><option>Event / activation</option><option>Just pops</option>
+          </select></label>
+        <label>Anything else?<textarea name="message" rows="3" placeholder="Locations, dates, quantities, questions"></textarea></label>
+        <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <button type="submit" class="btn">Send me the price sheet</button>
+        <p class="fnote" id="leadnote">We reply personally, usually the same day.</p>
+      </form>
     </div>
   </section>
 </main>
 
 <p class="footer">MOKIPOPS · Atlanta, GA · <a href="https://www.mokipops.com" target="_blank" rel="noopener">mokipops.com</a> · Prefer to talk? Request a call in the form and we'll ring you.</p>
 
-<script src="https://js.hsforms.net/forms/embed/51058060.js" defer></script>
+<script>
+// Lead form → local n8n webhook (through the ngrok tunnel). Set LEAD_ENDPOINT to
+// https://<NGROK_DOMAIN>/webhook/mokipops-lead once n8n/.env is configured.
+// While it is empty the form falls back to a pre-filled email, so nothing is ever lost.
+const LEAD_ENDPOINT = "";
+const TO = "moreflavor@mokipops.com";
+const form = document.getElementById('leadform'), note = document.getElementById('leadnote');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.source = 'wholesale.html';
+  if (!data.name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) { note.textContent = 'Please add your name and a valid email.'; return; }
+  const btn = form.querySelector('button'); btn.disabled = true; note.textContent = 'Sending…';
+  if (LEAD_ENDPOINT) {
+    try {
+      const r = await fetch(LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      if (r.ok) { form.innerHTML = '<h3 style="font-family:Fraunces,Georgia,serif">Got it — thank you! 🧡</h3><p>The price sheet and next steps are on the way to ' + data.email + '.</p>'; return; }
+    } catch (err) { /* fall through to email */ }
+  }
+  const body = Object.entries(data).filter(([k]) => k !== 'website').map(([k, v]) => k + ': ' + v).join('\n');
+  location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(data.interest + ' inquiry — ' + data.name) + '&body=' + encodeURIComponent(body);
+  note.textContent = 'Opening your email app — just hit send.'; btn.disabled = false;
+});
+</script>
 </body>
 </html>

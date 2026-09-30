@@ -1,0 +1,764 @@
+{
+ "name": "MOKIPOPS — daily cross-post (FB + IG)",
+ "nodes": [
+  {
+   "parameters": {
+    "rule": {
+     "interval": [
+      {
+       "field": "cronExpression",
+       "expression": "0 12 * * *"
+      }
+     ]
+    }
+   },
+   "id": "1f8a273d-3ebb-46c4-9bd6-7b591ddf5842",
+   "name": "Every day at noon ET",
+   "type": "n8n-nodes-base.scheduleTrigger",
+   "typeVersion": 1.2,
+   "position": [
+    0,
+    300
+   ],
+   "notes": "Workflow timezone is America/New_York (Settings). Noon ET was the strongest slot in the Jul–Aug run.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "assignments": {
+     "assignments": [
+      {
+       "id": "766e0044-1231-4b41-84ad-3ad02d592a6d",
+       "name": "page_id",
+       "type": "string",
+       "value": "={{ $env.FB_PAGE_ID || '1779805528922936' }}"
+      },
+      {
+       "id": "7f15d512-a3f0-450a-85c7-7204c192b648",
+       "name": "ig_user_id",
+       "type": "string",
+       "value": "={{ $env.IG_USER_ID || 'PASTE_IG_USER_ID' }}"
+      },
+      {
+       "id": "182ea035-a70c-4bc9-a7e0-baabbb1f05ee",
+       "name": "access_token",
+       "type": "string",
+       "value": "={{ $env.META_PAGE_TOKEN || 'PASTE_PAGE_TOKEN' }}"
+      },
+      {
+       "id": "e15ba436-8f50-48dd-bd68-7ab3bbfb8cae",
+       "name": "graph_version",
+       "type": "string",
+       "value": "={{ $env.GRAPH_VERSION || 'v23.0' }}"
+      },
+      {
+       "id": "5532c2c2-d08e-403b-b51a-9a847915c74f",
+       "name": "graph_host",
+       "type": "string",
+       "value": "={{ $env.GRAPH_HOST || 'https://graph.facebook.com' }}"
+      },
+      {
+       "id": "76b78216-af69-4e20-a231-6480bfb4faab",
+       "name": "graph_video_host",
+       "type": "string",
+       "value": "={{ $env.GRAPH_VIDEO_HOST || 'https://graph-video.facebook.com' }}"
+      },
+      {
+       "id": "bf4d2d58-456f-4542-be5e-78f93c60edbc",
+       "name": "queue_url",
+       "type": "string",
+       "value": "={{ $env.QUEUE_URL || 'https://borngifted.github.io/mokipops-reel/social-queue.json' }}"
+      },
+      {
+       "id": "c4238f94-7297-4ab8-8ebe-6104cc36ca2f",
+       "name": "timezone",
+       "type": "string",
+       "value": "America/New_York"
+      },
+      {
+       "id": "d49fb6e0-6e54-4bcc-8b0e-0c234b1df900",
+       "name": "dry_run",
+       "type": "boolean",
+       "value": "={{ String($env.DRY_RUN || 'false') === 'true' }}"
+      },
+      {
+       "id": "8cc8b91b-bf26-4f1f-903d-9ca26a99581b",
+       "name": "force_id",
+       "type": "string",
+       "value": "={{ $env.FORCE_POST_ID || '' }}"
+      }
+     ]
+    },
+    "options": {}
+   },
+   "id": "8edfd0a5-f5f7-45bf-ad02-843c567eda65",
+   "name": "Config",
+   "type": "n8n-nodes-base.set",
+   "typeVersion": 3.4,
+   "position": [
+    220,
+    300
+   ],
+   "notes": "Self-hosted: values come from n8n/.env. n8n Cloud has no $env — paste the values straight into this node instead.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "method": "GET",
+    "url": "={{ $json.queue_url }}?t={{ Date.now() }}",
+    "options": {
+     "timeout": 30000
+    },
+    "sendQuery": true,
+    "queryParameters": {
+     "parameters": []
+    }
+   },
+   "id": "7d763b62-4c88-490a-819b-37c895efe890",
+   "name": "Fetch queue",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    440,
+    300
+   ],
+   "notes": "social-queue.json on GitHub Pages. Regenerate with n8n/build_queue.py and ./publish.sh",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "jsCode": "// Choose today's row (America/New_York) that hasn't been posted yet.\nconst cfg = $('Config').first().json;\nconst body = $input.first().json;\nconst queue = Array.isArray(body) ? body : (body.posts || []);\nconst today = new Date().toLocaleDateString('en-CA', { timeZone: cfg.timezone }); // YYYY-MM-DD\nconst sd = $getWorkflowStaticData('global');\nsd.posted = sd.posted || {};\n\nlet rows;\nif (cfg.force_id) {\n  rows = queue.filter(p => p.id === cfg.force_id);\n  if (!rows.length) throw new Error(`FORCE_POST_ID ${cfg.force_id} not found in queue`);\n} else {\n  rows = queue.filter(p => p.date === today && !sd.posted[p.id]);\n}\nif (!rows.length) {\n  const future = queue.filter(p => p.date > today).length;\n  console.log(`Nothing to post for ${today}. ${future} future slots left in queue.`);\n  return [];\n}\nreturn rows.slice(0, 1).map(r => ({ json: { ...cfg, ...r, today } }));\n"
+   },
+   "id": "328cacaa-da5a-4843-908f-2310b4942f5f",
+   "name": "Pick post",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    660,
+    300
+   ],
+   "notes": "Idempotent: remembers posted ids in workflow static data. Set FORCE_POST_ID to re-run one slot.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "d09b0a71-bec9-4d3b-8f8a-9fced9318473",
+       "leftValue": "={{ $json.dry_run }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "d4e391e5-907b-44d9-b7ed-de73dcd81ae8",
+   "name": "Dry run?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    880,
+    300
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "aa7f890d-4919-417a-9823-9cc51bbbedc1",
+   "name": "Dry run — nothing posted",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    1100,
+    120
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "def644fe-896a-412e-86ff-afda0825e238",
+       "leftValue": "={{ $json.media_type }}",
+       "rightValue": "video",
+       "operator": {
+        "type": "string",
+        "operation": "equals"
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "97648dc2-3533-47de-b303-31db597e8ce6",
+   "name": "Is video?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    1100,
+    400
+   ]
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $('Pick post').first().json.graph_video_host }}/{{ $('Pick post').first().json.graph_version }}/{{ $('Pick post').first().json.page_id }}/videos",
+    "options": {
+     "timeout": 120000
+    },
+    "sendBody": true,
+    "contentType": "form-urlencoded",
+    "bodyParameters": {
+     "parameters": [
+      {
+       "name": "file_url",
+       "value": "={{ $('Pick post').first().json.media_url }}"
+      },
+      {
+       "name": "description",
+       "value": "={{ $('Pick post').first().json.caption }}"
+      },
+      {
+       "name": "access_token",
+       "value": "={{ $('Pick post').first().json.access_token }}"
+      }
+     ]
+    }
+   },
+   "id": "86b23ca1-408d-4e6b-adb7-3647ed88eaa5",
+   "name": "FB: upload video",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1340,
+    260
+   ],
+   "notes": "Facebook fetches the public URL itself. Continues on error so Instagram still runs.",
+   "notesInFlow": true,
+   "onError": "continueRegularOutput"
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $('Pick post').first().json.graph_host }}/{{ $('Pick post').first().json.graph_version }}/{{ $('Pick post').first().json.page_id }}/photos",
+    "options": {
+     "timeout": 120000
+    },
+    "sendBody": true,
+    "contentType": "form-urlencoded",
+    "bodyParameters": {
+     "parameters": [
+      {
+       "name": "url",
+       "value": "={{ $('Pick post').first().json.media_url }}"
+      },
+      {
+       "name": "caption",
+       "value": "={{ $('Pick post').first().json.caption }}"
+      },
+      {
+       "name": "access_token",
+       "value": "={{ $('Pick post').first().json.access_token }}"
+      }
+     ]
+    }
+   },
+   "id": "659d9349-0f9b-4916-928c-d2a3b959e254",
+   "name": "FB: post photo",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1340,
+    540
+   ],
+   "onError": "continueRegularOutput"
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $('Pick post').first().json.graph_host }}/{{ $('Pick post').first().json.graph_version }}/{{ $('Pick post').first().json.ig_user_id }}/media",
+    "options": {
+     "timeout": 120000
+    },
+    "sendBody": true,
+    "contentType": "form-urlencoded",
+    "bodyParameters": {
+     "parameters": [
+      {
+       "name": "media_type",
+       "value": "REELS"
+      },
+      {
+       "name": "video_url",
+       "value": "={{ $('Pick post').first().json.media_url }}"
+      },
+      {
+       "name": "caption",
+       "value": "={{ $('Pick post').first().json.caption }}"
+      },
+      {
+       "name": "share_to_feed",
+       "value": "true"
+      },
+      {
+       "name": "access_token",
+       "value": "={{ $('Pick post').first().json.access_token }}"
+      }
+     ]
+    }
+   },
+   "id": "73961792-3b70-4db0-9512-fcf245e3b864",
+   "name": "IG: create reel container",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1580,
+    260
+   ]
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $('Pick post').first().json.graph_host }}/{{ $('Pick post').first().json.graph_version }}/{{ $('Pick post').first().json.ig_user_id }}/media",
+    "options": {
+     "timeout": 120000
+    },
+    "sendBody": true,
+    "contentType": "form-urlencoded",
+    "bodyParameters": {
+     "parameters": [
+      {
+       "name": "image_url",
+       "value": "={{ $('Pick post').first().json.media_url }}"
+      },
+      {
+       "name": "caption",
+       "value": "={{ $('Pick post').first().json.caption }}"
+      },
+      {
+       "name": "access_token",
+       "value": "={{ $('Pick post').first().json.access_token }}"
+      }
+     ]
+    }
+   },
+   "id": "e63480ae-1216-4f42-ad83-a9539e1ee89e",
+   "name": "IG: create image container",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1580,
+    540
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Both container nodes feed in here; only one ran.\nconst post = $('Pick post').first().json;\nconst ig = $input.first().json;\nif (!ig || !ig.id) throw new Error('Instagram container was not created: ' + JSON.stringify(ig));\nlet fb = null;\ntry { fb = $('FB: upload video').first().json; } catch (e) {}\nif (!fb) { try { fb = $('FB: post photo').first().json; } catch (e) {} }\nconst fb_id = fb && (fb.id || fb.post_id) || null;\nconst fb_error = fb && fb.error ? (fb.error.message || JSON.stringify(fb.error)) : null;\n\n// Record the Facebook side immediately so a retry never double-posts it.\nconst sd = $getWorkflowStaticData('global');\nsd.posted = sd.posted || {};\nsd.posted[post.id] = { at: new Date().toISOString(), fb_id, fb_error, ig_id: null, creation_id: ig.id };\nreturn [{ json: { post_id: post.id, key: post.key, creation_id: ig.id, fb_id, fb_error, attempts: 0 } }];\n"
+   },
+   "id": "7db72abe-80eb-43ce-b450-2f59accc041c",
+   "name": "Normalize",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1820,
+    400
+   ]
+  },
+  {
+   "parameters": {
+    "method": "GET",
+    "url": "={{ $('Pick post').first().json.graph_host }}/{{ $('Pick post').first().json.graph_version }}/{{ $json.creation_id }}",
+    "options": {
+     "timeout": 30000
+    },
+    "sendQuery": true,
+    "queryParameters": {
+     "parameters": [
+      {
+       "name": "fields",
+       "value": "status_code,status"
+      },
+      {
+       "name": "access_token",
+       "value": "={{ $('Pick post').first().json.access_token }}"
+      }
+     ]
+    }
+   },
+   "id": "c5a70a42-e69b-4ace-a106-61162e2bd976",
+   "name": "IG: check status",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    2060,
+    400
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const carry = $('Normalize').first().json;\nconst r = $input.first().json;\nconst sd = $getWorkflowStaticData('global');\nsd.poll = sd.poll || {};\nconst n = (sd.poll[carry.creation_id] || 0) + 1;\nsd.poll[carry.creation_id] = n;\nconst code = r.status_code;\nif (code === 'ERROR' || code === 'EXPIRED') {\n  throw new Error(`Instagram container ${carry.creation_id} is ${code}: ${r.status || ''}`);\n}\nif (n > 40 && code !== 'FINISHED') {\n  throw new Error(`Instagram container ${carry.creation_id} still ${code} after ${n} checks`);\n}\nreturn [{ json: { ...carry, status_code: code, attempts: n, done: code === 'FINISHED' } }];\n"
+   },
+   "id": "d2f01a11-527b-400e-9415-bbaa321936ce",
+   "name": "Evaluate status",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    2280,
+    400
+   ],
+   "notes": "Images finish instantly; reels take 30 s – 3 min. Polls every 20 s, gives up after 40 tries.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "db1f718a-38f3-428f-bba2-4ad96a2c8d4e",
+       "leftValue": "={{ $json.done }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "886e5f5c-6dc6-4006-aaee-3518d38079ff",
+   "name": "Ready to publish?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    2500,
+    400
+   ]
+  },
+  {
+   "parameters": {
+    "amount": 20,
+    "unit": "seconds"
+   },
+   "id": "25999ae1-9652-4fb6-a72e-0e34b54fed23",
+   "name": "Wait 20 s",
+   "type": "n8n-nodes-base.wait",
+   "typeVersion": 1.1,
+   "position": [
+    2500,
+    620
+   ],
+   "webhookId": "ca6c8589-1cbe-4a2a-8ad6-c5719713e970"
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $('Pick post').first().json.graph_host }}/{{ $('Pick post').first().json.graph_version }}/{{ $('Pick post').first().json.ig_user_id }}/media_publish",
+    "options": {
+     "timeout": 120000
+    },
+    "sendBody": true,
+    "contentType": "form-urlencoded",
+    "bodyParameters": {
+     "parameters": [
+      {
+       "name": "creation_id",
+       "value": "={{ $json.creation_id }}"
+      },
+      {
+       "name": "access_token",
+       "value": "={{ $('Pick post').first().json.access_token }}"
+      }
+     ]
+    }
+   },
+   "id": "0cf70ccd-69e1-404e-9a67-d7c271027f15",
+   "name": "IG: publish",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    2740,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const carry = $('Evaluate status').first().json;\nconst ig = $input.first().json;\nconst sd = $getWorkflowStaticData('global');\nsd.posted = sd.posted || {};\nsd.posted[carry.post_id] = { ...(sd.posted[carry.post_id] || {}), ig_id: ig.id || null, done_at: new Date().toISOString() };\nif (sd.poll) delete sd.poll[carry.creation_id];\nreturn [{ json: { post_id: carry.post_id, key: carry.key, facebook_id: carry.fb_id, facebook_error: carry.fb_error, instagram_id: ig.id || null } }];\n"
+   },
+   "id": "82964964-a307-452c-9962-3673b3d89f5e",
+   "name": "Mark posted",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    2960,
+    300
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "8e60b89d-a567-4a10-bfb1-16d617ac613c",
+   "name": "Manual test",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    520
+   ],
+   "notes": "Click 'Execute workflow' to run once now. Combine with DRY_RUN=true or FORCE_POST_ID in .env.",
+   "notesInFlow": true
+  }
+ ],
+ "connections": {
+  "Every day at noon ET": {
+   "main": [
+    [
+     {
+      "node": "Config",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Config": {
+   "main": [
+    [
+     {
+      "node": "Fetch queue",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fetch queue": {
+   "main": [
+    [
+     {
+      "node": "Pick post",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Pick post": {
+   "main": [
+    [
+     {
+      "node": "Dry run?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Dry run?": {
+   "main": [
+    [
+     {
+      "node": "Dry run — nothing posted",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Is video?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Is video?": {
+   "main": [
+    [
+     {
+      "node": "FB: upload video",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "FB: post photo",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "FB: upload video": {
+   "main": [
+    [
+     {
+      "node": "IG: create reel container",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "FB: post photo": {
+   "main": [
+    [
+     {
+      "node": "IG: create image container",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "IG: create reel container": {
+   "main": [
+    [
+     {
+      "node": "Normalize",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "IG: create image container": {
+   "main": [
+    [
+     {
+      "node": "Normalize",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Normalize": {
+   "main": [
+    [
+     {
+      "node": "IG: check status",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "IG: check status": {
+   "main": [
+    [
+     {
+      "node": "Evaluate status",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Evaluate status": {
+   "main": [
+    [
+     {
+      "node": "Ready to publish?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Ready to publish?": {
+   "main": [
+    [
+     {
+      "node": "IG: publish",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Wait 20 s",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Wait 20 s": {
+   "main": [
+    [
+     {
+      "node": "IG: check status",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "IG: publish": {
+   "main": [
+    [
+     {
+      "node": "Mark posted",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Manual test": {
+   "main": [
+    [
+     {
+      "node": "Config",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "timezone": "America/New_York",
+  "executionOrder": "v1",
+  "saveExecutionProgress": true,
+  "saveManualExecutions": true,
+  "callerPolicy": "workflowsFromSameOwner"
+ },
+ "staticData": null,
+ "pinData": {},
+ "active": false,
+ "meta": {
+  "templateCredsSetupCompleted": true
+ },
+ "tags": [],
+ "id": "MokiPopsDailyPost",
+ "versionId": "0001"
+}

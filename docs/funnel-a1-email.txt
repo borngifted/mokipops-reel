@@ -1,0 +1,114 @@
+<!-- MOKIPOPS FUNNEL A1 &mdash; Previous Buyers &mdash; "New flavors since your last pop"
+     Subject: The pops got better since you left 🍉
+     Preview: New flavors, same real fruit &mdash; and a way to never run out.
+     List: Previous Buyers &middot; ALWAYS exclude "Suppression - Do Not Market"
+     Paste into HubSpot via rich-text module </> source view, or Custom HTML module. -->
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFFFFF;margin:0;padding:0;">
+  <tr>
+    <td align="center" style="padding:0;">
+
+      <!-- hidden preheader -->
+      <div style="display:none;font-size:1px;color:#FFFFFF;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
+        New flavors, same real fruit &mdash; and a way to never run out.
+      </div>
+
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#FFFFFF;">
+
+        <!-- mango accent bar -->
+        <tr><td style="background-color:#F5A623;height:6px;line-height:6px;font-size:6px;">&nbsp;</td></tr>
+
+        <!-- wordmark -->
+        <tr>
+          <td align="center" style="padding:32px 32px 8px 32px;">
+            <span style="font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:900;font-size:30px;letter-spacing:-0.5px;color:#2A1A12;">MOKI<span style="color:#F5A623;">POPS</span></span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="padding:0 32px 24px 32px;">
+            <span style="font-family:Archivo,Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5A463B;">Bliss on a Stick</span>
+          </td>
+        </tr>
+
+        <!-- headline -->
+        <tr>
+          <td align="left" style="padding:0 32px 16px 32px;">
+            <h1 style="margin:0;font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:900;font-size:32px;line-height:1.2;color:#2A1A12;">The pops got better since you left</h1>
+          </td>
+        </tr>
+
+        <!-- body -->
+        <tr>
+          <td align="left" style="padding:0 32px 16px 32px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#5A463B;">
+            Hey {{ contact.firstname | default: "friend" }},
+          </td>
+        </tr>
+        <tr>
+          <td align="left" style="padding:0 32px 16px 32px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#5A463B;">
+            You've had a MOKIPOPS in your hand before &mdash; so you already know: real fruit, no junk, made in Atlanta by a kid founder with big plans.
+          </td>
+        </tr>
+
+        <!-- flavor panel -->
+        <tr>
+          <td style="padding:8px 32px 8px 32px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFF6E9;border-radius:10px;">
+              <tr>
+                <td style="padding:20px 24px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.7;color:#2A1A12;">
+                  <strong style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#E23A23;">New since your last pop</strong><br>
+                  Watermelon Splasher &nbsp;&middot;&nbsp; Mango Lime &nbsp;&middot;&nbsp; Strawberry Lemonade<br>
+                  Cherry Lime &nbsp;&middot;&nbsp; Blueberriest Eye &nbsp;&middot;&nbsp; Creamy Chocolate
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- price panel -->
+        <tr>
+          <td style="padding:8px 32px 24px 32px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FBEAD0;border-radius:10px;">
+              <tr>
+                <td style="padding:20px 24px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#2A1A12;">
+                  One pop never seems to be enough. A case of 24 is
+                  <strong style="color:#E23A23;">$53.50</strong> &mdash; about
+                  <strong>$2.23 a pop</strong> instead of $4.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- CTA -->
+        <tr>
+          <td align="center" style="padding:0 32px 32px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td align="center" bgcolor="#F5A623" style="background-color:#F5A623;border-radius:8px;">
+                  <a href="https://www.mokipops.com" style="display:inline-block;padding:15px 38px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#2A1A12;text-decoration:none;border-radius:8px;">Shop pops &rarr;</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- signoff -->
+        <tr>
+          <td align="left" style="padding:0 32px 32px 32px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#5A463B;">
+            Stay cool,<br><strong style="color:#2A1A12;">The MOKIPOPS Family</strong>
+          </td>
+        </tr>
+
+        <!-- footer -->
+        <tr><td style="border-top:1px solid #FBEAD0;height:1px;line-height:1px;font-size:1px;">&nbsp;</td></tr>
+        <tr>
+          <td align="center" style="padding:20px 32px 32px 32px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#5A463B;">
+            MOKIPOPS LLC &middot; 16 Forest Parkway, Building A, Forest Park, GA 30297<br>
+            <a href="{{ unsubscribe_link }}" style="color:#5A463B;text-decoration:underline;">Unsubscribe</a>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>

@@ -17,3 +17,9 @@ calendar-sync.json
 docs/_cdp-chrome-launch.sh
 docs/_funnel-email-fix-handoff.md
 docs/_dns-work-order.html
+
+# n8n secrets
+n8n/.env
+
+# Local CRM replacement — contact data, send logs, leads. Never publish.
+contacts/

@@ -1,0 +1,983 @@
+{
+ "_about": "Daily MOKIPOPS cross-post queue read by n8n/mokipops-daily-post.json. Regenerate with n8n/build_queue.py; edit captions freely, keep ids unique.",
+ "generated": "2026-09-30",
+ "timezone": "America/New_York",
+ "posts": [
+  {
+   "id": "2026-10-01-facility",
+   "date": "2026-10-01",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "facility",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/facility.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0803c494-f1d0-4f24-810d-fe19bd6013dc.mp4",
+   "caption": "New month, new kitchen. 🧡 Our manufacturing facility is up and running — bigger batches, same rule: real whole fruit in every pop. #mokipops #atlanta #realfruit #newchapter",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-02-kids",
+   "date": "2026-10-02",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kids",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kids.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/56238264-98a4-4532-be7e-fe8a1d8e7ed1.mp4",
+   "caption": "Little pop lovers, big smiles 🥹🧡 This is exactly why we make them. #mokipops #realfruit #kidsapproved #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-03-dessertwars",
+   "date": "2026-10-03",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "dessertwars",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/dessertwars.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/26cbf364-1bd9-4c01-ad38-27c3b1956e1b.mp4",
+   "caption": "People's Choice, baby! 🏆 MOKIPOPS voted #1 at Dessert Wars Atlanta. Thank you for every single vote — this one's yours, Atlanta 🧡 #mokipops #dessertwars #atlanta #peopleschoice",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-04-kitchen",
+   "date": "2026-10-04",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kitchen",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kitchen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/48883671-d4ee-46a5-9214-a9e15904d221.mp4",
+   "caption": "Inside the MOKIPOPS kitchen 🧤🍓 Real fruit in, bliss out. Every single pop is packed by hand in Atlanta. #mokipops #behindthescenes #realfruit #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-05-sunshine",
+   "date": "2026-10-05",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "sunshine",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/sunshine.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2b9850ae-d312-421b-bd6b-fe2ee2a84e40.mp4",
+   "caption": "Sunshine + a MOKIPOPS = the whole vibe ☀️🍓 Thanks for sharing the love! #mokipops #realfruit #fruitpops #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-06-hawks_screen",
+   "date": "2026-10-06",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "hawks_screen",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/hawks_screen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c5b719a5-b2fe-4731-aa82-ac451d0f4f81.mp4",
+   "caption": "Up on the big screen at State Farm Arena! 🏀 Grateful to the Atlanta Hawks and Chase for supporting Black-owned businesses 🧡 #mokipops #atlanta #atlhawks #blackowned",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-07-popup",
+   "date": "2026-10-07",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "popup",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/popup.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/83d4db0b-6e6f-444e-ae96-9369ca37d907.mp4",
+   "caption": "Pop-up day with the crew ☀️ Nothing beats handing someone their first MOKIPOPS. Find us around Atlanta + at mokipops.com 🍧 #mokipops #atlanta #popup #fruitpops",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-08-nodairy",
+   "date": "2026-10-08",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "nodairy",
+   "tier": "C",
+   "media_type": "image",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/nodairy.jpg",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/d7628f24-8c3c-4f59-bd30-f5cc98d799b0.jpeg",
+   "caption": "No dairy. No dyes. No refined sugar. Just fruit, done right 🧡 #mokipops #cleanlabel #fruitpops #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-09-firstbite",
+   "date": "2026-10-09",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "firstbite",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/firstbite.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6256a569-5b45-41db-9054-aa66f567f6fe.mp4",
+   "caption": "That first-bite smile gets us every time 😄🧡 Thanks for the love! #mokipops #fruitpops #atlanta #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-10-beltline",
+   "date": "2026-10-10",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "beltline",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/beltline.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/59b2a036-942a-42aa-95c2-aa830c460589.mp4",
+   "caption": "Spotted on the BeltLine! 🛴🧡 Thanks for stopping by the cart — see you out there, Atlanta. #mokipops #atlbeltline #atlanta #fruitpops",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-11-founders",
+   "date": "2026-10-11",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "founders",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/founders.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/688dfd02-8379-49f5-91ec-bf099d856ffb.mp4",
+   "caption": "Our founders, telling the MOKIPOPS story 🎤 Kid-founded, family-run, Atlanta-grown since 2016. #mokipops #kidfounded #familyowned #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-12-grabgo",
+   "date": "2026-10-12",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "grabgo",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/grabgo.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/75fcc560-f5f4-4852-8346-d4710952e6a4.mp4",
+   "caption": "Grab-and-go bliss 🍓🌿 Real whole fruit, wrapped and ready — zero artificial anything. mokipops.com #mokipops #cleanlabel #realfruit #fruitpops",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-13-blueberries",
+   "date": "2026-10-13",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "blueberries",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/blueberries.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c808aa66-2345-48fd-a90d-913fad6a94cf.mp4",
+   "caption": "\"Oh THIS is real blueberries!\" 🫐 Yes it is — real whole fruit, nothing artificial, every time. #mokipops #realfruit #blueberry #cleanlabel",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-14-community",
+   "date": "2026-10-14",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "community",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/community.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/94489862-4f09-4031-96af-bfb8542b22cf.mp4",
+   "caption": "Community love like this keeps us going 🧡 Thank you, Atlanta, for cheering on our kid-founded crew! #mokipops #community #atlanta #kidfounded",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-15-basil",
+   "date": "2026-10-15",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "basil",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/basil.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b959fb22-b159-4363-8241-b0b024d1a518.mp4",
+   "caption": "Basil Lemonade, from scratch 🌿🍋 Fresh basil, real lemon, and nothing you can't pronounce. #mokipops #basillemonade #cleanlabel #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-16-freezer",
+   "date": "2026-10-16",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "freezer",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/freezer.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7a2a9567-e520-431b-b56b-0327b8b2f57b.mp4",
+   "caption": "Freezer's stocked and ready 🧊 Real-fruit pops, made in Atlanta — order yours at mokipops.com 🧡 #mokipops #shopsmall #atlanta #fruitpops",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-17-hawks_thanks",
+   "date": "2026-10-17",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "hawks_thanks",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/hawks_thanks.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/310014ab-6ec2-41d9-a64f-8903fec6d16d.mp4",
+   "caption": "Thank you @atlhawks and @chase for the support and recognition 🏀🧡 Proud to be an Atlanta-grown, family-run business. #mokipops #atlhawks #atlanta #blackowned",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-18-hotday",
+   "date": "2026-10-18",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "hotday",
+   "tier": "C",
+   "media_type": "image",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/hotday.jpg",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/32030c44-6502-4b6d-8010-ea48f9b0f443.jpeg",
+   "caption": "Good for a hot day, good all around ☀️ mokipops.com #mokipops #cleanlabel #fruitpops #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-19-bigscreen",
+   "date": "2026-10-19",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "bigscreen",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/bigscreen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/dcf86c44-89a0-4109-996f-d4a107ca6e2e.mp4",
+   "caption": "Catch us on the big screen! 🤩 Kid-founded, Atlanta-grown — and just getting started 🧡 #mokipops #atlanta #familyowned #fruitpops",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-20-kitchen",
+   "date": "2026-10-20",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kitchen",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kitchen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/48883671-d4ee-46a5-9214-a9e15904d221.mp4",
+   "caption": "No shortcuts in here. Whole strawberries, whole mango, whole hands. 🍓🥭 This is what clean-label actually looks like. #mokipops #cleanlabel #behindthescenes #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-21-hawks_screen",
+   "date": "2026-10-21",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "hawks_screen",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/hawks_screen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c5b719a5-b2fe-4731-aa82-ac451d0f4f81.mp4",
+   "caption": "Hawks season is BACK. 🏀🧡 Still can't believe we were up on that screen. Let's go, Atlanta! #mokipops #atlhawks #atlanta #kidfounded",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-22-popup",
+   "date": "2026-10-22",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "popup",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/popup.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/83d4db0b-6e6f-444e-ae96-9369ca37d907.mp4",
+   "caption": "Atlanta 'fall' is still pop weather. 😅🧡 Catch the cart at events all October — follow along for the next stop. #mokipops #atlanta #popup #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-23-blueberries",
+   "date": "2026-10-23",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "blueberries",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/blueberries.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c808aa66-2345-48fd-a90d-913fad6a94cf.mp4",
+   "caption": "The reaction when you can actually see the fruit. 🫐😂 No purple dye needed. #mokipops #realfruit #blueberry #nodyes",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-24-hawks_thanks",
+   "date": "2026-10-24",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "hawks_thanks",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/hawks_thanks.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/310014ab-6ec2-41d9-a64f-8903fec6d16d.mp4",
+   "caption": "Recognition like this means the most when it comes from home. 🏀🧡 Thank you, Atlanta Hawks + Chase. #mokipops #atlhawks #atlanta #familybusiness",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-25-founders",
+   "date": "2026-10-25",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "founders",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/founders.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/688dfd02-8379-49f5-91ec-bf099d856ffb.mp4",
+   "caption": "It started with a kid, a blender, and a freezer. 🧡 Ten years later we're still a family — just with a bigger kitchen. #mokipops #founders #kidfounded #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-26-facility",
+   "date": "2026-10-26",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "facility",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/facility.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0803c494-f1d0-4f24-810d-fe19bd6013dc.mp4",
+   "caption": "Behind these doors: fruit, freezers, and a family that's been at this since 2016. 🏭🧡 Retailers, this is where your cases come from. #mokipops #madeinatlanta #wholesale #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-27-grabgo",
+   "date": "2026-10-27",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "grabgo",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/grabgo.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/75fcc560-f5f4-4852-8346-d4710952e6a4.mp4",
+   "caption": "Read the label. That's it. That's the post. 🍓🥭🫐 #mokipops #cleanlabel #realfruit #nodyes",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-28-dessertwars",
+   "date": "2026-10-28",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "dessertwars",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/dessertwars.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/26cbf364-1bd9-4c01-ad38-27c3b1956e1b.mp4",
+   "caption": "Still the People's Choice. 🏆🧡 Atlanta picked real fruit over everything else at Dessert Wars — we'll never forget it. #mokipops #dessertwars #atlanta #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-29-sunshine",
+   "date": "2026-10-29",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "sunshine",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/sunshine.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2b9850ae-d312-421b-bd6b-fe2ee2a84e40.mp4",
+   "caption": "Golden-hour pop. ☀️🧡 Tag us in yours — we repost our favorites. #mokipops #fruitpops #atlanta #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-30-freezer",
+   "date": "2026-10-30",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "freezer",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/freezer.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7a2a9567-e520-431b-b56b-0327b8b2f57b.mp4",
+   "caption": "The most popular thing in this freezer is the mango. Every time. 🥭🧡 mokipops.com #mokipops #mango #realfruit #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-10-31-kids",
+   "date": "2026-10-31",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kids",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kids.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/56238264-98a4-4532-be7e-fe8a1d8e7ed1.mp4",
+   "caption": "Happy Halloween from the MOKIPOPS crew 🎃🧡 Real fruit, no dyes — the treat parents don't have to think twice about. #mokipops #halloween #nodyes #kidsapproved",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-01-community",
+   "date": "2026-11-01",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "community",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/community.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/94489862-4f09-4031-96af-bfb8542b22cf.mp4",
+   "caption": "This city shows up. 🧡 Every event, every line, every 'we saw you on the Hawks screen!' — thank you. #mokipops #atlanta #community #blackowned",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-02-basil",
+   "date": "2026-11-02",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "basil",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/basil.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b959fb22-b159-4363-8241-b0b024d1a518.mp4",
+   "caption": "Yes, that's real basil. 🌿 Grown-up flavor, kid-approved ingredients. #mokipops #basillemonade #cleanlabel #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-03-firstbite",
+   "date": "2026-11-03",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "firstbite",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/firstbite.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6256a569-5b45-41db-9054-aa66f567f6fe.mp4",
+   "caption": "Wait for it… 😏🍓 The moment someone realizes it's actually real fruit. #mokipops #realfruit #firstbite #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-04-bigscreen",
+   "date": "2026-11-04",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "bigscreen",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/bigscreen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/dcf86c44-89a0-4109-996f-d4a107ca6e2e.mp4",
+   "caption": "Big screen, small business, real fruit. 🎬🧡 #mokipops #kidfounded #atlanta #fruitpops",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-05-beltline",
+   "date": "2026-11-05",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "beltline",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/beltline.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/59b2a036-942a-42aa-95c2-aa830c460589.mp4",
+   "caption": "BeltLine walks hit different with a pop in hand. 🍓🚶 Look for the orange cart. #mokipops #atlbeltline #atlanta #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-06-popup",
+   "date": "2026-11-06",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "popup",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/popup.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/83d4db0b-6e6f-444e-ae96-9369ca37d907.mp4",
+   "caption": "Want MOKIPOPS at your event, school, or game day? 🎉 We bring the cart, the crew, and the fruit. DM us. #mokipops #atlantaevents #popup #kidfounded",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-07-freezer",
+   "date": "2026-11-07",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "freezer",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/freezer.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7a2a9567-e520-431b-b56b-0327b8b2f57b.mp4",
+   "caption": "Your freezer, but make it real fruit. 🧊🍓 Boxes ship from Atlanta — mokipops.com #mokipops #cleanlabel #shopsmall #fruitpops",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-08-kids",
+   "date": "2026-11-08",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kids",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kids.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/56238264-98a4-4532-be7e-fe8a1d8e7ed1.mp4",
+   "caption": "The taste-test panel has spoken. 😄🍓 Real fruit wins every time. #mokipops #kidsapproved #realfruit #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-09-facility",
+   "date": "2026-11-09",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "facility",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/facility.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/0803c494-f1d0-4f24-810d-fe19bd6013dc.mp4",
+   "caption": "From a home freezer to this. 🥹 Every square foot of our new facility was earned one pop at a time. Thank you, Atlanta. #mokipops #atlanta #familybusiness #kidfounded",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-10-basil",
+   "date": "2026-11-10",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "basil",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/basil.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/b959fb22-b159-4363-8241-b0b024d1a518.mp4",
+   "caption": "The flavor people don't expect — then order again. 🌿🍋 Basil Lemonade, made in Atlanta. #mokipops #basillemonade #realfruit #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-11-firstbite",
+   "date": "2026-11-11",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "firstbite",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/firstbite.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6256a569-5b45-41db-9054-aa66f567f6fe.mp4",
+   "caption": "First bites never get old. 🧡 Bring a friend who hasn't tried one yet — you know who. #mokipops #atlanta #fruitpops #shareable",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-12-hawks_screen",
+   "date": "2026-11-12",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "hawks_screen",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/hawks_screen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c5b719a5-b2fe-4731-aa82-ac451d0f4f81.mp4",
+   "caption": "From a kid's idea to the State Farm Arena jumbotron. 🏀 Thank you @atlhawks + @chase. 🧡 #mokipops #atlhawks #blackowned #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-13-kitchen",
+   "date": "2026-11-13",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kitchen",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kitchen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/48883671-d4ee-46a5-9214-a9e15904d221.mp4",
+   "caption": "Fall in the kitchen still means fruit — just more of it. 🍁🧡 Stocking freezers across Atlanta before the holidays. #mokipops #madeinatlanta #realfruit #bts",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-14-community",
+   "date": "2026-11-14",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "community",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/community.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/94489862-4f09-4031-96af-bfb8542b22cf.mp4",
+   "caption": "Built by a family, carried by a community. 🧡 #mokipops #atlanta #community #familybusiness",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-15-dessertwars",
+   "date": "2026-11-15",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "dessertwars",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/dessertwars.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/26cbf364-1bd9-4c01-ad38-27c3b1956e1b.mp4",
+   "caption": "Award-winning, kid-founded, Atlanta-made. 🏆 Looking for a dessert that wins the table this holiday? mokipops.com #mokipops #dessertwars #holidays #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-16-grabgo",
+   "date": "2026-11-16",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "grabgo",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/grabgo.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/75fcc560-f5f4-4852-8346-d4710952e6a4.mp4",
+   "caption": "Store owners: these fly out of a grab-and-go freezer. 🧊🧡 Case of 24, find us on Faire or DM for wholesale. #mokipops #wholesale #retail #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-17-founders",
+   "date": "2026-11-17",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "founders",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/founders.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/688dfd02-8379-49f5-91ec-bf099d856ffb.mp4",
+   "caption": "Why real fruit? Because that's what we wanted for our own kids. 🍓🧡 That's the whole origin story. #mokipops #founders #cleanlabel #familybusiness",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-18-sunshine",
+   "date": "2026-11-18",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "sunshine",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/sunshine.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/2b9850ae-d312-421b-bd6b-fe2ee2a84e40.mp4",
+   "caption": "Still 75° in Atlanta? Still pop season. 😎🍓 #mokipops #atlanta #realfruit #fallinatlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-19-blueberries",
+   "date": "2026-11-19",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "blueberries",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/blueberries.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/c808aa66-2345-48fd-a90d-913fad6a94cf.mp4",
+   "caption": "Blueberries so real you can count them. 🫐🧡 #mokipops #realfruit #blueberry #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-20-beltline",
+   "date": "2026-11-20",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "beltline",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/beltline.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/59b2a036-942a-42aa-95c2-aa830c460589.mp4",
+   "caption": "Cool mornings, warm afternoons, cart's out. 🍁🧡 Atlanta fall is our favorite pop-up season. #mokipops #atlbeltline #atlanta #popup",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-21-hawks_thanks",
+   "date": "2026-11-21",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "hawks_thanks",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/hawks_thanks.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/310014ab-6ec2-41d9-a64f-8903fec6d16d.mp4",
+   "caption": "A small family business, backed by the home team. 🧡🏀 Forever grateful. #mokipops #atlhawks #blackowned #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-22-bigscreen",
+   "date": "2026-11-22",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "bigscreen",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/bigscreen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/dcf86c44-89a0-4109-996f-d4a107ca6e2e.mp4",
+   "caption": "Play it back one more time. 😭🧡 Kid-founded in 2016, on the big screen in 2026. #mokipops #kidfounded #atlanta #familyowned",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-23-kitchen",
+   "date": "2026-11-23",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kitchen",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kitchen.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/48883671-d4ee-46a5-9214-a9e15904d221.mp4",
+   "caption": "Hand-packed, small-batch, Atlanta-made. 🧡 That's the whole recipe. #mokipops #handmade #cleanlabel #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-24-firstbite",
+   "date": "2026-11-24",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "firstbite",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/firstbite.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/6256a569-5b45-41db-9054-aa66f567f6fe.mp4",
+   "caption": "Holiday hack: a MOKIPOPS after the big meal. Light, cold, real fruit. 🍁🧡 #mokipops #realfruit #dessert #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-25-popup",
+   "date": "2026-11-25",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "popup",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/popup.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/83d4db0b-6e6f-444e-ae96-9369ca37d907.mp4",
+   "caption": "Every pop-up starts with a kid asking 'what flavor is THAT?' 🥭🍓 Real fruit, no dyes — and the answer is usually mango. #mokipops #atlanta #popup #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-26-community",
+   "date": "2026-11-26",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "community",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/community.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/94489862-4f09-4031-96af-bfb8542b22cf.mp4",
+   "caption": "Happy Thanksgiving, Atlanta 🍁🧡 From our family to yours — thank you for a year we'll never forget. #mokipops #thanksgiving #atlanta #grateful",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-27-freezer",
+   "date": "2026-11-27",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "freezer",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/freezer.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/7a2a9567-e520-431b-b56b-0327b8b2f57b.mp4",
+   "caption": "Skip the mall. Stock the freezer. 🧊🧡 Real-fruit pops ship from Atlanta all weekend — mokipops.com #mokipops #blackfriday #shopsmall #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-28-founders",
+   "date": "2026-11-28",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "founders",
+   "tier": "B",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/founders.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/688dfd02-8379-49f5-91ec-bf099d856ffb.mp4",
+   "caption": "Small Business Saturday 🧡 Kid-founded in 2016, family-run ever since, Atlanta-made every day. Shop small with us: mokipops.com #mokipops #smallbusinesssaturday #shopsmall #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-29-grabgo",
+   "date": "2026-11-29",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "grabgo",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/grabgo.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/75fcc560-f5f4-4852-8346-d4710952e6a4.mp4",
+   "caption": "Lunchbox, gym bag, dessert table — wrapped and ready for all of it. 🧡 #mokipops #realfruit #snack #atlanta",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  },
+  {
+   "id": "2026-11-30-kids",
+   "date": "2026-11-30",
+   "time": "12:00",
+   "tz": "America/New_York",
+   "key": "kids",
+   "tier": "A",
+   "media_type": "video",
+   "media_url": "https://borngifted.github.io/mokipops-reel/assets/social-library/kids.mp4",
+   "media_fallback_url": "https://database.blotato.io/storage/v1/object/public/public_media/6da849f3-a8f1-4ddf-bd02-c8446b5d737b/56238264-98a4-4532-be7e-fe8a1d8e7ed1.mp4",
+   "caption": "After-school snack, sorted. 🎒🧡 Fruit on a stick, made in Atlanta. Stock the freezer at mokipops.com #mokipops #kidsapproved #snacktime #realfruit",
+   "platforms": [
+    "facebook",
+    "instagram"
+   ]
+  }
+ ]
+}

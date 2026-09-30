@@ -1,0 +1,8 @@
+# Only the form webhook is reachable from the internet; the n8n editor stays local-only.
+on_http_request:
+  - expressions:
+      - "!req.url.path.startsWith('/webhook/')"
+    actions:
+      - type: deny
+        config:
+          status_code: 404
