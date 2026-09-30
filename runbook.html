@@ -92,7 +92,7 @@ pre code { background:none; padding:0; }
 
 <main class="wrap">
 <header class="hero">
-  <span class="eyebrow">Living document · updated Sep 30, 2026 (rev 2: manual email + video)</span>
+  <span class="eyebrow">Living document · updated Sep 30, 2026 (rev 3: B1–B3 manual plan + video)</span>
   <h1>Run MOKIPOPS marketing from one Mac.</h1>
   <p class="lede">Blotato is gone and HubSpot is locked. Everything they did now runs locally in <b>n8n</b> on Docker Desktop: daily Facebook + Instagram posts, the wholesale email funnel, and the lead form on the wholesale page. Monthly software cost: <b>$0</b>.</p>
   <div class="pills">
@@ -270,7 +270,7 @@ FUNNEL_DAILY_CAP=40</code></pre>
     <div class="card"><h3>Way 1 · One-off from your mail app</h3>
       <p class="small">Best for replying to a lead, a warm intro, or checking how an email looks on your own phone.</p>
       <ol style="padding-left:20px;font-size:14.5px;color:var(--sub);margin-top:8px">
-        <li>Click <b>Copy</b> on an email below. It copies the finished email as rich content, video preview included.</li>
+        <li>Click <b>Copy</b> on an email below, or <b>Copy + video</b> to drop the moving film preview in under the logo. It copies the finished email as rich content.</li>
         <li>In Apple Mail, Outlook or Gmail: <b>New message → From: moreflavor@mokipops.com</b>, paste into the body (⌘V).</li>
         <li>Change “Hey there” to their first name, paste the subject, send.</li>
         <li>Send yourself one first. Open it on the iPhone: the video should be moving.</li>
@@ -298,15 +298,17 @@ python3 n8n/mailer.py --list</code></pre>
     </div>
   </div>
 
-  <div class="card"><h3>The manual sending plan</h3>
-    <div class="tablewrap"><table>
-      <tr><th>Day</th><th>Send</th><th>To</th><th>Command</th></tr>
-      <tr><td>Day 0 (Mon)</td><td><b>V</b> video opener</td><td>b2b, 40/day until done (~10 days)</td><td><code>--campaign V --segment b2b --limit 40</code></td></tr>
-      <tr><td>Day 0</td><td><b>A2</b> + video</td><td>buyers (50, fits in two days)</td><td><code>--campaign A2 --segment buyers --limit 40 --video</code></td></tr>
-      <tr><td>Day 5</td><td><b>B2</b> Waymo story</td><td>b2b who got V ≥5 days ago</td><td><code>--campaign B2 --segment b2b --limit 40</code></td></tr>
-      <tr><td>Day 12</td><td><b>B3</b> last touch</td><td>b2b</td><td><code>--campaign B3 --segment b2b --limit 40</code></td></tr>
-      <tr><td>Any day</td><td>Reply to a lead with the film</td><td>one person</td><td>Copy button above, or <code>--campaign V --to them@store.com --name Them</code></td></tr>
+  <div class="card"><h3>The manual sending plan · the 3 sales-funnel emails, with the video</h3>
+    <p class="small">B1 → B2 → B3 is the wholesale sequence that was written for HubSpot. It now goes out from the mailbox, each email carrying the film, to the <code>b2b</code> segment at 40 a day. A2 runs alongside for past buyers. V is the standalone video opener for one-offs and warm intros.</p>
+    <div class="tablewrap" style="margin-top:10px"><table>
+      <tr><th>Day</th><th>Email</th><th>Subject</th><th>To</th><th>Command</th></tr>
+      <tr><td><b>Day 0</b></td><td><b>B1</b> + video</td><td>A $2 pop your customers will pay $4 for</td><td>b2b · 40/day (~10 days to cover 411)</td><td><code>--campaign B1 --segment b2b --limit 40 --video</code></td></tr>
+      <tr><td>Day 0</td><td><b>A2</b> + video</td><td>One case = your whole event, sorted</td><td>buyers · 50 (two days)</td><td><code>--campaign A2 --segment buyers --limit 40 --video</code></td></tr>
+      <tr><td><b>Day 5</b></td><td><b>B2</b> + video</td><td>120 cases, 3,000 pops, one Atlanta afternoon</td><td>b2b · same order as B1</td><td><code>--campaign B2 --segment b2b --limit 40 --video</code></td></tr>
+      <tr><td><b>Day 12</b></td><td><b>B3</b></td><td>Should I close your file?</td><td>b2b</td><td><code>--campaign B3 --segment b2b --limit 40</code></td></tr>
+      <tr><td>Any day</td><td><b>V</b> video opener</td><td>12 years in 38 seconds 🍉</td><td>one lead or a warm intro</td><td>Copy button above, or <code>--campaign V --to them@store.com --name Them</code></td></tr>
     </table></div>
+    <p class="small" style="margin-top:10px">Because each campaign sends 40 a day in the same contact order, B2 naturally lands 5 days after that person's B1 if you run one batch of each per day from Day 5 on. About 200 of the b2b contacts received B1 through HubSpot on Aug 26; the mailbox version is a fresh touch a month later with the film added, so it is fine to include them. B3 has no video on purpose: it's the short, plain "should I close your file?" note that gets replies.</p>
     <div class="callout" style="margin-top:12px"><b>Before the first batch:</b> DKIM enabled for mokipops.com (Setup step 5), one test to your own phone, and no more than 40 a day for the first week. Replies and “unsubscribe” answers land in the moreflavor inbox; answer them the same day.</div>
   </div>
 </section>
@@ -409,13 +411,18 @@ document.querySelectorAll('pre').forEach(p => { const b = p.querySelector('.copy
   const list = document.getElementById('copylist'), note = document.getElementById('copynote');
   list.innerHTML = EMAILS.map(([k, subj, file, seg]) => `<div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--hairline);font-size:14px">
      <div><b>${k}</b> · ${subj}<br><span class="small">${seg}</span></div>
-     <div style="display:flex;gap:6px;flex-shrink:0"><a class="pill" style="text-decoration:none" href="${file}" target="_blank" rel="noopener">Preview</a><button class="pill" data-file="${file}" data-subj="${subj}" style="border:0;cursor:pointer;font:inherit;font-size:12.5px;font-weight:800;background:var(--mango);color:#2A1A12">Copy</button></div></div>`).join('');
+     <div style="display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end"><a class="pill" style="text-decoration:none" href="${file}" target="_blank" rel="noopener">Preview</a><button class="pill" data-file="${file}" data-subj="${subj}" style="border:0;cursor:pointer;font:inherit;font-size:12.5px;font-weight:800;background:var(--mango);color:#2A1A12">Copy</button>${k === 'V' ? '' : `<button class="pill" data-file="${file}" data-subj="${subj}" data-video="1" style="border:0;cursor:pointer;font:inherit;font-size:12.5px;font-weight:800;background:var(--chili);color:#fff">Copy + video</button>`}</div></div>`).join('');
   list.addEventListener('click', async e => {
     const b = e.target.closest('button[data-file]'); if (!b) return;
     b.textContent = '…';
     try {
       const raw = await (await fetch(b.dataset.file)).text();
-      const html = clean(raw);
+      let html = clean(raw);
+      if (b.dataset.video) {
+        const block = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:8px 24px 18px;"><a href="${SITE}video.html?utm_source=email&utm_medium=email&utm_campaign=wholesale_funnel&utm_content=video" target="_blank" style="text-decoration:none;display:block;"><img src="${SITE}assets/funnel/funnel-loop.gif" width="520" alt="MOKIPOPS — real fruit pops, made in Atlanta (tap to watch)" style="display:block;width:100%;max-width:520px;height:auto;border-radius:14px;border:0;"></a><p style="margin:10px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#5A463B;">&#9654;&nbsp; <a href="${SITE}video.html?utm_source=email&utm_medium=email&utm_campaign=wholesale_funnel&utm_content=video_caption" target="_blank" style="color:#E23A23;text-decoration:underline;font-weight:700;">Watch the full 38 seconds</a> &nbsp;&middot;&nbsp; sound on</p></td></tr></table>`;
+        const m = html.match(/logo\.png[\s\S]*?<\/tr>/);
+        html = m ? html.slice(0, m.index + m[0].length) + '<tr><td>' + block + '</td></tr>' + html.slice(m.index + m[0].length) : block + html;
+      }
       const text = 'Subject: ' + b.dataset.subj + '\n\n' + html.replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
       await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([text], { type: 'text/plain' }) })]);
       b.textContent = 'Copied ✓'; note.textContent = 'Copied “' + b.dataset.subj + '” — paste into a new message from moreflavor@mokipops.com. Subject line: ' + b.dataset.subj;
