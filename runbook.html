@@ -86,19 +86,20 @@ pre code { background:none; padding:0; }
 <div class="topbar"><div class="wrap">
   <a class="wordmark" href="index.html">MOKI<em>POPS</em> · Runbook</a>
   <nav class="topnav">
-    <a href="#stack">Stack</a><a href="#setup">Setup</a><a href="#social">Social</a><a href="#email">Email</a><a href="#leads">Leads</a><a href="#ops">Daily ops</a><a href="#fix">Fix-it</a>
+    <a href="#stack">Stack</a><a href="#setup">Setup</a><a href="#social">Social</a><a href="#email">Email</a><a href="#manual">Send by hand</a><a href="#leads">Leads</a><a href="#ops">Daily ops</a><a href="#fix">Fix-it</a>
   </nav>
 </div></div>
 
 <main class="wrap">
 <header class="hero">
-  <span class="eyebrow">Living document · updated Sep 30, 2026</span>
+  <span class="eyebrow">Living document · updated Sep 30, 2026 (rev 2: manual email + video)</span>
   <h1>Run MOKIPOPS marketing from one Mac.</h1>
   <p class="lede">Blotato is gone and HubSpot is locked. Everything they did now runs locally in <b>n8n</b> on Docker Desktop: daily Facebook + Instagram posts, the wholesale email funnel, and the lead form on the wholesale page. Monthly software cost: <b>$0</b>.</p>
   <div class="pills">
     <span class="pill ok">Social workflow built &amp; tested</span>
     <span class="pill ok">Email batch workflow built &amp; tested</span>
     <span class="pill ok">Lead webhook built &amp; tested</span>
+    <span class="pill ok">Manual mailer + video email ready</span>
     <span class="pill todo">Needs: Meta token · mailbox SMTP · ngrok domain</span>
   </div>
 </header>
@@ -249,6 +250,67 @@ FUNNEL_DAILY_CAP=40</code></pre>
   </div>
 </section>
 
+
+<section id="manual">
+  <div class="sechead"><h2>Sending emails by hand (with the video playing)</h2><p>No n8n required. Two ways: copy a finished email into your own mail app for one-offs, or run the mailer script for a paced batch. Both use the same templates, the same log, and the same sender.</p></div>
+
+  <div class="card"><h3>How “video in an email” actually works</h3>
+    <p class="small">Email clients don't agree on video, so every MOKIPOPS email carries three layers of the same 38-second film and each client shows the best one it can. Every layer is a link to the full player at <a href="video.html">video.html</a>.</p>
+    <div class="tablewrap" style="margin-top:10px"><table>
+      <tr><th>Reader opens it in</th><th>What plays</th></tr>
+      <tr><td>Apple Mail (Mac), iPhone / iPad Mail</td><td><b>The real video</b>, autoplaying muted and looping inside the email. Tap for sound on the site.</td></tr>
+      <tr><td>Gmail (web, iOS, Android), Outlook.com / Outlook web, Yahoo, Samsung Mail</td><td><b>Animated 5-second loop</b> (GIF, 480 px, ~1 MB) that starts moving on open.</td></tr>
+      <tr><td>Outlook for Windows (desktop app)</td><td>The poster frame with a ▶ caption. One click opens the film.</td></tr>
+      <tr><td>Images turned off</td><td>The alt text “tap to watch” plus the ▶ Watch link.</td></tr>
+    </table></div>
+    <p class="small" style="margin-top:10px">Files: <code>assets/funnel/mokipops-wholesale-funnel.mp4</code> (film) · <code>funnel-loop.gif</code> (moving preview) · <code>funnel-poster.jpg</code> (still). Swap any of them and every future email picks it up; keep the GIF under ~1.5 MB.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><h3>Way 1 · One-off from your mail app</h3>
+      <p class="small">Best for replying to a lead, a warm intro, or checking how an email looks on your own phone.</p>
+      <ol style="padding-left:20px;font-size:14.5px;color:var(--sub);margin-top:8px">
+        <li>Click <b>Copy</b> on an email below. It copies the finished email as rich content, video preview included.</li>
+        <li>In Apple Mail, Outlook or Gmail: <b>New message → From: moreflavor@mokipops.com</b>, paste into the body (⌘V).</li>
+        <li>Change “Hey there” to their first name, paste the subject, send.</li>
+        <li>Send yourself one first. Open it on the iPhone: the video should be moving.</li>
+      </ol>
+      <div id="copylist" style="margin-top:12px"></div>
+      <p class="small" id="copynote" style="margin-top:8px">Rich copy needs Chrome, Safari or Edge on this site (HTTPS). If your client pastes plain text, use the <b>Preview</b> link, ⌘A ⌘C there, and paste.</p>
+    </div>
+    <div class="card"><h3>Way 2 · Paced batch from Terminal</h3>
+      <p class="small">Same result as the n8n batch, but you run it when you want and watch it go. Fill <code>SMTP_PASS</code> in <code>n8n/.env</code> once (step 5 of Setup).</p>
+<pre><button class="copy">copy</button><code>cd ~/Documents/MOKIPOPS/mokipops-reel-site
+
+# test it on yourself first (V = the video opener)
+python3 n8n/mailer.py --campaign V --to you@example.com --name "Your Name"
+
+# send today's batch: 40 b2b contacts, 30 s apart, skipping anyone already sent
+python3 n8n/mailer.py --campaign V --segment b2b --limit 40
+
+# add the video to any campaign, or just preview without sending
+python3 n8n/mailer.py --campaign A2 --segment buyers --limit 40 --video
+python3 n8n/mailer.py --campaign B2 --segment b2b --limit 5 --dry-run   # writes HTML to contacts/outbox/
+
+# where am I?
+python3 n8n/mailer.py --list</code></pre>
+      <p class="small">Every send is appended to <code>contacts/send-log.jsonl</code>, shared with the n8n batch, so neither path ever emails the same person the same campaign twice. Unsubscribe replies go in <code>contacts/unsubscribed.txt</code>, then <code>python3 n8n/build_contacts.py</code>.</p>
+    </div>
+  </div>
+
+  <div class="card"><h3>The manual sending plan</h3>
+    <div class="tablewrap"><table>
+      <tr><th>Day</th><th>Send</th><th>To</th><th>Command</th></tr>
+      <tr><td>Day 0 (Mon)</td><td><b>V</b> video opener</td><td>b2b, 40/day until done (~10 days)</td><td><code>--campaign V --segment b2b --limit 40</code></td></tr>
+      <tr><td>Day 0</td><td><b>A2</b> + video</td><td>buyers (50, fits in two days)</td><td><code>--campaign A2 --segment buyers --limit 40 --video</code></td></tr>
+      <tr><td>Day 5</td><td><b>B2</b> Waymo story</td><td>b2b who got V ≥5 days ago</td><td><code>--campaign B2 --segment b2b --limit 40</code></td></tr>
+      <tr><td>Day 12</td><td><b>B3</b> last touch</td><td>b2b</td><td><code>--campaign B3 --segment b2b --limit 40</code></td></tr>
+      <tr><td>Any day</td><td>Reply to a lead with the film</td><td>one person</td><td>Copy button above, or <code>--campaign V --to them@store.com --name Them</code></td></tr>
+    </table></div>
+    <div class="callout" style="margin-top:12px"><b>Before the first batch:</b> DKIM enabled for mokipops.com (Setup step 5), one test to your own phone, and no more than 40 a day for the first week. Replies and “unsubscribe” answers land in the moreflavor inbox; answer them the same day.</div>
+  </div>
+</section>
+
 <section id="leads">
   <div class="sechead"><h2>Wholesale &amp; events leads</h2><p>The form on the wholesale page posts to n8n on this Mac through the ngrok tunnel.</p></div>
   <div class="grid2">
@@ -296,6 +358,7 @@ python3 -c "import json;[print(l['at'][:10],l['interest'],'·',l['name'],'·',l[
     <tr><td>Funnel mail landing in spam</td><td>DKIM not enabled for mokipops.com</td><td>Enable DKIM in Defender portal + add the two CNAMEs at GoDaddy; keep volume ≤40/day for a week.</td></tr>
     <tr><td>Form shows “Opening your email app”</td><td>Webhook unreachable (ngrok down, workflow inactive, or <code>LEAD_ENDPOINT</code> empty)</td><td><code>docker compose --profile public up -d</code>; workflow toggle Active; set the constant in wholesale.html and publish.</td></tr>
     <tr><td>n8n not running after a reboot</td><td>Docker Desktop didn't start</td><td>Enable “Start Docker Desktop when you sign in”; containers are set to restart automatically.</td></tr>
+    <tr><td>Video not moving in an email</td><td>Client blocks GIF/video (Outlook desktop) or images off</td><td>Expected: they get the poster + ▶ link. Check on an iPhone or in Gmail to confirm the email itself is fine.</td></tr>
     <tr><td>Anything else</td><td>—</td><td>n8n → Executions → open the red run; the failing node shows the exact API response. Ask Claude with the <code>mokipops-posting</code> or <code>mokipops-funnel</code> runbook.</td></tr>
   </table></div>
   <div class="card"><h3>Files map</h3><div class="tablewrap"><table>
@@ -305,6 +368,8 @@ python3 -c "import json;[print(l['at'][:10],l['interest'],'·',l['name'],'·',l[
     <tr><td><code>n8n/mokipops-lead-webhook.json</code></td><td>Wholesale form receiver</td></tr>
     <tr><td><code>n8n/build_queue.py</code> → <code>social-queue.json</code></td><td>Posting calendar generator and its output (public)</td></tr>
     <tr><td><code>n8n/build_contacts.py</code> → <code>contacts/contacts.csv</code></td><td>Segments (private)</td></tr>
+    <tr><td><code>n8n/mailer.py</code></td><td>Manual mailer (one-off or paced batch, optional video block)</td></tr>
+    <tr><td><code>assets/funnel/</code></td><td>Film (mp4), moving preview (gif), poster (jpg) used in every email</td></tr>
     <tr><td><code>n8n/verify_meta.sh</code></td><td>Meta pre-flight</td></tr>
     <tr><td><code>n8n/docker-compose.yml</code> · <code>n8n/.env</code> · <code>n8n/ngrok-policy.yml</code></td><td>Runtime; .env is the only file with secrets</td></tr>
     <tr><td><code>assets/social-library/</code> · <code>social-library.json</code></td><td>The 19 proven assets and their caption variants</td></tr>
@@ -319,6 +384,45 @@ python3 -c "import json;[print(l['at'][:10],l['interest'],'·',l['name'],'·',l[
 <script>
 document.querySelectorAll('pre').forEach(p => { const b = p.querySelector('.copy'); if (!b) return;
   b.addEventListener('click', async () => { try { await navigator.clipboard.writeText(p.querySelector('code').innerText); b.textContent = 'copied'; setTimeout(() => b.textContent = 'copy', 1200); } catch (e) { b.textContent = 'select & copy'; } }); });
+
+// ---- Send by hand: copy finished emails as rich content ----
+(() => {
+  const EMAILS = [
+    ['V',  '12 years in 38 seconds 🍉', 'docs/funnel-video-email.html', 'b2b · video opener'],
+    ['A1', 'The pops got better since you left 🍉', 'docs/funnel-a1-email.html', 'buyers'],
+    ['A2', 'One case = your whole event, sorted', 'docs/funnel-a2-email.html', 'buyers'],
+    ['B1', 'A $2 pop your customers will pay $4 for', 'docs/funnel-b1-email.html', 'b2b'],
+    ['B2', '120 cases, 3,000 pops, one Atlanta afternoon', 'docs/funnel-b2-email.html', 'b2b'],
+    ['B3', 'Should I close your file?', 'docs/funnel-b3-email.html', 'b2b'],
+  ];
+  const SITE = 'https://borngifted.github.io/mokipops-reel/';
+  const unsub = 'mailto:moreflavor@mokipops.com?subject=Unsubscribe';
+  const clean = html => html
+    .replace(/\{%\s*text[^%]*value="([^"]*)"[^%]*%\}/g, '$1').replace(/\{%[\s\S]*?%\}/g, '')
+    .replace(/\{\{\s*unsubscribe_link(_all)?\s*\}\}/g, unsub)
+    .replace(/\{\{\s*site_settings\.company_name\s*\}\}/g, 'MOKIPOPS').replace(/\{\{\s*site_settings\.company_city\s*\}\}/g, 'Atlanta')
+    .replace(/\{\{\s*site_settings\.company_state\s*\}\}/g, 'GA').replace(/\{\{\s*site_settings\.company_country\s*\}\}/g, 'USA')
+    .replace(/\{\{\s*contact\.firstname\s*\}\}/g, 'there').replace(/\{\{[^}]*\}\}/g, '')
+    .replace(/utm_source=hubspot/g, 'utm_source=email')
+    .replace(/assets\/funnel\/funnel-preview\.gif/g, 'assets/funnel/funnel-loop.gif')
+    .replace(/(src|href)="(?!https?:|mailto:)\/?/g, '$1="' + SITE);
+  const list = document.getElementById('copylist'), note = document.getElementById('copynote');
+  list.innerHTML = EMAILS.map(([k, subj, file, seg]) => `<div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--hairline);font-size:14px">
+     <div><b>${k}</b> · ${subj}<br><span class="small">${seg}</span></div>
+     <div style="display:flex;gap:6px;flex-shrink:0"><a class="pill" style="text-decoration:none" href="${file}" target="_blank" rel="noopener">Preview</a><button class="pill" data-file="${file}" data-subj="${subj}" style="border:0;cursor:pointer;font:inherit;font-size:12.5px;font-weight:800;background:var(--mango);color:#2A1A12">Copy</button></div></div>`).join('');
+  list.addEventListener('click', async e => {
+    const b = e.target.closest('button[data-file]'); if (!b) return;
+    b.textContent = '…';
+    try {
+      const raw = await (await fetch(b.dataset.file)).text();
+      const html = clean(raw);
+      const text = 'Subject: ' + b.dataset.subj + '\n\n' + html.replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([text], { type: 'text/plain' }) })]);
+      b.textContent = 'Copied ✓'; note.textContent = 'Copied “' + b.dataset.subj + '” — paste into a new message from moreflavor@mokipops.com. Subject line: ' + b.dataset.subj;
+    } catch (err) { b.textContent = 'Copy'; note.textContent = 'Rich copy blocked here — open Preview, press ⌘A then ⌘C, and paste.'; }
+    setTimeout(() => b.textContent = 'Copy', 2500);
+  });
+})();
 (async () => {
   const stats = document.getElementById('stats'), next = document.getElementById('next'), note = document.getElementById('statnote');
   try {

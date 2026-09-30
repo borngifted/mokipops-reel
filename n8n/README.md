@@ -182,6 +182,14 @@ the unsubscribe link becomes a `mailto:` to moreflavor@. Put unsubscribes in
 Status: A1 + B1 went out Aug 26 2026 via HubSpot. **Next: A2 + B2 the same day, B3 a week later.**
 Warm-up: ≤40/day for the first week from this mailbox.
 
+### Manual path (no n8n): `mailer.py`
+`python3 n8n/mailer.py --campaign V --to you@x.com --name You` · `--campaign V --segment b2b --limit 40` ·
+`--video` on any campaign · `--dry-run` (previews in `contacts/outbox/`) · `--list`. Reads `SMTP_*` from
+`.env`, writes the same `contacts/send-log.jsonl`, skips anyone already logged for that campaign.
+Video block = `<video autoplay muted loop>` (Apple/iOS Mail) with `assets/funnel/funnel-loop.gif` as the
+fallback image and `funnel-poster.jpg` as poster; all wrapped in a link to `video.html`. The runbook page
+(`#manual`) also has rich-copy buttons for pasting a finished email into any mail app.
+
 ## Part 3 — Wholesale & events form
 
 `wholesale.html` now has a native form. It POSTs JSON to
