@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOKIPOPS — Email Studio</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Preview every MOKIPOPS funnel email, pick who gets it, and send from the MOKIPOPS mailbox.">
+<style>
+@font-face { font-family:'Fraunces'; src:url(assets/fraunces.woff2) format('woff2'); font-weight:100 900; font-display:swap; }
+@font-face { font-family:'Archivo'; src:url(assets/archivo.woff2) format('woff2'); font-weight:100 900; font-display:swap; }
+:root { --bg:#FFF6E9; --panel:#FBEAD0; --ink:#2A1A12; --sub:#5A463B; --hairline:rgba(42,26,18,.12); --card:#fff; --mango:#F5A623; --orange:#EE6C2B; --chili:#E23A23; --leaf:#4FB669; --r:16px; }
+@media (prefers-color-scheme: dark) { :root { --bg:#211714; --panel:#2A1A12; --ink:#FFF6E9; --sub:#cdbba8; --hairline:rgba(255,246,233,.14); --card:#33211a; } }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+h1,h2,h3 { font-family:'Fraunces',Georgia,serif; line-height:1.15; }
+a { color:var(--chili); }
+.wrap { max-width:1240px; margin:0 auto; padding:0 16px; }
+.topbar { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb, var(--bg) 84%, transparent); border-bottom:1px solid var(--hairline); }
+.topbar .wrap { display:flex; align-items:center; justify-content:space-between; min-height:52px; gap:12px; flex-wrap:wrap; padding-top:6px; padding-bottom:6px; }
+.wordmark { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:17px; text-decoration:none; color:var(--ink); }
+.wordmark em { font-style:normal; color:var(--mango); }
+.conn { display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; }
+.conn input { font:inherit; font-size:13px; padding:7px 10px; border:1px solid var(--hairline); border-radius:10px; background:var(--card); color:var(--ink); min-width:0; }
+.conn input.url { width:min(360px, 60vw); } .conn input.key { width:150px; }
+.dot { width:10px; height:10px; border-radius:50%; background:#bbb; display:inline-block; }
+.dot.ok { background:var(--leaf); } .dot.bad { background:var(--chili); }
+.btn { font:inherit; font-weight:800; font-size:13.5px; border:0; border-radius:12px; padding:9px 14px; cursor:pointer; background:var(--panel); color:var(--ink); }
+.btn.primary { background:var(--chili); color:#fff; } .btn.warm { background:var(--mango); color:#2A1A12; } .btn.ghost { background:transparent; border:1px solid var(--hairline); }
+.btn:disabled { opacity:.5; cursor:not-allowed; }
+.btn.sm { padding:5px 9px; font-size:12px; border-radius:9px; }
+h1 { font-size:clamp(26px,4vw,38px); font-weight:900; letter-spacing:-.02em; margin:26px 0 4px; }
+.lede { color:var(--sub); max-width:760px; margin-bottom:18px; font-size:15px; }
+.grid { display:grid; grid-template-columns:minmax(0,360px) minmax(0,1fr); gap:14px; align-items:start; }
+@media (max-width:900px) { .grid { grid-template-columns:1fr; } }
+.card { background:var(--card); border:1px solid var(--hairline); border-radius:var(--r); padding:16px; margin-bottom:14px; min-width:0; }
+.card h2 { font-size:19px; font-weight:800; margin-bottom:10px; }
+.emails { display:flex; flex-direction:column; gap:6px; }
+.em { display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start; padding:10px 12px; border:1px solid var(--hairline); border-radius:12px; cursor:pointer; }
+.em.sel { border-color:var(--mango); background:color-mix(in srgb, var(--mango) 14%, var(--card)); }
+.em b { font-size:14px; } .em .s { display:block; font-size:12.5px; color:var(--sub); }
+.tag { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--chili); }
+.row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.subject { font-size:14px; background:var(--panel); border-radius:10px; padding:8px 10px; word-break:break-word; }
+label.chk { display:flex; gap:8px; align-items:center; font-size:14px; }
+iframe { width:100%; height:min(78vh, 900px); border:1px solid var(--hairline); border-radius:12px; background:#fff; }
+.tabs { display:flex; gap:6px; margin-bottom:10px; flex-wrap:wrap; }
+.tabs button.on { background:var(--mango); color:#2A1A12; }
+.field { display:block; font-size:13px; font-weight:700; color:var(--sub); margin-bottom:10px; }
+.field input, .field select { display:block; width:100%; margin-top:4px; font:inherit; font-size:14px; padding:9px 11px; border:1px solid var(--hairline); border-radius:10px; background:var(--bg); color:var(--ink); }
+.list { max-height:340px; overflow:auto; border:1px solid var(--hairline); border-radius:10px; }
+.list table { width:100%; border-collapse:collapse; font-size:13px; }
+.list td, .list th { padding:6px 8px; border-bottom:1px solid var(--hairline); text-align:left; vertical-align:top; }
+.list th { position:sticky; top:0; background:var(--card); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); }
+.pill { font-size:10.5px; font-weight:800; padding:2px 6px; border-radius:999px; background:var(--panel); margin-right:3px; white-space:nowrap; }
+.pill.done { background:color-mix(in srgb, var(--leaf) 25%, transparent); }
+.note { font-size:13px; color:var(--sub); }
+.callout { border-left:4px solid var(--chili); background:color-mix(in srgb, var(--chili) 8%, var(--card)); padding:10px 14px; border-radius:0 10px 10px 0; font-size:13.5px; margin:10px 0; }
+.callout.ok { border-color:var(--leaf); background:color-mix(in srgb, var(--leaf) 10%, var(--card)); }
+.stats { display:flex; gap:10px; flex-wrap:wrap; }
+.stat { background:var(--panel); border-radius:12px; padding:10px 14px; min-width:110px; }
+.stat b { display:block; font-family:'Fraunces',Georgia,serif; font-size:24px; line-height:1; } .stat span { font-size:11px; color:var(--sub); font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+pre.log { font:12px/1.5 ui-monospace,Menlo,monospace; background:var(--panel); border-radius:10px; padding:10px; max-height:240px; overflow:auto; white-space:pre-wrap; }
+.hidden { display:none !important; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="wordmark" href="runbook.html">MOKI<em>POPS</em> · Email Studio</a>
+  <div class="conn">
+    <span class="dot" id="dot" title="not connected"></span>
+    <input class="url" id="api" placeholder="https://your-domain.ngrok-free.app/webhook/mokipops-email" autocomplete="off" spellcheck="false">
+    <input class="key" id="key" type="password" placeholder="send key" autocomplete="off">
+    <button class="btn sm warm" id="connect">Connect</button>
+    <span class="note" id="connnote"></span>
+  </div>
+</div></div>
+
+<main class="wrap">
+  <h1>Every email, one place. Pick who gets it.</h1>
+  <p class="lede">Previews and copy work anywhere. To list contacts and actually send from <b>moreflavor@mokipops.com</b>, connect to the n8n on the MOKIPOPS Mac (the ngrok address and the send key from <code>n8n/.env</code>). Sends go out in the background, 30 seconds apart, and are logged so nobody gets the same email twice.</p>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>1 · Choose the email</h2>
+        <div class="emails" id="emails"></div>
+        <div style="margin-top:12px" class="row">
+          <label class="chk"><input type="checkbox" id="video" checked> Include the video block</label>
+        </div>
+        <div style="margin-top:10px"><span class="note">Subject</span><div class="subject" id="subject"></div></div>
+        <div class="row" style="margin-top:10px">
+          <button class="btn sm" id="copyhtml">Copy as rich email</button>
+          <button class="btn sm ghost" id="openprev">Open preview in a tab</button>
+        </div>
+        <p class="note" id="copynote" style="margin-top:6px"></p>
+      </div>
+
+      <div class="card">
+        <h2>2 · Choose who gets it</h2>
+        <div class="tabs">
+          <button class="btn sm on" data-tab="segment">Segment batch</button>
+          <button class="btn sm" data-tab="pick">Pick contacts</button>
+          <button class="btn sm" data-tab="single">One address</button>
+        </div>
+        <div id="tab-segment">
+          <label class="field">Segment
+            <select id="segment"><option value="b2b">b2b — retailers, schools, offices (wholesale track)</option><option value="buyers">buyers — past Shopify customers</option><option value="lead">lead — no company known (parked; do not mail cold)</option></select></label>
+          <label class="field">How many today (40 is the safe daily pace) <input type="number" id="limit" value="40" min="1" max="200"></label>
+          <p class="note">Sends to the next unsent people in that segment for the chosen email. Run it again tomorrow and it continues where it stopped.</p>
+        </div>
+        <div id="tab-pick" class="hidden">
+          <div class="row" style="margin-bottom:8px">
+            <input id="search" placeholder="search name, email, company" style="flex:1;min-width:160px;font:inherit;font-size:13px;padding:8px 10px;border:1px solid var(--hairline);border-radius:10px;background:var(--bg);color:var(--ink)">
+            <select id="pickseg" style="font:inherit;font-size:13px;padding:8px;border:1px solid var(--hairline);border-radius:10px;background:var(--bg);color:var(--ink)"><option value="">all segments</option><option value="b2b">b2b</option><option value="buyers">buyers</option><option value="lead">lead</option></select>
+            <button class="btn sm" id="selall">Select shown (max 40)</button><button class="btn sm ghost" id="selnone">Clear</button>
+          </div>
+          <div class="list"><table><thead><tr><th></th><th>Contact</th><th>Segment</th><th>Already got</th></tr></thead><tbody id="contacts"><tr><td colspan="4" class="note">Connect to load contacts.</td></tr></tbody></table></div>
+          <p class="note" style="margin-top:6px"><span id="pickcount">0</span> selected. Greyed rows already received this email; tick <label class="chk" style="display:inline-flex"><input type="checkbox" id="force"> send anyway</label> to include them.</p>
+        </div>
+        <div id="tab-single" class="hidden">
+          <label class="field">Email address <input type="email" id="to" placeholder="buyer@store.com"></label>
+          <label class="field">Their name (for “Hey Name”) <input id="toname" placeholder="Jordan Lee"></label>
+          <p class="note">Good for testing on yourself, or replying to a lead with the film.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>3 · Review, then send</h2>
+        <div class="row"><button class="btn warm" id="review">Review recipients</button><button class="btn primary" id="send" disabled>Send</button></div>
+        <div id="reviewbox" style="margin-top:10px"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="row" style="justify-content:space-between;margin-bottom:8px"><h2 style="margin:0">Preview</h2><span class="note" id="prevnote">Rendered exactly as it will send (Apple Mail shows the video; others see the moving preview).</span></div>
+        <iframe id="preview" title="Email preview" sandbox="allow-same-origin allow-popups"></iframe>
+      </div>
+      <div class="card">
+        <div class="row" style="justify-content:space-between"><h2 style="margin:0">Activity</h2><button class="btn sm ghost" id="refresh">Refresh</button></div>
+        <div class="stats" id="stats" style="margin:10px 0"></div>
+        <pre class="log" id="log">Connect to see the send log.</pre>
+      </div>
+    </div>
+  </div>
+  <p class="note" style="padding:20px 0 40px">Setup and the full sending plan live in the <a href="runbook.html#manual">runbook</a>. If the Mac or ngrok is off, you can still copy any email here and send it from your own mail app.</p>
+</main>
+
+<script>
+// ---------- shared render (mirrors n8n/mokipops-email-api.json and n8n/mailer.py) ----------
+const SITE = 'https://borngifted.github.io/mokipops-reel/';
+const FROM = 'moreflavor@mokipops.com';
+const CAMPAIGNS = {
+  V:  { segment: 'b2b',    file: 'docs/funnel-video-email.html', subject: '12 years in 38 seconds 🍉', preview: 'Kid-founded, Atlanta-made, now on Faire. Press play.', video_builtin: true, blurb: 'Video opener · the film first, Faire button second' },
+  B1: { segment: 'b2b',    file: 'docs/funnel-b1-template.html', subject: 'A $2 pop your customers will pay $4 for', preview: 'All-natural, Atlanta-made, margin at every level.', blurb: 'Wholesale sequence 1 of 3 · the margin math' },
+  B2: { segment: 'b2b',    file: 'docs/funnel-b2-template.html', subject: '120 cases, 3,000 pops, one Atlanta afternoon', preview: 'The activation playbook — staffed cart included.', blurb: 'Wholesale sequence 2 of 3 · day 5 · the Waymo story' },
+  B3: { segment: 'b2b',    file: 'docs/funnel-b3-template.html', subject: 'Should I close your file?', preview: 'One reply gets you the price sheet — or a call.', blurb: 'Wholesale sequence 3 of 3 · day 12 · short last touch (send without video)' },
+  A1: { segment: 'buyers', file: 'docs/funnel-a1-template.html', subject: 'The pops got better since you left 🍉', preview: 'New flavors, same real fruit — and a way to never run out.', blurb: 'Past buyers 1 of 2 · new flavors' },
+  A2: { segment: 'buyers', file: 'docs/funnel-a2-template.html', subject: 'One case = your whole event, sorted', preview: '$53.50 for 24 pops. Offices, parties, teams, schools.', blurb: 'Past buyers 2 of 2 · day 7 · bring a case to your people' },
+};
+const VIDEO_TAG = `<video width="520" autoplay muted loop playsinline poster="${SITE}assets/funnel/funnel-poster.jpg" style="display:block;width:100%;max-width:520px;height:auto;border-radius:14px;"><source src="${SITE}assets/funnel/mokipops-wholesale-funnel.mp4" type="video/mp4"><img src="${SITE}assets/funnel/funnel-loop.gif" width="520" alt="MOKIPOPS — real fruit pops, made in Atlanta (tap to watch)" style="display:block;width:100%;max-width:520px;height:auto;border-radius:14px;border:0;"></video>`;
+const VIDEO_BLOCK = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:8px 24px 18px;"><a href="${SITE}video.html?utm_source=email&utm_medium=email&utm_campaign=wholesale_funnel&utm_content=video" target="_blank" style="text-decoration:none;display:block;">${VIDEO_TAG}</a><p style="margin:10px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#5A463B;">&#9654;&nbsp; <a href="${SITE}video.html?utm_source=email&utm_medium=email&utm_campaign=wholesale_funnel&utm_content=video_caption" target="_blank" style="color:#E23A23;text-decoration:underline;font-weight:700;">Watch the full 38 seconds</a> &nbsp;&middot;&nbsp; sound on</p></td></tr></table>`;
+function render(campaign, tpl, contact, withVideo, forClipboard) {
+  const c = CAMPAIGNS[campaign];
+  const first = (contact.firstname || '').trim() || 'there';
+  const unsub = `mailto:${FROM}?subject=${encodeURIComponent('Unsubscribe ' + (contact.email || ''))}`;
+  let html = tpl;
+  if (campaign === 'V') html = html.replace(/<img src="[^"]*funnel-preview\.gif"[\s\S]*?>/, forClipboard ? `<img src="${SITE}assets/funnel/funnel-loop.gif" width="520" alt="MOKIPOPS (tap to watch)" style="display:block;width:100%;max-width:520px;height:auto;border-radius:14px;border:0;">` : VIDEO_TAG);
+  html = html.replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/\{%\s*text[^%]*value="([^"]*)"[^%]*%\}/g, (_, v) => c.preview || v).replace(/\{%[\s\S]*?%\}/g, '')
+    .replace(/\{\{\s*content\.name\s*\}\}/g, c.subject).replace(/\{\{\s*contact\.firstname\s*\}\}/g, first)
+    .replace(/\{\{\s*unsubscribe_link(_all)?\s*\}\}/g, unsub)
+    .replace(/\{\{\s*site_settings\.company_name\s*\}\}/g, 'MOKIPOPS').replace(/\{\{\s*site_settings\.company_city\s*\}\}/g, 'Atlanta')
+    .replace(/\{\{\s*site_settings\.company_state\s*\}\}/g, 'GA').replace(/\{\{\s*site_settings\.company_country\s*\}\}/g, 'USA')
+    .replace(/\{\{[^}]*\}\}/g, '').replace(/utm_source=hubspot/g, 'utm_source=email')
+    .replace(/(src|href)="(?!https?:|mailto:|#)\/?/g, '$1="' + SITE);
+  if (withVideo && !c.video_builtin) {
+    const block = forClipboard ? VIDEO_BLOCK.replace(VIDEO_TAG, `<img src="${SITE}assets/funnel/funnel-loop.gif" width="520" alt="MOKIPOPS (tap to watch)" style="display:block;width:100%;max-width:520px;height:auto;border-radius:14px;border:0;">`) : VIDEO_BLOCK;
+    const m = html.match(/logo\.png[\s\S]*?<\/tr>/);
+    html = m ? html.slice(0, m.index + m[0].length) + '<tr><td>' + block + '</td></tr>' + html.slice(m.index + m[0].length) : html.replace(/(<body[^>]*>)/, '$1' + block);
+  }
+  return { subject: c.subject, html };
+}
+
+// ---------- state ----------
+const $ = id => document.getElementById(id);
+const state = { campaign: 'V', video: true, tab: 'segment', tpl: {}, contacts: [], picked: new Set(), review: null, connected: false, timer: null };
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+// emails list
+$('emails').innerHTML = Object.entries(CAMPAIGNS).map(([k, c]) => `<div class="em${k === state.campaign ? ' sel' : ''}" data-k="${k}"><span class="tag">${k}</span><div><b>${c.subject}</b><span class="s">${c.blurb} · <i>${c.segment}</i></span></div></div>`).join('');
+$('emails').addEventListener('click', e => { const d = e.target.closest('.em'); if (!d) return; state.campaign = d.dataset.k; document.querySelectorAll('.em').forEach(x => x.classList.toggle('sel', x.dataset.k === state.campaign)); if (state.campaign === 'B3') $('video').checked = false; if (state.campaign === 'V') $('video').checked = true; state.video = $('video').checked; $('segment').value = CAMPAIGNS[state.campaign].segment; refreshPreview(); paintContacts(); clearReview(); });
+$('video').addEventListener('change', () => { state.video = $('video').checked; refreshPreview(); clearReview(); });
+
+async function template(k) { if (!state.tpl[k]) state.tpl[k] = await (await fetch(CAMPAIGNS[k].file + '?t=' + Date.now())).text(); return state.tpl[k]; }
+async function refreshPreview() {
+  const tpl = await template(state.campaign);
+  const who = currentSample();
+  const { subject, html } = render(state.campaign, tpl, who, state.video, false);
+  $('subject').textContent = subject;
+  $('preview').srcdoc = html;
+}
+function currentSample() {
+  if (state.tab === 'single' && $('to').value) return { email: $('to').value, firstname: $('toname').value.split(' ')[0] };
+  if (state.tab === 'pick' && state.picked.size) { const e = [...state.picked][0]; return state.contacts.find(c => c.email === e) || { email: e }; }
+  return { email: 'them@example.com', firstname: '' };
+}
+$('copyhtml').addEventListener('click', async () => {
+  try {
+    const tpl = await template(state.campaign); const { subject, html } = render(state.campaign, tpl, currentSample(), state.video, true);
+    const text = 'Subject: ' + subject + '\n\n' + html.replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([text], { type: 'text/plain' }) })]);
+    $('copynote').textContent = 'Copied. New message from moreflavor@mokipops.com → paste → subject: ' + subject;
+  } catch (e) { $('copynote').textContent = 'Clipboard blocked here. Use “Open preview in a tab”, ⌘A, ⌘C.'; }
+});
+$('openprev').addEventListener('click', async () => { const tpl = await template(state.campaign); const { html } = render(state.campaign, tpl, currentSample(), state.video, false); const w = window.open('about:blank'); w.document.write(html); w.document.close(); });
+
+// tabs
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => { state.tab = b.dataset.tab; document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b)); ['segment', 'pick', 'single'].forEach(t => $('tab-' + t).classList.toggle('hidden', t !== state.tab)); clearReview(); refreshPreview(); }));
+['to', 'toname'].forEach(id => $(id).addEventListener('input', () => { clearReview(); if (state.tab === 'single') refreshPreview(); }));
+
+// ---------- API ----------
+$('api').value = LS.get('mp_api') || new URLSearchParams(location.search).get('api') || '';
+$('key').value = LS.get('mp_key') || '';
+async function api(payload) {
+  const url = $('api').value.trim(); const key = $('key').value;
+  if (!url) throw new Error('Enter the API address (https://<ngrok domain>/webhook/mokipops-email).');
+  const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key, ...payload }) });
+  let j = null; try { j = await r.json(); } catch (e) {}
+  if (!r.ok || !j || j.ok === false) throw new Error((j && j.error) || ('HTTP ' + r.status));
+  return j;
+}
+async function connect() {
+  LS.set('mp_api', $('api').value.trim()); LS.set('mp_key', $('key').value);
+  $('connnote').textContent = 'connecting…'; $('dot').className = 'dot';
+  try {
+    await loadStatus(); await loadContacts();
+    state.connected = true; $('dot').className = 'dot ok'; $('connnote').textContent = 'connected · ' + state.contacts.length + ' contacts';
+    if (state.timer) clearInterval(state.timer); state.timer = setInterval(loadStatus, 15000);
+  } catch (e) { state.connected = false; $('dot').className = 'dot bad'; $('connnote').textContent = e.message; }
+}
+$('connect').addEventListener('click', connect);
+$('refresh').addEventListener('click', () => loadStatus().catch(e => $('log').textContent = e.message));
+async function loadStatus() {
+  const s = await api({ action: 'status' });
+  const order = ['V', 'B1', 'B2', 'B3', 'A1', 'A2'];
+  $('stats').innerHTML = order.map(k => { const c = s.counts[k] || { ok: 0, failed: 0 }; return `<div class="stat"><b>${c.ok}</b><span>${k} sent${c.failed ? ' · ' + c.failed + ' failed' : ''}</span></div>`; }).join('');
+  $('log').textContent = s.recent.length ? s.recent.map(r => `${(r.at || '').replace('T', ' ').slice(0, 16)}  ${r.campaign.padEnd(2)}  ${r.ok ? 'sent  ' : 'FAILED'}  ${r.email}${r.error ? '  — ' + r.error : ''}`).join('\n') : 'No sends logged yet.';
+  return s;
+}
+async function loadContacts() { const c = await api({ action: 'contacts' }); state.contacts = c.contacts; paintContacts(); }
+function paintContacts() {
+  const q = ($('search').value || '').toLowerCase(), seg = $('pickseg').value;
+  const rows = state.contacts.filter(c => (!seg || c.segment === seg) && (!q || [c.name, c.email, c.company].join(' ').toLowerCase().includes(q))).slice(0, 400);
+  $('contacts').innerHTML = rows.length ? rows.map(c => { const got = c.sent.includes(state.campaign); return `<tr style="${got ? 'opacity:.55' : ''}${c.status !== 'active' ? ';text-decoration:line-through' : ''}"><td><input type="checkbox" data-e="${c.email}" ${state.picked.has(c.email) ? 'checked' : ''} ${c.status !== 'active' ? 'disabled' : ''}></td><td><b>${c.name || '—'}</b><br><span class="note">${c.email}${c.company ? ' · ' + c.company : ''}</span></td><td>${c.segment}</td><td>${c.sent.map(s => `<span class="pill${s === state.campaign ? ' done' : ''}">${s}</span>`).join('') || '<span class="note">—</span>'}</td></tr>`; }).join('') : `<tr><td colspan="4" class="note">${state.contacts.length ? 'No matches.' : 'Connect to load contacts.'}</td></tr>`;
+  $('pickcount').textContent = state.picked.size;
+}
+['search', 'pickseg'].forEach(id => $(id).addEventListener('input', paintContacts));
+$('contacts').addEventListener('change', e => { const cb = e.target.closest('input[data-e]'); if (!cb) return; cb.checked ? state.picked.add(cb.dataset.e) : state.picked.delete(cb.dataset.e); $('pickcount').textContent = state.picked.size; clearReview(); refreshPreview(); });
+$('selall').addEventListener('click', () => { document.querySelectorAll('#contacts input[data-e]:not(:disabled)').forEach(cb => { if (state.picked.size < 40) { state.picked.add(cb.dataset.e); cb.checked = true; } }); $('pickcount').textContent = state.picked.size; clearReview(); });
+$('selnone').addEventListener('click', () => { state.picked.clear(); paintContacts(); clearReview(); });
+
+// ---------- review + send ----------
+function payload(dry) {
+  const p = { action: 'send', campaign: state.campaign, video: state.video, dry_run: dry };
+  if (state.tab === 'single') p.to = { email: $('to').value.trim(), name: $('toname').value.trim() };
+  else if (state.tab === 'pick') { p.emails = [...state.picked]; p.force = $('force').checked; }
+  else { p.segment = $('segment').value; p.limit = Number($('limit').value) || 40; }
+  return p;
+}
+function clearReview() { state.review = null; $('send').disabled = true; $('reviewbox').innerHTML = ''; }
+$('review').addEventListener('click', async () => {
+  clearReview(); $('reviewbox').innerHTML = '<span class="note">Checking…</span>';
+  try {
+    if (state.tab === 'single' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($('to').value)) throw new Error('Enter a valid email address.');
+    if (state.tab === 'pick' && !state.picked.size) throw new Error('Tick at least one contact.');
+    const r = await api(payload(true)); state.review = r;
+    const list = r.recipients.slice(0, 60).map(x => `${x.name ? x.name + ' · ' : ''}${x.email}`).join('<br>') + (r.recipients.length > 60 ? `<br>… and ${r.recipients.length - 60} more` : '');
+    $('reviewbox').innerHTML = `<div class="callout ${r.count ? 'ok' : ''}"><b>${r.count} ${r.count === 1 ? 'person' : 'people'}</b> will get <b>${r.campaign}</b> “${r.sample_subject}”${r.video ? ' with the video' : ''}${r.skipped_already_sent ? ` · ${r.skipped_already_sent} skipped because they already got it` : ''}.</div><div class="note" style="max-height:160px;overflow:auto">${list || 'Nobody left to send to for this email in that group.'}</div>`;
+    $('send').disabled = !r.count; $('send').textContent = r.count ? `Send ${r.count} now` : 'Send';
+  } catch (e) { $('reviewbox').innerHTML = `<div class="callout">${e.message}</div>`; }
+});
+$('send').addEventListener('click', async () => {
+  if (!state.review) return;
+  $('send').disabled = true; $('send').textContent = 'Sending…';
+  try {
+    const r = await api(payload(false));
+    $('reviewbox').innerHTML = `<div class="callout ok"><b>Queued ${r.count}.</b> ${r.note} Activity below updates every 15 seconds.</div>`;
+    state.review = null; $('send').textContent = 'Send';
+    setTimeout(loadStatus, 4000); if (state.tab === 'pick') { state.picked.clear(); setTimeout(loadContacts, 6000); }
+  } catch (e) { $('reviewbox').innerHTML = `<div class="callout">${e.message}</div>`; $('send').disabled = false; $('send').textContent = 'Send'; }
+});
+
+refreshPreview();
+if ($('api').value && $('key').value) connect();
+</script>
+</body>
+</html>

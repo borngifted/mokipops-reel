@@ -1,0 +1,673 @@
+{
+ "id": "MokiPopsEmailApi",
+ "versionId": "0001",
+ "name": "MOKIPOPS — Email Studio API (send from the live page)",
+ "nodes": [
+  {
+   "parameters": {
+    "httpMethod": "POST",
+    "path": "mokipops-email",
+    "responseMode": "responseNode",
+    "options": {
+     "allowedOrigins": "*"
+    }
+   },
+   "id": "aa6b7469-36df-49ef-a58a-21b6fca32924",
+   "name": "Email Studio API",
+   "type": "n8n-nodes-base.webhook",
+   "typeVersion": 2,
+   "position": [
+    0,
+    300
+   ],
+   "webhookId": "3c9a7d0e-mokipops-email-api-0001",
+   "notes": "POST {key, action: contacts|status|send, campaign, video, dry_run, segment, limit, emails[], to:{email,name}}. Key = SEND_KEY in .env.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "jsCode": "const b = $input.first().json.body || {};\nconst key = $env.SEND_KEY || '';\nconst auth_ok = !!key && typeof b.key === 'string' && b.key === key;\nconst action = ['contacts', 'status', 'send'].includes(b.action) ? b.action : 'status';\nconst campaign = ['V','A1','A2','B1','B2','B3'].includes(b.campaign) ? b.campaign : 'V';\nreturn [{ json: { ...b, key: undefined, auth_ok, action, campaign, video: !!b.video, dry_run: !!b.dry_run, force: !!b.force,\n  limit: Math.max(1, Math.min(200, Number(b.limit) || 40)) } }];"
+   },
+   "id": "84bfe453-543d-4d3d-9e26-e64b426751c4",
+   "name": "Route",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    220,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "f2c4f961-2795-4187-8255-5817e81e2d73",
+       "leftValue": "={{ $json.auth_ok }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "64728ea2-26ea-4c63-abd3-b17fc5bf353a",
+   "name": "Authorized?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    440,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "respondWith": "json",
+    "responseBody": "={{ JSON.stringify({ ok: false, error: 'Bad or missing send key' }) }}",
+    "options": {
+     "responseCode": 401,
+     "responseHeaders": {
+      "entries": [
+       {
+        "name": "Access-Control-Allow-Origin",
+        "value": "*"
+       },
+       {
+        "name": "Cache-Control",
+        "value": "no-store"
+       }
+      ]
+     }
+    }
+   },
+   "id": "a8411f04-c889-416c-8793-1d55958ce6d9",
+   "name": "Respond 401",
+   "type": "n8n-nodes-base.respondToWebhook",
+   "typeVersion": 1.1,
+   "position": [
+    660,
+    520
+   ]
+  },
+  {
+   "parameters": {
+    "command": "mkdir -p /data/contacts && touch /data/contacts/send-log.jsonl && echo ok"
+   },
+   "id": "57d079bb-c0e8-44de-be7f-a68c7cbd3eb8",
+   "name": "Ensure send-log exists",
+   "type": "n8n-nodes-base.executeCommand",
+   "typeVersion": 1,
+   "position": [
+    660,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "fileSelector": "/files/contacts/contacts.csv",
+    "options": {}
+   },
+   "id": "f819b5dd-4e17-4ecd-85e2-6265311200bc",
+   "name": "Read contacts.csv",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    880,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "csv",
+    "options": {}
+   },
+   "id": "c832fddc-07cb-4149-a30a-1def95e9bd13",
+   "name": "Parse CSV",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    1100,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "return [{ json: { rows: $input.all().length } }];"
+   },
+   "id": "f5740041-3093-4d99-b362-7ea129799226",
+   "name": "Collapse",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1320,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "fileSelector": "/data/contacts/send-log.jsonl",
+    "options": {}
+   },
+   "id": "8e833b6b-6a68-4c3f-b95f-d30f391d8888",
+   "name": "Read send-log",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    1540,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "text",
+    "options": {}
+   },
+   "id": "0205fe9d-e446-4550-af97-9ed3b128cb77",
+   "name": "Log → text",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    1760,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const r = $('Route').first().json;\nconst files = { V: 'funnel-video-email.html', A1: 'funnel-a1-template.html', A2: 'funnel-a2-template.html', B1: 'funnel-b1-template.html', B2: 'funnel-b2-template.html', B3: 'funnel-b3-template.html' };\nreturn [{ json: { path: '/files/docs/' + files[r.campaign] } }];"
+   },
+   "id": "1493526c-fff0-49fa-9396-9ec7f22397dc",
+   "name": "Template path",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1980,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "fileSelector": "={{ $json.path }}",
+    "options": {}
+   },
+   "id": "3c1af0bb-13ce-4a86-a895-2dde50b8547b",
+   "name": "Read template",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    2200,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "text",
+    "options": {}
+   },
+   "id": "d4888a8b-e901-4d5c-af25-d0dc54a995a2",
+   "name": "Template → text",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    2420,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "\nconst SITE = 'https://borngifted.github.io/mokipops-reel/';\nconst FROM = $env.FUNNEL_FROM || 'moreflavor@mokipops.com';\nconst CAMPAIGNS = {\n  V:  { segment: 'b2b',    file: 'funnel-video-email.html', subject: '12 years in 38 seconds 🍉', preview: 'Kid-founded, Atlanta-made, now on Faire. Press play.', video_builtin: true },\n  A1: { segment: 'buyers', file: 'funnel-a1-template.html', subject: 'The pops got better since you left 🍉', preview: 'New flavors, same real fruit — and a way to never run out.' },\n  A2: { segment: 'buyers', file: 'funnel-a2-template.html', subject: 'One case = your whole event, sorted', preview: '$53.50 for 24 pops. Offices, parties, teams, schools.' },\n  B1: { segment: 'b2b',    file: 'funnel-b1-template.html', subject: 'A $2 pop your customers will pay $4 for', preview: 'All-natural, Atlanta-made, margin at every level.' },\n  B2: { segment: 'b2b',    file: 'funnel-b2-template.html', subject: '120 cases, 3,000 pops, one Atlanta afternoon', preview: 'The activation playbook — staffed cart included.' },\n  B3: { segment: 'b2b',    file: 'funnel-b3-template.html', subject: 'Should I close your file?', preview: 'One reply gets you the price sheet — or a call.' },\n};\nconst VIDEO_TAG = `<video width=\"520\" autoplay muted loop playsinline poster=\"${SITE}assets/funnel/funnel-poster.jpg\" style=\"display:block;width:100%;max-width:520px;height:auto;border-radius:14px;\"><source src=\"${SITE}assets/funnel/mokipops-wholesale-funnel.mp4\" type=\"video/mp4\"><img src=\"${SITE}assets/funnel/funnel-loop.gif\" width=\"520\" alt=\"MOKIPOPS — real fruit pops, made in Atlanta (tap to watch)\" style=\"display:block;width:100%;max-width:520px;height:auto;border-radius:14px;border:0;\"></video>`;\nconst VIDEO_BLOCK = `<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr><td align=\"center\" style=\"padding:8px 24px 18px;\"><a href=\"${SITE}video.html?utm_source=email&utm_medium=email&utm_campaign=wholesale_funnel&utm_content=video\" target=\"_blank\" style=\"text-decoration:none;display:block;\">${VIDEO_TAG}</a><p style=\"margin:10px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#5A463B;\">&#9654;&nbsp; <a href=\"${SITE}video.html?utm_source=email&utm_medium=email&utm_campaign=wholesale_funnel&utm_content=video_caption\" target=\"_blank\" style=\"color:#E23A23;text-decoration:underline;font-weight:700;\">Watch the full 38 seconds</a> &nbsp;&middot;&nbsp; sound on</p></td></tr></table>`;\nfunction render(campaign, tpl, contact, withVideo) {\n  const c = CAMPAIGNS[campaign];\n  const first = (contact.firstname || '').trim() || 'there';\n  const unsub = `mailto:${FROM}?subject=${encodeURIComponent('Unsubscribe ' + contact.email)}`;\n  let html = tpl;\n  if (campaign === 'V') html = html.replace(/<img src=\"[^\"]*funnel-preview\\.gif\"[\\s\\S]*?>/, VIDEO_TAG);\n  html = html.replace(/<!--[\\s\\S]*?-->/g, '')\n    .replace(/\\{%\\s*text[^%]*value=\"([^\"]*)\"[^%]*%\\}/g, (_, v) => c.preview || v).replace(/\\{%[\\s\\S]*?%\\}/g, '')\n    .replace(/\\{\\{\\s*content\\.name\\s*\\}\\}/g, c.subject).replace(/\\{\\{\\s*contact\\.firstname\\s*\\}\\}/g, first)\n    .replace(/\\{\\{\\s*unsubscribe_link(_all)?\\s*\\}\\}/g, unsub)\n    .replace(/\\{\\{\\s*site_settings\\.company_name\\s*\\}\\}/g, 'MOKIPOPS').replace(/\\{\\{\\s*site_settings\\.company_city\\s*\\}\\}/g, 'Atlanta')\n    .replace(/\\{\\{\\s*site_settings\\.company_state\\s*\\}\\}/g, 'GA').replace(/\\{\\{\\s*site_settings\\.company_country\\s*\\}\\}/g, 'USA')\n    .replace(/\\{\\{[^}]*\\}\\}/g, '').replace(/utm_source=hubspot/g, 'utm_source=email');\n  if (withVideo && !c.video_builtin) {\n    const m = html.match(/logo\\.png[\\s\\S]*?<\\/tr>/);\n    html = m ? html.slice(0, m.index + m[0].length) + '<tr><td>' + VIDEO_BLOCK + '</td></tr>' + html.slice(m.index + m[0].length) : html.replace(/(<body[^>]*>)/, '$1' + VIDEO_BLOCK);\n  }\n  const text = html.replace(/<style[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<a [^>]*href=\"([^\"]+)\"[^>]*>([\\s\\S]*?)<\\/a>/gi, (_, h, t) => `${t.replace(/<[^>]+>/g, '').trim()} (${h})`)\n    .replace(/<video[\\s\\S]*?<\\/video>/g, `Watch the film: ${SITE}video.html`)\n    .replace(/<\\/(p|div|tr|h\\d|li)>/gi, '\\n').replace(/<br\\s*\\/?>/gi, '\\n').replace(/<[^>]+>/g, '')\n    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#39;/g, \"'\").replace(/&quot;/g, '\"').replace(/&middot;/g, '·').replace(/&#9654;/g, '▶')\n    .replace(/[ \\t]+\\n/g, '\\n').replace(/\\n{3,}/g, '\\n\\n').trim();\n  return { subject: c.subject, html, text };\n}\n\nconst req = $('Route').first().json;\nconst rows = $('Parse CSV').all().map(i => i.json).map(r => ({ ...r, email: (r.email || '').toLowerCase() }));\nconst logText = (() => { try { return $('Log → text').first().json.data || ''; } catch (e) { return ''; } })();\nconst tpl = $('Template → text').first().json.data || '';\nconst entries = [];\nlogText.split('\\n').forEach(l => { if (!l.trim()) return; try { entries.push(JSON.parse(l)); } catch (e) {} });\nconst sent = {}; // campaign -> Set(email)\nentries.forEach(r => { if (r.ok && r.email) (sent[r.campaign] = sent[r.campaign] || new Set()).add(String(r.email).toLowerCase()); });\nconst sentList = e => Object.keys(sent).filter(c => sent[c].has(e));\n\nif (req.action === 'contacts') {\n  const contacts = rows.map(r => ({ email: r.email, firstname: r.firstname, name: r.name, company: r.company, city: r.city, segment: r.segment, status: r.status || 'active', sent: sentList(r.email) }));\n  const segments = {};\n  contacts.forEach(c => { const s = segments[c.segment] = segments[c.segment] || { total: 0, active: 0 }; s.total++; if (c.status === 'active') s.active++; });\n  return [{ json: { response: { ok: true, count: contacts.length, segments, contacts }, queue: [] } }];\n}\nif (req.action === 'status') {\n  const counts = {};\n  entries.forEach(r => { const c = counts[r.campaign] = counts[r.campaign] || { ok: 0, failed: 0, last_at: null }; if (r.ok) c.ok++; else c.failed++; if (!c.last_at || r.at > c.last_at) c.last_at = r.at; });\n  const recent = entries.filter(r => !req.campaign_filter || r.campaign === req.campaign_filter).slice(-100).reverse();\n  return [{ json: { response: { ok: true, counts, recent, total: entries.length }, queue: [] } }];\n}\n// action === 'send'\nconst camp = req.campaign;\nconst already = sent[camp] || new Set();\nlet picked = [], skipped = 0, mode;\nif (req.to && req.to.email) {\n  mode = 'single';\n  const e = String(req.to.email).toLowerCase().trim();\n  const known = rows.find(r => r.email === e) || {};\n  picked = [{ ...known, email: e, firstname: (req.to.name || known.firstname || '').split(' ')[0], name: req.to.name || known.name || '', segment: known.segment || 'manual' }];\n} else if (Array.isArray(req.emails) && req.emails.length) {\n  mode = 'picked';\n  const want = new Set(req.emails.map(x => String(x).toLowerCase().trim()));\n  picked = rows.filter(r => want.has(r.email));\n  want.forEach(e => { if (!rows.find(r => r.email === e)) picked.push({ email: e, firstname: '', name: '', segment: 'manual', status: 'active' }); });\n  picked = picked.filter(r => (r.status || 'active') === 'active');\n  if (!req.force) { const before = picked.length; picked = picked.filter(r => !already.has(r.email)); skipped = before - picked.length; }\n} else {\n  mode = 'segment';\n  const seg = req.segment || CAMPAIGNS[camp].segment;\n  const eligible = rows.filter(r => r.segment === seg && (r.status || 'active') === 'active');\n  const unsent = eligible.filter(r => !already.has(r.email));\n  skipped = eligible.length - unsent.length;\n  picked = unsent.slice(0, req.limit);\n}\nconst queue = picked.map(r => { const m = render(camp, tpl, r, req.video); return { email: r.email, name: r.name || '', segment: r.segment || '', campaign: camp, subject: m.subject, html: m.html, text: m.text }; });\nconst response = { ok: true, mode, campaign: camp, video: req.video || camp === 'V', dry_run: req.dry_run, count: queue.length, skipped_already_sent: skipped,\n  recipients: queue.map(q => ({ email: q.email, name: q.name, segment: q.segment })), sample_subject: queue[0] ? queue[0].subject : CAMPAIGNS[camp].subject,\n  sample_html: req.dry_run && queue[0] ? queue[0].html : undefined, note: req.dry_run ? 'Dry run — nothing sent.' : (queue.length ? `Sending ${queue.length} in the background, ${$env.FUNNEL_PAUSE_SECONDS || 30}s apart. Poll status.` : 'Nothing to send.') };\nreturn [{ json: { response, queue: req.dry_run ? [] : queue } }];\n"
+   },
+   "id": "8d706900-0a72-4c7e-8292-1d8bfb001cbb",
+   "name": "Build response",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    2640,
+    200
+   ],
+   "notes": "One node answers every action. For 'send' it also builds the per-recipient queue that continues after the response.",
+   "notesInFlow": true
+  },
+  {
+   "parameters": {
+    "respondWith": "json",
+    "responseBody": "={{ JSON.stringify($json.response) }}",
+    "options": {
+     "responseCode": 200,
+     "responseHeaders": {
+      "entries": [
+       {
+        "name": "Access-Control-Allow-Origin",
+        "value": "*"
+       },
+       {
+        "name": "Cache-Control",
+        "value": "no-store"
+       }
+      ]
+     }
+    }
+   },
+   "id": "1a1180d2-96fb-40a1-b459-1a9e140843a9",
+   "name": "Respond",
+   "type": "n8n-nodes-base.respondToWebhook",
+   "typeVersion": 1.1,
+   "position": [
+    2860,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "87b66423-151e-47a7-9675-20505daef7b8",
+       "leftValue": "={{ ($json.queue || []).length > 0 }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "c9fb2d7c-8002-4e1e-9995-ca2d89ee9452",
+   "name": "Anything to send?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    3080,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "return $input.first().json.queue.map(q => ({ json: q }));"
+   },
+   "id": "e02c93f0-0033-48c8-8a94-9352bfde290f",
+   "name": "Split queue",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    3300,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "batchSize": 1,
+    "options": {}
+   },
+   "id": "47c659cc-1f70-42b7-ade0-21b50760997e",
+   "name": "One at a time",
+   "type": "n8n-nodes-base.splitInBatches",
+   "typeVersion": 3,
+   "position": [
+    3520,
+    300
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "4cc66818-97dd-4fe4-b501-0b8d09730f5d",
+   "name": "Done",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    3740,
+    140
+   ]
+  },
+  {
+   "parameters": {
+    "fromEmail": "={{ 'MOKIPOPS <' + ($env.FUNNEL_FROM || 'moreflavor@mokipops.com') + '>' }}",
+    "toEmail": "={{ $json.name ? $json.name + ' <' + $json.email + '>' : $json.email }}",
+    "subject": "={{ $json.subject }}",
+    "emailFormat": "both",
+    "html": "={{ $json.html }}",
+    "text": "={{ $json.text }}",
+    "options": {
+     "replyTo": "={{ $env.FUNNEL_FROM || 'moreflavor@mokipops.com' }}",
+     "appendAttribution": false
+    }
+   },
+   "id": "e13b27d0-a411-42ef-afe5-788c61e10a61",
+   "name": "Send email",
+   "type": "n8n-nodes-base.emailSend",
+   "typeVersion": 2.1,
+   "position": [
+    3740,
+    400
+   ],
+   "credentials": {
+    "smtp": {
+     "id": "MokiPopsSmtp",
+     "name": "MOKIPOPS mail (SMTP)"
+    }
+   },
+   "onError": "continueRegularOutput"
+  },
+  {
+   "parameters": {
+    "jsCode": "const q = $('One at a time').first().json;\nconst out = $input.first().json || {};\nconst ok = !out.error;\nconst rec = { at: new Date().toISOString().slice(0, 19) + 'Z', campaign: q.campaign, email: q.email, segment: q.segment, via: 'email-studio', ok, error: ok ? null : String(out.error.message || JSON.stringify(out.error)).slice(0, 300) };\nreturn [{ json: { ...rec, log_b64: Buffer.from(JSON.stringify(rec) + '\\n').toString('base64') } }];"
+   },
+   "id": "74ec86bd-5a98-4d61-bc87-07606854c9c8",
+   "name": "Record result",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    3960,
+    400
+   ]
+  },
+  {
+   "parameters": {
+    "command": "=echo '{{ $json.log_b64 }}' | base64 -d >> /data/contacts/send-log.jsonl"
+   },
+   "id": "162cdc14-0fde-4b40-a62f-485a3ee4a090",
+   "name": "Append send-log",
+   "type": "n8n-nodes-base.executeCommand",
+   "typeVersion": 1,
+   "position": [
+    4180,
+    400
+   ],
+   "onError": "continueRegularOutput"
+  },
+  {
+   "parameters": {
+    "amount": "={{ Number($env.FUNNEL_PAUSE_SECONDS || 30) }}",
+    "unit": "seconds"
+   },
+   "id": "cde5b81a-3251-47bf-8ed6-d7a05cbd98c4",
+   "name": "Pause",
+   "type": "n8n-nodes-base.wait",
+   "typeVersion": 1.1,
+   "position": [
+    4400,
+    400
+   ],
+   "webhookId": "22f5b98c-9242-498a-b50d-025fe7c3bef2"
+  }
+ ],
+ "connections": {
+  "Email Studio API": {
+   "main": [
+    [
+     {
+      "node": "Route",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Route": {
+   "main": [
+    [
+     {
+      "node": "Authorized?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Authorized?": {
+   "main": [
+    [
+     {
+      "node": "Ensure send-log exists",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Respond 401",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Ensure send-log exists": {
+   "main": [
+    [
+     {
+      "node": "Read contacts.csv",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read contacts.csv": {
+   "main": [
+    [
+     {
+      "node": "Parse CSV",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Parse CSV": {
+   "main": [
+    [
+     {
+      "node": "Collapse",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Collapse": {
+   "main": [
+    [
+     {
+      "node": "Read send-log",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read send-log": {
+   "main": [
+    [
+     {
+      "node": "Log → text",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Log → text": {
+   "main": [
+    [
+     {
+      "node": "Template path",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Template path": {
+   "main": [
+    [
+     {
+      "node": "Read template",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read template": {
+   "main": [
+    [
+     {
+      "node": "Template → text",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Template → text": {
+   "main": [
+    [
+     {
+      "node": "Build response",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Build response": {
+   "main": [
+    [
+     {
+      "node": "Respond",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Respond": {
+   "main": [
+    [
+     {
+      "node": "Anything to send?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Anything to send?": {
+   "main": [
+    [
+     {
+      "node": "Split queue",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Split queue": {
+   "main": [
+    [
+     {
+      "node": "One at a time",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "One at a time": {
+   "main": [
+    [
+     {
+      "node": "Done",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Send email",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Send email": {
+   "main": [
+    [
+     {
+      "node": "Record result",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Record result": {
+   "main": [
+    [
+     {
+      "node": "Append send-log",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Append send-log": {
+   "main": [
+    [
+     {
+      "node": "Pause",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Pause": {
+   "main": [
+    [
+     {
+      "node": "One at a time",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "timezone": "America/New_York",
+  "executionOrder": "v1",
+  "saveManualExecutions": true
+ },
+ "staticData": null,
+ "pinData": {},
+ "active": false,
+ "meta": {
+  "templateCredsSetupCompleted": true
+ },
+ "tags": []
+}

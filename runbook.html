@@ -86,13 +86,13 @@ pre code { background:none; padding:0; }
 <div class="topbar"><div class="wrap">
   <a class="wordmark" href="index.html">MOKI<em>POPS</em> · Runbook</a>
   <nav class="topnav">
-    <a href="#stack">Stack</a><a href="#setup">Setup</a><a href="#social">Social</a><a href="#email">Email</a><a href="#manual">Send by hand</a><a href="#leads">Leads</a><a href="#ops">Daily ops</a><a href="#fix">Fix-it</a>
+    <a href="#stack">Stack</a><a href="#setup">Setup</a><a href="#social">Social</a><a href="#email">Email</a><a href="#manual">Send by hand</a><a href="emails.html"><b>Email Studio ↗</b></a><a href="#leads">Leads</a><a href="#ops">Daily ops</a><a href="#fix">Fix-it</a>
   </nav>
 </div></div>
 
 <main class="wrap">
 <header class="hero">
-  <span class="eyebrow">Living document · updated Sep 30, 2026 (rev 3: B1–B3 manual plan + video)</span>
+  <span class="eyebrow">Living document · updated Sep 30, 2026 (rev 4: Email Studio)</span>
   <h1>Run MOKIPOPS marketing from one Mac.</h1>
   <p class="lede">Blotato is gone and HubSpot is locked. Everything they did now runs locally in <b>n8n</b> on Docker Desktop: daily Facebook + Instagram posts, the wholesale email funnel, and the lead form on the wholesale page. Monthly software cost: <b>$0</b>.</p>
   <div class="pills">
@@ -100,6 +100,7 @@ pre code { background:none; padding:0; }
     <span class="pill ok">Email batch workflow built &amp; tested</span>
     <span class="pill ok">Lead webhook built &amp; tested</span>
     <span class="pill ok">Manual mailer + video email ready</span>
+    <span class="pill ok">Email Studio (pick &amp; send from the live link)</span>
     <span class="pill todo">Needs: Meta token · mailbox SMTP · ngrok domain</span>
   </div>
 </header>
@@ -254,6 +255,16 @@ FUNNEL_DAILY_CAP=40</code></pre>
 <section id="manual">
   <div class="sechead"><h2>Sending emails by hand (with the video playing)</h2><p>No n8n required. Two ways: copy a finished email into your own mail app for one-offs, or run the mailer script for a paced batch. Both use the same templates, the same log, and the same sender.</p></div>
 
+
+  <div class="card" style="border-color:var(--mango)"><h3>Way 0 · <a href="emails.html">Email Studio</a> — pick and send from this link</h3>
+    <p class="small"><b><a href="emails.html">emails.html</a></b> shows all six emails with a live preview, lets you choose <i>a segment batch</i>, <i>hand-picked contacts</i> (search, tick boxes, see who already got which email) or <i>one address</i>, then sends from moreflavor@mokipops.com through the n8n on the Mac. Nothing is sent until you click <b>Review</b> and then <b>Send N now</b>.</p>
+    <ol style="padding-left:20px;font-size:14.5px;color:var(--sub);margin-top:8px">
+      <li>One-time: add <code>SEND_KEY=</code>&lt;long random string&gt; to <code>n8n/.env</code>, import <code>n8n/mokipops-email-api.json</code>, toggle it <b>Active</b>, and run <code>docker compose --profile public up -d</code> so the ngrok tunnel is up.</li>
+      <li>Open the Studio, paste <code>https://&lt;NGROK_DOMAIN&gt;/webhook/mokipops-email</code> and the send key in the top bar, click <b>Connect</b>. The browser remembers both.</li>
+      <li>Choose the email → choose who → <b>Review</b> shows exactly who will get it and who is skipped as already sent → <b>Send</b>. Activity at the bottom updates as they go out.</li>
+    </ol>
+    <p class="small">Without the key nobody can list contacts or send, even with the link. The Studio, the Terminal mailer and the n8n click-batch all write to the same log, so they never double-send.</p>
+  </div>
   <div class="card"><h3>How “video in an email” actually works</h3>
     <p class="small">Email clients don't agree on video, so every MOKIPOPS email carries three layers of the same 38-second film and each client shows the best one it can. Every layer is a link to the full player at <a href="video.html">video.html</a>.</p>
     <div class="tablewrap" style="margin-top:10px"><table>
@@ -358,6 +369,7 @@ python3 -c "import json;[print(l['at'][:10],l['interest'],'·',l['name'],'·',l[
     <tr><td>Posts visible only to you</td><td>App still in Development mode</td><td>Meta app dashboard → switch to Live.</td></tr>
     <tr><td>Email node <code>535 Authentication unsuccessful</code></td><td>SMTP AUTH off or wrong app password</td><td>Step 5; re-enter the credential in n8n.</td></tr>
     <tr><td>Funnel mail landing in spam</td><td>DKIM not enabled for mokipops.com</td><td>Enable DKIM in Defender portal + add the two CNAMEs at GoDaddy; keep volume ≤40/day for a week.</td></tr>
+    <tr><td>Email Studio says “Bad or missing send key” / cannot connect</td><td>Key mismatch, API workflow inactive, or ngrok down</td><td>Match the key in the top bar to <code>SEND_KEY</code> in .env (restart compose after editing); toggle the “Email Studio API” workflow Active; <code>docker compose --profile public up -d</code>.</td></tr>
     <tr><td>Form shows “Opening your email app”</td><td>Webhook unreachable (ngrok down, workflow inactive, or <code>LEAD_ENDPOINT</code> empty)</td><td><code>docker compose --profile public up -d</code>; workflow toggle Active; set the constant in wholesale.html and publish.</td></tr>
     <tr><td>n8n not running after a reboot</td><td>Docker Desktop didn't start</td><td>Enable “Start Docker Desktop when you sign in”; containers are set to restart automatically.</td></tr>
     <tr><td>Video not moving in an email</td><td>Client blocks GIF/video (Outlook desktop) or images off</td><td>Expected: they get the poster + ▶ link. Check on an iPhone or in Gmail to confirm the email itself is fine.</td></tr>
@@ -370,6 +382,7 @@ python3 -c "import json;[print(l['at'][:10],l['interest'],'·',l['name'],'·',l[
     <tr><td><code>n8n/mokipops-lead-webhook.json</code></td><td>Wholesale form receiver</td></tr>
     <tr><td><code>n8n/build_queue.py</code> → <code>social-queue.json</code></td><td>Posting calendar generator and its output (public)</td></tr>
     <tr><td><code>n8n/build_contacts.py</code> → <code>contacts/contacts.csv</code></td><td>Segments (private)</td></tr>
+    <tr><td><code>emails.html</code> + <code>n8n/mokipops-email-api.json</code></td><td>Email Studio page and its key-protected send API (contacts · status · send)</td></tr>
     <tr><td><code>n8n/mailer.py</code></td><td>Manual mailer (one-off or paced batch, optional video block)</td></tr>
     <tr><td><code>assets/funnel/</code></td><td>Film (mp4), moving preview (gif), poster (jpg) used in every email</td></tr>
     <tr><td><code>n8n/verify_meta.sh</code></td><td>Meta pre-flight</td></tr>

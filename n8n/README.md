@@ -182,6 +182,14 @@ the unsubscribe link becomes a `mailto:` to moreflavor@. Put unsubscribes in
 Status: A1 + B1 went out Aug 26 2026 via HubSpot. **Next: A2 + B2 the same day, B3 a week later.**
 Warm-up: ≤40/day for the first week from this mailbox.
 
+### Email Studio (pick & send from the live site): `emails.html` + `mokipops-email-api.json`
+`https://borngifted.github.io/mokipops-reel/emails.html` previews all six emails and sends through a
+key-protected webhook (`POST /webhook/mokipops-email`, body `{key, action: contacts|status|send, campaign,
+video, dry_run, segment, limit, emails[], to:{email,name}, force}`). `SEND_KEY` in `.env` must match what
+the page presents. `send` answers immediately with the resolved recipient list and then keeps sending in
+the background (`FUNNEL_PAUSE_SECONDS` apart); `dry_run:true` is what the page's Review button calls.
+Dedupe and history come from `contacts/send-log.jsonl`, shared with `mailer.py`.
+
 ### Manual path (no n8n): `mailer.py`
 `python3 n8n/mailer.py --campaign V --to you@x.com --name You` · `--campaign V --segment b2b --limit 40` ·
 `--video` on any campaign · `--dry-run` (previews in `contacts/outbox/`) · `--list`. Reads `SMTP_*` from
